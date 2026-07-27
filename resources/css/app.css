@@ -26,7 +26,7 @@
 
 @theme {
     --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", serif;
+    --font-serif: "Libre Baskerville", ui-serif, Georgia, "Times New dev", serif;
     --color-accent: var(--color-teal-800);
     --color-accent-content: var(--color-teal-800);
     --color-accent-foreground: var(--color-white);

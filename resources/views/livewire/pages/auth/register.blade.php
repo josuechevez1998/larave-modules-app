@@ -11,13 +11,13 @@ use Livewire\Volt\Component;
 new #[Layout('layouts.guest')] class extends Component
 {
     public string $name = '';
+
     public string $email = '';
+
     public string $password = '';
+
     public string $password_confirmation = '';
 
-    /**
-     * Handle an incoming registration request.
-     */
     public function register(): void
     {
         $validated = $this->validate([
@@ -32,57 +32,64 @@ new #[Layout('layouts.guest')] class extends Component
 
         Auth::login($user);
 
-        $this->redirect(route('dashboard', absolute: false), navigate: true);
+        $this->redirect(route('verification.notice', absolute: false), navigate: true);
     }
 }; ?>
 
-<div>
-    <form wire:submit="register">
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text" name="name" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+<div class="flex flex-col gap-6">
+    <x-auth-header
+        :title="__('auth.register_title')"
+        :description="__('auth.register_description')"
+    />
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <form wire:submit="register" class="flex flex-col gap-5">
+        <flux:input
+            wire:model="name"
+            :label="__('Name')"
+            type="text"
+            name="name"
+            required
+            autofocus
+            autocomplete="name"
+        />
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <flux:input
+            wire:model="email"
+            :label="__('Email')"
+            type="email"
+            name="email"
+            required
+            autocomplete="username"
+            placeholder="email@example.com"
+        />
 
-            <x-text-input wire:model="password" id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+        <flux:input
+            wire:model="password"
+            :label="__('Password')"
+            type="password"
+            name="password"
+            required
+            autocomplete="new-password"
+            viewable
+        />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+        <flux:input
+            wire:model="password_confirmation"
+            :label="__('Confirm Password')"
+            type="password"
+            name="password_confirmation"
+            required
+            autocomplete="new-password"
+            viewable
+        />
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input wire:model="password_confirmation" id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}" wire:navigate>
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
+        <flux:button variant="primary" type="submit" class="w-full">
+            {{ __('Register') }}
+        </flux:button>
     </form>
+
+    <div class="space-x-1 text-center text-sm text-stone-600 rtl:space-x-reverse dark:text-stone-400">
+        <span>{{ __('auth.already_registered') }}</span>
+        <flux:link :href="route('login')" wire:navigate>{{ __('Log in') }}</flux:link>
+    </div>
 </div>

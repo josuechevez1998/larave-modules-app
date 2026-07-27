@@ -2,9 +2,13 @@
 
 namespace Tests\Feature;
 
+use App\Livewire\Settings\DeleteUserForm;
+use App\Livewire\Settings\Language;
+use App\Livewire\Settings\Password;
+use App\Livewire\Settings\Profile;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Livewire\Volt\Volt;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class ProfileTest extends TestCase
@@ -15,13 +19,18 @@ class ProfileTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->get('/profile');
+        $response = $this->actingAs($user)->get(route('settings.profile'));
 
-        $response
-            ->assertOk()
-            ->assertSeeVolt('profile.update-profile-information-form')
-            ->assertSeeVolt('profile.update-password-form')
-            ->assertSeeVolt('profile.delete-user-form');
+        $response->assertOk();
+    }
+
+    public function test_profile_redirect_from_legacy_path(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->get('/profile')
+            ->assertRedirect('/settings/profile');
     }
 
     public function test_profile_information_can_be_updated(): void
@@ -30,14 +39,11 @@ class ProfileTest extends TestCase
 
         $this->actingAs($user);
 
-        $component = Volt::test('profile.update-profile-information-form')
+        Livewire::test(Profile::class)
             ->set('name', 'Test User')
             ->set('email', 'test@example.com')
-            ->call('updateProfileInformation');
-
-        $component
-            ->assertHasNoErrors()
-            ->assertNoRedirect();
+            ->call('updateProfileInformation')
+            ->assertHasNoErrors();
 
         $user->refresh();
 
@@ -52,16 +58,41 @@ class ProfileTest extends TestCase
 
         $this->actingAs($user);
 
-        $component = Volt::test('profile.update-profile-information-form')
+        Livewire::test(Profile::class)
             ->set('name', 'Test User')
             ->set('email', $user->email)
-            ->call('updateProfileInformation');
-
-        $component
-            ->assertHasNoErrors()
-            ->assertNoRedirect();
+            ->call('updateProfileInformation')
+            ->assertHasNoErrors();
 
         $this->assertNotNull($user->refresh()->email_verified_at);
+    }
+
+    public function test_password_can_be_updated(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
+        Livewire::test(Password::class)
+            ->set('current_password', 'password')
+            ->set('password', 'new-password')
+            ->set('password_confirmation', 'new-password')
+            ->call('updatePassword')
+            ->assertHasNoErrors();
+    }
+
+    public function test_language_can_be_updated(): void
+    {
+        $user = User::factory()->create(['locale' => 'es']);
+
+        $this->actingAs($user);
+
+        Livewire::test(Language::class)
+            ->set('locale', 'en')
+            ->call('updateLanguage')
+            ->assertRedirect(route('settings.language'));
+
+        $this->assertSame('en', $user->refresh()->locale);
     }
 
     public function test_user_can_delete_their_account(): void
@@ -70,11 +101,9 @@ class ProfileTest extends TestCase
 
         $this->actingAs($user);
 
-        $component = Volt::test('profile.delete-user-form')
+        Livewire::test(DeleteUserForm::class)
             ->set('password', 'password')
-            ->call('deleteUser');
-
-        $component
+            ->call('deleteUser')
             ->assertHasNoErrors()
             ->assertRedirect('/');
 
@@ -88,11 +117,9 @@ class ProfileTest extends TestCase
 
         $this->actingAs($user);
 
-        $component = Volt::test('profile.delete-user-form')
+        Livewire::test(DeleteUserForm::class)
             ->set('password', 'wrong-password')
-            ->call('deleteUser');
-
-        $component
+            ->call('deleteUser')
             ->assertHasErrors('password')
             ->assertNoRedirect();
 

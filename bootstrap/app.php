@@ -101,24 +101,26 @@ return Application::configure(basePath: dirname(__DIR__))
 /**
  * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
  */
-function friendly_error_response(Request $request, string $message, string $code, int $status)
-{
-    if ($request->expectsJson() || $request->is('api/*')) {
-        return response()->json([
-            'message' => $message,
-            'code' => $code,
-        ], $status);
+if (! function_exists('friendly_error_response')) {
+    function friendly_error_response(Request $request, string $message, string $code, int $status)
+    {
+        if ($request->expectsJson() || $request->is('api/*')) {
+            return response()->json([
+                'message' => $message,
+                'code' => $code,
+            ], $status);
+        }
+
+        if ($request->hasSession()) {
+            $request->session()->flash('error', $message);
+        }
+
+        $view = match ($status) {
+            403 => 'errors.403',
+            404 => 'errors.404',
+            default => 'errors.500',
+        };
+
+        return response()->view($view, ['message' => $message], $status);
     }
-
-    if ($request->hasSession()) {
-        $request->session()->flash('error', $message);
-    }
-
-    $view = match ($status) {
-        403 => 'errors.403',
-        404 => 'errors.404',
-        default => 'errors.500',
-    };
-
-    return response()->view($view, ['message' => $message], $status);
 }
