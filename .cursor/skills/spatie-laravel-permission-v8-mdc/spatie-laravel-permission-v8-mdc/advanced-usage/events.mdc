@@ -1,0 +1,37 @@
+---
+description: "Eventos de asignación y eliminación de roles y permisos."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/events"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/events.md"
+---
+
+# Eventos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Emite eventos opcionales cuando se agregan o eliminan roles y permisos.
+
+## Reglas y conceptos clave
+- Activar `events_enabled` en `config/permission.php`.
+- Escuchar `RoleAttachedEvent`, `RoleDetachedEvent`, `PermissionAttachedEvent` y `PermissionDetachedEvent`.
+- Los argumentos pueden contener modelos, ids, arrays o colecciones.
+- Validar el tipo de los datos recibidos antes de procesarlos.
+- Usar eventos para auditoría, sincronización o notificaciones internas, no para duplicar la autorización.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/events
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/events.md

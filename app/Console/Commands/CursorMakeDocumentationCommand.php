@@ -148,11 +148,13 @@ class CursorMakeDocumentationCommand extends Command
 
         $venvDir = $scriptRoot.DIRECTORY_SEPARATOR.'.venv';
         $venvPython = $this->resolveVenvPython($scriptRoot);
-        $venvUsable = $venvPython !== null && $this->pythonWorks($venvPython, $scriptRoot);
+        $venvUsable = $venvPython !== null
+            && $this->pythonWorks($venvPython, $scriptRoot)
+            && $this->pipWorks($venvPython, $scriptRoot);
 
         if (! $venvUsable) {
             if (is_dir($venvDir)) {
-                $this->warn('El venv existente no es usable en este entorno; se recreará.');
+                $this->warn('El venv existente no es usable (python/pip); se recreará.');
                 File::deleteDirectory($venvDir);
             }
 
@@ -160,13 +162,43 @@ class CursorMakeDocumentationCommand extends Command
 
             $create = Process::path($scriptRoot)
                 ->timeout(120)
-                ->run(['python3', '-m', 'venv', '.venv']);
+                ->run(['python3', '-m', 'venv', '--upgrade-deps', '.venv']);
+
+            if (! $create->successful()) {
+                // Debian a veces no trae ensurepip; reintentar sin --upgrade-deps.
+                $create = Process::path($scriptRoot)
+                    ->timeout(120)
+                    ->run(['python3', '-m', 'venv', '.venv']);
+            }
 
             $venvPython = $this->resolveVenvPython($scriptRoot);
 
             if (! $create->successful() || $venvPython === null) {
-                $this->error('No se pudo crear el venv:');
+                if (is_dir($venvDir)) {
+                    File::deleteDirectory($venvDir);
+                }
+
+                $this->error('No se pudo crear el venv (falta python3-venv / ensurepip).');
                 $this->line($create->errorOutput() ?: $create->output());
+                $this->newLine();
+                $this->warn('En Laravel Sail (sin sudo) instala como root:');
+                $this->line('./vendor/bin/sail root-shell');
+                $this->line('apt-get update && apt-get install -y python3 python3-venv python3-pip curl');
+                $this->line('exit');
+                $this->line('rm -rf scripts/cursor-docs-export/.venv');
+                $this->line('sail php artisan cursor:make:documentation "…"');
+
+                return null;
+            }
+        }
+
+        if (! $this->pipWorks($venvPython, $scriptRoot)) {
+            $this->line('Bootstrap de pip en el venv (ensurepip)…');
+
+            if (! $this->bootstrapPip($venvPython, $scriptRoot)) {
+                $this->error('El venv no tiene pip y no se pudo instalar.');
+                $this->line('En Sail/Debian: apt-get install -y python3-venv python3-pip');
+                $this->line('Luego borra scripts/cursor-docs-export/.venv y vuelve a ejecutar el comando.');
 
                 return null;
             }
@@ -187,10 +219,8 @@ class CursorMakeDocumentationCommand extends Command
             ]);
 
         if (! $pip->successful()) {
-            $this->error('No se pudo actualizar pip.');
+            $this->warn('No se pudo actualizar pip; se continúa con la versión actual.');
             $this->line($pip->errorOutput() ?: $pip->output());
-
-            return null;
         }
 
         $deps = Process::path($scriptRoot)
@@ -255,6 +285,48 @@ class CursorMakeDocumentationCommand extends Command
             ->run([$python, '-c', 'import sys; print(sys.executable)']);
 
         return $probe->successful();
+    }
+
+    private function pipWorks(string $python, string $scriptRoot): bool
+    {
+        $probe = Process::path($scriptRoot)
+            ->timeout(30)
+            ->run([$python, '-c', 'import pip; print(pip.__version__)']);
+
+        return $probe->successful();
+    }
+
+    private function bootstrapPip(string $python, string $scriptRoot): bool
+    {
+        $ensure = Process::path($scriptRoot)
+            ->timeout(120)
+            ->run([$python, '-m', 'ensurepip', '--upgrade']);
+
+        if ($ensure->successful() && $this->pipWorks($python, $scriptRoot)) {
+            return true;
+        }
+
+        // Fallback: get-pip.py
+        $getPip = $scriptRoot.DIRECTORY_SEPARATOR.'get-pip.py';
+        $download = Process::path($scriptRoot)
+            ->timeout(120)
+            ->run([
+                'bash',
+                '-lc',
+                'curl -fsSL https://bootstrap.pypa.io/get-pip.py -o '.escapeshellarg($getPip),
+            ]);
+
+        if (! $download->successful() || ! is_file($getPip)) {
+            return false;
+        }
+
+        $install = Process::path($scriptRoot)
+            ->timeout(180)
+            ->run([$python, $getPip, '--force-reinstall']);
+
+        @unlink($getPip);
+
+        return $install->successful() && $this->pipWorks($python, $scriptRoot);
     }
 
     private function resolveOutputPath(string $output): string

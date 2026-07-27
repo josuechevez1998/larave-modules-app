@@ -1,7 +1,5 @@
 <x-app-layout>
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-        <x-breadcrumbs.trail />
-
         <div class="relative mb-2 w-full">
             <flux:heading size="xl" level="1">{{ __('Dashboard') }}</flux:heading>
             <flux:subheading size="lg" class="mb-6">{{ __("You're logged in!") }}</flux:subheading>

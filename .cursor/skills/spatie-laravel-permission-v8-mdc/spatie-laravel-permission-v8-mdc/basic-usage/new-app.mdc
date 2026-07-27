@@ -1,0 +1,43 @@
+---
+description: "Flujo para construir una aplicación mínima reproducible."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/new-app"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/new-app.md"
+---
+
+# Aplicación de ejemplo
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Guía para crear un proyecto de demostración destinado a aprendizaje, pruebas o reproducción de errores.
+
+## Reglas y conceptos clave
+- Crear un proyecto Laravel limpio con una base de datos sencilla.
+- Instalar el paquete, publicar archivos, migrar y agregar `HasRoles`.
+- Crear un seeder con permisos, roles y usuarios de prueba.
+- Configurar Super Admin mediante Gate.
+- Probar autorización en rutas, vistas, controladores y Policies.
+- Usar commits pequeños para compartir un caso reproducible.
+
+## Precauciones
+
+- No copiar credenciales de demostración a producción.
+- No usar `migrate:fresh` en ambientes con datos reales.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/new-app
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/new-app.md

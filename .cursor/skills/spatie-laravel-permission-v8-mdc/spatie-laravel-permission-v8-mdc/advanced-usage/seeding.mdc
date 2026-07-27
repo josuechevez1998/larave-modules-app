@@ -1,0 +1,53 @@
+---
+description: "Orden correcto, caché y optimización al sembrar roles y permisos."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/seeding"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/seeding.md"
+---
+
+# Seeders
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Define un orden seguro para crear permisos, roles y asignaciones durante la siembra.
+
+## Reglas y conceptos clave
+- Limpiar la caché antes de sembrar.
+- Crear primero los permisos y después los roles que los utilizarán.
+- Con `WithoutModelEvents`, limpiar nuevamente la caché antes de asignar permisos.
+- Crear usuarios y asignar roles mediante estados de factory o callbacks.
+- Para grandes volúmenes se puede usar `insert`, pero se omiten validaciones y limpieza automática.
+- Después de escrituras directas, limpiar manualmente la caché.
+
+## Ejemplo mínimo
+
+```php
+public function run(): void
+{
+    app(PermissionRegistrar::class)->forgetCachedPermissions();
+
+    Permission::create(['name' => 'users.view']);
+    Permission::create(['name' => 'users.update']);
+
+    $admin = Role::create(['name' => 'admin']);
+    $admin->syncPermissions(Permission::all());
+}
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/seeding
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/seeding.md

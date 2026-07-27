@@ -1,0 +1,56 @@
+---
+description: "Compatibilidad, modelo User, esquema de base de datos y restricciones previas."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/prerequisites"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/prerequisites.md"
+---
+
+# Prerrequisitos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Valida que Laravel, PHP, el modelo autenticable y el esquema de base de datos sean compatibles antes de instalar.
+
+## Reglas y conceptos clave
+- Laravel Permission v8 está orientado a Laravel 12 o 13 y requiere PHP 8.3 o superior.
+- El modelo autenticable debe implementar la autorización de Laravel; extender `Authenticatable` normalmente lo resuelve.
+- El modelo debe usar `Spatie\Permission\Traits\HasRoles`.
+- No crear propiedades, columnas, relaciones o métodos propios llamados `role`, `roles`, `permission` o `permissions` que choquen con los traits.
+- Revisar límites de índices en MySQL/MariaDB cuando se usa `utf8mb4`.
+- Adaptar la migración antes de ejecutarla cuando los identificadores sean UUID, ULID o GUID.
+- El motor debe soportar llaves foráneas o la aplicación debe preservar la integridad mediante los métodos del paquete.
+
+## Ejemplo mínimo
+
+```php
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasRoles;
+}
+```
+
+## Precauciones
+
+- No mantener un archivo propio `config/permission.php` incompatible con el publicado por el paquete.
+- No ejecutar la migración por defecto si el modelo User utiliza UUID sin adaptar `model_morph_key`.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/prerequisites
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/prerequisites.md

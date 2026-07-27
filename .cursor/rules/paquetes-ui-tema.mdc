@@ -1,0 +1,31 @@
+---
+description: Paquetes con CSS/UI deben adaptarse al tema stone/teal claro-oscuro (sin romper CSP)
+alwaysApply: true
+---
+
+# Paquetes UI / CSS → tema del proyecto
+
+Todo paquete Composer (o JS) que aporte **CSS, temas, toasts, modales, tablas o widgets visuales** debe **adaptarse al look claro/oscuro** del app (`ui-*`, stone/teal en `resources/css/app.css`). No dejar estilos default del vendor (Bootstrap purple, zinc genérico, CDN de temas) sin alinear.
+
+## Flujo obligatorio
+
+1. Instalar + **publicar** config/vistas/assets (`vendor-publish-paquetes.mdc`).
+2. Preferir **tema neutro/local** (`default`) sobre CDN de themes (p. ej. jsDelivr) — el CSP de `SecurityHeaders` suele bloquearlo.
+3. Sobrescribir look en **`resources/css/app.css`** (o vistas publicadas) con tokens/`@apply` + variantes `dark:`.
+4. Textos de botones/UI en **español** cuando el paquete lo permita.
+5. Verificar **claro y oscuro** y que no rompa Flux/Livewire (`wire:navigate`).
+
+## Qué sí / qué no
+
+```text
+❌ BAD — SWEET_ALERT_THEME=bootstrap-4 + CSS del CDN
+❌ BAD — Dejar botones indigo/gray del stub del paquete en pantallas auth
+✅ GOOD — theme=default + clases propias (swal-app*) + CSS en app.css
+✅ GOOD — Breadcrumbs Diglactic con vista Flux (`x-breadcrumbs.trail`), no Bootstrap
+```
+
+## Referencias
+
+* Tokens / componentes: `resources/css/app.css` (`.ui-surface`, `.ui-table`, `.ui-btn*`)
+* Ejemplo: `realrashid/sweet-alert` → `.cursor/skills/sweet-alert/SKILL.md`
+* UI stack: `ui-flux-flowbite-lucide.mdc` (Flux + Lucide; sin DaisyUI)

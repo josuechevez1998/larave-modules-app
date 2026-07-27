@@ -1,0 +1,8 @@
+    <div>
+        <flux:select wire:model="form.{{column}}" :label="__('{{title}}')">
+            <flux:select.option value="">{{ __('Seleccionar…') }}</flux:select.option>
+            @foreach ($this->{{relation}}Options() as $value => $label)
+                <flux:select.option :value="$value">{{ $label }}</flux:select.option>
+            @endforeach
+        </flux:select>
+    </div>

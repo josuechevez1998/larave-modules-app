@@ -1,0 +1,53 @@
+---
+description: "Autorización de rutas y controladores mediante permisos o roles."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/middleware"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/middleware.md"
+---
+
+# Middleware
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite proteger rutas mediante el middleware nativo `can` o los middleware del paquete.
+
+## Reglas y conceptos clave
+- Preferir `can:permission-name` cuando solo se verifica un permiso.
+- Registrar aliases para `RoleMiddleware`, `PermissionMiddleware` y `RoleOrPermissionMiddleware` en `bootstrap/app.php`.
+- Usar `|` para expresar OR entre varios roles o permisos.
+- Agregar el guard después de una coma cuando la regla se evalúe en un guard específico.
+- Aplicar middleware en rutas, grupos o controladores mediante `HasMiddleware`.
+- Revisar prioridad cuando se obtiene 404 en lugar de 403.
+
+## Ejemplo mínimo
+
+```php
+Route::middleware('can:articles.publish')
+    ->post('/articles/{article}/publish', PublishArticleController::class);
+
+Route::middleware('role:manager|editor')
+    ->get('/editorial', EditorialController::class);
+```
+
+## Precauciones
+
+- Desde v6 el namespace es `Spatie\Permission\Middleware`, en singular.
+- Middleware no sustituye reglas de propiedad o estado que pertenecen a una Policy.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/middleware
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/middleware.md

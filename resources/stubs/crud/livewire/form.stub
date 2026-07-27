@@ -2,13 +2,13 @@
 
 namespace {{livewireNamespace}}\Forms;
 
-use App\Services\{{modelName}}Service;
+use {{serviceNamespace}}\{{modelName}}Service;
 use {{modelNamespace}}\{{modelName}};
 use Livewire\Form;
 
 class {{modelName}}Form extends Form
 {
-    public ?{{modelName}} ${{modelNameLowerCase}}Model;
+    public ?{{modelName}} ${{modelNameLowerCase}}Model = null;
     {{livewireFormProperties}}
 
     public function rules(): array

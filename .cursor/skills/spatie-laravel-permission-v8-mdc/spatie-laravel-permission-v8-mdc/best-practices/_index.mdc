@@ -1,0 +1,37 @@
+---
+description: "Índice de diseño de autorización, Policies y rendimiento."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/best-practices"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/_index.md"
+---
+
+# Buenas prácticas
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Resume decisiones de arquitectura para un RBAC mantenible.
+
+## Reglas y conceptos clave
+- Usuarios reciben roles.
+- Roles agrupan permisos.
+- La aplicación comprueba permisos.
+- Las reglas de propiedad y contexto se concentran en Policies.
+- Las optimizaciones se aplican solo después de medir.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/best-practices
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/_index.md

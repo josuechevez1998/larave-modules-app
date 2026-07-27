@@ -1,0 +1,51 @@
+---
+description: "Modelo recomendado para separar grupos de usuarios y capacidades."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/best-practices/roles-vs-permissions"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/roles-vs-permissions.md"
+---
+
+# Roles frente a permisos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Los roles agrupan usuarios por conjuntos de capacidades; los permisos describen acciones verificables por la aplicación.
+
+## Reglas y conceptos clave
+- Asignar roles a usuarios.
+- Asignar permisos a roles.
+- Otorgar permisos directos solo en excepciones justificadas.
+- Comprobar permisos en vistas, Policies, controladores, rutas y middleware.
+- Usar nombres granulares y estables como `documents.view` y `documents.update`.
+- Evitar que el código dependa de nombres de roles que podrían cambiar.
+
+## Ejemplo mínimo
+
+```php
+// Preferido
+$user->assignRole('writer');
+$writer->givePermissionTo(['documents.view', 'documents.update']);
+
+$user->can('documents.update');
+
+// Evitar como regla general:
+$user->hasRole('writer');
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/best-practices/roles-vs-permissions
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/roles-vs-permissions.md

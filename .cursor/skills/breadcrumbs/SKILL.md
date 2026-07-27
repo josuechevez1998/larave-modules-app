@@ -10,8 +10,10 @@ php artisan vendor:publish --provider="Diglactic\Breadcrumbs\ServiceProvider" --
 php artisan vendor:publish --provider="Diglactic\Breadcrumbs\ServiceProvider" --tag=breadcrumbs-routes
 ```
 
+Ya está en el proyecto (`config/breadcrumbs.php`, `routes/breadcrumbs.php`). Vista: `breadcrumbs::tailwind` + UI Flux vía `<x-breadcrumbs.trail />`.
+
 ## Layout
-`<x-breadcrumbs.trail />` in `resources/views/layouts/app.blade.php` only.
+`<x-breadcrumbs.trail class="mb-4" />` en `resources/views/components/layouts/app.blade.php` (pantallas autenticadas).
 
 ## Defining trails
 `routes/breadcrumbs.php`:
@@ -21,6 +23,8 @@ Breadcrumbs::for('profile', function ($trail) {
     $trail->push(__('Profile'), route('profile'));
 });
 ```
+
+`make:crud` (Livewire/blade) **añade** las rutas `index/create/show/edit` automáticamente.
 
 ## Docs
 https://github.com/diglactic/laravel-breadcrumbs

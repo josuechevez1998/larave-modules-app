@@ -1,0 +1,52 @@
+---
+description: "Conceptos principales de roles, permisos y Laravel Gate."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/introduction"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/introduction.md"
+---
+
+# Introducción
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+El paquete almacena roles y permisos en base de datos y registra los permisos en Laravel Gate.
+
+## Reglas y conceptos clave
+- Un permiso representa una capacidad, por ejemplo `edit articles`.
+- Un rol representa un conjunto nombrado de permisos, por ejemplo `writer`.
+- Los permisos pueden asignarse directamente a usuarios o heredarse mediante roles.
+- Cada guard puede mantener su propio conjunto de roles y permisos.
+- Las comprobaciones deben integrarse con `Gate` para aprovechar Policies y superadministradores.
+
+## Ejemplo mínimo
+
+```php
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+$role = Role::create(['name' => 'writer']);
+$permission = Permission::create(['name' => 'edit articles']);
+
+$role->givePermissionTo($permission);
+$user->assignRole($role);
+
+abort_unless($user->can('edit articles'), 403);
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/introduction
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/introduction.md

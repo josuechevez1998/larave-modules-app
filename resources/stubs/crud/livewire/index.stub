@@ -3,8 +3,9 @@
 namespace {{livewireNamespace}}\{{modelNamePluralUpperCase}};
 
 use App\Services\ListQueryBuilder;
-use App\Services\{{modelName}}Service;
+use {{serviceNamespace}}\{{modelName}}Service;
 use {{modelNamespace}}\{{modelName}};
+{{catalogImports}}
 use Illuminate\View\View;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -18,31 +19,59 @@ class Index extends Component
     public string $sort = '-id';
 
     #[Url]
-    public ?int $status_id = null;
-
-    #[Url]
     public int $per_page = 15;
+{{filterProperties}}
+
+    public function updated(string $property): void
+    {
+        if (in_array($property, [{{filterPropertyList}}], true)) {
+            $this->resetPage();
+        }
+    }
+
+    public function clearFilters(): void
+    {
+{{clearFiltersBody}}
+        $this->resetPage();
+    }
+
+{{catalogMethods}}
+    public function confirmDelete(int $id): void
+    {
+        $this->js(livewire_swal_confirm_delete($id));
+    }
 
     public function delete({{modelName}} ${{modelNameLowerCase}}, {{modelName}}Service $service)
     {
         $service->delete(${{modelNameLowerCase}});
 
-        return $this->redirectRoute('{{modelRoute}}.index', navigate: true);
+        flash_swal_toast(__('Registro eliminado.'), 'success');
+
+        return $this->redirectRoute('{{modelRoute}}.index');
     }
 
     public function render(): View
     {
         $request = request()->merge([
             'sort' => $this->sort,
-            'status_id' => $this->status_id,
             'per_page' => $this->per_page,
+{{filterRequestMerge}}
         ]);
 
-        ${{modelNamePluralLowerCase}} = ListQueryBuilder::for({{modelName}}::query(), ['id', 'created_at', 'updated_at'])
+        ${{modelNamePluralLowerCase}} = ListQueryBuilder::for(
+            {{modelName}}::query(){{eagerLoad}},
+            [{{sortableColumns}}],
+            [{{includeRelations}}]
+        )
+            ->withColumnFilters(
+                textColumns: [{{textFilterColumns}}],
+                exactColumns: [{{exactFilterColumns}}],
+            )
             ->apply($request)
             ->paginate($request);
 
-        return view('livewire.{{modelView}}.index', compact('{{modelNamePluralLowerCase}}'))
-            ->with('i', $this->getPage() * ${{modelNamePluralLowerCase}}->perPage());
+        return view('{{modelViewFull}}.index', compact('{{modelNamePluralLowerCase}}'))
+            ->layout('components.layouts.app')
+            ->with('i', ($this->getPage() - 1) * ${{modelNamePluralLowerCase}}->perPage());
     }
 }

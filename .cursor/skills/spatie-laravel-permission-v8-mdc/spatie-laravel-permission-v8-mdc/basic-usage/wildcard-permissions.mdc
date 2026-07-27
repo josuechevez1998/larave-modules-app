@@ -1,0 +1,52 @@
+---
+description: "Permisos jerárquicos y patrones con partes, asteriscos y subpartes."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/wildcard-permissions"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/wildcard-permissions.md"
+---
+
+# Permisos wildcard
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite representar permisos compuestos como `recurso.acción.objetivo` y patrones explícitos.
+
+## Reglas y conceptos clave
+- Activar `enable_wildcard_permission` en la configuración.
+- Separar partes con puntos y subpartes con comas.
+- El asterisco significa todos los valores de una parte, no cualquier permiso no registrado.
+- Crear previamente tanto los permisos concretos como los patrones que serán asignados o comprobados.
+- Definir una convención estable para el significado de cada parte.
+
+## Ejemplo mínimo
+
+```php
+Permission::create(['name' => 'posts.*']);
+$user->givePermissionTo('posts.*');
+
+$user->can('posts.create');
+$user->can('posts.update');
+```
+
+## Precauciones
+
+- No usar `*` como si fuera una coincidencia libre de permisos inexistentes.
+- No mezclar convenciones de nombres incompatibles dentro del mismo proyecto.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/wildcard-permissions
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/wildcard-permissions.md

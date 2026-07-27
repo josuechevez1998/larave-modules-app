@@ -1,0 +1,44 @@
+---
+description: CRUD web y endpoints API REST solo con ibex/crud-generator en módulos
+alwaysApply: true
+---
+
+# CRUD con ibex (UI + endpoints API)
+
+Todo CRUD estándar —**Livewire/Flux y endpoints API REST**— lo genera **ibex/crud-generator** vía el comando del proyecto (`make:crud`). No escribir a mano controllers API resource ni Index/Form Livewire de un CRUD convencional.
+
+## Comandos
+
+```bash
+# Raíz (App\) — sin bandera
+./vendor/bin/sail artisan make:crud banks livewire
+./vendor/bin/sail artisan make:crud banks api
+
+# Módulo — con --module=
+./vendor/bin/sail artisan make:crud banks livewire --module=Blog
+./vendor/bin/sail artisan make:crud banks api --module=Blog
+```
+
+- Sin `--module` → `App\Models`, `App\Livewire`, `App\Services`, `app/Http/...`
+- Con `--module=Blog` → `Modules/Blog/app/...`, vistas del módulo, rutas en `Modules/Blog/routes/{web,api}.php`
+- Stacks: `livewire`, `api`, `bootstrap`, `tailwind` (preferir livewire/api)
+
+## Antes de generar
+
+1. Paquete en raíz: `ibex/crud-generator` (`composer require --dev` si falta).
+2. Stubs en `resources/stubs/crud/` (publish si faltan).
+3. Con `--module=`: el módulo debe existir (`module:make Blog` + `modules_statuses.json`).
+4. La tabla debe existir en la BD.
+
+## Qué no hacer
+
+```text
+❌ BAD — API/Livewire CRUD a mano o editar vendor/ibex
+✅ GOOD — make:crud … [--module=X]; lógica en Service
+```
+
+Features especiales (no CRUD) → Services + Livewire a mano (`arquitectura-servicios.mdc`).
+
+## Referencia
+
+`.cursor/skills/crud-generator/SKILL.md` · `app/Console/Commands/MakeCrudCommand.php`

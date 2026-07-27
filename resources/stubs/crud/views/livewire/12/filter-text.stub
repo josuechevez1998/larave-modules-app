@@ -1,0 +1,8 @@
+<div>
+    <flux:input
+        wire:model.live.debounce.300ms="{{column}}"
+        :label="__('{{title}}')"
+        type="text"
+        :placeholder="__('Buscar :field…', ['field' => __('{{title}}')])"
+    />
+</div>

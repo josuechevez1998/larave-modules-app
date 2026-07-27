@@ -1,0 +1,42 @@
+---
+description: "Roles y permisos para clientes OAuth mediante Laravel Passport."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/passport"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/passport.md"
+---
+
+# Passport Client Credentials
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Adapta el modelo Client de Passport para que sea autorizable y pueda usar roles y permisos.
+
+## Reglas y conceptos clave
+- Extender el modelo `Laravel\Passport\Client`.
+- Implementar `Authorizable` y usar los traits `Authorizable` y `HasRoles`.
+- Definir `$guard_name` o `guardName()` con el guard configurado para Passport.
+- Registrar el modelo extendido mediante `Passport::useClientModel`.
+- Activar `use_passport_client_credentials` en `config/permission.php`.
+- Proteger rutas de client credentials con el middleware `client`, no conjuntamente con `auth:api`.
+
+## Precauciones
+
+- Verificar compatibilidad exacta entre la versión de Laravel, Passport y el paquete antes de usar este flujo.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/passport
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/passport.md

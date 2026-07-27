@@ -4,11 +4,16 @@ Published stubs: `resources/stubs/crud/`. Config: `config/crud.php` → `stub_pa
 
 ## Conventions
 
-1. After `php artisan make:crud {table} livewire`, also copy/generate `App\Services\{Model}Service` from `Service.stub` (ibex does not emit Services by default — create manually or copy stub).
-2. Livewire Index uses `ListQueryBuilder` (sort / status_id / per_page).
-3. Livewire Form / API Controller call `{Model}Service`.
-4. Views under `views/livewire/12/` already use Flux inputs/buttons.
-5. Prefer module routes when the feature belongs to a module.
+1. `MakeCrudCommand` también genera `{Model}Service` desde `service.stub`.
+2. Livewire Index usa `ListQueryBuilder` (sort / `per_page` / filtros por columna).
+3. Filtros por columna en Index: texto (`LIKE`) si no hay FK; `flux:select` de catálogo si la columna es FK (`*_id` / foreign key). `clearFilters` + `<x-ui.clear-filters />`.
+4. Formularios: columnas FK → select de catálogo (`{relation}Options()`); el resto → input texto. Reglas `exists:tabla,id`.
+5. Livewire Form / API Controller llaman a `{Model}Service`.
+6. Vistas `views/livewire/12/` → Flux + clases `ui-*` (claro/oscuro). Includes con `{{modelViewFull}}.form` (`livewire.blog.form` o `blog::livewire.blog.form` según `--module=`).
+7. DI del Service en acciones del componente Livewire (`save(Service $s)` → `$this->form->store($s)`). Los `Livewire\Form` **no** resuelven type-hints al llamar `$this->form->store()`.
+8. Breadcrumbs Diglactic: `make:crud` append a `routes/breadcrumbs.php`; trail en layout app.
+9. SweetAlert: toasts con `livewire_swal_toast()` / `flash_swal_toast()`; **Eliminar** siempre vía `confirmDelete` → `livewire_swal_confirm_delete()` (nunca `wire:confirm` nativo).
+10. Preferir `--module=` cuando el feature vive en un módulo.
 
 ## Command
 

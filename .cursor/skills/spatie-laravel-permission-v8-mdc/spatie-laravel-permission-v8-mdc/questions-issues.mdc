@@ -1,0 +1,40 @@
+---
+description: "Canales apropiados para soporte, errores y reportes de seguridad."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/questions-issues"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/questions-issues.md"
+---
+
+# Preguntas e incidencias
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Indica dónde reportar errores y cómo tratar incidencias de seguridad.
+
+## Reglas y conceptos clave
+- Reproducir el problema en una aplicación mínima antes de abrir una incidencia.
+- Incluir versión de Laravel, PHP, paquete, guard usado, configuración relevante y pasos reproducibles.
+- Usar el issue tracker para errores generales y propuestas.
+- Reportar vulnerabilidades por el canal privado de seguridad indicado por Spatie.
+
+## Precauciones
+
+- No publicar credenciales, tokens, datos personales ni detalles explotables de seguridad en un issue público.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/questions-issues
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/questions-issues.md

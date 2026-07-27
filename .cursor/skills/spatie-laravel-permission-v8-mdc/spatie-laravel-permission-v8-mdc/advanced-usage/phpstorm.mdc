@@ -1,0 +1,36 @@
+---
+description: "Reconocimiento de directivas Blade en PhpStorm."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/phpstorm"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/phpstorm.md"
+---
+
+# Integración con PhpStorm
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Configura el IDE para reconocer las directivas Blade agregadas por el paquete.
+
+## Reglas y conceptos clave
+- Laravel Idea puede registrar las directivas automáticamente.
+- Sin el plugin, agregar las directivas manualmente en la configuración Blade de PhpStorm.
+- Registrar pares de apertura y cierre como `role/endrole`, `hasrole/endhasrole`, `hasanyrole/endhasanyrole`, `hasallroles/endhasallroles`, `unlessrole/endunlessrole` y `hasexactroles/endhasexactroles`.
+- Esta configuración solo mejora análisis y resaltado del IDE; no modifica la aplicación.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/phpstorm
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/phpstorm.md

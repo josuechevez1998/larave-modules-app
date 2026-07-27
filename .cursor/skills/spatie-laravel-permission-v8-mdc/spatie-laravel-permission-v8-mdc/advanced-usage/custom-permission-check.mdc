@@ -1,0 +1,49 @@
+---
+description: "Sustitución del verificador predeterminado de permisos."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/custom-permission-check"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/custom-permission-check.md"
+---
+
+# Comprobación personalizada
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite desactivar el verificador registrado por el paquete e implementar una fuente de autorización alternativa.
+
+## Reglas y conceptos clave
+- Por defecto el paquete registra una comprobación en Laravel Gate.
+- Desactivar `register_permission_check_method` solo cuando existe una estrategia completa alternativa.
+- Registrar una regla `Gate::before` que devuelva `true` o `null`.
+- La lógica personalizada puede leer claims de tokens, un servicio externo o una política interna.
+- Mantener comportamiento coherente con Policies y middleware.
+
+## Ejemplo mínimo
+
+```php
+Gate::before(function ($user, string $ability): ?bool {
+    return $user->hasTokenPermission($ability) ? true : null;
+});
+```
+
+## Precauciones
+
+- No desactivar el mecanismo predeterminado sin pruebas de regresión sobre toda la autorización.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/custom-permission-check
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/custom-permission-check.md

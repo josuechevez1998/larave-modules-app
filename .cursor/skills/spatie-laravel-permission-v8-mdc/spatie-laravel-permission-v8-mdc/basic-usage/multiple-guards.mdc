@@ -1,0 +1,48 @@
+---
+description: "Aislamiento de roles y permisos por guard de autenticación."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/multiple-guards"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/multiple-guards.md"
+---
+
+# Múltiples guards
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Cada guard funciona como un espacio de nombres independiente para roles y permisos.
+
+## Reglas y conceptos clave
+- Crear cada rol y permiso con el `guard_name` correcto.
+- Duplicar nombres cuando una capacidad existe en varios guards.
+- Alinear el guard del modelo con el guard del rol o permiso para evitar `GuardDoesNotMatch`.
+- Cuando todos los modelos comparten las mismas capacidades, forzar un guard único mediante `$guard_name` o `getDefaultGuardName`.
+- Revisar el orden de `auth.guards`, porque influye en el guard predeterminado.
+
+## Ejemplo mínimo
+
+```php
+$permission = Permission::create([
+    'name' => 'articles.publish',
+    'guard_name' => 'api',
+]);
+
+$user->hasPermissionTo('articles.publish', 'api');
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/multiple-guards
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/multiple-guards.md

@@ -1,0 +1,53 @@
+---
+description: "Uso de BackedEnum para nombres de roles y permisos."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/enums"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/enums.md"
+---
+
+# Enums
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite centralizar nombres de roles y permisos mediante enums respaldados por string.
+
+## Reglas y conceptos clave
+- Definir enums separados para roles y permisos cuando el dominio sea amplio.
+- Usar `BackedEnum` directamente en métodos compatibles del paquete.
+- Usar `enum_value()` o `->value` cuando una API externa exija string.
+- No depender de casts de enum en el modelo Permission si la versión no los soporta.
+
+## Ejemplo mínimo
+
+```php
+enum PermissionName: string
+{
+    case VIEW_USERS = 'users.view';
+    case UPDATE_USERS = 'users.update';
+}
+
+$role->givePermissionTo(PermissionName::VIEW_USERS);
+$user->hasPermissionTo(PermissionName::VIEW_USERS);
+
+@can(enum_value(PermissionName::VIEW_USERS))
+    ...
+@endcan
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/enums
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/enums.md

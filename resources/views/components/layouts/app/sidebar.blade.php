@@ -120,6 +120,8 @@
             <flux:toast />
         @endpersist
 
+        @include('sweetalert::alert')
+
         @fluxScripts
     </body>
 </html>

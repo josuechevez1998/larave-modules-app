@@ -1,0 +1,43 @@
+---
+description: "Campos personalizados, modelos extendidos y relaciones especiales."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/extending"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/extending.md"
+---
+
+# Extensión de modelos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite agregar campos y comportamiento propio sin modificar directamente el código del paquete.
+
+## Reglas y conceptos clave
+- Agregar columnas mediante migraciones propias.
+- Crear modelos propios que extiendan `Spatie\Permission\Models\Role` y `Permission`.
+- Actualizar `models.role` y `models.permission` en `config/permission.php`.
+- Mantener los contratos y métodos requeridos por el paquete.
+- Usar las capacidades de autorización de Laravel en modelos autenticables personalizados.
+- Evaluar cuidadosamente la herencia de modelos hijos por las restricciones de relaciones polimórficas.
+
+## Precauciones
+
+- No editar archivos dentro de `vendor`.
+- Revisar modelos extendidos en cada actualización mayor.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/extending
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/extending.md

@@ -3,27 +3,26 @@
 namespace {{livewireNamespace}}\{{modelNamePluralUpperCase}};
 
 use {{livewireNamespace}}\Forms\{{modelName}}Form;
-use {{modelNamespace}}\{{modelName}};
+use {{serviceNamespace}}\{{modelName}}Service;
+{{catalogImports}}use Illuminate\View\View;
 use Livewire\Component;
 
 class Create extends Component
 {
     public {{modelName}}Form $form;
-
-    public function mount({{modelName}} ${{modelNameLowerCase}})
+{{catalogMethods}}
+    public function save({{modelName}}Service $service)
     {
-        $this->form->set{{modelName}}Model(${{modelNameLowerCase}});
+        $this->form->store($service);
+
+        flash_swal_toast(__('Registro guardado.'), 'success');
+
+        return $this->redirectRoute('{{modelRoute}}.index');
     }
 
-    public function save()
+    public function render(): View
     {
-        $this->form->store();
-
-        return $this->redirectRoute('{{modelRoute}}.index', navigate: true);
-    }
-
-    public function render()
-    {
-        return view('livewire.{{modelView}}.create');
+        return view('{{modelViewFull}}.create')
+            ->layout('components.layouts.app');
     }
 }

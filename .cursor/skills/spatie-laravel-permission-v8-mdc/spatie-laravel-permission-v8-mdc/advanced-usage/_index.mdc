@@ -1,0 +1,36 @@
+---
+description: "Índice de caché, eventos, extensiones, pruebas, UUID y personalizaciones."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/_index.md"
+---
+
+# Uso avanzado
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Agrupa configuraciones que afectan arquitectura, rendimiento, extensibilidad y operación.
+
+## Reglas y conceptos clave
+- Entender la caché antes de realizar escrituras directas.
+- Planificar UUID y Teams antes de ejecutar migraciones.
+- Mantener modelos extendidos y contratos alineados con la versión instalada.
+- Aislar personalizaciones de autorización en Gate, Policies, listeners y servicios.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/_index.md

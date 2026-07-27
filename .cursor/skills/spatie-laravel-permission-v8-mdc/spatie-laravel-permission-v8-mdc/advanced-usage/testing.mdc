@@ -1,0 +1,50 @@
+---
+description: "Caché, seeders y factories dentro de tests."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/testing"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/testing.md"
+---
+
+# Pruebas
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Evita resultados inconsistentes en pruebas limpiando la caché cuando cambia la base de datos.
+
+## Reglas y conceptos clave
+- Llamar `forgetCachedPermissions` en `setUp` cuando los permisos se crean después del registro inicial de Gate.
+- Con `LazilyRefreshDatabase`, ejecutar el seeder al evento `DatabaseRefreshed` y limpiar la caché después.
+- Usar el cache store `array` durante pruebas para reducir persistencia entre casos.
+- Extender los modelos del paquete y agregar `HasFactory` cuando se requieren factories de Role o Permission.
+- Probar autorización mediante `can`, rutas, Policies y respuestas 403.
+
+## Ejemplo mínimo
+
+```php
+protected function setUp(): void
+{
+    parent::setUp();
+
+    $this->app
+        ->make(\Spatie\Permission\PermissionRegistrar::class)
+        ->forgetCachedPermissions();
+}
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/testing
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/testing.md

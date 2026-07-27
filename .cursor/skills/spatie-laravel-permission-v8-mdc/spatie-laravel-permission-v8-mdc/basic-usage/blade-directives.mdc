@@ -1,0 +1,52 @@
+---
+description: "Autorización en vistas mediante Gate y directivas de roles."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/blade-directives"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/blade-directives.md"
+---
+
+# Directivas Blade
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Protege elementos visuales mediante las directivas de autorización de Laravel y directivas adicionales del paquete.
+
+## Reglas y conceptos clave
+- Preferir `@can`, `@cannot` y `@canany` para permisos.
+- Pasar un guard cuando la aplicación usa varios contextos de autenticación.
+- Usar `@role`, `@hasrole`, `@hasanyrole`, `@hasallroles`, `@unlessrole` o `@hasexactroles` solo cuando la vista necesita consultar roles directamente.
+- Las vistas no sustituyen la autorización del controlador, ruta o Policy.
+
+## Ejemplo mínimo
+
+```php
+@can('articles.update')
+    <a href="{{ route('articles.edit', $article) }}">Editar</a>
+@endcan
+
+@hasanyrole('admin|editor')
+    <span>Panel editorial</span>
+@endhasanyrole
+```
+
+## Precauciones
+
+- Ocultar un botón no protege el endpoint; autorizar también del lado del servidor.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/blade-directives
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/blade-directives.md

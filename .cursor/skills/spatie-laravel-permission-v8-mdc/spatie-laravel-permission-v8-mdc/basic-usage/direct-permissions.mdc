@@ -1,0 +1,51 @@
+---
+description: "Asignación excepcional de permisos directamente a usuarios."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/direct-permissions"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/direct-permissions.md"
+---
+
+# Permisos directos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite otorgar permisos a un usuario sin pasar por un rol, aunque no es el diseño recomendado.
+
+## Reglas y conceptos clave
+- Preferir permisos en roles y roles en usuarios.
+- Usar `givePermissionTo`, `revokePermissionTo` y `syncPermissions` para permisos directos.
+- Usar `can` y `canAny` cuando deben intervenir Gate, Policies o el superadministrador.
+- Usar `hasPermissionTo`, `hasAnyPermission` y `hasAllPermissions` solo cuando se desea consultar la API del paquete directamente.
+
+## Ejemplo mínimo
+
+```php
+$user->givePermissionTo(['articles.edit', 'articles.delete']);
+$user->revokePermissionTo('articles.delete');
+
+if ($user->can('articles.edit')) {
+    // autorizado mediante Gate
+}
+```
+
+## Precauciones
+
+- Los métodos `hasPermissionTo` y similares no aplican automáticamente una regla global de Super Admin definida en Gate.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/direct-permissions
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/direct-permissions.md

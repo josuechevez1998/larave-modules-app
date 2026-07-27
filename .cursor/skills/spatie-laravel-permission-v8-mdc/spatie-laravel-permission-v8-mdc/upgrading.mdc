@@ -1,0 +1,51 @@
+---
+description: "Procedimiento para actualizar Laravel Permission y puntos específicos de v8."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/upgrading"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/upgrading.md"
+---
+
+# Actualización
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+La actualización exige comparar Composer, migraciones, configuración, modelos, traits y contratos.
+
+## Reglas y conceptos clave
+- Actualizar la restricción de Composer y ejecutar una actualización dirigida del paquete.
+- Comparar la migración publicada con la nueva migración del paquete; crear migraciones incrementales cuando sea necesario.
+- Comparar y fusionar los cambios de `config/permission.php`.
+- Revisar modelos extendidos, métodos sobrescritos y contratos implementados.
+- En v8, los contratos de Role y Permission aceptan `BackedEnum|string` en `findByName` y `findOrCreate`.
+- Revisar el changelog y los releases antes de desplegar.
+
+## Ejemplo mínimo
+
+```php
+composer require spatie/laravel-permission:^8.0
+composer update spatie/laravel-permission
+php artisan optimize:clear
+```
+
+## Precauciones
+
+- No reemplazar migraciones ya ejecutadas en producción; crear migraciones nuevas.
+- No asumir que un modelo extendido seguirá siendo compatible sin revisar firmas y tipos de retorno.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/upgrading
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/upgrading.md

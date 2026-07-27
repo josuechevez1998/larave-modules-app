@@ -1,0 +1,49 @@
+---
+description: "Consejos de rendimiento para grandes volúmenes de permisos."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/best-practices/performance"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/performance.md"
+---
+
+# Rendimiento
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Algunas operaciones alternativas pueden reducir consultas en aplicaciones grandes.
+
+## Reglas y conceptos clave
+- No optimizar prematuramente aplicaciones pequeñas.
+- En escenarios de alta rotación, asignar el rol desde Permission con `assignRole` puede ser más rápido.
+- Crear permisos con `make` y `saveOrFail` puede reducir ciertas comprobaciones frente a `create`.
+- Medir con datos reales antes de cambiar el flujo.
+- Si se escribe directamente en base de datos, limpiar manualmente la caché.
+
+## Ejemplo mínimo
+
+```php
+$permission = Permission::make([
+    'name' => 'reports.export',
+    'guard_name' => 'web',
+]);
+
+$permission->saveOrFail();
+$permission->assignRole($role);
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/best-practices/performance
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/performance.md

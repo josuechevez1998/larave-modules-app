@@ -1,0 +1,49 @@
+---
+description: Auditoría creado_por/actualizado_por en tablas y columnas de última actualización en grids
+alwaysApply: true
+---
+
+# Auditoría de registros (creado_por / actualizado_por)
+
+Toda **tabla de dominio** (entidades de negocio, no pivots ni tablas de framework) debe incluir trazabilidad de autoría.
+
+## Columnas obligatorias (migración)
+
+Además de `timestamps()`:
+
+```php
+$table->foreignId('creado_por')->nullable()->constrained('users')->nullOnDelete();
+$table->foreignId('actualizado_por')->nullable()->constrained('users')->nullOnDelete();
+```
+
+- Nombres en español: `creado_por`, `actualizado_por` (FK → `users.id`).
+- Rellenar en create/update (trait, observer o Service) con `auth()->id()`; no pedirlos en el formulario CRUD.
+- Modelo: `fillable` / relaciones `creadoPor()` y `actualizadoPor()` → `belongsTo(User::class, …)`.
+
+## Excepciones (no aplicar)
+
+Tablas de sistema / infra: `cache*`, `jobs*`, `sessions`, `password_reset_tokens`, `personal_access_tokens`, Spatie permission/team pivots, y catálogos globales mínimos (`statuses`) salvo que el producto pida lo contrario.
+
+## Grid (Index Livewire)
+
+Todo listado CRUD debe mostrar **siempre**:
+
+1. **Última actualización** → `updated_at` (formato legible / relativo según el resto de la UI).
+2. **Quién actualizó** → relación `actualizadoPor` (nombre del usuario; fallback `—` si es null).
+
+```blade
+{{-- ✅ GOOD --}}
+<td>{{ $model->updated_at?->format('d/m/Y H:i') }}</td>
+<td>{{ $model->actualizadoPor?->name ?? '—' }}</td>
+
+{{-- ❌ BAD — ocultar auditoría o mostrar solo el id numérico --}}
+<td>{{ $model->actualizado_por }}</td>
+```
+
+- Eager load: `->with(['actualizadoPor'])` (y `creadoPor` si el show lo usa).
+- No filtrar estas columnas en la barra de filtros del Index salvo requisito explícito.
+- Show puede mostrar también `creado_por` + `created_at`; el Index prioriza **última actualización**.
+
+## Generación CRUD
+
+Al extender stubs / `make:crud`, incluir columnas de auditoría en la tabla del Index (no como inputs del form). Ver `resources/stubs/crud/` y `MakeCrudCommand`.

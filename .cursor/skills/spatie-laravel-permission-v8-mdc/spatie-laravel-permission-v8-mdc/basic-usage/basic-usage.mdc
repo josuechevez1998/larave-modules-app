@@ -1,0 +1,50 @@
+---
+description: "Creación, asignación, sincronización, consultas y scopes."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/basic-usage"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/basic-usage.md"
+---
+
+# Uso básico de la API
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Expone la API base de Role, Permission y el trait `HasRoles`.
+
+## Reglas y conceptos clave
+- Crear `Role` y `Permission` como modelos Eloquent con `name` y, cuando corresponda, `guard_name`.
+- Asignar permisos a roles con `givePermissionTo` o desde Permission con `assignRole`.
+- Usar `syncPermissions`, `revokePermissionTo`, `syncRoles` y `removeRole` para mantener relaciones.
+- Consultar permisos directos, heredados y totales mediante los métodos del trait.
+- Usar scopes `role`, `withoutRole`, `permission` y `withoutPermission` para filtrar modelos.
+
+## Ejemplo mínimo
+
+```php
+$role = Role::create(['name' => 'editor']);
+$permission = Permission::create(['name' => 'articles.update']);
+
+$role->givePermissionTo($permission);
+$user->assignRole($role);
+
+$permissions = $user->getAllPermissions();
+$editors = User::role('editor')->get();
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/basic-usage
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/basic-usage.md

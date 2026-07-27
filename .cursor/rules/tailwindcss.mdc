@@ -1,0 +1,30 @@
+---
+description: Estándares obligatorios para Tailwind CSS v4 en Laravel, Blade, Livewire y Vite
+globs:
+  - "resources/**/*.blade.php"
+  - "resources/**/*.css"
+  - "resources/**/*.{js,ts,jsx,tsx,vue}"
+  - "Modules/**/*.blade.php"
+  - "Modules/**/*.css"
+  - "Modules/**/*.{js,ts,jsx,tsx,vue}"
+  - "vite.config.{js,ts}"
+alwaysApply: false
+---
+
+# Tailwind CSS v4
+
+- Consultar la skill `tailwindcss-v4` antes de cambiar instalación, tema, variantes o CSS global.
+- Integrar Tailwind mediante `@tailwindcss/vite`.
+- Importar Tailwind con `@import "tailwindcss";`.
+- No usar las directivas de instalación de Tailwind v3.
+- Definir tokens de marca mediante `@theme`.
+- Preferir clases completas y estáticas.
+- No crear clases mediante concatenación de fragmentos.
+- Mapear estados a cadenas completas de clases.
+- Mantener diseño mobile-first.
+- Incluir estados `focus-visible`, `disabled` y atributos ARIA cuando correspondan.
+- Usar `dark:` solo bajo la estrategia de dark mode definida por el proyecto.
+- Preferir utilidades antes de CSS personalizado.
+- Crear utilidades reutilizables con `@utility`.
+- Usar valores arbitrarios solo cuando no exista un token reutilizable.
+- No usar Play CDN en producción.

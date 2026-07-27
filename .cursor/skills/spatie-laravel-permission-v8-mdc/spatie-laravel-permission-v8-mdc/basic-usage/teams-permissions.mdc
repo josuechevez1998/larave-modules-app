@@ -1,0 +1,54 @@
+---
+description: "Configuración y operación de roles segmentados por equipo o tenant."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/teams-permissions"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/teams-permissions.md"
+---
+
+# Permisos por equipos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Añade un identificador de equipo a las relaciones para aislar roles y asignaciones por contexto.
+
+## Reglas y conceptos clave
+- Activar `'teams' => true` antes de ejecutar la migración inicial.
+- Cuando la instalación ya existe, generar la migración adicional con `permission:setup-teams`.
+- Establecer el equipo activo en middleware mediante `setPermissionsTeamId`.
+- Ejecutar el middleware de equipo antes de `SubstituteBindings`.
+- Después de cambiar de equipo, limpiar las relaciones `roles` y `permissions` del modelo antes de consultar.
+- Los roles globales pueden usar team id nulo, pero las asignaciones deben evaluarse en el equipo activo.
+
+## Ejemplo mínimo
+
+```php
+setPermissionsTeamId($teamId);
+
+$user->unsetRelation('roles')
+     ->unsetRelation('permissions');
+
+abort_unless($user->can('projects.update'), 403);
+```
+
+## Precauciones
+
+- No reutilizar relaciones Eloquent cargadas antes de cambiar el equipo activo.
+- En Livewire, registrar el middleware de equipo como persistente cuando aplique.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/teams-permissions
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/teams-permissions.md

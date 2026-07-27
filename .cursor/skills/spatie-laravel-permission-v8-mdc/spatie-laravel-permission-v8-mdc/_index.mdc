@@ -1,0 +1,42 @@
+---
+description: "Índice general y criterios de uso de Spatie Laravel Permission v8."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/_index.md"
+---
+
+# Laravel Permission v8
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Punto de entrada para implementar autorización basada en roles y permisos sobre el sistema Gate de Laravel.
+
+## Reglas y conceptos clave
+- Usar permisos como capacidades concretas que la aplicación verifica.
+- Usar roles como agrupaciones de permisos asignadas a usuarios u otros modelos.
+- Preferir las verificaciones nativas de Laravel: `can`, `cannot`, `authorize`, `@can` y Policies.
+- Aplicar `HasRoles` únicamente a modelos autenticables compatibles con autorización.
+- Revisar instalación, guardias, caché y migraciones antes de diseñar el RBAC.
+
+## Precauciones
+
+- No diseñar el sistema alrededor de comprobaciones constantes de nombres de roles.
+- No modificar tablas de roles o permisos directamente sin considerar la invalidación de caché.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/_index.md

@@ -1,0 +1,40 @@
+---
+description: "Ocultamiento de pivotes y timestamps en relaciones many-to-many."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/timestamps"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/timestamps.md"
+---
+
+# Timestamps
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Permite ocultar información de pivote en JSON o agregar timestamps a las tablas intermedias.
+
+## Reglas y conceptos clave
+- Extender modelos y ocultar `pivot` mediante `$hidden` cuando no debe aparecer en JSON.
+- Agregar `$table->timestamps()` a las tablas pivot mediante una migración.
+- Agregar `withTimestamps()` a las relaciones `roles()` y `permissions()` de modelos extendidos.
+- Ajustar también las relaciones del modelo que usa `HasRoles` o `HasPermissions`.
+
+## Precauciones
+
+- Todos los lados de la relación deben usar timestamps de manera consistente.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/timestamps
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/timestamps.md

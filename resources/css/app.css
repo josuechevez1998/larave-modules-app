@@ -186,3 +186,193 @@ textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
+
+/* SweetAlert2 — themed to match Flux / ui-surface (CSP-safe) */
+.swal2-container.swal-app {
+    z-index: 100000;
+}
+
+.swal2-popup.swal-app-popup {
+    @apply rounded-xl border border-stone-300/70 bg-app-surface font-sans text-stone-800 shadow-[0_1px_2px_rgba(28,25,23,0.05)] dark:border-stone-700/80 dark:bg-stone-900 dark:text-stone-100 dark:shadow-none;
+}
+
+/*
+ * Toast: balanced size (not modal-huge, not pill-tiny).
+ * Aligns with ui-surface / Flux density.
+ */
+.swal2-popup.swal2-toast,
+.swal2-popup.swal2-toast.swal-app-popup {
+    width: 22rem !important;
+    max-width: calc(100vw - 2rem) !important;
+    padding: 0.875rem 1rem !important;
+    border-radius: 0.75rem !important;
+    border: 1px solid color-mix(in oklab, var(--color-stone-300) 70%, transparent) !important;
+    background: var(--color-app-surface, #faf9f7) !important;
+    box-shadow:
+        0 1px 2px rgba(28, 25, 23, 0.06),
+        0 8px 24px rgba(28, 25, 23, 0.08) !important;
+    font-size: 0.875rem !important;
+    overflow: hidden !important;
+}
+
+.dark .swal2-popup.swal2-toast,
+.dark .swal2-popup.swal2-toast.swal-app-popup,
+:where(.dark) .swal2-popup.swal2-toast {
+    border-color: color-mix(in oklab, var(--color-stone-700) 80%, transparent) !important;
+    background: var(--color-stone-900, #1c1917) !important;
+    box-shadow: none !important;
+}
+
+.swal2-popup.swal2-toast .swal2-title,
+.swal2-popup.swal2-toast.swal-app-popup .swal2-title {
+    margin: 0 !important;
+    padding: 0 1.75rem 0 0 !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.01em !important;
+    color: var(--color-stone-900, #1c1917) !important;
+    text-align: start !important;
+}
+
+.dark .swal2-popup.swal2-toast .swal2-title,
+:where(.dark) .swal2-popup.swal2-toast .swal2-title {
+    color: var(--color-stone-100, #f5f5f4) !important;
+}
+
+.swal2-popup.swal2-toast .swal2-html-container {
+    margin: 0.15rem 1.75rem 0 0 !important;
+    padding: 0 !important;
+    font-size: 0.8125rem !important;
+    line-height: 1.4 !important;
+    color: var(--color-stone-500, #78716c) !important;
+    text-align: start !important;
+}
+
+.dark .swal2-popup.swal2-toast .swal2-html-container,
+:where(.dark) .swal2-popup.swal2-toast .swal2-html-container {
+    color: var(--color-stone-400, #a8a29e) !important;
+}
+
+.swal2-popup.swal2-toast .swal2-icon {
+    width: 2rem !important;
+    min-width: 2rem !important;
+    height: 2rem !important;
+    margin: 0 0.75rem 0 0 !important;
+    border: none !important;
+    background: transparent !important;
+    color: inherit !important;
+}
+
+/* Ocultar animación nativa (líneas que se ven como “carita”) */
+.swal2-popup.swal2-toast .swal2-icon .swal2-success-ring,
+.swal2-popup.swal2-toast .swal2-icon [class^='swal2-success-line'],
+.swal2-popup.swal2-toast .swal2-icon .swal2-success-circular-line-left,
+.swal2-popup.swal2-toast .swal2-icon .swal2-success-circular-line-right,
+.swal2-popup.swal2-toast .swal2-icon .swal2-success-fix-tip,
+.swal2-popup.swal2-toast .swal2-icon .swal2-x-mark,
+.swal2-popup.swal2-toast .swal2-icon .swal2-x-mark-line-left,
+.swal2-popup.swal2-toast .swal2-icon .swal2-x-mark-line-right {
+    display: none !important;
+}
+
+.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    line-height: 0 !important;
+}
+
+.swal-toast-glyph {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.swal-toast-glyph svg {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.swal-toast-glyph-success {
+    color: var(--color-teal-600, #0d9488);
+}
+
+.swal-toast-glyph-info {
+    color: var(--color-sky-600, #0284c7);
+}
+
+.swal-toast-glyph-warning {
+    color: var(--color-amber-500, #f59e0b);
+}
+
+.swal-toast-glyph-error {
+    color: var(--color-red-600, #dc2626);
+}
+
+.swal2-popup.swal2-toast .swal2-close {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    font-size: 1.15rem !important;
+    margin: 0 !important;
+    inset: 0.55rem 0.55rem auto auto !important;
+    color: var(--color-stone-400, #a8a29e) !important;
+    border-radius: 0.375rem !important;
+}
+
+.swal2-popup.swal2-toast .swal2-close:hover {
+    color: var(--color-stone-700, #44403c) !important;
+    background: color-mix(in oklab, var(--color-stone-500) 12%, transparent) !important;
+}
+
+.dark .swal2-popup.swal2-toast .swal2-close:hover,
+:where(.dark) .swal2-popup.swal2-toast .swal2-close:hover {
+    color: var(--color-stone-200, #e7e5e4) !important;
+}
+
+.swal2-popup.swal2-toast .swal2-timer-progress-bar {
+    height: 3px !important;
+    background: color-mix(in oklab, var(--color-accent) 75%, transparent) !important;
+}
+
+.swal2-title.swal-app-title {
+    @apply font-serif text-lg font-normal tracking-tight text-stone-950 dark:text-stone-50;
+}
+
+.swal2-html-container.swal-app-content {
+    @apply text-sm text-stone-600 dark:text-stone-300;
+}
+
+.swal2-actions.swal-app-actions {
+    @apply gap-2;
+}
+
+.swal2-styled.swal2-confirm.swal-app-confirm {
+    @apply !m-0 inline-flex items-center justify-center rounded-md border border-teal-950/25 bg-accent px-3 py-2 text-xs font-medium tracking-[0.04em] text-accent-foreground shadow-none transition-[background-color,border-color] duration-200 hover:bg-[color-mix(in_oklab,var(--color-accent),black_12%)] dark:border-teal-400/20;
+}
+
+.swal2-styled.swal2-confirm.swal-app-confirm-danger {
+    @apply border-red-950/30 bg-red-900 text-white hover:bg-red-950 dark:border-red-500/20 dark:bg-red-800 dark:hover:bg-red-700;
+}
+
+.swal2-styled.swal2-cancel.swal-app-cancel {
+    @apply !m-0 inline-flex items-center justify-center rounded-md border border-stone-300/80 bg-app-surface px-3 py-2 text-xs font-medium tracking-[0.04em] text-stone-700 shadow-none transition-[background-color,color,border-color] duration-200 hover:border-accent/40 hover:bg-accent/10 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-200;
+}
+
+.swal2-input.swal-app-input,
+.swal2-textarea.swal-app-input {
+    @apply rounded-lg border border-stone-300/80 bg-white text-sm text-stone-900 shadow-none dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100;
+}
+
+.swal2-timer-progress-bar {
+    background: color-mix(in oklab, var(--color-accent) 70%, transparent);
+}

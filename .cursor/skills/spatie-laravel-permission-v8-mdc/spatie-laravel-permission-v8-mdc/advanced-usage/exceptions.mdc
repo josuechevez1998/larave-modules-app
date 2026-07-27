@@ -1,0 +1,50 @@
+---
+description: "Personalización de respuestas ante errores de autorización."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/exceptions"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/exceptions.md"
+---
+
+# Excepciones
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Las excepciones del paquete se procesan con el sistema estándar de excepciones de Laravel.
+
+## Reglas y conceptos clave
+- Registrar un renderer para `UnauthorizedException` en `bootstrap/app.php`.
+- Responder JSON estructurado para APIs y mantener páginas 403 para interfaces web.
+- Registrar trazas internamente sin exponer detalles de permisos al cliente.
+- Consultar el namespace `Spatie\Permission\Exceptions` para excepciones específicas.
+
+## Ejemplo mínimo
+
+```php
+->withExceptions(function (Exceptions $exceptions) {
+    $exceptions->render(function (
+        \Spatie\Permission\Exceptions\UnauthorizedException $exception
+    ) {
+        return response()->json([
+            'message' => 'No autorizado.',
+        ], 403);
+    });
+})
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/exceptions
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/exceptions.md

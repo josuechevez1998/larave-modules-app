@@ -1,0 +1,35 @@
+---
+description: "Cómo consultar cambios, versiones y rupturas de compatibilidad."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/changelog"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/changelog.md"
+---
+
+# Registro de cambios
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Remite al changelog y a los releases oficiales para revisar correcciones, nuevas funciones y cambios incompatibles.
+
+## Reglas y conceptos clave
+- Consultar el archivo `CHANGELOG.md` del repositorio antes de actualizar.
+- Revisar releases y notas de versión para cambios de migraciones, contratos, eventos y comandos.
+- Validar cualquier extensión o sobrescritura propia contra la nueva versión.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/changelog
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/changelog.md

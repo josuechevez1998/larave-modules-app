@@ -1,0 +1,35 @@
+---
+description: "Referencia sobre cómo apoyar el mantenimiento de los paquetes de Spatie."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/support-us"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/support-us.md"
+---
+
+# Apoyo al proyecto
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Página informativa sobre el sostenimiento del trabajo open source de Spatie.
+
+## Reglas y conceptos clave
+- El paquete se distribuye como software abierto.
+- Spatie mantiene productos y mecanismos de apoyo para financiar su trabajo.
+- Esta página no modifica la instalación ni el comportamiento del paquete.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/support-us
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/support-us.md

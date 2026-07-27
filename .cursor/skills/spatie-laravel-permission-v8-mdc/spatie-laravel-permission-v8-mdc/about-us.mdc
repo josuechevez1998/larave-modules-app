@@ -1,0 +1,35 @@
+---
+description: "Origen y créditos generales del paquete."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/about-us"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/about-us.md"
+---
+
+# Acerca de Spatie
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Página informativa sobre Spatie, su trabajo open source y los antecedentes del paquete.
+
+## Reglas y conceptos clave
+- Spatie desarrolla y mantiene paquetes open source para Laravel.
+- El diseño original del paquete se inspira en material educativo sobre roles y permisos.
+- Esta página no contiene configuración técnica obligatoria.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/about-us
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/about-us.md

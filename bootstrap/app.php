@@ -30,6 +30,7 @@ return Application::configure(basePath: dirname(__DIR__))
             TeamsPermission::class,
             SetLocale::class,
             SecurityHeaders::class,
+            \RealRashid\SweetAlert\ToSweetAlert::class,
         ]);
 
         $middleware->api(append: [

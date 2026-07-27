@@ -4,6 +4,8 @@
 
 <x-layouts.app.sidebar :title="$title">
     <flux:main>
+        <x-breadcrumbs.trail class="mb-4" />
+
         @isset($header)
             <div class="mb-6">
                 {{ $header }}

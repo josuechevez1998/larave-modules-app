@@ -4,19 +4,21 @@ namespace {{livewireNamespace}}\{{modelNamePluralUpperCase}};
 
 use {{livewireNamespace}}\Forms\{{modelName}}Form;
 use {{modelNamespace}}\{{modelName}};
+use Illuminate\View\View;
 use Livewire\Component;
 
 class Show extends Component
 {
     public {{modelName}}Form $form;
 
-    public function mount({{modelName}} ${{modelNameLowerCase}})
+    public function mount({{modelName}} ${{modelNameLowerCase}}): void
     {
         $this->form->set{{modelName}}Model(${{modelNameLowerCase}});
     }
 
-    public function render()
+    public function render(): View
     {
-        return view('livewire.{{modelView}}.show', ['{{modelNameLowerCase}}' => $this->form->{{modelNameLowerCase}}Model]);
+        return view('{{modelViewFull}}.show', ['{{modelNameLowerCase}}' => $this->form->{{modelNameLowerCase}}Model])
+            ->layout('components.layouts.app');
     }
 }

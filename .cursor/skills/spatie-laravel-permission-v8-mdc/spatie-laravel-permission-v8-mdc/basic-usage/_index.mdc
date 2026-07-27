@@ -1,0 +1,36 @@
+---
+description: "Índice de operaciones esenciales con roles y permisos."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/_index.md"
+---
+
+# Uso básico
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Agrupa las funciones principales para crear, asignar, comprobar y proteger recursos.
+
+## Reglas y conceptos clave
+- Crear roles y permisos con modelos Eloquent o comandos Artisan.
+- Asignar permisos principalmente a roles y roles a usuarios.
+- Comprobar capacidades mediante Laravel Gate, Blade, middleware y Policies.
+- Definir guardias, Teams o wildcards solo cuando el dominio realmente los necesite.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/_index.md

@@ -42,3 +42,24 @@ Breadcrumbs::for('profile', function (BreadcrumbTrail $trail): void {
     $trail->parent('dashboard');
     $trail->push(__('app.profile'), route('settings.profile'));
 });
+
+// CRUD: Blog
+Breadcrumbs::for('blogs.index', function (BreadcrumbTrail $trail): void {
+    $trail->parent('dashboard');
+    $trail->push(__('Blogs'), route('blogs.index'));
+});
+
+Breadcrumbs::for('blogs.create', function (BreadcrumbTrail $trail): void {
+    $trail->parent('blogs.index');
+    $trail->push(__('Nuevo'), route('blogs.create'));
+});
+
+Breadcrumbs::for('blogs.show', function (BreadcrumbTrail $trail, \Modules\Blog\Models\Blog $blog): void {
+    $trail->parent('blogs.index');
+    $trail->push((string) ($blog->nombre ?: __('Detalle')), route('blogs.show', $blog));
+});
+
+Breadcrumbs::for('blogs.edit', function (BreadcrumbTrail $trail, \Modules\Blog\Models\Blog $blog): void {
+    $trail->parent('blogs.index');
+    $trail->push(__('Editar'), route('blogs.edit', $blog));
+});

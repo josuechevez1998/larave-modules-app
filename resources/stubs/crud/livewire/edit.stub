@@ -4,26 +4,31 @@ namespace {{livewireNamespace}}\{{modelNamePluralUpperCase}};
 
 use {{livewireNamespace}}\Forms\{{modelName}}Form;
 use {{modelNamespace}}\{{modelName}};
+use {{serviceNamespace}}\{{modelName}}Service;
+{{catalogImports}}use Illuminate\View\View;
 use Livewire\Component;
 
 class Edit extends Component
 {
     public {{modelName}}Form $form;
 
-    public function mount({{modelName}} ${{modelNameLowerCase}})
+    public function mount({{modelName}} ${{modelNameLowerCase}}): void
     {
         $this->form->set{{modelName}}Model(${{modelNameLowerCase}});
     }
-
-    public function save()
+{{catalogMethods}}
+    public function save({{modelName}}Service $service)
     {
-        $this->form->update();
+        $this->form->update($service);
 
-        return $this->redirectRoute('{{modelRoute}}.index', navigate: true);
+        flash_swal_toast(__('Registro actualizado.'), 'success');
+
+        return $this->redirectRoute('{{modelRoute}}.index');
     }
 
-    public function render()
+    public function render(): View
     {
-        return view('livewire.{{modelView}}.edit');
+        return view('{{modelViewFull}}.edit')
+            ->layout('components.layouts.app');
     }
 }

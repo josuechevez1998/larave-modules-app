@@ -1,0 +1,35 @@
+---
+description: "Recursos complementarios y diagrama del esquema."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/other"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/other.md"
+---
+
+# Otros recursos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Referencia complementaria para visualizar el esquema relacional del paquete.
+
+## Reglas y conceptos clave
+- Consultar el diagrama como apoyo conceptual.
+- Tomar la migración publicada y la configuración instalada como fuente real del esquema.
+- Verificar personalizaciones de nombres de tablas, Teams y UUID antes de documentar la base de datos.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/other
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/other.md

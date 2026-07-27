@@ -17,6 +17,10 @@ class ListQueryBuilder
         protected array $includes = [],
         protected int $defaultPerPage = 15,
         protected int $maxPerPage = 100,
+        /** @var array<int, string> */
+        protected array $textFilterColumns = [],
+        /** @var array<int, string> */
+        protected array $exactFilterColumns = [],
     ) {}
 
     public static function for(Builder|string $model, array $sortable = [], array $includes = []): self
@@ -30,7 +34,42 @@ class ListQueryBuilder
     {
         $this->applyIncludes($request);
         $this->applyStatus($request);
+        $this->applyColumnFilters($request);
         $this->applySort($request);
+
+        return $this;
+    }
+
+    /**
+     * @param  array<int, string>  $textColumns  LIKE filters (request key = column)
+     * @param  array<int, string>  $exactColumns  exact match (typically FKs)
+     */
+    public function withColumnFilters(array $textColumns = [], array $exactColumns = []): self
+    {
+        $this->textFilterColumns = $textColumns;
+        $this->exactFilterColumns = $exactColumns;
+
+        return $this;
+    }
+
+    public function applyColumnFilters(Request $request): self
+    {
+        foreach ($this->textFilterColumns as $column) {
+            if (! $request->filled($column) || ! $this->hasColumn($column)) {
+                continue;
+            }
+
+            $value = $request->string($column)->toString();
+            $this->query->where($column, 'like', '%'.$value.'%');
+        }
+
+        foreach ($this->exactFilterColumns as $column) {
+            if (! $request->filled($column) || ! $this->hasColumn($column)) {
+                continue;
+            }
+
+            $this->query->where($column, $request->input($column));
+        }
 
         return $this;
     }

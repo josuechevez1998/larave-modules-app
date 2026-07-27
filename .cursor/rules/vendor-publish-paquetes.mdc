@@ -1,0 +1,46 @@
+---
+description: Publicar configs/assets de paquetes Laravel cuando el vendor lo permita
+alwaysApply: true
+---
+
+# Publicar paquetes (vendor:publish)
+
+Tras instalar o actualizar un paquete Composer, **publicar** lo que el vendor exponga (config, stubs, vistas, migrations, assets) para poder editarlo en el repo. No dejar la app acoplada solo a defaults en `vendor/`.
+
+## Flujo
+
+1. Instalar/actualizar el paquete (`sail composer require …`).
+2. Listar tags publicables:
+   ```bash
+   ./vendor/bin/sail artisan vendor:publish
+   ```
+   o el tag que documente el paquete (`--tag=…`).
+3. Publicar lo relevante (config / stubs / views / migrations según el caso).
+4. Revisar y ajustar lo publicado en `config/`, `resources/`, `database/migrations`, etc.
+5. Commitear los archivos publicados necesarios (no secretos).
+
+## Ejemplos del proyecto
+
+| Paquete | Acción típica |
+|---------|----------------|
+| `ibex/crud-generator` | `--tag=crud`, `--tag=stubs-crud` → `resources/stubs/crud/` |
+| `spatie/laravel-permission` | config + migrations si aún no están |
+| `diglactic/laravel-breadcrumbs` | config + routes (`breadcrumbs-config`, `breadcrumbs-routes`) |
+| `realrashid/sweet-alert` | `php artisan sweetalert:publish` → config, views, `public/vendor/sweetalert` |
+| `nwidart/laravel-modules` | stubs del proyecto (`stubs/nwidart-stubs`) cuando se customizan |
+| Flux / Livewire / Sanctum / Scramble / Log Viewer | publish config (y vistas solo si hay override real) |
+
+## Qué no hacer
+
+```text
+❌ BAD — Editar archivos dentro de vendor/
+✅ GOOD — vendor:publish y editar la copia en el proyecto
+```
+
+- No republicar a ciegas pidiendo `--force` si ya hay custom local (revisar diff antes).
+- Si el paquete **no** tiene tags publishables, no inventar: usar su API/config en código o `.env`.
+- Secretos solo en `.env`, nunca en configs publicadas commiteadas.
+
+## Sail
+
+Preferir `./vendor/bin/sail artisan vendor:publish …` cuando el stack Docker esté activo.

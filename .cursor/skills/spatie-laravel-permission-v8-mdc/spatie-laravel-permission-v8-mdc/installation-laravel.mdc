@@ -1,0 +1,55 @@
+---
+description: "Proceso de instalación, publicación, configuración y migración."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/installation-laravel"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/installation-laravel.md"
+---
+
+# Instalación en Laravel
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Instala el paquete, publica configuración y migraciones, ajusta las opciones requeridas y agrega `HasRoles` al modelo.
+
+## Reglas y conceptos clave
+- Instalar con Composer usando `composer require spatie/laravel-permission`.
+- Publicar la migración y `config/permission.php` mediante el service provider.
+- Configurar UUID, Teams, nombres de llaves e índices antes de migrar.
+- Cuando el store de caché sea `database`, crear primero las tablas de caché de Laravel.
+- Limpiar la caché de configuración antes de ejecutar las migraciones.
+- Ejecutar `php artisan migrate` y agregar `HasRoles` al modelo autenticable.
+
+## Ejemplo mínimo
+
+```php
+composer require spatie/laravel-permission
+
+php artisan vendor:publish \
+  --provider="Spatie\Permission\PermissionServiceProvider"
+
+php artisan optimize:clear
+php artisan migrate
+```
+
+## Precauciones
+
+- No sobrescribir sin revisión un `config/permission.php` existente.
+- No activar Teams después de migrar sin generar la migración adicional correspondiente.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/installation-laravel
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/installation-laravel.md

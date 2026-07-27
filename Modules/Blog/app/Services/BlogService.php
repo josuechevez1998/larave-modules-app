@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Services;
+namespace Modules\Blog\Services;
 
 use App\Services\BaseService;
-use {{modelNamespace}}\{{modelName}};
+use Modules\Blog\Models\Blog;
 use Illuminate\Database\Eloquent\Model;
 
-class {{modelName}}Service extends BaseService
+class BlogService extends BaseService
 {
     public function create(array $data): Model
     {
-        return {{modelName}}::query()->create($data);
+        return Blog::query()->create($data);
     }
 
     public function update(Model $model, array $data): Model
     {
-        /** @var {{modelName}} $model */
+        /** @var Blog $model */
         $model->update($data);
 
         return $model->refresh();

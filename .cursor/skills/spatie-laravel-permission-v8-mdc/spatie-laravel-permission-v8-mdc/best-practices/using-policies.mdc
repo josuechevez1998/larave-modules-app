@@ -1,0 +1,51 @@
+---
+description: "Combinación de permisos, propiedad y reglas de negocio."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/best-practices/using-policies"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/using-policies.md"
+---
+
+# Policies de modelos
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Las Policies centralizan la autorización contextual de recursos.
+
+## Reglas y conceptos clave
+- Usar permisos para capacidades generales.
+- Combinar permisos con propiedad, estado del registro, tenant y otras reglas de dominio.
+- Autorizar mediante `$this->authorize`, `Gate::authorize` o middleware `can`.
+- Mantener la lógica de autorización fuera de las vistas.
+- Agregar `before` solo para excepciones globales bien definidas.
+
+## Ejemplo mínimo
+
+```php
+public function update(User $user, Post $post): bool
+{
+    if ($user->can('posts.update.any')) {
+        return true;
+    }
+
+    return $user->can('posts.update.own')
+        && $post->user_id === $user->id;
+}
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/best-practices/using-policies
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/best-practices/using-policies.md

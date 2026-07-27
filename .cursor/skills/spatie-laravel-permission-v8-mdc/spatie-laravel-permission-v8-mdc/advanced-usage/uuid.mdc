@@ -1,0 +1,44 @@
+---
+description: "Adaptación de migraciones y modelos para identificadores no enteros."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/uuid"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/uuid.md"
+---
+
+# UUID y ULID
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Ajusta columnas, llaves foráneas, pivotes y modelos cuando User, Role o Permission usan UUID/ULID.
+
+## Reglas y conceptos clave
+- Editar la migración publicada antes de ejecutarla.
+- Cambiar `model_morph_key` a UUID/ULID en ambas tablas polimórficas.
+- Si Role y Permission usan UUID, cambiar sus llaves primarias y todas las llaves de pivote relacionadas.
+- Actualizar referencias de llaves foráneas para apuntar a la columna correcta.
+- Opcionalmente renombrar `model_id` a `model_uuid` en la configuración.
+- Extender los modelos de Role y Permission e incorporar `HasUuids` o `HasUlids`.
+- Actualizar la configuración para usar los modelos propios.
+
+## Precauciones
+
+- No mezclar tipos de llave entre tablas relacionadas.
+- No ejecutar la migración estándar y corregirla después en producción.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/uuid
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/uuid.md

@@ -1,0 +1,50 @@
+---
+description: "Implementación correcta de Super Admin mediante Laravel Gate."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/super-admin"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/super-admin.md"
+---
+
+# Superadministrador
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Centraliza la excepción de acceso total en `Gate::before`, evitando comprobaciones dispersas de rol.
+
+## Reglas y conceptos clave
+- Usar una regla global `Gate::before` que devuelva `true` para el rol de Super Admin.
+- Devolver `null` cuando el usuario no sea superadministrador para permitir que continúe la evaluación normal.
+- Usar `can`, `canAny`, `cannot`, `authorize` y `@can` para que la regla global se aplique.
+- Usar `Policy::before` cuando la excepción solo deba afectar una Policy específica.
+- Considerar `Gate::after` cuando ciertas reglas deban evaluarse antes incluso para Super Admin.
+
+## Ejemplo mínimo
+
+```php
+Gate::before(function ($user, string $ability): ?bool {
+    return $user->hasRole('Super Admin') ? true : null;
+});
+```
+
+## Precauciones
+
+- No devolver `false` desde `Gate::before` para usuarios normales.
+- Las comprobaciones directas `hasPermissionTo` no atraviesan Gate.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/super-admin
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/super-admin.md

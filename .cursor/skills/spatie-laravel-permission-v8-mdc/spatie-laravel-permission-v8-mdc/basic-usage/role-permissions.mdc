@@ -1,0 +1,48 @@
+---
+description: "Asignación y consulta de roles y permisos heredados."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/role-permissions"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/role-permissions.md"
+---
+
+# Permisos mediante roles
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Describe el flujo recomendado: permisos asignados a roles y roles asignados a modelos.
+
+## Reglas y conceptos clave
+- Asignar uno o varios roles con `assignRole` y reemplazarlos con `syncRoles`.
+- Administrar usuarios desde el lado del rol con `assignToModels`, `removeFromModels` y `syncModels`.
+- Comprobar roles mediante `hasRole`, `hasAnyRole`, `hasAllRoles` y `hasExactRoles`.
+- Asignar permisos al rol con `givePermissionTo` y sincronizarlos con `syncPermissions`.
+- Distinguir permisos directos de permisos heredados usando `getDirectPermissions`, `getPermissionsViaRoles` y `getAllPermissions`.
+
+## Ejemplo mínimo
+
+```php
+$editor = Role::findByName('editor');
+$editor->syncPermissions(['articles.view', 'articles.update']);
+
+$user->syncRoles([$editor]);
+
+$user->can('articles.update'); // true
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/role-permissions
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/role-permissions.md

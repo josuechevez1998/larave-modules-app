@@ -1,0 +1,41 @@
+---
+description: "Criterios para construir o integrar una interfaz de administración."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/ui-options"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/ui-options.md"
+---
+
+# Opciones de interfaz
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+El paquete no incluye pantallas; la interfaz de administración debe construirse o integrarse aparte.
+
+## Reglas y conceptos clave
+- Determinar si realmente se necesita edición dinámica de roles y permisos.
+- Mantener nombres de permisos controlados por desarrolladores cuando forman parte del código.
+- Permitir que administradores asignen roles a usuarios sin necesariamente editar las capacidades del sistema.
+- Aplicar validación, autorización, auditoría y protección de roles críticos en cualquier panel.
+- Las integraciones de terceros deben evaluarse por compatibilidad con Laravel, el paquete y el stack visual.
+
+## Precauciones
+
+- No permitir que un administrador elimine el permiso necesario para administrar el propio sistema sin salvaguardas.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/ui-options
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/ui-options.md

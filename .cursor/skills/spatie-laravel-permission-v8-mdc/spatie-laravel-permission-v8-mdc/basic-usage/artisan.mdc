@@ -1,0 +1,47 @@
+---
+description: "Creación, inspección y limpieza de caché desde consola."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/basic-usage/artisan"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/artisan.md"
+---
+
+# Comandos Artisan
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Proporciona comandos para crear roles, crear permisos, mostrar matrices y limpiar caché.
+
+## Reglas y conceptos clave
+- Crear roles con `permission:create-role`.
+- Crear permisos con `permission:create-permission`.
+- Indicar el guard como segundo argumento cuando sea necesario.
+- Crear un rol y asignar permisos en una sola operación usando una lista separada por `|`.
+- Mostrar roles y permisos con `permission:show`.
+- Limpiar manualmente la caché con `permission:cache-reset` solo cuando sea necesario.
+
+## Ejemplo mínimo
+
+```php
+php artisan permission:create-role editor web
+php artisan permission:create-permission "articles.update" web
+php artisan permission:create-role writer web "articles.view|articles.create"
+php artisan permission:show
+```
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/basic-usage/artisan
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/basic-usage/artisan.md

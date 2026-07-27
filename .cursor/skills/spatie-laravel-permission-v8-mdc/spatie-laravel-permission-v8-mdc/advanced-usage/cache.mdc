@@ -1,0 +1,55 @@
+---
+description: "Invalidación, configuración, multitenancy, Octane y stores."
+globs:
+  - "app/**/*.php"
+  - "bootstrap/**/*.php"
+  - "config/**/*.php"
+  - "database/**/*.php"
+  - "routes/**/*.php"
+  - "resources/views/**/*.blade.php"
+  - "tests/**/*.php"
+alwaysApply: false
+package: "spatie/laravel-permission"
+version: "8"
+language: "es"
+source_page: "https://spatie.be/docs/laravel-permission/v8/advanced-usage/cache"
+source_repository: "https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/cache.md"
+---
+
+# Caché
+
+> Adaptación técnica en español basada en la documentación oficial. No sustituye la lectura de la fuente enlazada.
+
+## Objetivo
+
+Roles y permisos se almacenan en caché; la API del paquete administra la mayoría de invalidaciones automáticamente.
+
+## Reglas y conceptos clave
+- Los métodos oficiales sobre Role y Permission limpian la caché automáticamente.
+- Las asignaciones a usuarios se mantienen en memoria y no siempre disparan un reset global.
+- Limpiar manualmente con `PermissionRegistrar::forgetCachedPermissions` o `permission:cache-reset`.
+- Configurar un prefijo único cuando varias aplicaciones comparten Redis o Memcached.
+- En multitenancy, reinicializar la caché del registrar después de cambiar store o prefijo.
+- Configurar un listener de reset para Octane cuando se detecten permisos obsoletos.
+- Crear las tablas de caché de Laravel cuando se usa el store `database`.
+
+## Ejemplo mínimo
+
+```php
+app(PermissionRegistrar::class)
+    ->forgetCachedPermissions();
+
+// Después de cambiar tenant/store:
+app(PermissionRegistrar::class)
+    ->initializeCache();
+```
+
+## Precauciones
+
+- No usar el cache store `array` en producción como sustituto de una estrategia real.
+- No realizar cambios directos en tablas sin reset de caché.
+
+## Fuente oficial
+
+- Página: https://spatie.be/docs/laravel-permission/v8/advanced-usage/cache
+- Archivo fuente: https://github.com/spatie/laravel-permission/blob/main/docs/advanced-usage/cache.md
