@@ -143,6 +143,13 @@ class MakeCrudCommand extends CrudGenerator
             }
         }
 
+        if ($this->options['stack'] === 'livewire' && $this->tableHasAuditColumns()) {
+            $tableHead .= $this->getHead('Última actualización');
+            $tableHead .= $this->getHead('Actualizado por');
+            $tableBody .= $this->getAuditUpdatedAtBody();
+            $tableBody .= $this->getAuditUpdatedByBody();
+        }
+
         $filtersBar = '';
         if ($this->options['stack'] === 'livewire' && trim($filters) !== '') {
             $filtersBar = <<<BLADE
@@ -304,6 +311,11 @@ BLADE;
         $exactColumns = array_values(array_filter($filtered, fn (string $c) => isset($fkMap[$c])));
         $relations = array_values(array_unique(array_column($fkMap, 'relation')));
 
+        if ($this->tableHasAuditColumns()) {
+            $relations[] = 'actualizadoPor';
+            $relations = array_values(array_unique($relations));
+        }
+
         $filterProperties = '';
         $filterRequestMerge = '';
         $clearReset = [];
@@ -438,6 +450,11 @@ PHP;
             }
 
             $column = $fk['columns'][0];
+
+            if (in_array($column, $this->unwantedColumns, true)) {
+                continue;
+            }
+
             $foreignTable = $this->extractForeignTableName($fk['foreign_table']);
             $ownerKey = $fk['foreign_columns'][0];
             $class = Str::studly(Str::singular($foreignTable));
@@ -458,6 +475,10 @@ PHP;
 
         foreach ($this->getFilteredColumns() as $column) {
             if (isset($map[$column]) || ! str_ends_with($column, '_id')) {
+                continue;
+            }
+
+            if (in_array($column, $this->unwantedColumns, true)) {
                 continue;
             }
 
@@ -490,6 +511,40 @@ PHP;
     protected function isForeignKeyColumn(string $column): bool
     {
         return isset($this->getForeignKeysMap()[$column]);
+    }
+
+    protected function tableHasAuditColumns(): bool
+    {
+        try {
+            return Schema::hasColumn($this->table, 'actualizado_por')
+                && Schema::hasColumn($this->table, 'updated_at');
+        } catch (\Throwable) {
+            return false;
+        }
+    }
+
+    protected function getAuditUpdatedAtBody(): string
+    {
+        $attr = 'class="whitespace-nowrap px-3 py-4 text-sm text-stone-600 dark:text-stone-300"';
+        $replace = $this->buildReplacements();
+
+        return str_replace(
+            array_keys($replace),
+            array_values($replace),
+            str_repeat(' ', 10).'<td '.$attr.'>{{ ${{modelNameLowerCase}}->updated_at?->format(\'d/m/Y H:i\') }}</td>'."\n"
+        );
+    }
+
+    protected function getAuditUpdatedByBody(): string
+    {
+        $attr = 'class="whitespace-nowrap px-3 py-4 text-sm text-stone-600 dark:text-stone-300"';
+        $replace = $this->buildReplacements();
+
+        return str_replace(
+            array_keys($replace),
+            array_values($replace),
+            str_repeat(' ', 10).'<td '.$attr.'>{{ ${{modelNameLowerCase}}->actualizadoPor?->name ?? \'—\' }}</td>'."\n"
+        );
     }
 
     protected function extractForeignTableName(string $foreignTable): string
@@ -754,10 +809,10 @@ PHP;
             return;
         }
 
-        $block = "\n// CRUD: {$this->name} (make:crud --module={$this->moduleStudly})\n".implode("\n", $lines)."\n";
+        $block = "\n// CRUD table: {$this->table} (make:crud --module={$this->moduleStudly})\n".implode("\n", $lines)."\n";
         $contents = $this->files->get($routeFile);
 
-        if (str_contains($contents, "CRUD: {$this->name}")) {
+        if (str_contains($contents, "CRUD table: {$this->table}")) {
             $this->warn('Las rutas de este CRUD ya estaban en el archivo; no se duplicaron.');
 
             return;
@@ -785,7 +840,7 @@ PHP;
         $titlePlural = $replace['{{modelTitlePlural}}'] ?? Str::title(str_replace('_', ' ', $route));
         $modelFqcn = ($replace['{{modelNamespace}}'] ?? $this->modelNamespace).'\\'.($replace['{{modelName}}'] ?? $this->name);
         $modelVar = '$'.($replace['{{modelNameLowerCase}}'] ?? Str::camel($this->name));
-        $marker = "CRUD: {$this->name}";
+        $marker = "CRUD table: {$this->table}";
 
         $contents = $this->files->get($file);
 

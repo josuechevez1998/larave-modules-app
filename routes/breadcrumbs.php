@@ -63,3 +63,45 @@ Breadcrumbs::for('blogs.edit', function (BreadcrumbTrail $trail, \Modules\Blog\M
     $trail->parent('blogs.index');
     $trail->push(__('Editar'), route('blogs.edit', $blog));
 });
+
+// CRUD table: todo_estado
+Breadcrumbs::for('todo-estados.index', function (BreadcrumbTrail $trail): void {
+    $trail->parent('dashboard');
+    $trail->push(__('Estados ToDo'), route('todo-estados.index'));
+});
+
+Breadcrumbs::for('todo-estados.create', function (BreadcrumbTrail $trail): void {
+    $trail->parent('todo-estados.index');
+    $trail->push(__('Nuevo'), route('todo-estados.create'));
+});
+
+Breadcrumbs::for('todo-estados.show', function (BreadcrumbTrail $trail, \Modules\ToDo\Models\TodoEstado $todoEstado): void {
+    $trail->parent('todo-estados.index');
+    $trail->push(__('Detalle'), route('todo-estados.show', $todoEstado));
+});
+
+Breadcrumbs::for('todo-estados.edit', function (BreadcrumbTrail $trail, \Modules\ToDo\Models\TodoEstado $todoEstado): void {
+    $trail->parent('todo-estados.index');
+    $trail->push(__('Editar'), route('todo-estados.edit', $todoEstado));
+});
+
+// CRUD table: todos
+Breadcrumbs::for('todos.index', function (BreadcrumbTrail $trail): void {
+    $trail->parent('dashboard');
+    $trail->push(__('ToDos'), route('todos.index'));
+});
+
+Breadcrumbs::for('todos.create', function (BreadcrumbTrail $trail): void {
+    $trail->parent('todos.index');
+    $trail->push(__('Nuevo'), route('todos.create'));
+});
+
+Breadcrumbs::for('todos.show', function (BreadcrumbTrail $trail, \Modules\ToDo\Models\Todo $todo): void {
+    $trail->parent('todos.index');
+    $trail->push(__('Detalle'), route('todos.show', $todo));
+});
+
+Breadcrumbs::for('todos.edit', function (BreadcrumbTrail $trail, \Modules\ToDo\Models\Todo $todo): void {
+    $trail->parent('todos.index');
+    $trail->push(__('Editar'), route('todos.edit', $todo));
+});

@@ -16,6 +16,12 @@
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </flux:navlist.item>
+                    <flux:navlist.item icon="clipboard-document-list" :href="route('todos.index')" :current="request()->routeIs('todos.*')" wire:navigate>
+                        {{ __('ToDos') }}
+                    </flux:navlist.item>
+                    <flux:navlist.item icon="tag" :href="route('todo-estados.index')" :current="request()->routeIs('todo-estados.*')" wire:navigate>
+                        {{ __('Estados ToDo') }}
+                    </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
