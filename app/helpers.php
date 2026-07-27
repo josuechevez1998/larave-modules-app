@@ -1,7 +1,35 @@
 <?php
 
 use App\Models\InstitutionSetting;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
+
+if (! function_exists('friendly_error_response')) {
+    /**
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     */
+    function friendly_error_response(Request $request, string $message, string $code, int $status)
+    {
+        if ($request->expectsJson() || $request->is('api/*')) {
+            return response()->json([
+                'message' => $message,
+                'code' => $code,
+            ], $status);
+        }
+
+        if ($request->hasSession()) {
+            $request->session()->flash('error', $message);
+        }
+
+        $view = match ($status) {
+            403 => 'errors.403',
+            404 => 'errors.404',
+            default => 'errors.500',
+        };
+
+        return response()->view($view, ['message' => $message], $status);
+    }
+}
 
 if (! function_exists('brand_logo_url_from_config')) {
     function brand_logo_url_from_config(): ?string
