@@ -98,6 +98,27 @@
         @apply overflow-hidden rounded-xl border border-stone-300/70 bg-app-surface shadow-[0_1px_2px_rgba(28,25,23,0.05)] dark:border-stone-700/80 dark:bg-stone-900 dark:shadow-none;
     }
 
+    .ui-table-busy {
+        @apply relative transition-opacity duration-200;
+    }
+
+    .ui-table-busy[data-loading] {
+        @apply pointer-events-none opacity-55;
+    }
+
+    @keyframes ui-livewire-busy-bar {
+        0% {
+            transform: translateX(-120%);
+        }
+        100% {
+            transform: translateX(420%);
+        }
+    }
+
+    .ui-livewire-busy-bar {
+        animation: ui-livewire-busy-bar 1.05s ease-in-out infinite;
+    }
+
     .ui-filter {
         @apply rounded-xl border border-stone-300/70 bg-stone-50/80 px-4 py-4 shadow-[0_1px_2px_rgba(28,25,23,0.04)] dark:border-stone-700/80 dark:bg-stone-900/80 sm:px-5;
     }

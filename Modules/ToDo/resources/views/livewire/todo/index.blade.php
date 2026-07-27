@@ -59,7 +59,10 @@
         </div>
     </div>
 
-    <div class="ui-table">
+    <div
+        class="ui-table ui-table-busy"
+        wire:loading.delay.200ms.attr="data-loading"
+    >
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-stone-200 dark:divide-stone-700">
                 <thead class="ui-thead">
@@ -103,6 +106,8 @@
                                         variant="danger"
                                         type="button"
                                         wire:click="confirmDelete({{ $todo->id }})"
+                                        wire:loading.attr="disabled"
+                                        wire:target="confirmDelete, delete"
                                     >
                                         {{ __('Eliminar') }}
                                     </flux:button>

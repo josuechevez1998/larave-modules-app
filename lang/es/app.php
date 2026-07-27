@@ -43,9 +43,13 @@ return [
     'delete_account_confirm' => '¿Seguro que deseas eliminar tu cuenta?',
     'delete_account_warning' => 'Una vez eliminada, todos los datos se borrarán de forma permanente. Ingresa tu contraseña para confirmar.',
     'save' => 'Guardar',
+    'saving' => 'Guardando…',
+    'deleting' => 'Eliminando…',
+    'loading' => 'Cargando…',
     'saved' => 'Guardado.',
     'locale' => 'Idioma',
     'locale_es' => 'Español',
     'locale_en' => 'Inglés',
     'clear_filters' => 'Limpiar filtros',
+    'clearing_filters' => 'Limpiando…',
 ];

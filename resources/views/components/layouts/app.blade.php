@@ -3,6 +3,8 @@
 ])
 
 <x-layouts.app.sidebar :title="$title">
+    <x-ui.livewire-busy />
+
     <flux:main>
         <x-breadcrumbs.trail class="mb-4" />
 

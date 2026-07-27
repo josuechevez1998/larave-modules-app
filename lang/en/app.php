@@ -43,9 +43,13 @@ return [
     'delete_account_confirm' => 'Are you sure you want to delete your account?',
     'delete_account_warning' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm.',
     'save' => 'Save',
+    'saving' => 'Saving…',
+    'deleting' => 'Deleting…',
+    'loading' => 'Loading…',
     'saved' => 'Saved.',
     'locale' => 'Language',
     'locale_es' => 'Spanish',
     'locale_en' => 'English',
     'clear_filters' => 'Clear filters',
+    'clearing_filters' => 'Clearing…',
 ];

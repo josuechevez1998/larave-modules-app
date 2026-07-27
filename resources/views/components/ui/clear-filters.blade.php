@@ -6,6 +6,8 @@
     type="button"
     variant="ghost"
     wire:click="{{ $wireClick }}"
+    wire:loading.attr="disabled"
+    wire:target="{{ $wireClick }}"
     {{ $attributes }}
 >
     {{ $slot->isEmpty() ? __('app.clear_filters') : $slot }}

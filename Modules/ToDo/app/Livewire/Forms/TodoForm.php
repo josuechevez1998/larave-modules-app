@@ -43,15 +43,31 @@ class TodoForm extends Form
 
     public function store(TodoService $service): void
     {
-        $service->create($this->validate());
+        $service->create($this->validatedPayload());
 
         $this->reset();
     }
 
     public function update(TodoService $service): void
     {
-        $service->update($this->todoModel, $this->validate());
+        $service->update($this->todoModel, $this->validatedPayload());
 
         $this->reset();
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    protected function validatedPayload(): array
+    {
+        $data = $this->validate();
+
+        foreach (['fecha_inicio', 'fecha_fin', 'descripcion'] as $field) {
+            if (($data[$field] ?? null) === '') {
+                $data[$field] = null;
+            }
+        }
+
+        return $data;
     }
 }

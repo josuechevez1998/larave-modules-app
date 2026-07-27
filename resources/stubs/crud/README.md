@@ -13,7 +13,8 @@ Published stubs: `resources/stubs/crud/`. Config: `config/crud.php` → `stub_pa
 7. DI del Service en acciones del componente Livewire (`save(Service $s)` → `$this->form->store($s)`). Los `Livewire\Form` **no** resuelven type-hints al llamar `$this->form->store()`.
 8. Breadcrumbs Diglactic: `make:crud` append a `routes/breadcrumbs.php`; trail en layout app.
 9. SweetAlert: toasts con `livewire_swal_toast()` / `flash_swal_toast()`; **Eliminar** siempre vía `confirmDelete` → `livewire_swal_confirm_delete()` (nunca `wire:confirm` nativo).
-10. Preferir `--module=` cuando el feature vive en un módulo.
+10. Loading panel (no login): `<x-ui.livewire-busy />` en layout app (barra superior con delay); forms con `<x-ui.action-button />`; Index atenúa tabla (`ui-table-busy`) al filtrar/paginar; Eliminar/Limpiar con loading en el botón.
+11. Preferir `--module=` cuando el feature vive en un módulo.
 
 ## Command
 

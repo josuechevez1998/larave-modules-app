@@ -11,8 +11,15 @@
     </div>
 
     <div class="flex flex-wrap items-center gap-3 pt-2">
-        <flux:button variant="primary" type="submit">{{ __('app.save') }}</flux:button>
-        <flux:button variant="ghost" :href="route('blogs.index')" wire:navigate type="button">
+        <x-ui.action-button target="save" />
+        <flux:button
+            variant="ghost"
+            :href="route('blogs.index')"
+            wire:navigate
+            type="button"
+            wire:loading.attr="disabled"
+            wire:target="save"
+        >
             {{ __('Cancelar') }}
         </flux:button>
     </div>
