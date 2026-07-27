@@ -1,0 +1,18 @@
+---
+description: Listados con sort, includes, status y paginación
+globs:
+  - app/Services/ListQueryBuilder.php
+  - **/Livewire/**/*Index*.php
+  - **/Http/Controllers/Api/**/*.php
+alwaysApply: false
+---
+
+# Listados y paginación
+
+- Usar `App\Services\ListQueryBuilder` para Index Livewire y API index.
+- `sort`: whitelist de columnas; prefijo `-` = desc (ej. `-created_at`).
+- `include` / `with`: solo relaciones en whitelist.
+- Filtro `status_id` o `status` (code) cuando el modelo tenga `status_id`.
+- `per_page` acotado (default 15, max 100).
+- Estados de negocio vía tabla `statuses` (FK), no enums sueltos por entidad salvo casos puntuales.
+- Listados admin con filtros: botón limpiar filtros cuando aplique.

@@ -1,0 +1,513 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Controllers (/docs/13/basic-usage/controllers). Referencia nwidart/laravel-modules v13.
+---
+
+# Controllers
+
+> Fuente: https://laravelmodules.com/docs/13/basic-usage/controllers
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Generating Controllers](#generating-controllers)
+- [Controller Options](#controller-options)
+- [Plain Controller](#plain-controller)
+- [Resource Controller](#resource-controller)
+- [API Controller](#api-controller)
+- [Invokable Controller](#invokable-controller)
+- [A Full Resource Controller Example](#a-full-resource-controller-example)
+- [Form Requests](#form-requests)
+- [API Controllers and JSON Responses](#api-controllers-and-json-responses)
+- [Middleware on Controllers](#middleware-on-controllers)
+- [Organising Controllers into Subdirectories](#organising-controllers-into-subdirectories)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Controllers
+
+---
+
+- [Generating Controllers](#generating-controllers)
+- [Controller Options](#controller-options)
+- [Plain Controller](#plain-controller)
+- [Resource Controller](#resource-controller)
+- [API Controller](#api-controller)
+- [Invokable Controller](#invokable-controller)
+- [A Full Resource Controller Example](#a-full-resource-controller-example)
+- [Form Requests](#form-requests)
+- [API Controllers and JSON Responses](#api-controllers-and-json-responses)
+- [Middleware on Controllers](#middleware-on-controllers)
+- [Organising Controllers into Subdirectories](#organising-controllers-into-subdirectories)
+
+Module controllers live in `Modules/{ModuleName}/app/Http/Controllers/` and are namespaced as `Modules\{ModuleName}\Http\Controllers`.
+
+## [#](#generating-controllers)Generating Controllers
+
+```
+php artisan module:make-controller PostController Blog
+
+php artisan module:make-controller PostController Blog
+```
+
+This creates `Modules/Blog/app/Http/Controllers/PostController.php`:
+
+```
+<?php
+
+namespace Modules\Blog\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use Illuminate\Routing\Controller;
+
+class PostController extends Controller
+
+{
+
+public function index()
+
+{
+
+return view('blog::index');
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+
+class PostController extends Controller
+{
+    public function index()
+    {
+        return view('blog::index');
+    }
+}
+```
+
+## [#](#controller-options)Controller Options
+
+### [#](#plain-controller)Plain Controller
+
+A plain controller with no boilerplate methods:
+
+```
+php artisan module:make-controller PostController Blog --plain
+
+php artisan module:make-controller PostController Blog --plain
+```
+
+### [#](#resource-controller)Resource Controller
+
+Generates a controller with `index`, `create`, `store`, `show`, `edit`, `update`, and `destroy` methods:
+
+```
+php artisan module:make-controller PostController Blog
+
+php artisan module:make-controller PostController Blog
+```
+
+Then register it in `routes/web.php`:
+
+```
+Route::resource('posts', PostController::class);
+
+Route::resource('posts', PostController::class);
+```
+
+### [#](#api-controller)API Controller
+
+Generates a controller without `create` and `edit` (those are only needed for HTML forms):
+
+```
+php artisan module:make-controller PostController Blog --api
+
+php artisan module:make-controller PostController Blog --api
+```
+
+Register as an API resource:
+
+```
+Route::apiResource('posts', PostController::class);
+
+Route::apiResource('posts', PostController::class);
+```
+
+### [#](#invokable-controller)Invokable Controller
+
+A single-action controller with one `__invoke` method:
+
+```
+php artisan module:make-controller PublishPostController Blog --invokable
+
+php artisan module:make-controller PublishPostController Blog --invokable
+```
+
+Register in routes:
+
+```
+Route::post('/posts/{post}/publish', PublishPostController::class);
+
+Route::post('/posts/{post}/publish', PublishPostController::class);
+```
+
+## [#](#a-full-resource-controller-example)A Full Resource Controller Example
+
+```
+<?php
+
+namespace Modules\Blog\Http\Controllers;
+
+use Illuminate\Http\RedirectResponse;
+
+use Illuminate\View\View;
+
+use Illuminate\Routing\Controller;
+
+use Modules\Blog\Http\Requests\StorePostRequest;
+
+use Modules\Blog\Http\Requests\UpdatePostRequest;
+
+use Modules\Blog\Models\Post;
+
+class PostController extends Controller
+
+{
+
+public function index(): View
+
+{
+
+$posts = Post::latest()->paginate(20);
+
+return view('blog::posts.index', compact('posts'));
+
+}
+
+public function create(): View
+
+{
+
+return view('blog::posts.create');
+
+}
+
+public function store(StorePostRequest $request): RedirectResponse
+
+{
+
+Post::create($request->validated());
+
+return redirect()->route('blog.posts.index')
+
+->with('success', 'Post created.');
+
+}
+
+public function show(Post $post): View
+
+{
+
+return view('blog::posts.show', compact('post'));
+
+}
+
+public function edit(Post $post): View
+
+{
+
+return view('blog::posts.edit', compact('post'));
+
+}
+
+public function update(UpdatePostRequest $request, Post $post): RedirectResponse
+
+{
+
+$post->update($request->validated());
+
+return redirect()->route('blog.posts.show', $post)
+
+->with('success', 'Post updated.');
+
+}
+
+public function destroy(Post $post): RedirectResponse
+
+{
+
+$post->delete();
+
+return redirect()->route('blog.posts.index')
+
+->with('success', 'Post deleted.');
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Http\Controllers;
+
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
+use Illuminate\Routing\Controller;
+use Modules\Blog\Http\Requests\StorePostRequest;
+use Modules\Blog\Http\Requests\UpdatePostRequest;
+use Modules\Blog\Models\Post;
+
+class PostController extends Controller
+{
+    public function index(): View
+    {
+        $posts = Post::latest()->paginate(20);
+
+        return view('blog::posts.index', compact('posts'));
+    }
+
+    public function create(): View
+    {
+        return view('blog::posts.create');
+    }
+
+    public function store(StorePostRequest $request): RedirectResponse
+    {
+        Post::create($request->validated());
+
+        return redirect()->route('blog.posts.index')
+            ->with('success', 'Post created.');
+    }
+
+    public function show(Post $post): View
+    {
+        return view('blog::posts.show', compact('post'));
+    }
+
+    public function edit(Post $post): View
+    {
+        return view('blog::posts.edit', compact('post'));
+    }
+
+    public function update(UpdatePostRequest $request, Post $post): RedirectResponse
+    {
+        $post->update($request->validated());
+
+        return redirect()->route('blog.posts.show', $post)
+            ->with('success', 'Post updated.');
+    }
+
+    public function destroy(Post $post): RedirectResponse
+    {
+        $post->delete();
+
+        return redirect()->route('blog.posts.index')
+            ->with('success', 'Post deleted.');
+    }
+}
+```
+
+## [#](#form-requests)Form Requests
+
+Generate a form request for validation:
+
+```
+php artisan module:make-request StorePostRequest Blog
+
+php artisan module:make-request UpdatePostRequest Blog
+
+php artisan module:make-request StorePostRequest Blog
+php artisan module:make-request UpdatePostRequest Blog
+```
+
+These are placed in `Modules/Blog/app/Http/Requests/`:
+
+```
+<?php
+
+namespace Modules\Blog\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class StorePostRequest extends FormRequest
+
+{
+
+public function authorize(): bool
+
+{
+
+return true;
+
+}
+
+public function rules(): array
+
+{
+
+return [
+
+'title'   => ['required', 'string', 'max:255'],
+
+'slug'    => ['required', 'string', 'unique:posts,slug'],
+
+'body'    => ['required', 'string'],
+
+'published_at' => ['nullable', 'date'],
+
+];
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class StorePostRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'title'   => ['required', 'string', 'max:255'],
+            'slug'    => ['required', 'string', 'unique:posts,slug'],
+            'body'    => ['required', 'string'],
+            'published_at' => ['nullable', 'date'],
+        ];
+    }
+}
+```
+
+## [#](#api-controllers-and-json-responses)API Controllers and JSON Responses
+
+For API controllers, return JSON responses using API resources:
+
+```
+php artisan module:make-controller PostController Blog --api
+
+php artisan module:make-resource PostResource Blog
+
+php artisan module:make-controller PostController Blog --api
+php artisan module:make-resource PostResource Blog
+```
+
+```
+<?php
+
+namespace Modules\Blog\Http\Controllers;
+
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+
+use Illuminate\Routing\Controller;
+
+use Modules\Blog\Http\Resources\PostResource;
+
+use Modules\Blog\Models\Post;
+
+class PostController extends Controller
+
+{
+
+public function index(): AnonymousResourceCollection
+
+{
+
+return PostResource::collection(Post::paginate(20));
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Http\Controllers;
+
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Routing\Controller;
+use Modules\Blog\Http\Resources\PostResource;
+use Modules\Blog\Models\Post;
+
+class PostController extends Controller
+{
+    public function index(): AnonymousResourceCollection
+    {
+        return PostResource::collection(Post::paginate(20));
+    }
+}
+```
+
+## [#](#middleware-on-controllers)Middleware on Controllers
+
+Apply middleware in the constructor:
+
+```
+public function __construct()
+
+{
+
+$this->middleware('auth')->except(['index', 'show']);
+
+$this->middleware('can:manage-posts')->only(['create', 'store', 'edit', 'update', 'destroy']);
+
+}
+
+public function __construct()
+{
+    $this->middleware('auth')->except(['index', 'show']);
+    $this->middleware('can:manage-posts')->only(['create', 'store', 'edit', 'update', 'destroy']);
+}
+```
+
+## [#](#organising-controllers-into-subdirectories)Organising Controllers into Subdirectories
+
+You can organise controllers into subdirectories:
+
+```
+php artisan module:make-controller Api/PostController Blog
+
+php artisan module:make-controller Api/PostController Blog
+```
+
+This creates `Modules/Blog/app/Http/Controllers/Api/PostController.php` with namespace `Modules\Blog\Http\Controllers\Api`.
+
+Register it in routes:
+
+```
+use Modules\Blog\Http\Controllers\Api\PostController;
+
+Route::apiResource('posts', PostController::class);
+
+use Modules\Blog\Http\Controllers\Api\PostController;
+
+Route::apiResource('posts', PostController::class);
+```
+
+---
+
+[Previous page: 
+←
+Routing](/docs/13/basic-usage/routing)
+[Next page: 
+Views
+ →](/docs/13/basic-usage/views)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/basic-usage/controllers.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/basic-usage/controllers&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

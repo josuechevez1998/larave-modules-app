@@ -1,0 +1,109 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Module Methods (/docs/3/advanced/module-methods). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Module Methods
+
+> Fuente: https://laravelmodules.com/docs/3/advanced/module-methods
+> Exportado: 2026-07-23 19:57 UTC
+
+Get an entity from a specific module.
+
+Copied!
+
+```
+$module = Module::find('blog');
+
+$module = Module::find('blog');
+```
+
+Get module name.
+
+Copied!
+
+```
+$module->getName();
+
+$module->getName();
+```
+
+Get module name in lowercase.
+
+Copied!
+
+```
+$module->getLowerName();
+
+$module->getLowerName();
+```
+
+Get module name in studlycase.
+
+Copied!
+
+```
+$module->getStudlyName();
+
+$module->getStudlyName();
+```
+
+Get module path.
+
+Copied!
+
+```
+$module->getPath();
+
+$module->getPath();
+```
+
+Get extra path.
+
+Copied!
+
+```
+$module->getExtraPath('Assets');
+
+$module->getExtraPath('Assets');
+```
+
+Disable the specified module.
+
+Copied!
+
+```
+$module->disable();
+
+$module->disable();
+```
+
+Enable the specified module.
+
+Copied!
+
+```
+$module->enable();
+
+$module->enable();
+```
+
+Delete the specified module.
+
+Copied!
+
+```
+$module->delete();
+
+$module->delete();
+```
+
+Get an array of module requirements. Note: these should be aliases of the module.
+
+Copied!
+
+```
+$module->getRequires();
+
+$module->getRequires();
+```

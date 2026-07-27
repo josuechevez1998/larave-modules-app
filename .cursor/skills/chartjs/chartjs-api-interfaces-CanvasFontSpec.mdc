@@ -1,0 +1,123 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: CanvasFontSpec (/docs/latest/api/interfaces/CanvasFontSpec.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: CanvasFontSpec
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/CanvasFontSpec.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-canvasfontspec) Interface: CanvasFontSpec
+
+## [#](#hierarchy) Hierarchy
+
+- [`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)
+
+  ↳ **`CanvasFontSpec`**
+
+## [#](#properties) Properties
+
+### [#](#family) family
+
+• **family**: `string`
+
+Default font family for all text, follows CSS font-family options.
+
+**`Default`**
+
+"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+
+#### [#](#inherited-from) Inherited from
+
+[FontSpec](/docs/latest/api/interfaces/FontSpec.html).[family](/docs/latest/api/interfaces/FontSpec.html#family)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1787  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1787)
+
+---
+
+### [#](#lineheight) lineHeight
+
+• **lineHeight**: `string` | `number`
+
+Height of an individual line of text (see MDN).
+
+**`Default`**
+
+1.2
+
+#### [#](#inherited-from-2) Inherited from
+
+[FontSpec](/docs/latest/api/interfaces/FontSpec.html).[lineHeight](/docs/latest/api/interfaces/FontSpec.html#lineheight)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1806  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1806)
+
+---
+
+### [#](#size) size
+
+• **size**: `number`
+
+Default font size (in px) for text. Does not apply to radialLinear scale point labels.
+
+**`Default`**
+
+12
+
+#### [#](#inherited-from-3) Inherited from
+
+[FontSpec](/docs/latest/api/interfaces/FontSpec.html).[size](/docs/latest/api/interfaces/FontSpec.html#size)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1792  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1792)
+
+---
+
+### [#](#string) string
+
+• **string**: `string`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1810  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1810)
+
+---
+
+### [#](#style) style
+
+• **style**: `"normal"` | `"inherit"` | `"italic"` | `"oblique"` | `"initial"`
+
+Default font style. Does not apply to tooltip title or footer. Does not apply to chart title. Follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit)
+
+**`Default`**
+
+'normal'
+
+#### [#](#inherited-from-4) Inherited from
+
+[FontSpec](/docs/latest/api/interfaces/FontSpec.html).[style](/docs/latest/api/interfaces/FontSpec.html#style)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1797  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1797)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number` | `"bold"` | `"normal"` | `"lighter"` | `"bolder"`
+
+Default font weight (boldness). (see MDN).
+
+#### [#](#inherited-from-5) Inherited from
+
+[FontSpec](/docs/latest/api/interfaces/FontSpec.html).[weight](/docs/latest/api/interfaces/FontSpec.html#weight)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1801  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1801)

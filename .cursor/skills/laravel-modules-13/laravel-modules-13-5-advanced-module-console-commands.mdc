@@ -1,0 +1,43 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Module Console Commands (/docs/5/advanced/module-console-commands). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Module Console Commands
+
+> Fuente: https://laravelmodules.com/docs/5/advanced/module-console-commands
+> Exportado: 2026-07-23 19:57 UTC
+
+Your module may contain console commands. You can generate these commands manually, or with the following helper:
+
+Copied!
+
+```
+php artisan module:make-command CreatePostCommand Blog
+
+php artisan module:make-command CreatePostCommand Blog
+```
+
+This will create a `CreatePostCommand` inside the Blog module. By default this will be `Modules/Blog/Console/CreatePostCommand`.
+
+Please refer to the [laravel documentation on artisan commands](https://laravel.com/docs/5.8/artisan) to learn all about them.
+
+## [#](#registering-the-command)Registering the command
+
+You can register the command with the laravel method called `commands` that is available inside a service provider class.
+
+Copied!
+
+```
+$this->commands([
+
+\Modules\Blog\Console\CreatePostCommand::class,
+
+]);
+
+$this->commands([
+    \Modules\Blog\Console\CreatePostCommand::class,
+]);
+```
+
+You can now access your command via `php artisan` in the console.

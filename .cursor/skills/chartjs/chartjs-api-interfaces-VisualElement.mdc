@@ -1,0 +1,144 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: VisualElement (/docs/latest/api/interfaces/VisualElement.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: VisualElement
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/VisualElement.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-visualelement) Interface: VisualElement
+
+## [#](#hierarchy) Hierarchy
+
+- **`VisualElement`**
+
+  ↳ [`LineElement`](/docs/latest/api/interfaces/LineElement.html)
+
+  ↳ [`BarElement`](/docs/latest/api/interfaces/BarElement.html)
+
+## [#](#methods) Methods
+
+### [#](#draw) draw
+
+▸ **draw**(`ctx`, `area?`): `void`
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `ctx` | `CanvasRenderingContext2D` |
+| `area?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1817  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1817)
+
+---
+
+### [#](#getcenterpoint) getCenterPoint
+
+▸ **getCenterPoint**(`useFinalPosition?`): [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-2) Returns
+
+[`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1821  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1821)
+
+---
+
+### [#](#getrange) getRange
+
+▸ `Optional` **getRange**(`axis`): `number`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | `"x"` | `"y"` |
+
+#### [#](#returns-3) Returns
+
+`number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1822  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1822)
+
+---
+
+### [#](#inrange) inRange
+
+▸ **inRange**(`mouseX`, `mouseY`, `useFinalPosition?`): `boolean`
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mouseX` | `number` |
+| `mouseY` | `number` |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-4) Returns
+
+`boolean`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1818  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1818)
+
+---
+
+### [#](#inxrange) inXRange
+
+▸ **inXRange**(`mouseX`, `useFinalPosition?`): `boolean`
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mouseX` | `number` |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-5) Returns
+
+`boolean`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1819  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1819)
+
+---
+
+### [#](#inyrange) inYRange
+
+▸ **inYRange**(`mouseY`, `useFinalPosition?`): `boolean`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mouseY` | `number` |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-6) Returns
+
+`boolean`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1820  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1820)

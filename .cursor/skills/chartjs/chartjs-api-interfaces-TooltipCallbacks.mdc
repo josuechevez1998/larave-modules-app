@@ -1,0 +1,343 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipCallbacks<TType, Model, Item> (/docs/latest/api/interfaces/TooltipCallbacks.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipCallbacks<TType, Model, Item>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipCallbacks.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-tooltipcallbacks-ttype-model-item) Interface: TooltipCallbacks<TType, Model, Item>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+| `Model` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`> |
+| `Item` | [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`> |
+
+## [#](#hierarchy) Hierarchy
+
+- [`TooltipDatasetCallbacks`](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html)<`TType`, `Model`, `Item`>
+
+  ↳ **`TooltipCallbacks`**
+
+## [#](#methods) Methods
+
+### [#](#afterbody) afterBody
+
+▸ **afterBody**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2704  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2704)
+
+---
+
+### [#](#afterfooter) afterFooter
+
+▸ **afterFooter**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-2) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2716  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2716)
+
+---
+
+### [#](#afterlabel) afterLabel
+
+▸ **afterLabel**(`this`, `tooltipItem`): `string` | `void` | `string`[]
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-3) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#overrides) Overrides
+
+[TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html).[afterLabel](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html#afterlabel)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2708  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2708)
+
+---
+
+### [#](#aftertitle) afterTitle
+
+▸ **afterTitle**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-4) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2701  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2701)
+
+---
+
+### [#](#beforebody) beforeBody
+
+▸ **beforeBody**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-5) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2703  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2703)
+
+---
+
+### [#](#beforefooter) beforeFooter
+
+▸ **beforeFooter**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-6) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2714  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2714)
+
+---
+
+### [#](#beforelabel) beforeLabel
+
+▸ **beforeLabel**(`this`, `tooltipItem`): `string` | `void` | `string`[]
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-7) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#overrides-2) Overrides
+
+[TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html).[beforeLabel](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html#beforelabel)
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2706  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2706)
+
+---
+
+### [#](#beforetitle) beforeTitle
+
+▸ **beforeTitle**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-8) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2699  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2699)
+
+---
+
+### [#](#footer) footer
+
+▸ **footer**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-9) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2715  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2715)
+
+---
+
+### [#](#label) label
+
+▸ **label**(`this`, `tooltipItem`): `string` | `void` | `string`[]
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-10) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#overrides-3) Overrides
+
+[TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html).[label](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html#label)
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2707  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2707)
+
+---
+
+### [#](#labelcolor) labelColor
+
+▸ **labelColor**(`this`, `tooltipItem`): `void` | [`TooltipLabelStyle`](/docs/latest/api/interfaces/TooltipLabelStyle.html)
+
+#### [#](#parameters-11) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-11) Returns
+
+`void` | [`TooltipLabelStyle`](/docs/latest/api/interfaces/TooltipLabelStyle.html)
+
+#### [#](#overrides-4) Overrides
+
+[TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html).[labelColor](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html#labelcolor)
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:2710  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2710)
+
+---
+
+### [#](#labelpointstyle) labelPointStyle
+
+▸ **labelPointStyle**(`this`, `tooltipItem`): `void` | { `pointStyle`: [`PointStyle`](/docs/latest/api/#pointstyle) ; `rotation`: `number` }
+
+#### [#](#parameters-12) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-12) Returns
+
+`void` | { `pointStyle`: [`PointStyle`](/docs/latest/api/#pointstyle) ; `rotation`: `number` }
+
+#### [#](#overrides-5) Overrides
+
+[TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html).[labelPointStyle](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html#labelpointstyle)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:2712  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2712)
+
+---
+
+### [#](#labeltextcolor) labelTextColor
+
+▸ **labelTextColor**(`this`, `tooltipItem`): `void` | [`Color`](/docs/latest/api/#color)
+
+#### [#](#parameters-13) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-13) Returns
+
+`void` | [`Color`](/docs/latest/api/#color)
+
+#### [#](#overrides-6) Overrides
+
+[TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html).[labelTextColor](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html#labeltextcolor)
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:2711  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2711)
+
+---
+
+### [#](#title) title
+
+▸ **title**(`this`, `tooltipItems`): `string` | `void` | `string`[]
+
+#### [#](#parameters-14) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItems` | `Item`[] |
+
+#### [#](#returns-14) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:2700  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2700)

@@ -1,0 +1,50 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Services\ListQueryBuilder;
+use {{ modelNamespace }}\{{ model }};
+use {{ serviceNamespace }}\{{ model }}Service;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use {{ resourceNamespace }}\{{ model }}Resource;
+
+class {{ model }}Controller
+{
+    public function __construct(private readonly {{ model }}Service $service) {}
+
+    public function index(Request $request): AnonymousResourceCollection
+    {
+        $paginator = ListQueryBuilder::for({{ model }}::query(), ['id', 'created_at', 'updated_at'])
+            ->apply($request)
+            ->paginate($request);
+
+        return {{ model }}Resource::collection($paginator);
+    }
+
+    public function store({{ model }}StoreRequest $request): {{ model }}Resource
+    {
+        $model = $this->service->create($request->validated());
+
+        return new {{ model }}Resource($model);
+    }
+
+    public function show({{ model }} $model): {{ model }}Resource
+    {
+        return new {{ model }}Resource($model);
+    }
+
+    public function update({{ model }}UpdateRequest $request, {{ model }} $model): {{ model }}Resource
+    {
+        $model = $this->service->update($model, $request->validated());
+
+        return new {{ model }}Resource($model);
+    }
+
+    public function destroy({{ model }} $model)
+    {
+        $this->service->delete($model);
+
+        return response()->json(['message' => __('Deleted.')]);
+    }
+}

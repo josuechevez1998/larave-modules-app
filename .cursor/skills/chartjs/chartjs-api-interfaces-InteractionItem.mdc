@@ -1,0 +1,41 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: InteractionItem (/docs/latest/api/interfaces/InteractionItem.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: InteractionItem
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/InteractionItem.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-interactionitem) Interface: InteractionItem
+
+## [#](#properties) Properties
+
+### [#](#datasetindex) datasetIndex
+
+• **datasetIndex**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:729  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L729)
+
+---
+
+### [#](#element) element
+
+• **element**: `default`<`AnyObject`, `AnyObject`>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:728  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L728)
+
+---
+
+### [#](#index) index
+
+• **index**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:730  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L730)

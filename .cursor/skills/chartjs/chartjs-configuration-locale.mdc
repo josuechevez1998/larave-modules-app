@@ -1,0 +1,35 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Locale (/docs/latest/configuration/locale.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Locale
+
+> Fuente: https://www.chartjs.org/docs/latest/configuration/locale.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#locale) Locale
+
+For applications where the numbers of ticks on scales must be formatted accordingly with a language sensitive number formatting, you can enable this kind of formatting by setting the `locale` option.
+
+The locale is a string that is a [Unicode BCP 47 locale identifier  (opens new window)](https://www.unicode.org/reports/tr35/tr35.html#BCP_47_Conformance).
+
+A Unicode BCP 47 locale identifier consists of
+
+1. a language code,
+2. (optionally) a script code,
+3. (optionally) a region (or country) code,
+4. (optionally) one or more variant codes, and
+5. (optionally) one or more extension sequences,
+
+with all present components separated by hyphens.
+
+By default, the chart is using the default locale of the platform which is running on.
+
+## [#](#configuration-options) Configuration Options
+
+Namespace: `options`
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `locale` | `string` | `undefined` | a string with a BCP 47 language tag, leveraging on [INTL NumberFormat  (opens new window)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat). |

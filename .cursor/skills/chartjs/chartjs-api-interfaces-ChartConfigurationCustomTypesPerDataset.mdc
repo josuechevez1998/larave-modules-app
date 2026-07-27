@@ -1,0 +1,49 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartConfigurationCustomTypesPerDataset<TType, TData, TLabel> (/docs/latest/api/interfaces/ChartConfigurationCustomTypesPerDataset.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartConfigurationCustomTypesPerDataset<TType, TData, TLabel>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartConfigurationCustomTypesPerDataset.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-chartconfigurationcustomtypesperdataset-ttype-tdata-tlabel) Interface: ChartConfigurationCustomTypesPerDataset<TType, TData, TLabel>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+| `TData` | [`DefaultDataPoint`](/docs/latest/api/#defaultdatapoint)<`TType`> |
+| `TLabel` | `unknown` |
+
+## [#](#properties) Properties
+
+### [#](#data) data
+
+• **data**: [`ChartDataCustomTypesPerDataset`](/docs/latest/api/interfaces/ChartDataCustomTypesPerDataset.html)<`TType`, `TData`, `TLabel`>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3882  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3882)
+
+---
+
+### [#](#options) options
+
+• `Optional` **options**: `Exclude`<`DeepPartial`<[`CoreChartOptions`](/docs/latest/api/interfaces/CoreChartOptions.html)<`TType`> & [`ElementChartOptions`](/docs/latest/api/#elementchartoptions)<`TType`> & [`PluginChartOptions`](/docs/latest/api/interfaces/PluginChartOptions.html)<`TType`> & [`DatasetChartOptions`](/docs/latest/api/#datasetchartoptions)<`TType`> & [`ScaleChartOptions`](/docs/latest/api/#scalechartoptions)<`TType`> & [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"chartOptions"`]>, `_DeepPartialArray`<`unknown`>>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3883  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3883)
+
+---
+
+### [#](#plugins) plugins
+
+• `Optional` **plugins**: [`Plugin`](/docs/latest/api/interfaces/Plugin.html)<`TType`, `AnyObject`>[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3884  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3884)

@@ -1,0 +1,1233 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: Tooltip (/docs/latest/api/interfaces/Tooltip.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: Tooltip
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/Tooltip.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-tooltip) Interface: Tooltip
+
+## [#](#hierarchy) Hierarchy
+
+- [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+  ↳ **`Tooltip`**
+
+## [#](#properties) Properties
+
+### [#](#defaults) defaults
+
+• `Optional` **defaults**: `Partial`<`AnyObject`>
+
+Default options used in the plugin
+
+#### [#](#inherited-from) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[defaults](/docs/latest/api/interfaces/Plugin.html#defaults)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1133  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1133)
+
+---
+
+### [#](#events) events
+
+• `Optional` **events**: keyof `HTMLElementEventMap`[]
+
+The events option defines the browser events that the plugin should listen.
+
+**`Default`**
+
+['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove']
+
+#### [#](#inherited-from-2) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[events](/docs/latest/api/interfaces/Plugin.html#events)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:833  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L833)
+
+---
+
+### [#](#id) id
+
+• **id**: `string`
+
+#### [#](#inherited-from-3) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[id](/docs/latest/api/interfaces/Plugin.html#id)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:827  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L827)
+
+---
+
+### [#](#positioners) positioners
+
+• `Readonly` **positioners**: [`TooltipPositionerMap`](/docs/latest/api/interfaces/TooltipPositionerMap.html)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2676  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2676)
+
+## [#](#methods) Methods
+
+### [#](#afterbuildticks) afterBuildTicks
+
+▸ `Optional` **afterBuildTicks**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after scale has build its ticks. This hook is called separately for each scale in the chart.
+
+#### [#](#parameters) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> | The scale. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#inherited-from-4) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterBuildTicks](/docs/latest/api/interfaces/Plugin.html#afterbuildticks)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:992  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L992)
+
+---
+
+### [#](#afterdatalimits) afterDataLimits
+
+▸ `Optional` **afterDataLimits**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after scale data limits are calculated. This hook is called separately for each scale in the chart.
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> | The scale. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#inherited-from-5) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDataLimits](/docs/latest/api/interfaces/Plugin.html#afterdatalimits)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:976  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L976)
+
+---
+
+### [#](#afterdatasetdraw) afterDatasetDraw
+
+▸ `Optional` **afterDatasetDraw**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `chart` datasets at the given `args.index` have been drawn
+(datasets are drawn in the reverse order). Note that this hook will not be called
+if the datasets drawing has been previously cancelled.
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.index` | `number` | The dataset index. |
+| `args.meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> | The dataset metadata. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#inherited-from-6) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDatasetDraw](/docs/latest/api/interfaces/Plugin.html#afterdatasetdraw)
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1074  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1074)
+
+---
+
+### [#](#afterdatasetupdate) afterDatasetUpdate
+
+▸ `Optional` **afterDatasetUpdate**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `chart` datasets at the given `args.index` has been updated. Note
+that this hook will not be called if the datasets update has been previously cancelled.
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `false` | - |
+| `args.index` | `number` | The dataset index. |
+| `args.meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> | The dataset metadata. |
+| `args.mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` | The update mode. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#inherited-from-7) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDatasetUpdate](/docs/latest/api/interfaces/Plugin.html#afterdatasetupdate)
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:951  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L951)
+
+---
+
+### [#](#afterdatasetsdraw) afterDatasetsDraw
+
+▸ `Optional` **afterDatasetsDraw**(`chart`, `args`, `options`, `cancelable`): `void`
+
+**`Desc`**
+
+Called after the `chart` datasets have been drawn. Note that this hook
+will not be called if the datasets drawing has been previously cancelled.
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+| `cancelable` | `false` | - |
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#inherited-from-8) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDatasetsDraw](/docs/latest/api/interfaces/Plugin.html#afterdatasetsdraw)
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1051  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1051)
+
+---
+
+### [#](#afterdatasetsupdate) afterDatasetsUpdate
+
+▸ `Optional` **afterDatasetsUpdate**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `chart` datasets have been updated. Note that this hook
+will not be called if the datasets update has been previously cancelled.
+
+**`Since`**
+
+version 2.1.5
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `args.mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` | The update mode. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-6) Returns
+
+`void`
+
+#### [#](#inherited-from-9) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDatasetsUpdate](/docs/latest/api/interfaces/Plugin.html#afterdatasetsupdate)
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:928  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L928)
+
+---
+
+### [#](#afterdestroy) afterDestroy
+
+▸ `Optional` **afterDestroy**(`chart`, `args`, `options`): `void`
+
+Called after the chart has been destroyed.
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-7) Returns
+
+`void`
+
+#### [#](#inherited-from-10) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDestroy](/docs/latest/api/interfaces/Plugin.html#afterdestroy)
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1120  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1120)
+
+---
+
+### [#](#afterdraw) afterDraw
+
+▸ `Optional` **afterDraw**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `chart` has been drawn. Note that this hook will not be called
+if the drawing has been previously cancelled.
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-8) Returns
+
+`void`
+
+#### [#](#inherited-from-11) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterDraw](/docs/latest/api/interfaces/Plugin.html#afterdraw)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1034  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1034)
+
+---
+
+### [#](#afterevent) afterEvent
+
+▸ `Optional` **afterEvent**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `event` has been consumed. Note that this hook
+will not be called if the `event` has been previously discarded.
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `false` | - |
+| `args.changed?` | `boolean` | Set to true if the plugin needs a render. Should only be changed to true, because this args object is passed through all plugins. |
+| `args.event` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) | The event object. |
+| `args.inChartArea` | `boolean` | The event position is inside chartArea |
+| `args.replay` | `boolean` | True if this event is replayed from `Chart.update` |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-9) Returns
+
+`void`
+
+#### [#](#inherited-from-12) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterEvent](/docs/latest/api/interfaces/Plugin.html#afterevent)
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1098  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1098)
+
+---
+
+### [#](#afterinit) afterInit
+
+▸ `Optional` **afterInit**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after `chart` has been initialized and before the first update.
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-10) Returns
+
+`void`
+
+#### [#](#inherited-from-13) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterInit](/docs/latest/api/interfaces/Plugin.html#afterinit)
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:872  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L872)
+
+---
+
+### [#](#afterlayout) afterLayout
+
+▸ `Optional` **afterLayout**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `chart` has been laid out. Note that this hook will not
+be called if the layout update has been previously cancelled.
+
+#### [#](#parameters-11) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-11) Returns
+
+`void`
+
+#### [#](#inherited-from-14) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterLayout](/docs/latest/api/interfaces/Plugin.html#afterlayout)
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:1000  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1000)
+
+---
+
+### [#](#afterrender) afterRender
+
+▸ `Optional` **afterRender**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the `chart` has been fully rendered (and animation completed). Note
+that this hook will not be called if the rendering has been previously cancelled.
+
+#### [#](#parameters-12) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-12) Returns
+
+`void`
+
+#### [#](#inherited-from-15) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterRender](/docs/latest/api/interfaces/Plugin.html#afterrender)
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:1017  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1017)
+
+---
+
+### [#](#aftertooltipdraw) afterTooltipDraw
+
+▸ `Optional` **afterTooltipDraw**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after drawing the `tooltip`. Note that this hook will not
+be called if the tooltip drawing has been previously cancelled.
+
+#### [#](#parameters-13) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.tooltip` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)> | The tooltip. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-13) Returns
+
+`void`
+
+#### [#](#inherited-from-16) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterTooltipDraw](/docs/latest/api/interfaces/Plugin.html#aftertooltipdraw)
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:2741  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2741)
+
+---
+
+### [#](#afterupdate) afterUpdate
+
+▸ `Optional` **afterUpdate**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after `chart` has been updated and before rendering. Note that this
+hook will not be called if the chart update has been previously cancelled.
+
+#### [#](#parameters-14) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` | The update mode |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-14) Returns
+
+`void`
+
+#### [#](#inherited-from-17) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[afterUpdate](/docs/latest/api/interfaces/Plugin.html#afterupdate)
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:891  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L891)
+
+---
+
+### [#](#beforebuildticks) beforeBuildTicks
+
+▸ `Optional` **beforeBuildTicks**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called before scale builds its ticks. This hook is called separately for each scale in the chart.
+
+#### [#](#parameters-15) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> | The scale. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-15) Returns
+
+`void`
+
+#### [#](#inherited-from-18) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeBuildTicks](/docs/latest/api/interfaces/Plugin.html#beforebuildticks)
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:984  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L984)
+
+---
+
+### [#](#beforedatalimits) beforeDataLimits
+
+▸ `Optional` **beforeDataLimits**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called before scale data limits are calculated. This hook is called separately for each scale in the chart.
+
+#### [#](#parameters-16) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> | The scale. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-16) Returns
+
+`void`
+
+#### [#](#inherited-from-19) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDataLimits](/docs/latest/api/interfaces/Plugin.html#beforedatalimits)
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:968  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L968)
+
+---
+
+### [#](#beforedatasetdraw) beforeDatasetDraw
+
+▸ `Optional` **beforeDatasetDraw**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before drawing the `chart` dataset at the given `args.index` (datasets
+are drawn in the reverse order). If any plugin returns `false`, the datasets drawing
+is cancelled until another `render` is triggered.
+
+#### [#](#parameters-17) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.index` | `number` | The dataset index. |
+| `args.meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> | The dataset metadata. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-17) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart datasets drawing.
+
+#### [#](#inherited-from-20) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDatasetDraw](/docs/latest/api/interfaces/Plugin.html#beforedatasetdraw)
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:1063  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1063)
+
+---
+
+### [#](#beforedatasetupdate) beforeDatasetUpdate
+
+▸ `Optional` **beforeDatasetUpdate**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before updating the `chart` dataset at the given `args.index`. If any plugin
+returns `false`, the datasets update is cancelled until another `update` is triggered.
+
+#### [#](#parameters-18) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `args.index` | `number` | The dataset index. |
+| `args.meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> | The dataset metadata. |
+| `args.mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` | The update mode. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-18) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart datasets drawing.
+
+#### [#](#inherited-from-21) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDatasetUpdate](/docs/latest/api/interfaces/Plugin.html#beforedatasetupdate)
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:940  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L940)
+
+---
+
+### [#](#beforedatasetsdraw) beforeDatasetsDraw
+
+▸ `Optional` **beforeDatasetsDraw**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before drawing the `chart` datasets. If any plugin returns `false`,
+the datasets drawing is cancelled until another `render` is triggered.
+
+#### [#](#parameters-19) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-19) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart datasets drawing.
+
+#### [#](#inherited-from-22) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDatasetsDraw](/docs/latest/api/interfaces/Plugin.html#beforedatasetsdraw)
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:1043  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1043)
+
+---
+
+### [#](#beforedatasetsupdate) beforeDatasetsUpdate
+
+▸ `Optional` **beforeDatasetsUpdate**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before updating the `chart` datasets. If any plugin returns `false`,
+the datasets update is cancelled until another `update` is triggered.
+
+**`Since`**
+
+version 2.1.5
+
+#### [#](#parameters-20) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` | The update mode. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-20) Returns
+
+`boolean` | `void`
+
+false to cancel the datasets update.
+
+#### [#](#inherited-from-23) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDatasetsUpdate](/docs/latest/api/interfaces/Plugin.html#beforedatasetsupdate)
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:918  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L918)
+
+---
+
+### [#](#beforedestroy) beforeDestroy
+
+▸ `Optional` **beforeDestroy**(`chart`, `args`, `options`): `void`
+
+Called before the chart is being destroyed.
+
+#### [#](#parameters-21) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-21) Returns
+
+`void`
+
+#### [#](#inherited-from-24) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDestroy](/docs/latest/api/interfaces/Plugin.html#beforedestroy)
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:1113  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1113)
+
+---
+
+### [#](#beforedraw) beforeDraw
+
+▸ `Optional` **beforeDraw**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before drawing `chart` at every animation frame. If any plugin returns `false`,
+the frame drawing is cancelled untilanother `render` is triggered.
+
+#### [#](#parameters-22) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-22) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart drawing.
+
+#### [#](#inherited-from-25) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeDraw](/docs/latest/api/interfaces/Plugin.html#beforedraw)
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:1026  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1026)
+
+---
+
+### [#](#beforeelementsupdate) beforeElementsUpdate
+
+▸ `Optional` **beforeElementsUpdate**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called during the update process, before any chart elements have been created.
+This can be used for data decimation by changing the data array inside a dataset.
+
+#### [#](#parameters-23) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-23) Returns
+
+`void`
+
+#### [#](#inherited-from-26) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeElementsUpdate](/docs/latest/api/interfaces/Plugin.html#beforeelementsupdate)
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:899  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L899)
+
+---
+
+### [#](#beforeevent) beforeEvent
+
+▸ `Optional` **beforeEvent**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before processing the specified `event`. If any plugin returns `false`,
+the event will be discarded.
+
+#### [#](#parameters-24) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `args.changed?` | `boolean` | Set to true if the plugin needs a render. Should only be changed to true, because this args object is passed through all plugins. |
+| `args.event` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) | The event object. |
+| `args.inChartArea` | `boolean` | The event position is inside chartArea |
+| `args.replay` | `boolean` | True if this event is replayed from `Chart.update` |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-24) Returns
+
+`boolean` | `void`
+
+#### [#](#inherited-from-27) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeEvent](/docs/latest/api/interfaces/Plugin.html#beforeevent)
+
+#### [#](#defined-in-28) Defined in
+
+[types/index.d.ts:1086  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1086)
+
+---
+
+### [#](#beforeinit) beforeInit
+
+▸ `Optional` **beforeInit**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called before initializing `chart`.
+
+#### [#](#parameters-25) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-25) Returns
+
+`void`
+
+#### [#](#inherited-from-28) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeInit](/docs/latest/api/interfaces/Plugin.html#beforeinit)
+
+#### [#](#defined-in-29) Defined in
+
+[types/index.d.ts:865  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L865)
+
+---
+
+### [#](#beforelayout) beforeLayout
+
+▸ `Optional` **beforeLayout**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before laying out `chart`. If any plugin returns `false`,
+the layout update is cancelled until another `update` is triggered.
+
+#### [#](#parameters-26) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-26) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart layout.
+
+#### [#](#inherited-from-29) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeLayout](/docs/latest/api/interfaces/Plugin.html#beforelayout)
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:960  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L960)
+
+---
+
+### [#](#beforerender) beforeRender
+
+▸ `Optional` **beforeRender**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before rendering `chart`. If any plugin returns `false`,
+the rendering is cancelled until another `render` is triggered.
+
+#### [#](#parameters-27) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-27) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart rendering.
+
+#### [#](#inherited-from-30) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeRender](/docs/latest/api/interfaces/Plugin.html#beforerender)
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:1009  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1009)
+
+---
+
+### [#](#beforetooltipdraw) beforeTooltipDraw
+
+▸ `Optional` **beforeTooltipDraw**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before drawing the `tooltip`. If any plugin returns `false`,
+the tooltip drawing is cancelled until another `render` is triggered.
+
+#### [#](#parameters-28) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `args.tooltip` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)> | The tooltip. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-28) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart tooltip drawing.
+
+#### [#](#inherited-from-31) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeTooltipDraw](/docs/latest/api/interfaces/Plugin.html#beforetooltipdraw)
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:2732  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2732)
+
+---
+
+### [#](#beforeupdate) beforeUpdate
+
+▸ `Optional` **beforeUpdate**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before updating `chart`. If any plugin returns `false`, the update
+is cancelled (and thus subsequent render(s)) until another `update` is triggered.
+
+#### [#](#parameters-29) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `args.mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` | The update mode |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-29) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart update.
+
+#### [#](#inherited-from-32) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[beforeUpdate](/docs/latest/api/interfaces/Plugin.html#beforeupdate)
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:882  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L882)
+
+---
+
+### [#](#install) install
+
+▸ `Optional` **install**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called when plugin is installed for this chart instance. This hook is also invoked for disabled plugins (options === false).
+
+**`Since`**
+
+3.0.0
+
+#### [#](#parameters-30) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-30) Returns
+
+`void`
+
+#### [#](#inherited-from-33) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[install](/docs/latest/api/interfaces/Plugin.html#install)
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:842  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L842)
+
+---
+
+### [#](#reset) reset
+
+▸ `Optional` **reset**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called during chart reset
+
+**`Since`**
+
+version 3.0.0
+
+#### [#](#parameters-31) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-31) Returns
+
+`void`
+
+#### [#](#inherited-from-34) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[reset](/docs/latest/api/interfaces/Plugin.html#reset)
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:907  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L907)
+
+---
+
+### [#](#resize) resize
+
+▸ `Optional` **resize**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after the chart as been resized.
+
+#### [#](#parameters-32) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.size` | `Object` | The new canvas display size (eq. canvas.style width & height). |
+| `args.size.height` | `number` | - |
+| `args.size.width` | `number` | - |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-32) Returns
+
+`void`
+
+#### [#](#inherited-from-35) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[resize](/docs/latest/api/interfaces/Plugin.html#resize)
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:1106  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1106)
+
+---
+
+### [#](#start) start
+
+▸ `Optional` **start**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called when a plugin is starting. This happens when chart is created or plugin is enabled.
+
+**`Since`**
+
+3.0.0
+
+#### [#](#parameters-33) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-33) Returns
+
+`void`
+
+#### [#](#inherited-from-36) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[start](/docs/latest/api/interfaces/Plugin.html#start)
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:850  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L850)
+
+---
+
+### [#](#stop) stop
+
+▸ `Optional` **stop**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called when a plugin stopping. This happens when chart is destroyed or plugin is disabled.
+
+**`Since`**
+
+3.0.0
+
+#### [#](#parameters-34) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-34) Returns
+
+`void`
+
+#### [#](#inherited-from-37) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[stop](/docs/latest/api/interfaces/Plugin.html#stop)
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:858  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L858)
+
+---
+
+### [#](#uninstall) uninstall
+
+▸ `Optional` **uninstall**(`chart`, `args`, `options`): `void`
+
+Called after chart is destroyed on all plugins that were installed for that chart. This hook is also invoked for disabled plugins (options === false).
+
+**`Since`**
+
+3.0.0
+
+#### [#](#parameters-35) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `EmptyObject` | The call arguments. |
+| `options` | `AnyObject` | The plugin options. |
+
+#### [#](#returns-35) Returns
+
+`void`
+
+#### [#](#inherited-from-38) Inherited from
+
+[Plugin](/docs/latest/api/interfaces/Plugin.html).[uninstall](/docs/latest/api/interfaces/Plugin.html#uninstall)
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:1128  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1128)

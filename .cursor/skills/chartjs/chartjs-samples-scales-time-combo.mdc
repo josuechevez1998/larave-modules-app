@@ -1,0 +1,164 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Time Scale - Combo Chart (/docs/latest/samples/scales/time-combo.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Time Scale - Combo Chart
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/scales/time-combo.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#time-scale-combo-chart) Time Scale - Combo Chart
+
+config
+setup
+actions
+
+const config = {
+type: 'line',
+data: data,
+options: {
+plugins: {
+title: {
+text: 'Chart.js Combo Time Scale',
+display: true
+}
+},
+scales: {
+x: {
+type: 'time',
+display: true,
+offset: true,
+ticks: {
+source: 'data'
+},
+time: {
+unit: 'day'
+},
+},
+},
+},
+};
+
+```
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    plugins: {
+      title: {
+        text: 'Chart.js Combo Time Scale',
+        display: true
+      }
+    },
+    scales: {
+      x: {
+        type: 'time',
+        display: true,
+        offset: true,
+        ticks: {
+          source: 'data'
+        },
+        time: {
+          unit: 'day'
+        },
+      },
+    },
+  },
+};
+```
+
+const DATA\_COUNT = 7;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: 0, max: 100};
+const labels = [];
+for (let i = 0; i < DATA\_COUNT; ++i) {
+labels.push(Utils.newDate(i));
+}
+const data = {
+labels: labels,
+datasets: [{
+type: 'bar',
+label: 'Dataset 1',
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.red, 0.5),
+borderColor: Utils.CHART\_COLORS.red,
+data: Utils.numbers(NUMBER\_CFG),
+}, {
+type: 'bar',
+label: 'Dataset 2',
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.blue, 0.5),
+borderColor: Utils.CHART\_COLORS.blue,
+data: Utils.numbers(NUMBER\_CFG),
+}, {
+type: 'line',
+label: 'Dataset 3',
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.green, 0.5),
+borderColor: Utils.CHART\_COLORS.green,
+fill: false,
+data: Utils.numbers(NUMBER\_CFG),
+}]
+};
+
+```
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+const labels = [];
+for (let i = 0; i < DATA_COUNT; ++i) {
+  labels.push(Utils.newDate(i));
+}
+const data = {
+  labels: labels,
+  datasets: [{
+    type: 'bar',
+    label: 'Dataset 1',
+    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+    borderColor: Utils.CHART_COLORS.red,
+    data: Utils.numbers(NUMBER_CFG),
+  }, {
+    type: 'bar',
+    label: 'Dataset 2',
+    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+    borderColor: Utils.CHART_COLORS.blue,
+    data: Utils.numbers(NUMBER_CFG),
+  }, {
+    type: 'line',
+    label: 'Dataset 3',
+    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.green, 0.5),
+    borderColor: Utils.CHART_COLORS.green,
+    fill: false,
+    data: Utils.numbers(NUMBER_CFG),
+  }]
+};
+```
+
+const actions = [
+{
+name: 'Randomize',
+handler(chart) {
+chart.data.datasets.forEach(dataset => {
+dataset.data = Utils.numbers({count: chart.data.labels.length, min: 0, max: 100});
+});
+chart.update();
+}
+},
+];
+
+```
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: 0, max: 100});
+      });
+      chart.update();
+    }
+  },
+];
+```
+
+## [#](#docs) Docs
+
+- [Bar](/docs/latest/charts/bar.html)
+- [Line](/docs/latest/charts/line.html)
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)
+- [Time Scale](/docs/latest/axes/cartesian/time.html)

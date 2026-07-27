@@ -1,0 +1,21 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: RadialParsedData (/docs/latest/api/interfaces/RadialParsedData.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: RadialParsedData
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/RadialParsedData.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-radialparseddata) Interface: RadialParsedData
+
+## [#](#properties) Properties
+
+### [#](#r) r
+
+• **r**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3703  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3703)

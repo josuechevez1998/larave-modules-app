@@ -1,0 +1,107 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartComponent (/docs/latest/api/interfaces/ChartComponent.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartComponent
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartComponent.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-chartcomponent) Interface: ChartComponent
+
+## [#](#hierarchy) Hierarchy
+
+- **`ChartComponent`**
+
+  ↳ [`DatasetControllerChartComponent`](/docs/latest/api/interfaces/DatasetControllerChartComponent.html)
+
+## [#](#properties) Properties
+
+### [#](#defaultroutes) defaultRoutes
+
+• `Optional` **defaultRoutes**: `Object`
+
+#### [#](#index-signature) Index signature
+
+▪ [property: `string`]: `string`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1565  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1565)
+
+---
+
+### [#](#defaults) defaults
+
+• `Optional` **defaults**: `AnyObject`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1564  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1564)
+
+---
+
+### [#](#id) id
+
+• **id**: `string`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1563  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1563)
+
+## [#](#methods) Methods
+
+### [#](#afterregister) afterRegister
+
+▸ `Optional` **afterRegister**(): `void`
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1568  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1568)
+
+---
+
+### [#](#afterunregister) afterUnregister
+
+▸ `Optional` **afterUnregister**(): `void`
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1570  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1570)
+
+---
+
+### [#](#beforeregister) beforeRegister
+
+▸ `Optional` **beforeRegister**(): `void`
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1567  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1567)
+
+---
+
+### [#](#beforeunregister) beforeUnregister
+
+▸ `Optional` **beforeUnregister**(): `void`
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1569  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1569)

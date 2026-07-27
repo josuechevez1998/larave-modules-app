@@ -1,0 +1,86 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: InteractionModeMap (/docs/latest/api/interfaces/InteractionModeMap.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: InteractionModeMap
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/InteractionModeMap.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-interactionmodemap) Interface: InteractionModeMap
+
+## [#](#properties) Properties
+
+### [#](#dataset) dataset
+
+• **dataset**: [`InteractionModeFunction`](/docs/latest/api/#interactionmodefunction)
+
+Returns items in the same dataset. If the options.intersect parameter is true, we only return items if we intersect something
+If the options.intersect is false, we find the nearest item and return the items in that dataset
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:751  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L751)
+
+---
+
+### [#](#index) index
+
+• **index**: [`InteractionModeFunction`](/docs/latest/api/#interactionmodefunction)
+
+Returns items at the same index. If the options.intersect parameter is true, we only return items if we intersect something
+If the options.intersect mode is false, we find the nearest item and return the items at the same index as that item
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:745  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L745)
+
+---
+
+### [#](#nearest) nearest
+
+• **nearest**: [`InteractionModeFunction`](/docs/latest/api/#interactionmodefunction)
+
+nearest mode returns the element closest to the point
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:760  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L760)
+
+---
+
+### [#](#point) point
+
+• **point**: [`InteractionModeFunction`](/docs/latest/api/#interactionmodefunction)
+
+Point mode returns all elements that hit test based on the event position
+of the event
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:756  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L756)
+
+---
+
+### [#](#x) x
+
+• **x**: [`InteractionModeFunction`](/docs/latest/api/#interactionmodefunction)
+
+x mode returns the elements that hit-test at the current x coordinate
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:764  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L764)
+
+---
+
+### [#](#y) y
+
+• **y**: [`InteractionModeFunction`](/docs/latest/api/#interactionmodefunction)
+
+y mode returns the elements that hit-test at the current y coordinate
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:768  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L768)

@@ -1,0 +1,400 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipModel<TType> (/docs/latest/api/interfaces/TooltipModel.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipModel<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipModel.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-tooltipmodel-ttype) Interface: TooltipModel<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#hierarchy) Hierarchy
+
+- `default`<`AnyObject`, [`TooltipOptions`](/docs/latest/api/interfaces/TooltipOptions.html)<`TType`>>
+
+  ↳ **`TooltipModel`**
+
+## [#](#properties) Properties
+
+### [#](#animations) $animations
+
+• **$animations**: `Record`<`string`, [`Animation`](/docs/latest/api/classes/Animation.html)>
+
+#### [#](#inherited-from) Inherited from
+
+Element.$animations
+
+#### [#](#defined-in) Defined in
+
+[core/core.element.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L15)
+
+---
+
+### [#](#active) active
+
+• **active**: `boolean` = `false`
+
+#### [#](#inherited-from-2) Inherited from
+
+Element.active
+
+#### [#](#defined-in-2) Defined in
+
+[core/core.element.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L13)
+
+---
+
+### [#](#afterbody) afterBody
+
+• **afterBody**: `string`[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2632  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2632)
+
+---
+
+### [#](#beforebody) beforeBody
+
+• **beforeBody**: `string`[]
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2630  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2630)
+
+---
+
+### [#](#body) body
+
+• **body**: { `after`: `string`[] ; `before`: `string`[] ; `lines`: `string`[] }[]
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2628  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2628)
+
+---
+
+### [#](#caretx) caretX
+
+• **caretX**: `number`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2619  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2619)
+
+---
+
+### [#](#carety) caretY
+
+• **caretY**: `number`
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2620  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2620)
+
+---
+
+### [#](#chart) chart
+
+• `Readonly` **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<`TType`, `DistributiveArray`<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"defaultDataPoint"`]>, `unknown`>
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2604  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2604)
+
+---
+
+### [#](#datapoints) dataPoints
+
+• **dataPoints**: [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>[]
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2607  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2607)
+
+---
+
+### [#](#footer) footer
+
+• **footer**: `string`[]
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2640  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2640)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:2617  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2617)
+
+---
+
+### [#](#labelcolors) labelColors
+
+• **labelColors**: [`TooltipLabelStyle`](/docs/latest/api/interfaces/TooltipLabelStyle.html)[]
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:2643  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2643)
+
+---
+
+### [#](#labelpointstyles) labelPointStyles
+
+• **labelPointStyles**: { `pointStyle`: [`PointStyle`](/docs/latest/api/#pointstyle) ; `rotation`: `number` }[]
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:2645  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2645)
+
+---
+
+### [#](#labeltextcolors) labelTextColors
+
+• **labelTextColors**: [`Color`](/docs/latest/api/#color)[]
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:2644  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2644)
+
+---
+
+### [#](#opacity) opacity
+
+• **opacity**: `number`
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:2648  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2648)
+
+---
+
+### [#](#options) options
+
+• **options**: [`TooltipOptions`](/docs/latest/api/interfaces/TooltipOptions.html)<`TType`>
+
+#### [#](#overrides) Overrides
+
+Element.options
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:2651  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2651)
+
+---
+
+### [#](#title) title
+
+• **title**: `string`[]
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:2636  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2636)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:2616  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2616)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#overrides-2) Overrides
+
+Element.x
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:2614  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2614)
+
+---
+
+### [#](#xalign) xAlign
+
+• **xAlign**: [`TooltipXAlignment`](/docs/latest/api/#tooltipxalignment)
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:2610  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2610)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#overrides-3) Overrides
+
+Element.y
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:2615  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2615)
+
+---
+
+### [#](#yalign) yAlign
+
+• **yAlign**: [`TooltipYAlignment`](/docs/latest/api/#tooltipyalignment)
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:2611  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2611)
+
+## [#](#methods) Methods
+
+### [#](#getactiveelements) getActiveElements
+
+▸ **getActiveElements**(): [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[]
+
+#### [#](#returns) Returns
+
+[`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[]
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:2653  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2653)
+
+---
+
+### [#](#getprops) getProps
+
+▸ **getProps**<`P`>(`props`, `final?`): `Pick`<`AnyObject`, `P`[`number`]>
+
+Gets the current or final value of each prop. Can return extra properties (whole object).
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string`[] |
+
+#### [#](#parameters) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `props` | `P` | properties to get |
+| `final?` | `boolean` | get the final value (animation target) |
+
+#### [#](#returns-2) Returns
+
+`Pick`<`AnyObject`, `P`[`number`]>
+
+#### [#](#inherited-from-3) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-24) Defined in
+
+[core/core.element.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L31)
+
+▸ **getProps**<`P`>(`props`, `final?`): `Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#type-parameters-3) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string` |
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `props` | `P`[] |
+| `final?` | `boolean` |
+
+#### [#](#returns-3) Returns
+
+`Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#inherited-from-4) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-25) Defined in
+
+[core/core.element.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L32)
+
+---
+
+### [#](#hasvalue) hasValue
+
+▸ **hasValue**(): `boolean`
+
+#### [#](#returns-4) Returns
+
+`boolean`
+
+#### [#](#inherited-from-5) Inherited from
+
+Element.hasValue
+
+#### [#](#defined-in-26) Defined in
+
+[core/core.element.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L22)
+
+---
+
+### [#](#setactiveelements) setActiveElements
+
+▸ **setActiveElements**(`active`, `eventPosition`): `void`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `active` | [`ActiveDataPoint`](/docs/latest/api/interfaces/ActiveDataPoint.html)[] |
+| `eventPosition` | [`Point`](/docs/latest/api/interfaces/Point.html) |
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:2654  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2654)
+
+---
+
+### [#](#tooltipposition) tooltipPosition
+
+▸ **tooltipPosition**(`useFinalPosition`): [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-6) Returns
+
+[`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#inherited-from-6) Inherited from
+
+Element.tooltipPosition
+
+#### [#](#defined-in-28) Defined in
+
+[core/core.element.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L17)

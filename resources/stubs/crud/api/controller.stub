@@ -1,0 +1,53 @@
+<?php
+
+namespace {{apiControllerNamespace}};
+
+use App\Services\ListQueryBuilder;
+use App\Services\{{modelName}}Service;
+use {{modelNamespace}}\{{modelName}};
+use {{requestNamespace}}\{{modelName}}Request;
+use {{resourceNamespace}}\{{modelName}}Resource;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use {{controllerNamespace}}\Controller;
+
+class {{modelName}}Controller extends Controller
+{
+    public function __construct(private readonly {{modelName}}Service $service) {}
+
+    public function index(Request $request)
+    {
+        ${{modelNamePluralLowerCase}} = ListQueryBuilder::for({{modelName}}::query(), ['id', 'created_at', 'updated_at'])
+            ->apply($request)
+            ->paginate($request);
+
+        return {{modelName}}Resource::collection(${{modelNamePluralLowerCase}});
+    }
+
+    public function store({{modelName}}Request $request): JsonResponse
+    {
+        ${{modelNameLowerCase}} = $this->service->create($request->validated());
+
+        return response()->json(new {{modelName}}Resource(${{modelNameLowerCase}}), 201);
+    }
+
+    public function show({{modelName}} ${{modelNameLowerCase}}): JsonResponse
+    {
+        return response()->json(new {{modelName}}Resource(${{modelNameLowerCase}}));
+    }
+
+    public function update({{modelName}}Request $request, {{modelName}} ${{modelNameLowerCase}}): JsonResponse
+    {
+        ${{modelNameLowerCase}} = $this->service->update(${{modelNameLowerCase}}, $request->validated());
+
+        return response()->json(new {{modelName}}Resource(${{modelNameLowerCase}}));
+    }
+
+    public function destroy({{modelName}} ${{modelNameLowerCase}}): Response
+    {
+        $this->service->delete(${{modelNameLowerCase}});
+
+        return response()->noContent();
+    }
+}

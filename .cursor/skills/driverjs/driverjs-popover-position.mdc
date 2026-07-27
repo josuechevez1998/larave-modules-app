@@ -1,0 +1,57 @@
+---
+alwaysApply: false
+description: Documentación local (driverjs): Popover Position - Driver.js (/docs/popover-position). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Popover Position - Driver.js
+
+> Fuente: https://driverjs.com/docs/popover-position
+> Exportado: 2026-07-10 23:31 UTC
+
+# Popover Position
+
+You can control the popover position using the `side` and `align` options. The `side` option controls which side of the element the popover is shown on (`top`, `right`, `bottom`, or `left`, defaulting to `bottom`). The `align` option controls how the popover is aligned along that side: `start` lines its leading edge up with the element, `center` centers it, and `end` lines up the trailing edges (defaults to `start`).
+
+> **Note:** Popover is intelligent enough to adjust itself to fit in the viewport. So, if you set `side` to `left` and `align` to `start`, but the popover doesn’t fit in the viewport, it will automatically adjust itself to fit in the viewport. Consider highlighting and scrolling the browser to the element below to see this in action.
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver();
+driverObj.highlight({
+  element: "#left-start",
+  popover: {
+    title: "Animated Tour Example",
+    description: "Here is the code example showing animated tour. Let's walk you through it.",
+    side: "left",
+    align: "start",
+  },
+});
+```
+
+Use the buttons below to show the popover.
+
+Left Start
+
+Left Center
+
+Left End
+
+Top Start
+
+Top Center
+
+Top End
+
+Right Start
+
+Right Center
+
+Right End
+
+Bottom Start
+
+Bottom Center
+
+Bottom End

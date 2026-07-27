@@ -1,0 +1,461 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: CoreScaleOptions (/docs/latest/api/interfaces/CoreScaleOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: CoreScaleOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/CoreScaleOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-corescaleoptions) Interface: CoreScaleOptions
+
+## [#](#hierarchy) Hierarchy
+
+- **`CoreScaleOptions`**
+
+  ↳ [`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html)
+
+## [#](#properties) Properties
+
+### [#](#aligntopixels) alignToPixels
+
+• **alignToPixels**: `boolean`
+
+Align pixel values to device pixels
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1179  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1179)
+
+---
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`Color`](/docs/latest/api/#color)
+
+Background color of the scale area.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1183  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1183)
+
+---
+
+### [#](#clip) clip
+
+• **clip**: `boolean`
+
+Clip the dataset drawing against the size of the scale instead of chart area.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1193  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1193)
+
+---
+
+### [#](#display) display
+
+• **display**: `boolean` | `"auto"`
+
+Controls the axis global visibility (visible when true, hidden when false). When display: 'auto', the axis is visible only if at least one associated dataset is visible.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1175  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1175)
+
+---
+
+### [#](#max) max
+
+• **max**: `unknown`
+
+User defined maximum value for the scale, overrides maximum value from data.
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1206  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1206)
+
+---
+
+### [#](#min) min
+
+• **min**: `unknown`
+
+User defined minimum value for the scale, overrides minimum value from data.
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1202  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1202)
+
+---
+
+### [#](#reverse) reverse
+
+• **reverse**: `boolean`
+
+Reverse the scale.
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1188  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1188)
+
+---
+
+### [#](#suggestedmax) suggestedMax
+
+• **suggestedMax**: `unknown`
+
+Adjustment used when calculating the minimum data value.
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1214  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1214)
+
+---
+
+### [#](#suggestedmin) suggestedMin
+
+• **suggestedMin**: `unknown`
+
+Adjustment used when calculating the maximum data value.
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1210  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1210)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number`
+
+The weight used to sort the axis. Higher weights are further away from the chart area.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1198  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1198)
+
+## [#](#methods) Methods
+
+### [#](#afterbuildticks) afterBuildTicks
+
+▸ **afterBuildTicks**(`axis`): `void`
+
+Callback that runs after ticks are created. Useful for filtering ticks.
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1242  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1242)
+
+---
+
+### [#](#aftercalculatelabelrotation) afterCalculateLabelRotation
+
+▸ **afterCalculateLabelRotation**(`axis`): `void`
+
+Callback that runs after tick rotation is determined.
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1258  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1258)
+
+---
+
+### [#](#afterdatalimits) afterDataLimits
+
+▸ **afterDataLimits**(`axis`): `void`
+
+Callback that runs after data limits are determined.
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1234  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1234)
+
+---
+
+### [#](#afterfit) afterFit
+
+▸ **afterFit**(`axis`): `void`
+
+Callback that runs after the scale fits to the canvas.
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1266  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1266)
+
+---
+
+### [#](#aftersetdimensions) afterSetDimensions
+
+▸ **afterSetDimensions**(`axis`): `void`
+
+Callback that runs after dimensions are set.
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:1226  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1226)
+
+---
+
+### [#](#afterticktolabelconversion) afterTickToLabelConversion
+
+▸ **afterTickToLabelConversion**(`axis`): `void`
+
+Callback that runs after ticks are converted into strings.
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-6) Returns
+
+`void`
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:1250  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1250)
+
+---
+
+### [#](#afterupdate) afterUpdate
+
+▸ **afterUpdate**(`axis`): `void`
+
+Callback that runs at the end of the update process.
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-7) Returns
+
+`void`
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:1270  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1270)
+
+---
+
+### [#](#beforebuildticks) beforeBuildTicks
+
+▸ **beforeBuildTicks**(`axis`): `void`
+
+Callback that runs before ticks are created.
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-8) Returns
+
+`void`
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:1238  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1238)
+
+---
+
+### [#](#beforecalculatelabelrotation) beforeCalculateLabelRotation
+
+▸ **beforeCalculateLabelRotation**(`axis`): `void`
+
+Callback that runs before tick rotation is determined.
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-9) Returns
+
+`void`
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:1254  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1254)
+
+---
+
+### [#](#beforedatalimits) beforeDataLimits
+
+▸ **beforeDataLimits**(`axis`): `void`
+
+Callback that runs before data limits are determined.
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-10) Returns
+
+`void`
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:1230  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1230)
+
+---
+
+### [#](#beforefit) beforeFit
+
+▸ **beforeFit**(`axis`): `void`
+
+Callback that runs before the scale fits to the canvas.
+
+#### [#](#parameters-11) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-11) Returns
+
+`void`
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:1262  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1262)
+
+---
+
+### [#](#beforesetdimensions) beforeSetDimensions
+
+▸ **beforeSetDimensions**(`axis`): `void`
+
+Callback that runs before dimensions are set.
+
+#### [#](#parameters-12) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-12) Returns
+
+`void`
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:1222  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1222)
+
+---
+
+### [#](#beforeticktolabelconversion) beforeTickToLabelConversion
+
+▸ **beforeTickToLabelConversion**(`axis`): `void`
+
+Callback that runs before ticks are converted into strings.
+
+#### [#](#parameters-13) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-13) Returns
+
+`void`
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:1246  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1246)
+
+---
+
+### [#](#beforeupdate) beforeUpdate
+
+▸ **beforeUpdate**(`axis`): `void`
+
+Callback called before the update process starts.
+
+#### [#](#parameters-14) Parameters
+
+| Name | Type |
+| --- | --- |
+| `axis` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-14) Returns
+
+`void`
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:1218  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1218)

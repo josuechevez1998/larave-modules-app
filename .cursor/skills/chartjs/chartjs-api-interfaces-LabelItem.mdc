@@ -1,0 +1,51 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LabelItem (/docs/latest/api/interfaces/LabelItem.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LabelItem
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LabelItem.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-labelitem) Interface: LabelItem
+
+## [#](#properties) Properties
+
+### [#](#font) font
+
+• **font**: [`CanvasFontSpec`](/docs/latest/api/interfaces/CanvasFontSpec.html)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1502  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1502)
+
+---
+
+### [#](#label) label
+
+• **label**: `string` | `string`[]
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1501  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1501)
+
+---
+
+### [#](#options) options
+
+• **options**: [`RenderTextOpts`](/docs/latest/api/interfaces/RenderTextOpts.html)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1504  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1504)
+
+---
+
+### [#](#textoffset) textOffset
+
+• **textOffset**: `number`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1503  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1503)

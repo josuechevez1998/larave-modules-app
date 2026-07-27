@@ -1,0 +1,95 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: PointPrefixedOptions (/docs/latest/api/interfaces/PointPrefixedOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: PointPrefixedOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/PointPrefixedOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-pointprefixedoptions) Interface: PointPrefixedOptions
+
+## [#](#properties) Properties
+
+### [#](#pointbackgroundcolor) pointBackgroundColor
+
+• **pointBackgroundColor**: [`Color`](/docs/latest/api/#color)
+
+The fill color for points.
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2050  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2050)
+
+---
+
+### [#](#pointbordercolor) pointBorderColor
+
+• **pointBorderColor**: [`Color`](/docs/latest/api/#color)
+
+The border color for points.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2054  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2054)
+
+---
+
+### [#](#pointborderwidth) pointBorderWidth
+
+• **pointBorderWidth**: `number`
+
+The width of the point border in pixels.
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2058  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2058)
+
+---
+
+### [#](#pointhitradius) pointHitRadius
+
+• **pointHitRadius**: `number`
+
+The pixel size of the non-displayed point that reacts to mouse events.
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2062  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2062)
+
+---
+
+### [#](#pointradius) pointRadius
+
+• **pointRadius**: `number`
+
+The radius of the point shape. If set to 0, the point is not rendered.
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2066  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2066)
+
+---
+
+### [#](#pointrotation) pointRotation
+
+• **pointRotation**: `number`
+
+The rotation of the point in degrees.
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2070  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2070)
+
+---
+
+### [#](#pointstyle) pointStyle
+
+• **pointStyle**: [`PointStyle`](/docs/latest/api/#pointstyle)
+
+Style of the point.
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2074  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2074)

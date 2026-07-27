@@ -1,0 +1,57 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BubbleDataPoint (/docs/latest/api/interfaces/BubbleDataPoint.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BubbleDataPoint
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BubbleDataPoint.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-bubbledatapoint) Interface: BubbleDataPoint
+
+## [#](#hierarchy) Hierarchy
+
+- [`Point`](/docs/latest/api/interfaces/Point.html)
+
+  ↳ **`BubbleDataPoint`**
+
+## [#](#properties) Properties
+
+### [#](#r) r
+
+• `Optional` **r**: `number`
+
+Bubble radius in pixels (not scaled).
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:180  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L180)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from) Inherited from
+
+[Point](/docs/latest/api/interfaces/Point.html).[x](/docs/latest/api/interfaces/Point.html#x)
+
+#### [#](#defined-in-2) Defined in
+
+[types/geometric.d.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-2) Inherited from
+
+[Point](/docs/latest/api/interfaces/Point.html).[y](/docs/latest/api/interfaces/Point.html#y)
+
+#### [#](#defined-in-3) Defined in
+
+[types/geometric.d.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L12)

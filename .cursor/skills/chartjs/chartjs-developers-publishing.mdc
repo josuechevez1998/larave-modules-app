@@ -1,0 +1,47 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Publishing an extension (/docs/latest/developers/publishing.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Publishing an extension
+
+> Fuente: https://www.chartjs.org/docs/latest/developers/publishing.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#publishing-an-extension) Publishing an extension
+
+If you are planning on publishing an extension for Chart.js, here are some pointers.
+
+## [#](#awesome) Awesome
+
+You'd probably want your extension to be listed in the [awesome  (opens new window)](https://github.com/chartjs/awesome).
+
+Note the minimum extension age requirement of 30 days.
+
+## [#](#esm) ESM
+
+If you are utilizing ESM, you probably still want to publish a UMD bundle of your extension. Because Chart.js v3 is tree shakeable, the interface is a bit different.
+UMD package's global `Chart` includes everything, while ESM package exports all the things separately.
+Fortunately, most of the exports can be mapped automatically by the bundlers.
+
+But not the helpers.
+
+In UMD, helpers are available through `Chart.helpers`. In ESM, they are imported from `chart.js/helpers`.
+
+For example `import {isNullOrUndef} from 'chart.js/helpers'` is available at `Chart.helpers.isNullOrUndef` for UMD.
+
+### [#](#rollup) Rollup
+
+`output.globals` can be used to convert the helpers.
+
+```
+module.exports = {
+  // ...
+  output: {
+    globals: {
+      'chart.js': 'Chart',
+      'chart.js/helpers': 'Chart.helpers'
+    }
+  }
+};
+```

@@ -1,0 +1,71 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BackdropOptions (/docs/latest/api/interfaces/BackdropOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BackdropOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BackdropOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-backdropoptions) Interface: BackdropOptions
+
+## [#](#properties) Properties
+
+### [#](#color) color
+
+• **color**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+Color of label backdrops.
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1497  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1497)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+Height of backdrop in pixels
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1492  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1492)
+
+---
+
+### [#](#left) left
+
+• **left**: `number`
+
+Left position of backdrop as pixel
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1477  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1477)
+
+---
+
+### [#](#top) top
+
+• **top**: `number`
+
+Top position of backdrop as pixel
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1482  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1482)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+Width of backdrop in pixels
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1487  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1487)

@@ -1,0 +1,82 @@
+---
+alwaysApply: true
+---
+
+# Rules — modular-app
+
+Reglas obligatorias para este repositorio. No aplicar patrones de Stancl tenancy / consule-manager salvo tarea explícita.
+
+## Stack actual
+
+* Laravel 12 + PHP 8.4
+* **Livewire 4** (+ Volt para auth Breeze)
+* **Flux** (UI Livewire) + **Flowbite JS-only** + **Lucide** (iconos) — **sin DaisyUI**
+* **Tailwind CSS v4** (`@tailwindcss/vite`, `@import "tailwindcss"`)
+* **nwidart/laravel-modules** v13 (`Modules/`)
+* **spatie/laravel-permission** v8 con **`teams => true`**
+* **Services-first** (`app/Services`)
+* i18n **ES (default) / EN (fallback)** + `users.locale` + middleware `SetLocale`
+* Catálogo **`statuses`** + `ListQueryBuilder` para listados
+* Diglactic **breadcrumbs** en layouts auth
+* **Scramble** (`/docs/api`, gate `viewApiDocs`) + **Log Viewer** (gate `viewLogViewer`)
+* Preferir **`./vendor/bin/sail`** (MySQL + Redis) cuando el stack Docker esté activo
+* Textos de UI orientados a **español** (locale app `es`)
+
+## Antes de tocar código
+
+* Revisar estructura real del repo (rutas, módulos, modelos).
+* No asumir nombres de rutas/layouts/componentes sin verificarlos.
+* No implementaciones parciales; no duplicar lógica; no cambios innecesarios.
+* Skills: `.cursor/skills/` (flux, flowbite, lucide, breadcrumbs, crud-generator, scramble, log-viewer, sail, laravel-modules-13, livewire-4x).
+
+## Arquitectura
+
+* Lógica de negocio en **Services**; Livewire = UI; API = FormRequest + Service + JSON.
+* Rutas de features en `Modules/{X}/routes/{web,api}.php` (subcarpetas OK si el RouteServiceProvider las carga).
+* Errores amigables i18n (web + API) — ver `errores-usuario.mdc`.
+* CRUD estándar: ibex `make:crud {table} livewire` con stubs en `resources/stubs/crud/`.
+
+## Módulos (nwidart v13)
+
+* Código de dominio de producto vive en `Modules/{Nombre}/` cuando sea feature aislable.
+* Autoload vía `wikimedia/composer-merge-plugin` (`Modules/*/composer.json`) — **no** añadir `"Modules\\": "Modules/"` al autoload raíz.
+* Estado enable/disable: `modules_statuses.json` (commitear).
+* Helpers: `module_path()`, vistas `alias::vista`.
+* Assets de módulos: exportar `paths` desde `Modules/*/vite.config.js` y recolectarlos en el Vite raíz con `vite-module-loader.js`.
+
+## Auth y permisos (Spatie + teams)
+
+* `config/permission.php` → `teams` **true**. Contexto: sesión `team_id` + middleware `TeamsPermission`.
+* Rol global **Super Admin**. `Gate::before` concede todo si `hasRole('Super Admin')`.
+* Permisos con columna **`module`**. Admin seed: `admin@saas.test`.
+* Gates: `viewApiDocs`, `viewLogViewer` → local o Super Admin.
+
+## Livewire 4 + UI
+
+* Flux en pantallas autenticadas; auth Breeze puede quedar hasta migrar.
+* Breadcrumbs en layout app; omitir en welcome/landing públicas.
+* Iconos solo Lucide (`x-icon`).
+* Preferir `wire:navigate` en navegación interna autenticada.
+
+## Blade (código custom)
+
+* Sin `@php`, Eloquent o reglas de negocio en Blade de negocio.
+* Preparar datos en Livewire / Services / Support.
+* **No refactorizar por esta regla:** vistas Breeze/auth generadas por el starter kit.
+
+## Laravel / DB
+
+* No modificar migraciones ya aplicadas; añadir migraciones nuevas.
+* No `migrate:fresh` / `wipe` fuera de local con confirmación.
+* Estados: FK `status_id` → `statuses`; no enums sueltos por tabla salvo casos puntuales.
+
+## Seguridad
+
+* No exponer rutas privadas; no debilitar Spatie/Sanctum/teams.
+* Secretos solo en `.env`.
+* CSP: en local Vite HMR puede requerir orígenes :5173 si hay middleware CSP.
+
+## Diseño
+
+* Seguir reglas de frontend del usuario cuando aplique a superficies nuevas.
+* No introducir DaisyUI ni temas Flowbite CSS.

@@ -1,0 +1,148 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Derived Axis Type (/docs/latest/samples/advanced/derived-axis-type.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Derived Axis Type
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/advanced/derived-axis-type.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#derived-axis-type) Derived Axis Type
+
+config
+setup
+
+const config = {
+type: 'line',
+data,
+options: {
+responsive: true,
+scales: {
+x: {
+display: true,
+},
+y: {
+display: true,
+type: 'log2',
+}
+}
+}
+};
+
+```
+const config = {
+  type: 'line',
+  data,
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: true,
+      },
+      y: {
+        display: true,
+        type: 'log2',
+      }
+    }
+  }
+};
+```
+
+const DATA\_COUNT = 12;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: 0, max: 1000};
+const labels = Utils.months({count: DATA\_COUNT});
+const data = {
+labels: labels,
+datasets: [
+{
+label: 'My First dataset',
+data: Utils.numbers(NUMBER\_CFG),
+borderColor: Utils.CHART\_COLORS.red,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.red, 0.5),
+fill: false,
+}
+],
+};
+
+```
+const DATA_COUNT = 12;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 1000};
+const labels = Utils.months({count: DATA_COUNT});
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'My First dataset',
+      data: Utils.numbers(NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+      fill: false,
+    }
+  ],
+};
+```
+
+## [#](#log2-axis-implementation) Log2 axis implementation
+
+```
+import {Scale, LinearScale} from 'chart.js';
+export default class Log2Axis extends Scale {
+  constructor(cfg) {
+    super(cfg);
+    this._startValue = undefined;
+    this._valueRange = 0;
+  }
+  parse(raw, index) {
+    const value = LinearScale.prototype.parse.apply(this, [raw, index]);
+    return isFinite(value) && value > 0 ? value : null;
+  }
+  determineDataLimits() {
+    const {min, max} = this.getMinMax(true);
+    this.min = isFinite(min) ? Math.max(0, min) : null;
+    this.max = isFinite(max) ? Math.max(0, max) : null;
+  }
+  buildTicks() {
+    const ticks = [];
+    let power = Math.floor(Math.log2(this.min || 1));
+    let maxPower = Math.ceil(Math.log2(this.max || 2));
+    while (power <= maxPower) {
+      ticks.push({value: Math.pow(2, power)});
+      power += 1;
+    }
+    this.min = ticks[0].value;
+    this.max = ticks[ticks.length - 1].value;
+    return ticks;
+  }
+  /**
+   * @protected
+   */
+  configure() {
+    const start = this.min;
+    super.configure();
+    this._startValue = Math.log2(start);
+    this._valueRange = Math.log2(this.max) - Math.log2(start);
+  }
+  getPixelForValue(value) {
+    if (value === undefined || value === 0) {
+      value = this.min;
+    }
+    return this.getPixelForDecimal(value === this.min ? 0
+      : (Math.log2(value) - this._startValue) / this._valueRange);
+  }
+  getValueForPixel(pixel) {
+    const decimal = this.getDecimalForPixel(pixel);
+    return Math.pow(2, this._startValue + decimal * this._valueRange);
+  }
+}
+Log2Axis.id = 'log2';
+Log2Axis.defaults = {};
+// The derived axis is registered like this:
+// Chart.register(Log2Axis);
+```
+
+## [#](#docs) Docs
+
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)
+- [Line](/docs/latest/charts/line.html)
+- [New Axes](/docs/latest/developers/axes.html)

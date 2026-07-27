@@ -1,0 +1,208 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TickOptions (/docs/latest/api/interfaces/TickOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TickOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TickOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-tickoptions) Interface: TickOptions
+
+## [#](#properties) Properties
+
+### [#](#backdropcolor) backdropColor
+
+• **backdropColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+Color of label backdrops.
+
+**`Default`**
+
+'rgba(255, 255, 255, 0.75)'
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3075  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3075)
+
+---
+
+### [#](#backdroppadding) backdropPadding
+
+• **backdropPadding**: `number` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+Padding of tick backdrop.
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3080  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3080)
+
+---
+
+### [#](#callback) callback
+
+• **callback**: (`this`: [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>, `tickValue`: `string` | `number`, `index`: `number`, `ticks`: [`Tick`](/docs/latest/api/interfaces/Tick.html)[]) => `string` | `number` | `string`[] | `number`[]
+
+#### [#](#type-declaration) Type declaration
+
+▸ (`this`, `tickValue`, `index`, `ticks`): `string` | `number` | `string`[] | `number`[]
+
+Returns the string representation of the tick value as it should be displayed on the chart. See callback.
+
+##### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+| `tickValue` | `string` | `number` |
+| `index` | `number` |
+| `ticks` | [`Tick`](/docs/latest/api/interfaces/Tick.html)[] |
+
+##### [#](#returns) Returns
+
+`string` | `number` | `string`[] | `number`[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3085  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3085)
+
+---
+
+### [#](#color) color
+
+• **color**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+Color of tick
+
+**`See`**
+
+Defaults.color
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3095  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3095)
+
+---
+
+### [#](#display) display
+
+• **display**: `boolean`
+
+If true, show tick labels.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:3090  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3090)
+
+---
+
+### [#](#font) font
+
+• **font**: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+see Fonts
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:3099  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3099)
+
+---
+
+### [#](#major) major
+
+• **major**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `enabled` | `boolean` | If true, major ticks are generated. A major tick will affect autoskipping and major will be defined on ticks in the scriptable options context. **`Default`** false |
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:3125  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3125)
+
+---
+
+### [#](#padding) padding
+
+• **padding**: `number`
+
+Sets the offset of the tick labels from the axis
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:3103  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3103)
+
+---
+
+### [#](#showlabelbackdrop) showLabelBackdrop
+
+• **showLabelBackdrop**: [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+If true, draw a background behind the tick labels.
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:3108  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3108)
+
+---
+
+### [#](#textstrokecolor) textStrokeColor
+
+• **textStrokeColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+The color of the stroke around the text.
+
+**`Default`**
+
+undefined
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:3113  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3113)
+
+---
+
+### [#](#textstrokewidth) textStrokeWidth
+
+• **textStrokeWidth**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+Stroke width around the text.
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:3118  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3118)
+
+---
+
+### [#](#z) z
+
+• **z**: `number`
+
+z-index of tick layer. Useful when ticks are drawn on chart area. Values <= 0 are drawn under datasets, > 0 on top.
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:3123  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3123)

@@ -1,0 +1,71 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartArea (/docs/latest/api/interfaces/ChartArea.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartArea
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartArea.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-chartarea) Interface: ChartArea
+
+## [#](#properties) Properties
+
+### [#](#bottom) bottom
+
+• **bottom**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/geometric.d.ts:5  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L5)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+#### [#](#defined-in-2) Defined in
+
+[types/geometric.d.ts:7  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L7)
+
+---
+
+### [#](#left) left
+
+• **left**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/geometric.d.ts:3  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L3)
+
+---
+
+### [#](#right) right
+
+• **right**: `number`
+
+#### [#](#defined-in-4) Defined in
+
+[types/geometric.d.ts:4  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L4)
+
+---
+
+### [#](#top) top
+
+• **top**: `number`
+
+#### [#](#defined-in-5) Defined in
+
+[types/geometric.d.ts:2  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L2)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+#### [#](#defined-in-6) Defined in
+
+[types/geometric.d.ts:6  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L6)

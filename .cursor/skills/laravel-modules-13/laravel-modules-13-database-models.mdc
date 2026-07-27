@@ -1,0 +1,601 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Models (/docs/13/database/models). Referencia nwidart/laravel-modules v13.
+---
+
+# Models
+
+> Fuente: https://laravelmodules.com/docs/13/database/models
+> Exportado: 2026-07-23 19:55 UTC
+
+- [Generating Models](#generating-models)
+- [Generating a Model with Related Files](#generating-a-model-with-related-files)
+- [Filling Attributes](#filling-attributes)
+- [Relationships](#relationships)
+- [Scopes](#scopes)
+- [Generating a Query Scope Class](#generating-a-query-scope-class)
+- [Casts and Accessors](#casts-and-accessors)
+- [Factories](#factories)
+- [Policies](#policies)
+- [Observers](#observers)
+- [Showing Model Information](#showing-model-information)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Models
+
+---
+
+- [Generating Models](#generating-models)
+- [Generating a Model with Related Files](#generating-a-model-with-related-files)
+- [Filling Attributes](#filling-attributes)
+- [Relationships](#relationships)
+- [Scopes](#scopes)
+- [Generating a Query Scope Class](#generating-a-query-scope-class)
+- [Casts and Accessors](#casts-and-accessors)
+- [Factories](#factories)
+- [Policies](#policies)
+- [Observers](#observers)
+- [Showing Model Information](#showing-model-information)
+
+Module models live in `Modules/{ModuleName}/app/Models/` and are namespaced as `Modules\{ModuleName}\Models`.
+
+## [#](#generating-models)Generating Models
+
+```
+php artisan module:make-model Post Blog
+
+php artisan module:make-model Post Blog
+```
+
+This creates `Modules/Blog/app/Models/Post.php`:
+
+```
+<?php
+
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Post extends Model
+
+{
+
+use HasFactory;
+
+protected $guarded = [];
+
+}
+
+<?php
+
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Post extends Model
+{
+    use HasFactory;
+
+    protected $guarded = [];
+}
+```
+
+## [#](#generating-a-model-with-related-files)Generating a Model with Related Files
+
+Generate a model alongside a migration, factory, and seeder in one command:
+
+```
+php artisan module:make-model Post Blog --migration --factory --seed
+
+php artisan module:make-model Post Blog --migration --factory --seed
+```
+
+Or generate everything at once:
+
+```
+php artisan module:make-model Post Blog --all
+
+php artisan module:make-model Post Blog --all
+```
+
+The `--all` flag generates: migration, factory, seeder, controller, request, resource, and policy.
+
+## [#](#filling-attributes)Filling Attributes
+
+Define `$fillable` or `$guarded` as usual:
+
+```
+<?php
+
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Post extends Model
+
+{
+
+use HasFactory, SoftDeletes;
+
+protected $fillable = [
+
+'user_id',
+
+'category_id',
+
+'title',
+
+'slug',
+
+'excerpt',
+
+'body',
+
+'status',
+
+'published_at',
+
+];
+
+protected $casts = [
+
+'published_at' => 'datetime',
+
+];
+
+}
+
+<?php
+
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Post extends Model
+{
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'user_id',
+        'category_id',
+        'title',
+        'slug',
+        'excerpt',
+        'body',
+        'status',
+        'published_at',
+    ];
+
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+}
+```
+
+You can also pass fillable attributes when generating the model:
+
+```
+php artisan module:make-model Post Blog --fillable="title,slug,body,status"
+
+php artisan module:make-model Post Blog --fillable="title,slug,body,status"
+```
+
+## [#](#relationships)Relationships
+
+Define relationships exactly as you would in a standard Laravel model. Models from different modules can have relationships with one another by using the fully-qualified class name:
+
+```
+<?php
+
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+use Modules\Blog\Models\Category;
+
+use Modules\Blog\Models\Comment;
+
+use Modules\Comments\Models\Comment;
+
+use App\Models\User;
+
+class Post extends Model
+
+{
+
+// Relationship to a model in the main app
+
+public function author(): BelongsTo
+
+{
+
+return $this->belongsTo(User::class, 'user_id');
+
+}
+
+// Relationship to another model in the same module
+
+public function category(): BelongsTo
+
+{
+
+return $this->belongsTo(Category::class);
+
+}
+
+// Relationship to a model in a different module
+
+public function comments(): HasMany
+
+{
+
+return $this->hasMany(Comment::class);
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Blog\Models\Category;
+use Modules\Blog\Models\Comment;
+use Modules\Comments\Models\Comment;
+use App\Models\User;
+
+class Post extends Model
+{
+    // Relationship to a model in the main app
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    // Relationship to another model in the same module
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Relationship to a model in a different module
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+}
+```
+
+## [#](#scopes)Scopes
+
+Define query scopes to encapsulate common query logic:
+
+```
+use Illuminate\Database\Eloquent\Builder;
+
+public function scopePublished(Builder $query): Builder
+
+{
+
+return $query->where('status', 'published')
+
+->whereNotNull('published_at')
+
+->where('published_at', '<=', now());
+
+}
+
+public function scopeDraft(Builder $query): Builder
+
+{
+
+return $query->where('status', 'draft');
+
+}
+
+use Illuminate\Database\Eloquent\Builder;
+
+public function scopePublished(Builder $query): Builder
+{
+    return $query->where('status', 'published')
+        ->whereNotNull('published_at')
+        ->where('published_at', '<=', now());
+}
+
+public function scopeDraft(Builder $query): Builder
+{
+    return $query->where('status', 'draft');
+}
+```
+
+Use them in controllers:
+
+```
+$posts = Post::published()->latest('published_at')->paginate(20);
+
+$posts = Post::published()->latest('published_at')->paginate(20);
+```
+
+## [#](#generating-a-query-scope-class)Generating a Query Scope Class
+
+For reusable query scopes, generate a dedicated scope class:
+
+```
+php artisan module:make-scope PublishedScope Blog
+
+php artisan module:make-scope PublishedScope Blog
+```
+
+## [#](#casts-and-accessors)Casts and Accessors
+
+```
+protected $casts = [
+
+'published_at' => 'datetime',
+
+'metadata'     => 'array',
+
+];
+
+// Accessor
+
+public function getExcerptAttribute(): string
+
+{
+
+return $this->excerpt ?? Str::limit(strip_tags($this->body), 150);
+
+}
+
+protected $casts = [
+    'published_at' => 'datetime',
+    'metadata'     => 'array',
+];
+
+// Accessor
+public function getExcerptAttribute(): string
+{
+    return $this->excerpt ?? Str::limit(strip_tags($this->body), 150);
+}
+```
+
+Or using PHP 8 attribute syntax with Laravel 9+:
+
+```
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
+protected function excerpt(): Attribute
+
+{
+
+return Attribute::make(
+
+get: fn () => $this->attributes['excerpt'] ?? Str::limit(strip_tags($this->body), 150),
+
+);
+
+}
+
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
+protected function excerpt(): Attribute
+{
+    return Attribute::make(
+        get: fn () => $this->attributes['excerpt'] ?? Str::limit(strip_tags($this->body), 150),
+    );
+}
+```
+
+## [#](#factories)Factories
+
+When a model is generated with `--factory`, the factory class is created in `database/factories/`:
+
+```
+<?php
+
+namespace Modules\Blog\Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+use Modules\Blog\Models\Post;
+
+class PostFactory extends Factory
+
+{
+
+protected $model = Post::class;
+
+public function definition(): array
+
+{
+
+return [
+
+'title'        => fake()->sentence(),
+
+'slug'         => fake()->slug(),
+
+'excerpt'      => fake()->paragraph(),
+
+'body'         => fake()->paragraphs(5, true),
+
+'status'       => 'published',
+
+'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
+
+];
+
+}
+
+public function draft(): static
+
+{
+
+return $this->state([
+
+'status'       => 'draft',
+
+'published_at' => null,
+
+]);
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Blog\Models\Post;
+
+class PostFactory extends Factory
+{
+    protected $model = Post::class;
+
+    public function definition(): array
+    {
+        return [
+            'title'        => fake()->sentence(),
+            'slug'         => fake()->slug(),
+            'excerpt'      => fake()->paragraph(),
+            'body'         => fake()->paragraphs(5, true),
+            'status'       => 'published',
+            'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
+        ];
+    }
+
+    public function draft(): static
+    {
+        return $this->state([
+            'status'       => 'draft',
+            'published_at' => null,
+        ]);
+    }
+}
+```
+
+The `HasFactory` trait on the model automatically resolves the factory from the module's namespace. Use it in tests:
+
+```
+Post::factory()->create();
+
+Post::factory()->draft()->count(5)->create();
+
+Post::factory()->create();
+Post::factory()->draft()->count(5)->create();
+```
+
+## [#](#policies)Policies
+
+Generate an authorization policy for a model:
+
+```
+php artisan module:make-policy PostPolicy Blog
+
+php artisan module:make-policy PostPolicy Blog
+```
+
+Register the policy in the module's service provider or in `App\Providers\AuthServiceProvider`:
+
+```
+// In AuthServiceProvider
+
+use Modules\Blog\Models\Post;
+
+use Modules\Blog\Policies\PostPolicy;
+
+protected $policies = [
+
+Post::class => PostPolicy::class,
+
+];
+
+// In AuthServiceProvider
+use Modules\Blog\Models\Post;
+use Modules\Blog\Policies\PostPolicy;
+
+protected $policies = [
+    Post::class => PostPolicy::class,
+];
+```
+
+## [#](#observers)Observers
+
+Generate a model observer:
+
+```
+php artisan module:make-observer PostObserver Blog
+
+php artisan module:make-observer PostObserver Blog
+```
+
+Register it in the module service provider's `boot` method:
+
+```
+use Modules\Blog\Models\Post;
+
+use Modules\Blog\Observers\PostObserver;
+
+public function boot(): void
+
+{
+
+Post::observe(PostObserver::class);
+
+}
+
+use Modules\Blog\Models\Post;
+use Modules\Blog\Observers\PostObserver;
+
+public function boot(): void
+{
+    Post::observe(PostObserver::class);
+}
+```
+
+## [#](#showing-model-information)Showing Model Information
+
+Inspect a module model's attributes, relationships, and more with:
+
+```
+php artisan module:show-model Blog
+
+php artisan module:show-model Blog
+```
+
+---
+
+[Previous page: 
+←
+Migrations](/docs/13/database/migrations)
+[Next page: 
+Seeders and Factories
+ →](/docs/13/database/seeders-and-factories)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/database/models.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/database/models&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

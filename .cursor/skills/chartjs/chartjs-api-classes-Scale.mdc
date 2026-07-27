@@ -1,0 +1,1355 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Class: Scale<O> (/docs/latest/api/classes/Scale.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Class: Scale<O>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/classes/Scale.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#class-scale-o) Class: Scale<O>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html) = [`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html) |
+
+## [#](#hierarchy) Hierarchy
+
+- `default`<`unknown`, `O`>
+- [`LayoutItem`](/docs/latest/api/interfaces/LayoutItem.html)
+
+  ↳ **`Scale`**
+
+  ↳↳ [`TimeScale`](/docs/latest/api/interfaces/TimeScale.html)
+
+  ↳↳ [`RadialLinearScale`](/docs/latest/api/interfaces/RadialLinearScale.html)
+
+## [#](#constructors) Constructors
+
+### [#](#constructor) constructor
+
+• **new Scale**<`O`>(`cfg`)
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html) = [`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html) |
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `cfg` | `Object` |
+| `cfg.chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+| `cfg.ctx` | `CanvasRenderingContext2D` |
+| `cfg.id` | `string` |
+| `cfg.type` | `string` |
+
+#### [#](#inherited-from) Inherited from
+
+Element<unknown, O>.constructor
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1386  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1386)
+
+## [#](#properties) Properties
+
+### [#](#animations) $animations
+
+• **$animations**: `Record`<`never`, [`Animation`](/docs/latest/api/classes/Animation.html)>
+
+#### [#](#inherited-from-2) Inherited from
+
+Element.$animations
+
+#### [#](#defined-in-2) Defined in
+
+[core/core.element.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L15)
+
+---
+
+### [#](#active) active
+
+• **active**: `boolean` = `false`
+
+#### [#](#inherited-from-3) Inherited from
+
+Element.active
+
+#### [#](#defined-in-3) Defined in
+
+[core/core.element.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L13)
+
+---
+
+### [#](#axis) axis
+
+• **axis**: `string`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1287  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1287)
+
+---
+
+### [#](#bottom) bottom
+
+• **bottom**: `number`
+
+Bottom edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-4) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[bottom](/docs/latest/api/interfaces/LayoutItem.html#bottom)
+
+#### [#](#defined-in-5) Defined in
+
+[types/layout.d.ts:41  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L41)
+
+---
+
+### [#](#chart) chart
+
+• `Readonly` **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1277  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1277)
+
+---
+
+### [#](#ctx) ctx
+
+• `Readonly` **ctx**: `CanvasRenderingContext2D`
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1276  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1276)
+
+---
+
+### [#](#fullsize) fullSize
+
+• **fullSize**: `boolean`
+
+if true, and the item is horizontal, then push vertical boxes down
+
+#### [#](#inherited-from-5) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[fullSize](/docs/latest/api/interfaces/LayoutItem.html#fullsize)
+
+#### [#](#defined-in-8) Defined in
+
+[types/layout.d.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L17)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+Height of item. Must be valid after update()
+
+#### [#](#inherited-from-6) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[height](/docs/latest/api/interfaces/LayoutItem.html#height)
+
+#### [#](#defined-in-9) Defined in
+
+[types/layout.d.ts:25  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L25)
+
+---
+
+### [#](#id) id
+
+• `Readonly` **id**: `string`
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1274  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1274)
+
+---
+
+### [#](#labelrotation) labelRotation
+
+• **labelRotation**: `number`
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1288  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1288)
+
+---
+
+### [#](#left) left
+
+• **left**: `number`
+
+Left edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-7) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[left](/docs/latest/api/interfaces/LayoutItem.html#left)
+
+#### [#](#defined-in-12) Defined in
+
+[types/layout.d.ts:29  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L29)
+
+---
+
+### [#](#max) max
+
+• **max**: `number`
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1290  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1290)
+
+---
+
+### [#](#maxheight) maxHeight
+
+• **maxHeight**: `number`
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1280  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1280)
+
+---
+
+### [#](#maxwidth) maxWidth
+
+• **maxWidth**: `number`
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:1279  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1279)
+
+---
+
+### [#](#min) min
+
+• **min**: `number`
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:1289  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1289)
+
+---
+
+### [#](#options) options
+
+• **options**: `O`
+
+#### [#](#inherited-from-8) Inherited from
+
+Element.options
+
+#### [#](#defined-in-17) Defined in
+
+[core/core.element.ts:14  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L14)
+
+---
+
+### [#](#paddingbottom) paddingBottom
+
+• **paddingBottom**: `number`
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:1283  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1283)
+
+---
+
+### [#](#paddingleft) paddingLeft
+
+• **paddingLeft**: `number`
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:1284  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1284)
+
+---
+
+### [#](#paddingright) paddingRight
+
+• **paddingRight**: `number`
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:1285  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1285)
+
+---
+
+### [#](#paddingtop) paddingTop
+
+• **paddingTop**: `number`
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:1282  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1282)
+
+---
+
+### [#](#position) position
+
+• **position**: [`LayoutPosition`](/docs/latest/api/#layoutposition)
+
+The position of the item in the chart layout. Possible values are
+
+#### [#](#inherited-from-9) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[position](/docs/latest/api/interfaces/LayoutItem.html#position)
+
+#### [#](#defined-in-22) Defined in
+
+[types/layout.d.ts:9  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L9)
+
+---
+
+### [#](#right) right
+
+• **right**: `number`
+
+Right edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-10) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[right](/docs/latest/api/interfaces/LayoutItem.html#right)
+
+#### [#](#defined-in-23) Defined in
+
+[types/layout.d.ts:37  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L37)
+
+---
+
+### [#](#ticks) ticks
+
+• **ticks**: [`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:1291  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1291)
+
+---
+
+### [#](#top) top
+
+• **top**: `number`
+
+Top edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-11) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[top](/docs/latest/api/interfaces/LayoutItem.html#top)
+
+#### [#](#defined-in-25) Defined in
+
+[types/layout.d.ts:33  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L33)
+
+---
+
+### [#](#type) type
+
+• `Readonly` **type**: `string`
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:1275  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1275)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number`
+
+The weight used to sort the item. Higher weights are further away from the chart area
+
+#### [#](#inherited-from-12) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[weight](/docs/latest/api/interfaces/LayoutItem.html#weight)
+
+#### [#](#defined-in-27) Defined in
+
+[types/layout.d.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L13)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+Width of item. Must be valid after update()
+
+#### [#](#inherited-from-13) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[width](/docs/latest/api/interfaces/LayoutItem.html#width)
+
+#### [#](#defined-in-28) Defined in
+
+[types/layout.d.ts:21  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L21)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from-14) Inherited from
+
+Element.x
+
+#### [#](#defined-in-29) Defined in
+
+[core/core.element.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-15) Inherited from
+
+Element.y
+
+#### [#](#defined-in-30) Defined in
+
+[core/core.element.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L12)
+
+## [#](#methods) Methods
+
+### [#](#afterbuildticks) afterBuildTicks
+
+▸ **afterBuildTicks**(): `void`
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:1372  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1372)
+
+---
+
+### [#](#aftercalculatelabelrotation) afterCalculateLabelRotation
+
+▸ **afterCalculateLabelRotation**(): `void`
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:1378  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1378)
+
+---
+
+### [#](#afterdatalimits) afterDataLimits
+
+▸ **afterDataLimits**(): `void`
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:1369  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1369)
+
+---
+
+### [#](#afterfit) afterFit
+
+▸ **afterFit**(): `void`
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:1381  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1381)
+
+---
+
+### [#](#aftersetdimensions) afterSetDimensions
+
+▸ **afterSetDimensions**(): `void`
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:1366  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1366)
+
+---
+
+### [#](#afterticktolabelconversion) afterTickToLabelConversion
+
+▸ **afterTickToLabelConversion**(): `void`
+
+#### [#](#returns-6) Returns
+
+`void`
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:1375  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1375)
+
+---
+
+### [#](#afterupdate) afterUpdate
+
+▸ **afterUpdate**(): `void`
+
+#### [#](#returns-7) Returns
+
+`void`
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:1363  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1363)
+
+---
+
+### [#](#beforebuildticks) beforeBuildTicks
+
+▸ **beforeBuildTicks**(): `void`
+
+#### [#](#returns-8) Returns
+
+`void`
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:1370  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1370)
+
+---
+
+### [#](#beforecalculatelabelrotation) beforeCalculateLabelRotation
+
+▸ **beforeCalculateLabelRotation**(): `void`
+
+#### [#](#returns-9) Returns
+
+`void`
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:1376  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1376)
+
+---
+
+### [#](#beforedatalimits) beforeDataLimits
+
+▸ **beforeDataLimits**(): `void`
+
+#### [#](#returns-10) Returns
+
+`void`
+
+#### [#](#defined-in-40) Defined in
+
+[types/index.d.ts:1367  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1367)
+
+---
+
+### [#](#beforefit) beforeFit
+
+▸ **beforeFit**(): `void`
+
+#### [#](#returns-11) Returns
+
+`void`
+
+#### [#](#defined-in-41) Defined in
+
+[types/index.d.ts:1379  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1379)
+
+---
+
+### [#](#beforelayout) beforeLayout
+
+▸ `Optional` **beforeLayout**(): `void`
+
+Called before the layout process starts
+
+#### [#](#returns-12) Returns
+
+`void`
+
+#### [#](#inherited-from-16) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[beforeLayout](/docs/latest/api/interfaces/LayoutItem.html#beforelayout)
+
+#### [#](#defined-in-42) Defined in
+
+[types/layout.d.ts:46  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L46)
+
+---
+
+### [#](#beforesetdimensions) beforeSetDimensions
+
+▸ **beforeSetDimensions**(): `void`
+
+#### [#](#returns-13) Returns
+
+`void`
+
+#### [#](#defined-in-43) Defined in
+
+[types/index.d.ts:1364  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1364)
+
+---
+
+### [#](#beforeticktolabelconversion) beforeTickToLabelConversion
+
+▸ **beforeTickToLabelConversion**(): `void`
+
+#### [#](#returns-14) Returns
+
+`void`
+
+#### [#](#defined-in-44) Defined in
+
+[types/index.d.ts:1373  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1373)
+
+---
+
+### [#](#beforeupdate) beforeUpdate
+
+▸ **beforeUpdate**(): `void`
+
+#### [#](#returns-15) Returns
+
+`void`
+
+#### [#](#defined-in-45) Defined in
+
+[types/index.d.ts:1361  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1361)
+
+---
+
+### [#](#buildticks) buildTicks
+
+▸ **buildTicks**(): [`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#returns-16) Returns
+
+[`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#defined-in-46) Defined in
+
+[types/index.d.ts:1371  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1371)
+
+---
+
+### [#](#calculatelabelrotation) calculateLabelRotation
+
+▸ **calculateLabelRotation**(): `void`
+
+#### [#](#returns-17) Returns
+
+`void`
+
+#### [#](#defined-in-47) Defined in
+
+[types/index.d.ts:1377  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1377)
+
+---
+
+### [#](#configure) configure
+
+▸ **configure**(): `void`
+
+#### [#](#returns-18) Returns
+
+`void`
+
+#### [#](#defined-in-48) Defined in
+
+[types/index.d.ts:1362  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1362)
+
+---
+
+### [#](#determinedatalimits) determineDataLimits
+
+▸ **determineDataLimits**(): `void`
+
+#### [#](#returns-19) Returns
+
+`void`
+
+#### [#](#defined-in-49) Defined in
+
+[types/index.d.ts:1368  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1368)
+
+---
+
+### [#](#draw) draw
+
+▸ **draw**(`chartArea`): `void`
+
+Draws the element
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-20) Returns
+
+`void`
+
+#### [#](#inherited-from-17) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[draw](/docs/latest/api/interfaces/LayoutItem.html#draw)
+
+#### [#](#defined-in-50) Defined in
+
+[types/layout.d.ts:50  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L50)
+
+---
+
+### [#](#drawgrid) drawGrid
+
+▸ **drawGrid**(`chartArea`): `void`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-21) Returns
+
+`void`
+
+#### [#](#defined-in-51) Defined in
+
+[types/index.d.ts:1296  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1296)
+
+---
+
+### [#](#drawlabels) drawLabels
+
+▸ **drawLabels**(`chartArea`): `void`
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-22) Returns
+
+`void`
+
+#### [#](#defined-in-52) Defined in
+
+[types/index.d.ts:1295  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1295)
+
+---
+
+### [#](#drawtitle) drawTitle
+
+▸ **drawTitle**(`chartArea`): `void`
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-23) Returns
+
+`void`
+
+#### [#](#defined-in-53) Defined in
+
+[types/index.d.ts:1294  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1294)
+
+---
+
+### [#](#fit) fit
+
+▸ **fit**(): `void`
+
+#### [#](#returns-24) Returns
+
+`void`
+
+#### [#](#defined-in-54) Defined in
+
+[types/index.d.ts:1380  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1380)
+
+---
+
+### [#](#generateticklabels) generateTickLabels
+
+▸ **generateTickLabels**(`ticks`): `void`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `ticks` | [`Tick`](/docs/latest/api/interfaces/Tick.html)[] |
+
+#### [#](#returns-25) Returns
+
+`void`
+
+#### [#](#defined-in-55) Defined in
+
+[types/index.d.ts:1374  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1374)
+
+---
+
+### [#](#getbasepixel) getBasePixel
+
+▸ **getBasePixel**(): `number`
+
+Returns the pixel for the minimum chart value
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#returns-26) Returns
+
+`number`
+
+#### [#](#defined-in-56) Defined in
+
+[types/index.d.ts:1352  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1352)
+
+---
+
+### [#](#getbasevalue) getBaseValue
+
+▸ **getBaseValue**(): `number`
+
+#### [#](#returns-27) Returns
+
+`number`
+
+#### [#](#defined-in-57) Defined in
+
+[types/index.d.ts:1346  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1346)
+
+---
+
+### [#](#getdecimalforpixel) getDecimalForPixel
+
+▸ **getDecimalForPixel**(`pixel`): `number`
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `pixel` | `number` |
+
+#### [#](#returns-28) Returns
+
+`number`
+
+#### [#](#defined-in-58) Defined in
+
+[types/index.d.ts:1302  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1302)
+
+---
+
+### [#](#getlabelforvalue) getLabelForValue
+
+▸ **getLabelForValue**(`value`): `string`
+
+Used to get the label to display in the tooltip for the given value
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+
+#### [#](#returns-29) Returns
+
+`string`
+
+#### [#](#defined-in-59) Defined in
+
+[types/index.d.ts:1322  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1322)
+
+---
+
+### [#](#getlabelitems) getLabelItems
+
+▸ **getLabelItems**(`chartArea?`): [`LabelItem`](/docs/latest/api/interfaces/LabelItem.html)[]
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-30) Returns
+
+[`LabelItem`](/docs/latest/api/interfaces/LabelItem.html)[]
+
+#### [#](#defined-in-60) Defined in
+
+[types/index.d.ts:1360  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1360)
+
+---
+
+### [#](#getlabels) getLabels
+
+▸ **getLabels**(): `string`[]
+
+#### [#](#returns-31) Returns
+
+`string`[]
+
+#### [#](#defined-in-61) Defined in
+
+[types/index.d.ts:1359  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1359)
+
+---
+
+### [#](#getlinewidthforvalue) getLineWidthForValue
+
+▸ **getLineWidthForValue**(`value`): `number`
+
+Returns the grid line width at given value
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+
+#### [#](#returns-32) Returns
+
+`number`
+
+#### [#](#defined-in-62) Defined in
+
+[types/index.d.ts:1327  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1327)
+
+---
+
+### [#](#getmatchingvisiblemetas) getMatchingVisibleMetas
+
+▸ **getMatchingVisibleMetas**(`type?`): [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>[]
+
+#### [#](#parameters-11) Parameters
+
+| Name | Type |
+| --- | --- |
+| `type?` | `string` |
+
+#### [#](#returns-33) Returns
+
+[`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>[]
+
+#### [#](#defined-in-63) Defined in
+
+[types/index.d.ts:1292  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1292)
+
+---
+
+### [#](#getminmax) getMinMax
+
+▸ **getMinMax**(`canStack`): `Object`
+
+#### [#](#parameters-12) Parameters
+
+| Name | Type |
+| --- | --- |
+| `canStack` | `boolean` |
+
+#### [#](#returns-34) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `max` | `number` |
+| `min` | `number` |
+
+#### [#](#defined-in-64) Defined in
+
+[types/index.d.ts:1357  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1357)
+
+---
+
+### [#](#getpadding) getPadding
+
+▸ `Optional` **getPadding**(): [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+Returns an object with padding on the edges
+
+#### [#](#returns-35) Returns
+
+[`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+#### [#](#inherited-from-18) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[getPadding](/docs/latest/api/interfaces/LayoutItem.html#getpadding)
+
+#### [#](#defined-in-65) Defined in
+
+[types/layout.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L54)
+
+---
+
+### [#](#getpixelfordecimal) getPixelForDecimal
+
+▸ **getPixelForDecimal**(`decimal`): `number`
+
+Utility for getting the pixel location of a percentage of scale
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-13) Parameters
+
+| Name | Type |
+| --- | --- |
+| `decimal` | `number` |
+
+#### [#](#returns-36) Returns
+
+`number`
+
+#### [#](#defined-in-66) Defined in
+
+[types/index.d.ts:1309  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1309)
+
+---
+
+### [#](#getpixelfortick) getPixelForTick
+
+▸ **getPixelForTick**(`index`): `number`
+
+Returns the location of the tick at the given index
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-14) Parameters
+
+| Name | Type |
+| --- | --- |
+| `index` | `number` |
+
+#### [#](#returns-37) Returns
+
+`number`
+
+#### [#](#defined-in-67) Defined in
+
+[types/index.d.ts:1316  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1316)
+
+---
+
+### [#](#getpixelforvalue) getPixelForValue
+
+▸ **getPixelForValue**(`value`, `index?`): `number`
+
+Returns the location of the given data point. Value can either be an index or a numerical value
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-15) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+| `index?` | `number` |
+
+#### [#](#returns-38) Returns
+
+`number`
+
+#### [#](#defined-in-68) Defined in
+
+[types/index.d.ts:1336  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1336)
+
+---
+
+### [#](#getprops) getProps
+
+▸ **getProps**<`P`>(`props`, `final?`): `Pick`<`unknown`, `P`[`number`]>
+
+Gets the current or final value of each prop. Can return extra properties (whole object).
+
+#### [#](#type-parameters-3) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `never`[] |
+
+#### [#](#parameters-16) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `props` | `P` | properties to get |
+| `final?` | `boolean` | get the final value (animation target) |
+
+#### [#](#returns-39) Returns
+
+`Pick`<`unknown`, `P`[`number`]>
+
+#### [#](#inherited-from-19) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-69) Defined in
+
+[core/core.element.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L31)
+
+▸ **getProps**<`P`>(`props`, `final?`): `Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#type-parameters-4) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string` |
+
+#### [#](#parameters-17) Parameters
+
+| Name | Type |
+| --- | --- |
+| `props` | `P`[] |
+| `final?` | `boolean` |
+
+#### [#](#returns-40) Returns
+
+`Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#inherited-from-20) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-70) Defined in
+
+[core/core.element.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L32)
+
+---
+
+### [#](#getticks) getTicks
+
+▸ **getTicks**(): [`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#returns-41) Returns
+
+[`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#defined-in-71) Defined in
+
+[types/index.d.ts:1358  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1358)
+
+---
+
+### [#](#getuserbounds) getUserBounds
+
+▸ **getUserBounds**(): `Object`
+
+#### [#](#returns-42) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `max` | `number` |
+| `maxDefined` | `boolean` |
+| `min` | `number` |
+| `minDefined` | `boolean` |
+
+#### [#](#defined-in-72) Defined in
+
+[types/index.d.ts:1356  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1356)
+
+---
+
+### [#](#getvalueforpixel) getValueForPixel
+
+▸ **getValueForPixel**(`pixel`): `number`
+
+Used to get the data value from a given pixel. This is the inverse of getPixelForValue
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-18) Parameters
+
+| Name | Type |
+| --- | --- |
+| `pixel` | `number` |
+
+#### [#](#returns-43) Returns
+
+`number`
+
+#### [#](#defined-in-73) Defined in
+
+[types/index.d.ts:1344  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1344)
+
+---
+
+### [#](#hasvalue) hasValue
+
+▸ **hasValue**(): `boolean`
+
+#### [#](#returns-44) Returns
+
+`boolean`
+
+#### [#](#inherited-from-21) Inherited from
+
+Element.hasValue
+
+#### [#](#defined-in-74) Defined in
+
+[core/core.element.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L22)
+
+---
+
+### [#](#init) init
+
+▸ **init**(`options`): `void`
+
+#### [#](#parameters-19) Parameters
+
+| Name | Type |
+| --- | --- |
+| `options` | `O` |
+
+#### [#](#returns-45) Returns
+
+`void`
+
+#### [#](#defined-in-75) Defined in
+
+[types/index.d.ts:1354  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1354)
+
+---
+
+### [#](#isfullsize) isFullSize
+
+▸ **isFullSize**(): `boolean`
+
+#### [#](#returns-46) Returns
+
+`boolean`
+
+#### [#](#defined-in-76) Defined in
+
+[types/index.d.ts:1383  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1383)
+
+---
+
+### [#](#ishorizontal) isHorizontal
+
+▸ **isHorizontal**(): `boolean`
+
+returns true if the layout item is horizontal (ie. top or bottom)
+
+#### [#](#returns-47) Returns
+
+`boolean`
+
+#### [#](#inherited-from-22) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[isHorizontal](/docs/latest/api/interfaces/LayoutItem.html#ishorizontal)
+
+#### [#](#defined-in-77) Defined in
+
+[types/layout.d.ts:58  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L58)
+
+---
+
+### [#](#parse) parse
+
+▸ **parse**(`raw`, `index?`): `unknown`
+
+#### [#](#parameters-20) Parameters
+
+| Name | Type |
+| --- | --- |
+| `raw` | `unknown` |
+| `index?` | `number` |
+
+#### [#](#returns-48) Returns
+
+`unknown`
+
+#### [#](#defined-in-78) Defined in
+
+[types/index.d.ts:1355  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1355)
+
+---
+
+### [#](#setdimensions) setDimensions
+
+▸ **setDimensions**(): `void`
+
+#### [#](#returns-49) Returns
+
+`void`
+
+#### [#](#defined-in-79) Defined in
+
+[types/index.d.ts:1365  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1365)
+
+---
+
+### [#](#tooltipposition) tooltipPosition
+
+▸ **tooltipPosition**(`useFinalPosition`): [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#parameters-21) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-50) Returns
+
+[`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#inherited-from-23) Inherited from
+
+Element.tooltipPosition
+
+#### [#](#defined-in-80) Defined in
+
+[core/core.element.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L17)
+
+---
+
+### [#](#update) update
+
+▸ **update**(`width`, `height`, `margins?`): `void`
+
+Takes two parameters: width and height.
+
+#### [#](#parameters-22) Parameters
+
+| Name | Type |
+| --- | --- |
+| `width` | `number` |
+| `height` | `number` |
+| `margins?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-51) Returns
+
+`void`
+
+#### [#](#inherited-from-24) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[update](/docs/latest/api/interfaces/LayoutItem.html#update)
+
+#### [#](#defined-in-81) Defined in
+
+[types/layout.d.ts:64  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L64)

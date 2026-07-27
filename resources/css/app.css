@@ -1,0 +1,188 @@
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Warm stone neutrals instead of cool slate */
+@theme {
+    --color-zinc-50: var(--color-stone-50);
+    --color-zinc-100: var(--color-stone-100);
+    --color-zinc-200: var(--color-stone-200);
+    --color-zinc-300: var(--color-stone-300);
+    --color-zinc-400: var(--color-stone-400);
+    --color-zinc-500: var(--color-stone-500);
+    --color-zinc-600: var(--color-stone-600);
+    --color-zinc-700: var(--color-stone-700);
+    --color-zinc-800: var(--color-stone-800);
+    --color-zinc-900: var(--color-stone-900);
+    --color-zinc-950: var(--color-stone-950);
+}
+
+@theme {
+    --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: "Libre Baskerville", ui-serif, Georgia, "Times New Roman", serif;
+    --color-accent: var(--color-teal-800);
+    --color-accent-content: var(--color-teal-800);
+    --color-accent-foreground: var(--color-white);
+    --color-app-canvas: var(--color-stone-100);
+    --color-app-sidebar: var(--color-stone-50);
+    --color-app-surface: #faf9f7;
+}
+
+@layer theme {
+    :root {
+        --color-zinc-400: var(--color-stone-500);
+        --color-zinc-500: var(--color-stone-600);
+        --color-zinc-600: var(--color-stone-700);
+        --color-accent: var(--color-teal-800);
+        --color-accent-content: var(--color-teal-800);
+        --color-accent-foreground: var(--color-white);
+        --color-app-canvas: color-mix(in oklab, var(--color-stone-100) 94%, var(--color-teal-950));
+        --color-app-sidebar: color-mix(in oklab, var(--color-stone-50) 96%, var(--color-teal-900));
+        --color-app-surface: #faf9f7;
+    }
+
+    .dark {
+        --color-zinc-400: var(--color-stone-400);
+        --color-zinc-500: var(--color-stone-500);
+        --color-zinc-600: var(--color-stone-600);
+        --color-accent: var(--color-teal-700);
+        --color-accent-content: var(--color-teal-300);
+        --color-accent-foreground: var(--color-white);
+        --color-app-canvas: color-mix(in oklab, var(--color-stone-950) 90%, var(--color-teal-950));
+        --color-app-sidebar: color-mix(in oklab, var(--color-stone-900) 94%, var(--color-teal-950));
+        --color-app-surface: var(--color-stone-900);
+    }
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    body {
+        @apply font-sans antialiased text-stone-800 dark:text-stone-100;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    [data-flux-heading],
+    .ui-display {
+        font-family: var(--font-serif);
+        letter-spacing: -0.01em;
+    }
+}
+
+@layer components {
+    .ui-surface {
+        @apply overflow-hidden rounded-xl border border-stone-300/70 bg-app-surface shadow-[0_1px_2px_rgba(28,25,23,0.05)] dark:border-stone-700/80 dark:bg-stone-900 dark:shadow-none;
+    }
+
+    .ui-panel {
+        @apply overflow-hidden rounded-xl border border-stone-300/70 bg-stone-50/90 shadow-[0_1px_2px_rgba(28,25,23,0.04)] dark:border-stone-700/80 dark:bg-stone-900/95 dark:shadow-none;
+    }
+
+    .ui-table {
+        @apply overflow-hidden rounded-xl border border-stone-300/70 bg-app-surface shadow-[0_1px_2px_rgba(28,25,23,0.05)] dark:border-stone-700/80 dark:bg-stone-900 dark:shadow-none;
+    }
+
+    .ui-filter {
+        @apply rounded-xl border border-stone-300/70 bg-stone-50/80 px-4 py-4 shadow-[0_1px_2px_rgba(28,25,23,0.04)] dark:border-stone-700/80 dark:bg-stone-900/80 sm:px-5;
+    }
+
+    .ui-stat,
+    .ui-stat-muted,
+    .ui-stat-strong {
+        @apply rounded-xl border px-5 py-4 shadow-[0_1px_2px_rgba(28,25,23,0.04)] dark:shadow-none;
+    }
+
+    .ui-stat {
+        @apply border-stone-300/70 bg-app-surface dark:border-stone-700/80 dark:bg-stone-900;
+    }
+
+    .ui-stat-muted {
+        @apply border-stone-300/70 bg-stone-100/80 dark:border-stone-700/80 dark:bg-stone-900/90;
+    }
+
+    .ui-stat-strong {
+        @apply border-stone-400/60 bg-stone-200/50 dark:border-stone-600 dark:bg-stone-950;
+    }
+
+    .ui-stat-value {
+        @apply mt-4 font-serif text-3xl font-normal tracking-tight text-stone-950 dark:text-stone-50;
+    }
+
+    .ui-stat-hint {
+        @apply mt-2 text-sm text-stone-500 dark:text-stone-400;
+    }
+
+    .ui-label {
+        @apply text-[11px] font-medium uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400;
+    }
+
+    .ui-inset {
+        @apply rounded-lg border border-stone-300/60 bg-white/70 p-5 dark:border-stone-700/70 dark:bg-stone-950/40;
+    }
+
+    .ui-thead {
+        @apply bg-stone-100/90 dark:bg-stone-950/70;
+    }
+
+    .ui-th {
+        @apply px-3 py-3.5 text-left text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400;
+    }
+
+    .ui-tr {
+        @apply transition-colors duration-150 hover:bg-stone-100/70 dark:hover:bg-stone-800/40;
+    }
+
+    .ui-control {
+        @apply w-full rounded-lg border border-stone-300/80 bg-white px-4 py-2.5 text-sm text-stone-900 shadow-none transition placeholder:text-stone-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 dark:focus:border-accent dark:focus:ring-accent/25;
+    }
+
+    .ui-btn {
+        @apply inline-flex items-center justify-center rounded-md border border-stone-300/80 bg-app-surface px-3 py-2 text-xs font-medium tracking-[0.04em] text-stone-700 shadow-none transition-[background-color,color,border-color] duration-200 hover:border-accent/40 hover:bg-accent/10 hover:text-[var(--color-accent-content)] dark:border-stone-600 dark:bg-stone-900 dark:text-stone-200 dark:hover:border-accent/40 dark:hover:bg-accent/15;
+    }
+
+    .ui-btn-primary {
+        @apply inline-flex items-center justify-center rounded-md border border-teal-950/25 bg-accent px-3 py-2 text-xs font-medium tracking-[0.04em] text-accent-foreground shadow-none transition-[background-color,border-color] duration-200 hover:bg-[color-mix(in_oklab,var(--color-accent),black_12%)] dark:border-teal-400/20;
+    }
+
+    .ui-btn-danger {
+        @apply inline-flex items-center justify-center rounded-md border border-red-950/30 bg-red-900 px-3 py-2 text-xs font-medium tracking-[0.04em] text-white shadow-none transition-[background-color] duration-200 hover:bg-red-950 dark:border-red-500/20 dark:bg-red-800 dark:hover:bg-red-700;
+    }
+
+    .ui-header {
+        @apply border-b border-stone-300/60 px-6 py-5 dark:border-stone-700/70;
+    }
+
+    .ui-th.text-right {
+        @apply text-right;
+    }
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}

@@ -1,0 +1,23 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BarControllerChartOptions (/docs/latest/api/interfaces/BarControllerChartOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BarControllerChartOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BarControllerChartOptions.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-barcontrollerchartoptions) Interface: BarControllerChartOptions
+
+## [#](#properties) Properties
+
+### [#](#skipnull) skipNull
+
+• `Optional` **skipNull**: `boolean`
+
+Should null or undefined values be omitted from drawing
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:153  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L153)

@@ -1,0 +1,355 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Module Resources (/docs/13/advanced/module-resources). Referencia nwidart/laravel-modules v13.
+---
+
+# Module Resources
+
+> Fuente: https://laravelmodules.com/docs/13/advanced/module-resources
+> Exportado: 2026-07-23 19:55 UTC
+
+- [Configuration](#configuration)
+- [Multiple Config Files](#multiple-config-files)
+- [Views](#views)
+- [Translations](#translations)
+- [Migrations](#migrations)
+- [Assets](#assets)
+- [Publishable Group Tags](#publishable-group-tags)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Module Resources
+
+---
+
+- [Configuration](#configuration)
+- [Multiple Config Files](#multiple-config-files)
+- [Views](#views)
+- [Translations](#translations)
+- [Migrations](#migrations)
+- [Assets](#assets)
+- [Publishable Group Tags](#publishable-group-tags)
+
+Modules register their resources (config, views, translations) in their service provider. The generated service provider handles this automatically when a module is scaffolded with `module:make`. This page explains what each registration does and how to customise it.
+
+## [#](#configuration)Configuration
+
+The `registerConfig` method merges the module's config into the application and optionally makes it publishable:
+
+```
+protected function registerConfig(): void
+
+{
+
+$this->publishes([
+
+module_path($this->moduleName, 'config/config.php') => config_path($this->moduleNameLower . '.php'),
+
+], 'config');
+
+$this->mergeConfigFrom(
+
+module_path($this->moduleName, 'config/config.php'),
+
+$this->moduleNameLower
+
+);
+
+}
+
+protected function registerConfig(): void
+{
+    $this->publishes([
+        module_path($this->moduleName, 'config/config.php') => config_path($this->moduleNameLower . '.php'),
+    ], 'config');
+
+    $this->mergeConfigFrom(
+        module_path($this->moduleName, 'config/config.php'),
+        $this->moduleNameLower
+    );
+}
+```
+
+The `mergeConfigFrom` call makes the module's config available immediately at `config('blog.key')` without requiring the user to publish the config. Publishing allows users to override it.
+
+### [#](#multiple-config-files)Multiple Config Files
+
+From v11.1.5, modules support multiple config files. Place additional files alongside `config/config.php`:
+
+```
+config/
+
+├── config.php
+
+├── cache.php
+
+└── api.php
+
+config/
+├── config.php
+├── cache.php
+└── api.php
+```
+
+Register each file in the service provider:
+
+```
+protected function registerConfig(): void
+
+{
+
+$this->mergeConfigFrom(module_path($this->moduleName, 'config/config.php'), $this->moduleNameLower);
+
+$this->mergeConfigFrom(module_path($this->moduleName, 'config/cache.php'), $this->moduleNameLower . '.cache');
+
+$this->mergeConfigFrom(module_path($this->moduleName, 'config/api.php'), $this->moduleNameLower . '.api');
+
+}
+
+protected function registerConfig(): void
+{
+    $this->mergeConfigFrom(module_path($this->moduleName, 'config/config.php'), $this->moduleNameLower);
+    $this->mergeConfigFrom(module_path($this->moduleName, 'config/cache.php'), $this->moduleNameLower . '.cache');
+    $this->mergeConfigFrom(module_path($this->moduleName, 'config/api.php'), $this->moduleNameLower . '.api');
+}
+```
+
+Access with: `config('blog.cache.ttl')` or `config('blog.api.key')`.
+
+Nested config directories are also supported:
+
+```
+config/
+
+├── admin/
+
+│   └── settings.php
+
+└── config.php
+
+config/
+├── admin/
+│   └── settings.php
+└── config.php
+```
+
+Access: `config('blog.admin.settings.value')`
+
+## [#](#views)Views
+
+The `registerViews` method loads views and allows them to be published for application-level overrides:
+
+```
+protected function registerViews(): void
+
+{
+
+$viewPath = resource_path('views/modules/' . $this->moduleNameLower);
+
+$sourcePath = module_path($this->moduleName, 'resources/views');
+
+$this->publishes([
+
+$sourcePath => $viewPath,
+
+], ['views', $this->moduleNameLower . '-module-views']);
+
+$this->loadViewsFrom(
+
+array_merge($this->getPublishableViewPaths(), [$sourcePath]),
+
+$this->moduleNameLower
+
+);
+
+$componentNamespace = 'Modules\\' . $this->moduleName . '\\View\\Components';
+
+Blade::componentNamespace($componentNamespace, $this->moduleNameLower);
+
+}
+
+protected function registerViews(): void
+{
+    $viewPath = resource_path('views/modules/' . $this->moduleNameLower);
+    $sourcePath = module_path($this->moduleName, 'resources/views');
+
+    $this->publishes([
+        $sourcePath => $viewPath,
+    ], ['views', $this->moduleNameLower . '-module-views']);
+
+    $this->loadViewsFrom(
+        array_merge($this->getPublishableViewPaths(), [$sourcePath]),
+        $this->moduleNameLower
+    );
+
+    $componentNamespace = 'Modules\\' . $this->moduleName . '\\View\\Components';
+    Blade::componentNamespace($componentNamespace, $this->moduleNameLower);
+}
+```
+
+The key behaviour here is that `loadViewsFrom` checks `resources/views/modules/blog` first, then falls back to the module's own views. This means any view can be overridden at the application level without modifying the module.
+
+Publish a module's views:
+
+```
+php artisan vendor:publish --tag=blog-module-views
+
+php artisan vendor:publish --tag=blog-module-views
+```
+
+## [#](#translations)Translations
+
+The `registerTranslations` method loads translation files from the module or from a published override path:
+
+```
+protected function registerTranslations(): void
+
+{
+
+$langPath = resource_path('lang/modules/' . $this->moduleNameLower);
+
+if (is_dir($langPath)) {
+
+$this->loadTranslationsFrom($langPath, $this->moduleNameLower);
+
+$this->loadJsonTranslationsFrom($langPath);
+
+} else {
+
+$this->loadTranslationsFrom(module_path($this->moduleName, 'lang'), $this->moduleNameLower);
+
+$this->loadJsonTranslationsFrom(module_path($this->moduleName, 'lang'));
+
+}
+
+}
+
+protected function registerTranslations(): void
+{
+    $langPath = resource_path('lang/modules/' . $this->moduleNameLower);
+
+    if (is_dir($langPath)) {
+        $this->loadTranslationsFrom($langPath, $this->moduleNameLower);
+        $this->loadJsonTranslationsFrom($langPath);
+    } else {
+        $this->loadTranslationsFrom(module_path($this->moduleName, 'lang'), $this->moduleNameLower);
+        $this->loadJsonTranslationsFrom(module_path($this->moduleName, 'lang'));
+    }
+}
+```
+
+Publish translation files:
+
+```
+php artisan module:publish-translation Blog
+
+php artisan module:publish-translation Blog
+```
+
+After publishing, translations in `resources/lang/modules/blog/` take precedence over the module's own `lang/` directory.
+
+## [#](#migrations)Migrations
+
+Migrations are loaded in the `boot` method using `loadMigrationsFrom`:
+
+```
+public function boot(): void
+
+{
+
+$this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+
+}
+
+public function boot(): void
+{
+    $this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+}
+```
+
+This means `php artisan migrate` automatically picks up module migrations without any extra configuration.
+
+Publish migration files to the application's main migrations folder:
+
+```
+php artisan module:publish-migration Blog
+
+php artisan module:publish-migration Blog
+```
+
+## [#](#assets)Assets
+
+Publish a module's public assets to `public/modules/{module}`:
+
+```
+$this->publishes([
+
+module_path($this->moduleName, 'resources/assets') => public_path('modules/' . $this->moduleNameLower),
+
+], 'public');
+
+$this->publishes([
+    module_path($this->moduleName, 'resources/assets') => public_path('modules/' . $this->moduleNameLower),
+], 'public');
+```
+
+```
+php artisan module:publish Blog
+
+php artisan module:publish Blog
+```
+
+## [#](#publishable-group-tags)Publishable Group Tags
+
+Use tags to allow selective publishing:
+
+```
+$this->publishes([
+
+module_path($this->moduleName, 'config/config.php') => config_path('blog.php'),
+
+], 'blog-config');
+
+$this->publishes([
+
+module_path($this->moduleName, 'resources/views') => resource_path('views/modules/blog'),
+
+], 'blog-views');
+
+$this->publishes([
+    module_path($this->moduleName, 'config/config.php') => config_path('blog.php'),
+], 'blog-config');
+
+$this->publishes([
+    module_path($this->moduleName, 'resources/views') => resource_path('views/modules/blog'),
+], 'blog-views');
+```
+
+Users can then publish only what they need:
+
+```
+php artisan vendor:publish --tag=blog-config
+
+php artisan vendor:publish --tag=blog-views
+
+php artisan vendor:publish --tag=blog-config
+php artisan vendor:publish --tag=blog-views
+```
+
+---
+
+[Previous page: 
+←
+Module Methods](/docs/13/advanced/module-methods)
+[Next page: 
+Languages and Translations
+ →](/docs/13/advanced/languages)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/advanced/module-resources.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/advanced/module-resources&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

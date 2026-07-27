@@ -1,0 +1,125 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Compiling Assets with Laravel Mix (/docs/5/basic-usage/compiling-assets). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Compiling Assets with Laravel Mix
+
+> Fuente: https://laravelmodules.com/docs/5/basic-usage/compiling-assets
+> Exportado: 2026-07-23 19:57 UTC
+
+## [#](#installation-amp-setup)Installation & Setup
+
+When you create a new module it also create assets for CSS/JS and the `webpack.mix.js` configuration file.
+
+Copied!
+
+```
+php artisan module:make Blog
+
+php artisan module:make Blog
+```
+
+Change directory to the module:
+
+Copied!
+
+```
+cd Modules/Blog
+
+cd Modules/Blog
+```
+
+The default `package.json` file includes everything you need to get started. You may install the dependencies it references by running:
+
+Copied!
+
+```
+npm install
+
+npm install
+```
+
+## [#](#running-mix)Running Mix
+
+Mix is a configuration layer on top of [Webpack](https://webpack.js.org/), so to run your Mix tasks you only need to execute one of the NPM scripts that is included with the default `laravel-modules` `package.json` file
+
+Copied!
+
+```
+// Run all Mix tasks...
+
+npm run dev
+
+// Run all Mix tasks and minify output...
+
+npm run production
+
+// Run all Mix tasks...
+npm run dev
+
+// Run all Mix tasks and minify output...
+npm run production
+```
+
+After generating the versioned file, you won't know the exact file name. So, you should use Laravel's global mix function within your views to load the appropriately hashed asset. The mix function will automatically determine the current name of the hashed file:
+
+Copied!
+
+```
+// Modules/Blog/Resources/views/layouts/master.blade.php
+
+<link rel="stylesheet" href="{{ mix('css/blog.css') }}">
+
+<script src="{{ mix('js/blog.js') }}"></script>
+
+// Modules/Blog/Resources/views/layouts/master.blade.php
+
+<link rel="stylesheet" href="{{ mix('css/blog.css') }}">
+
+<script src="{{ mix('js/blog.js') }}"></script>
+```
+
+For more info on Laravel Mix view the documentation here: <https://laravel.com/docs/mix>
+
+> Note: to prevent the main Laravel Mix configuration from overwriting the `public/mix-manifest.json` file:
+
+Install `laravel-mix-merge-manifest`
+
+Copied!
+
+```
+npm install laravel-mix-merge-manifest --save-dev
+
+npm install laravel-mix-merge-manifest --save-dev
+```
+
+Modify `webpack.mix.js` main file
+
+Copied!
+
+```
+let mix = require('laravel-mix');
+
+/* Allow multiple Laravel Mix applications*/
+
+require('laravel-mix-merge-manifest');
+
+mix.mergeManifest();
+
+/*----------------------------------------*/
+
+mix.js('resources/assets/js/app.js', 'public/js')
+
+.sass('resources/assets/sass/app.scss', 'public/css');
+
+let mix = require('laravel-mix');
+
+/* Allow multiple Laravel Mix applications*/
+require('laravel-mix-merge-manifest');
+mix.mergeManifest();
+/*----------------------------------------*/
+
+mix.js('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');
+```

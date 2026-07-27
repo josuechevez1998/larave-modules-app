@@ -1,0 +1,122 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BarOptions (/docs/latest/api/interfaces/BarOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BarOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BarOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-baroptions) Interface: BarOptions
+
+## [#](#hierarchy) Hierarchy
+
+- `Omit`<[`CommonElementOptions`](/docs/latest/api/interfaces/CommonElementOptions.html), `"borderWidth"`>
+
+  ↳ **`BarOptions`**
+
+## [#](#properties) Properties
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#inherited-from) Inherited from
+
+Omit.backgroundColor
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1828  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1828)
+
+---
+
+### [#](#base) base
+
+• **base**: `number`
+
+The base value for the bar in data units along the value axis.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2107  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2107)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#inherited-from-2) Inherited from
+
+Omit.borderColor
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1827  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1827)
+
+---
+
+### [#](#borderradius) borderRadius
+
+• **borderRadius**: `number` | [`BorderRadius`](/docs/latest/api/interfaces/BorderRadius.html)
+
+Border radius
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2119  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2119)
+
+---
+
+### [#](#borderskipped) borderSkipped
+
+• **borderSkipped**: `boolean` | `"end"` | `"start"` | `"left"` | `"top"` | `"bottom"` | `"right"` | `"middle"`
+
+Skipped (excluded) border: 'start', 'end', 'left', 'right', 'bottom', 'top', 'middle', false (none) or true (all).
+
+**`Default`**
+
+'start'
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2113  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2113)
+
+---
+
+### [#](#borderwidth) borderWidth
+
+• **borderWidth**: `number` | { `bottom?`: `number` ; `left?`: `number` ; `right?`: `number` ; `top?`: `number` }
+
+Width of the border, number for all sides, object to specify width for each side specifically
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2132  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2132)
+
+---
+
+### [#](#inflateamount) inflateAmount
+
+• **inflateAmount**: `number` | `"auto"`
+
+Amount to inflate the rectangle(s). This can be used to hide artifacts between bars.
+Unit is pixels. 'auto' translates to 0.33 pixels when barPercentage \* categoryPercentage is 1, else 0.
+
+**`Default`**
+
+'auto'
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2126  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2126)

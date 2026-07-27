@@ -1,0 +1,207 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Programmatic Event Triggers (/docs/latest/samples/advanced/programmatic-events.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Programmatic Event Triggers
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/advanced/programmatic-events.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#programmatic-event-triggers) Programmatic Event Triggers
+
+hover
+tooltip
+actions
+config
+setup
+
+function triggerHover(chart) {
+if (chart.getActiveElements().length > 0) {
+chart.setActiveElements([]);
+} else {
+chart.setActiveElements([
+{
+datasetIndex: 0,
+index: 0,
+}, {
+datasetIndex: 1,
+index: 0,
+}
+]);
+}
+chart.update();
+}
+
+```
+function triggerHover(chart) {
+  if (chart.getActiveElements().length > 0) {
+    chart.setActiveElements([]);
+  } else {
+    chart.setActiveElements([
+      {
+        datasetIndex: 0,
+        index: 0,
+      }, {
+        datasetIndex: 1,
+        index: 0,
+      }
+    ]);
+  }
+  chart.update();
+}
+```
+
+function triggerTooltip(chart) {
+const tooltip = chart.tooltip;
+if (tooltip.getActiveElements().length > 0) {
+tooltip.setActiveElements([], {x: 0, y: 0});
+} else {
+const chartArea = chart.chartArea;
+tooltip.setActiveElements([
+{
+datasetIndex: 0,
+index: 2,
+}, {
+datasetIndex: 1,
+index: 2,
+}
+],
+{
+x: (chartArea.left + chartArea.right) / 2,
+y: (chartArea.top + chartArea.bottom) / 2,
+});
+}
+chart.update();
+}
+
+```
+function triggerTooltip(chart) {
+  const tooltip = chart.tooltip;
+  if (tooltip.getActiveElements().length > 0) {
+    tooltip.setActiveElements([], {x: 0, y: 0});
+  } else {
+    const chartArea = chart.chartArea;
+    tooltip.setActiveElements([
+      {
+        datasetIndex: 0,
+        index: 2,
+      }, {
+        datasetIndex: 1,
+        index: 2,
+      }
+    ],
+    {
+      x: (chartArea.left + chartArea.right) / 2,
+      y: (chartArea.top + chartArea.bottom) / 2,
+    });
+  }
+  chart.update();
+}
+```
+
+const actions = [
+{
+name: 'Trigger Hover',
+handler: triggerHover
+},
+{
+name: 'Trigger Tooltip',
+handler: triggerTooltip
+}
+];
+
+```
+const actions = [
+  {
+    name: 'Trigger Hover',
+    handler: triggerHover
+  },
+  {
+    name: 'Trigger Tooltip',
+    handler: triggerTooltip
+  }
+];
+```
+
+const config = {
+type: 'bar',
+data: data,
+options: {
+},
+};
+
+```
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+  },
+};
+```
+
+const DATA\_COUNT = 7;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: -100, max: 100};
+const labels = Utils.months({count: 7});
+const data = {
+labels: labels,
+datasets: [
+{
+label: 'Dataset 1',
+data: Utils.numbers(NUMBER\_CFG),
+borderColor: Utils.CHART\_COLORS.red,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.red, 0.5),
+hoverBorderWidth: 5,
+hoverBorderColor: 'green',
+},
+{
+label: 'Dataset 2',
+data: Utils.numbers(NUMBER\_CFG),
+borderColor: Utils.CHART\_COLORS.blue,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.blue, 0.5),
+hoverBorderWidth: 5,
+hoverBorderColor: 'green',
+}
+]
+};
+
+```
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+      hoverBorderWidth: 5,
+      hoverBorderColor: 'green',
+    },
+    {
+      label: 'Dataset 2',
+      data: Utils.numbers(NUMBER_CFG),
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+      hoverBorderWidth: 5,
+      hoverBorderColor: 'green',
+    }
+  ]
+};
+```
+
+## [#](#api) API
+
+- [Chart](/docs/latest/api/classes/Chart.html)
+  - [`setActiveElements`](/docs/latest/api/classes/Chart.html#setactiveelements)
+- [TooltipModel](/docs/latest/api/interfaces/TooltipModel.html)
+  - [`setActiveElements`](/docs/latest/api/interfaces/TooltipModel.html#setactiveelements)
+
+## [#](#docs) Docs
+
+- [Bar](/docs/latest/charts/bar.html)
+  - [Interactions (`hoverBorderColor`)](/docs/latest/charts/bar.html#interactions)
+- [Interactions](/docs/latest/configuration/interactions.html)
+- [Tooltip](/docs/latest/configuration/tooltip.html)

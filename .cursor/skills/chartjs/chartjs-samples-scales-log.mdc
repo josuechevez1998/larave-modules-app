@@ -1,0 +1,143 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Log Scale (/docs/latest/samples/scales/log.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Log Scale
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/scales/log.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#log-scale) Log Scale
+
+config
+setup
+actions
+
+const config = {
+type: 'line',
+data: data,
+options: {
+responsive: true,
+plugins: {
+title: {
+display: true,
+text: 'Chart.js Line Chart - Logarithmic'
+}
+},
+scales: {
+x: {
+display: true,
+},
+y: {
+display: true,
+type: 'logarithmic',
+}
+}
+},
+};
+
+```
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart - Logarithmic'
+      }
+    },
+    scales: {
+      x: {
+        display: true,
+      },
+      y: {
+        display: true,
+        type: 'logarithmic',
+      }
+    }
+  },
+};
+```
+
+const DATA\_COUNT = 7;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: 0, max: 100};
+const labels = Utils.months({count: 7});
+const data = {
+labels: labels,
+datasets: [
+{
+label: 'Dataset 1',
+data: logNumbers(DATA\_COUNT),
+borderColor: Utils.CHART\_COLORS.red,
+backgroundColor: Utils.CHART\_COLORS.red,
+fill: false,
+},
+]
+};
+
+```
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: logNumbers(DATA_COUNT),
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.CHART_COLORS.red,
+      fill: false,
+    },
+  ]
+};
+```
+
+const logNumbers = (num) => {
+const data = [];
+for (let i = 0; i < num; ++i) {
+data.push(Math.ceil(Math.random() \* 10.0) \* Math.pow(10, Math.ceil(Math.random() \* 5)));
+}
+return data;
+};
+const actions = [
+{
+name: 'Randomize',
+handler(chart) {
+chart.data.datasets.forEach(dataset => {
+dataset.data = logNumbers(chart.data.labels.length);
+});
+chart.update();
+}
+},
+];
+
+```
+const logNumbers = (num) => {
+  const data = [];
+  for (let i = 0; i < num; ++i) {
+    data.push(Math.ceil(Math.random() * 10.0) * Math.pow(10, Math.ceil(Math.random() * 5)));
+  }
+  return data;
+};
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = logNumbers(chart.data.labels.length);
+      });
+      chart.update();
+    }
+  },
+];
+```
+
+## [#](#docs) Docs
+
+- [Line](/docs/latest/charts/line.html)
+- [Logarithmic Axis](/docs/latest/axes/cartesian/logarithmic.html)
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)

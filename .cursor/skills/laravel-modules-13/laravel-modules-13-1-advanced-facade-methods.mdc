@@ -1,0 +1,327 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Facade methods (/docs/1/advanced/facade-methods). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Facade methods
+
+> Fuente: https://laravelmodules.com/docs/1/advanced/facade-methods
+> Exportado: 2026-07-23 20:01 UTC
+
+Get all modules.
+
+Copied!
+
+```
+Module::all();
+
+Module::all();
+```
+
+Get all cached modules.
+
+Copied!
+
+```
+Module::getCached()
+
+Module::getCached()
+```
+
+Get ordered modules. The modules will be ordered by the `priority` key in `module.json` file.
+
+Copied!
+
+```
+Module::getOrdered();
+
+Module::getOrdered();
+```
+
+Get scanned modules.
+
+Copied!
+
+```
+Module::scan();
+
+Module::scan();
+```
+
+Find a specific module.
+
+Copied!
+
+```
+Module::find('name');
+
+// OR
+
+Module::get('name');
+
+Module::find('name');
+// OR
+Module::get('name');
+```
+
+Find a module, if there is one, return the `Module` instance, otherwise throw `Nwidart\Modules\Exeptions\ModuleNotFoundException`.
+
+Copied!
+
+```
+Module::findOrFail('module-name');
+
+Module::findOrFail('module-name');
+```
+
+Get scanned paths.
+
+Copied!
+
+```
+Module::getScanPaths();
+
+Module::getScanPaths();
+```
+
+Get all modules as a collection instance.
+
+Copied!
+
+```
+Module::toCollection();
+
+Module::toCollection();
+```
+
+Get modules by the status. 1 for active and 0 for inactive.
+
+Copied!
+
+```
+Module::getByStatus(1);
+
+Module::getByStatus(1);
+```
+
+Check the specified module. If it exists, will return `true`, otherwise `false`.
+
+Copied!
+
+```
+Module::has('blog');
+
+Module::has('blog');
+```
+
+Get all enabled modules.
+
+Copied!
+
+```
+Module::enabled();
+
+Module::enabled();
+```
+
+Get all disabled modules.
+
+Copied!
+
+```
+Module::disabled();
+
+Module::disabled();
+```
+
+Get count of all modules.
+
+Copied!
+
+```
+Module::count();
+
+Module::count();
+```
+
+Get module path.
+
+Copied!
+
+```
+Module::getPath();
+
+Module::getPath();
+```
+
+Register the modules.
+
+Copied!
+
+```
+Module::register();
+
+Module::register();
+```
+
+Boot all available modules.
+
+Copied!
+
+```
+Module::boot();
+
+Module::boot();
+```
+
+Get all enabled modules as collection instance.
+
+Copied!
+
+```
+Module::collections();
+
+Module::collections();
+```
+
+Get module path from the specified module.
+
+Copied!
+
+```
+Module::getModulePath('name');
+
+Module::getModulePath('name');
+```
+
+Get assets path from the specified module.
+
+Copied!
+
+```
+Module::assetPath('name');
+
+Module::assetPath('name');
+```
+
+Get config value from this package.
+
+Copied!
+
+```
+Module::config('composer.vendor');
+
+Module::config('composer.vendor');
+```
+
+Get used storage path.
+
+Copied!
+
+```
+Module::getUsedStoragePath();
+
+Module::getUsedStoragePath();
+```
+
+Get used module for cli session.
+
+Copied!
+
+```
+Module::getUsedNow();
+
+// OR
+
+Module::getUsed();
+
+Module::getUsedNow();
+// OR
+Module::getUsed();
+```
+
+Set used module for cli session.
+
+Copied!
+
+```
+Module::setUsed('name');
+
+Module::setUsed('name');
+```
+
+Get modules's assets path.
+
+Copied!
+
+```
+Module::getAssetsPath();
+
+Module::getAssetsPath();
+```
+
+Get asset url from specific module.
+
+Copied!
+
+```
+Module::asset('blog:img/logo.img');
+
+Module::asset('blog:img/logo.img');
+```
+
+Install the specified module by given module name.
+
+Copied!
+
+```
+Module::install('nwidart/hello');
+
+Module::install('nwidart/hello');
+```
+
+Update dependencies for the specified module.
+
+Copied!
+
+```
+Module::update('hello');
+
+Module::update('hello');
+```
+
+Add a macro to the module repository.
+
+Copied!
+
+```
+Module::macro('hello', function() {
+
+echo "I'm a macro";
+
+});
+
+Module::macro('hello', function() {
+    echo "I'm a macro";
+});
+```
+
+Call a macro from the module repository.
+
+Copied!
+
+```
+Module::hello();
+
+Module::hello();
+```
+
+Get all required modules of a module
+
+Copied!
+
+```
+Module::getRequirements('module name');
+
+Module::getRequirements('module name');
+```

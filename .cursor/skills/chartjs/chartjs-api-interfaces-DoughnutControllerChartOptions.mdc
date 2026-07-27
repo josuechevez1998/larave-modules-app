@@ -1,0 +1,114 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: DoughnutControllerChartOptions (/docs/latest/api/interfaces/DoughnutControllerChartOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: DoughnutControllerChartOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/DoughnutControllerChartOptions.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-doughnutcontrollerchartoptions) Interface: DoughnutControllerChartOptions
+
+## [#](#properties) Properties
+
+### [#](#animation) animation
+
+• **animation**: `false` | [`DoughnutAnimationOptions`](/docs/latest/api/interfaces/DoughnutAnimationOptions.html)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:335  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L335)
+
+---
+
+### [#](#circumference) circumference
+
+• **circumference**: `number`
+
+Sweep to allow arcs to cover.
+
+**`Default`**
+
+360
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:303  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L303)
+
+---
+
+### [#](#cutout) cutout
+
+• **cutout**: [`Scriptable`](/docs/latest/api/#scriptable)<`string` | `number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"doughnut"`>>
+
+The portion of the chart that is cut out of the middle. ('50%' - for doughnut, 0 - for pie)
+String ending with '%' means percentage, number means pixels.
+
+**`Default`**
+
+50
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:310  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L310)
+
+---
+
+### [#](#offset) offset
+
+• **offset**: `number` | `number`[]
+
+Arc offset (in pixels).
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:315  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L315)
+
+---
+
+### [#](#radius) radius
+
+• **radius**: [`Scriptable`](/docs/latest/api/#scriptable)<`string` | `number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"doughnut"`>>
+
+The outer radius of the chart. String ending with '%' means percentage of maximum radius, number means pixels.
+
+**`Default`**
+
+'100%'
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:321  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L321)
+
+---
+
+### [#](#rotation) rotation
+
+• **rotation**: `number`
+
+Starting angle to draw arcs from.
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:327  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L327)
+
+---
+
+### [#](#spacing) spacing
+
+• **spacing**: `number`
+
+Spacing between the arcs
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:333  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L333)

@@ -1,0 +1,28 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Common tick options to all axes (/docs/latest/axes/_common_ticks.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Common tick options to all axes
+
+> Fuente: https://www.chartjs.org/docs/latest/axes/_common_ticks.html
+> Exportado: 2026-07-12 20:58 UTC
+
+### [#](#common-tick-options-to-all-axes) Common tick options to all axes
+
+Namespace: `options.scales[scaleId].ticks`
+
+| Name | Type | Scriptable | Default | Description |
+| --- | --- | --- | --- | --- |
+| `backdropColor` | [`Color`](/docs/latest/general/colors.html) | Yes | `'rgba(255, 255, 255, 0.75)'` | Color of label backdrops. |
+| `backdropPadding` | [`Padding`](/docs/latest/general/padding.html) |  | `2` | Padding of label backdrop. |
+| `callback` | `function` |  |  | Returns the string representation of the tick value as it should be displayed on the chart. See [callback](/docs/latest/axes/labelling.html#creating-custom-tick-formats). |
+| `display` | `boolean` |  | `true` | If true, show tick labels. |
+| `color` | [`Color`](/docs/latest/general/colors.html) | Yes | `Chart.defaults.color` | Color of ticks. |
+| `font` | `Font` | Yes | `Chart.defaults.font` | See [Fonts](/docs/latest/general/fonts.html) |
+| `major` | `object` |  | `{}` | [Major ticks configuration](/docs/latest/axes/styling.html#major-tick-configuration). |
+| `padding` | `number` |  | `3` | Sets the offset of the tick labels from the axis |
+| `showLabelBackdrop` | `boolean` | Yes | `true` for radial scale, `false` otherwise | If true, draw a background behind the tick labels. |
+| `textStrokeColor` | [`Color`](/docs/latest/general/colors.html) | Yes | `` | The color of the stroke around the text. |
+| `textStrokeWidth` | `number` | Yes | `0` | Stroke width around the text. |
+| `z` | `number` |  | `0` | z-index of tick layer. Useful when ticks are drawn on chart area. Values <= 0 are drawn under datasets, > 0 on top. |

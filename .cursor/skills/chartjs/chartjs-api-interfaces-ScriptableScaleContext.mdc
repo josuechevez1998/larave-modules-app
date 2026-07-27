@@ -1,0 +1,51 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ScriptableScaleContext (/docs/latest/api/interfaces/ScriptableScaleContext.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ScriptableScaleContext
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ScriptableScaleContext.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-scriptablescalecontext) Interface: ScriptableScaleContext
+
+## [#](#properties) Properties
+
+### [#](#chart) chart
+
+• **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1390  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1390)
+
+---
+
+### [#](#index) index
+
+• **index**: `number`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1392  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1392)
+
+---
+
+### [#](#scale) scale
+
+• **scale**: [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1391  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1391)
+
+---
+
+### [#](#tick) tick
+
+• **tick**: [`Tick`](/docs/latest/api/interfaces/Tick.html)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1393  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1393)

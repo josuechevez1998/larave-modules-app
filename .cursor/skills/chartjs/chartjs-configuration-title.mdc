@@ -1,0 +1,89 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Title (/docs/latest/configuration/title.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Title
+
+> Fuente: https://www.chartjs.org/docs/latest/configuration/title.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#title) Title
+
+The chart title defines text to draw at the top of the chart.
+
+## [#](#title-configuration) Title Configuration
+
+Namespace: `options.plugins.title`, the global options for the chart title is defined in `Chart.defaults.plugins.title`.
+
+| Name | Type | Default | [Scriptable](/docs/latest/general/options.html#scriptable-options) | Description |
+| --- | --- | --- | --- | --- |
+| `align` | `string` | `'center'` | Yes | Alignment of the title. [more...](#align) |
+| `color` | [`Color`](/docs/latest/general/colors.html) | `Chart.defaults.color` | Yes | Color of text. |
+| `display` | `boolean` | `false` | Yes | Is the title shown? |
+| `fullSize` | `boolean` | `true` | Yes | Marks that this box should take the full width/height of the canvas. If `false`, the box is sized and placed above/beside the chart area. |
+| `position` | `string` | `'top'` | Yes | Position of title. [more...](#position) |
+| `font` | `Font` | `{weight: 'bold'}` | Yes | See [Fonts](/docs/latest/general/fonts.html) |
+| `padding` | [`Padding`](/docs/latest/general/padding.html) | `10` | Yes | Padding to apply around the title. Only `top` and `bottom` are implemented. |
+| `text` | `string`|`string[]` | `''` | Yes | Title text to display. If specified as an array, text is rendered on multiple lines. |
+
+Note
+
+If you need more visual customizations, you can implement the title with HTML and CSS.
+
+### [#](#position) Position
+
+Possible title position values are:
+
+- `'top'`
+- `'left'`
+- `'bottom'`
+- `'right'`
+
+## [#](#align) Align
+
+Alignment of the title. Options are:
+
+- `'start'`
+- `'center'`
+- `'end'`
+
+## [#](#example-usage) Example Usage
+
+The example below would enable a title of 'Custom Chart Title' on the chart that is created.
+
+```
+const chart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Custom Chart Title'
+            }
+        }
+    }
+});
+```
+
+This example shows how to specify separate top and bottom title text padding:
+
+```
+const chart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Custom Chart Title',
+                padding: {
+                    top: 10,
+                    bottom: 30
+                }
+            }
+        }
+    }
+});
+```

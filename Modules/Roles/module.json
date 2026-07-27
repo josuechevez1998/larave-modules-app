@@ -1,0 +1,11 @@
+{
+    "name": "Roles",
+    "alias": "roles",
+    "description": "Roles y permisos Spatie (teams)",
+    "keywords": ["spatie", "permission", "roles"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Roles\\Providers\\RolesServiceProvider"
+    ],
+    "files": []
+}

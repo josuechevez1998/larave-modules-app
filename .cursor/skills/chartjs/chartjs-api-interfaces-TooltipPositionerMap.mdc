@@ -1,0 +1,31 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipPositionerMap (/docs/latest/api/interfaces/TooltipPositionerMap.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipPositionerMap
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipPositionerMap.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-tooltippositionermap) Interface: TooltipPositionerMap
+
+## [#](#properties) Properties
+
+### [#](#average) average
+
+• **average**: [`TooltipPositionerFunction`](/docs/latest/api/#tooltippositionerfunction)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2669  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2669)
+
+---
+
+### [#](#nearest) nearest
+
+• **nearest**: [`TooltipPositionerFunction`](/docs/latest/api/#tooltippositionerfunction)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2670  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2670)

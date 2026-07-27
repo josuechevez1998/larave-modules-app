@@ -1,0 +1,53 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: CommonHoverOptions (/docs/latest/api/interfaces/CommonHoverOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: CommonHoverOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/CommonHoverOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-commonhoveroptions) Interface: CommonHoverOptions
+
+## [#](#hierarchy) Hierarchy
+
+- **`CommonHoverOptions`**
+
+  ↳ [`ArcHoverOptions`](/docs/latest/api/interfaces/ArcHoverOptions.html)
+
+  ↳ [`LineHoverOptions`](/docs/latest/api/interfaces/LineHoverOptions.html)
+
+  ↳ [`PointHoverOptions`](/docs/latest/api/interfaces/PointHoverOptions.html)
+
+  ↳ [`BarHoverOptions`](/docs/latest/api/interfaces/BarHoverOptions.html)
+
+## [#](#properties) Properties
+
+### [#](#hoverbackgroundcolor) hoverBackgroundColor
+
+• **hoverBackgroundColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1834  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1834)
+
+---
+
+### [#](#hoverbordercolor) hoverBorderColor
+
+• **hoverBorderColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1833  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1833)
+
+---
+
+### [#](#hoverborderwidth) hoverBorderWidth
+
+• **hoverBorderWidth**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1832  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1832)

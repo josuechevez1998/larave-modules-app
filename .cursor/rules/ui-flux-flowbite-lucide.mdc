@@ -1,0 +1,17 @@
+---
+description: UI stack Flux + Flowbite JS + Lucide
+globs:
+  - resources/views/**/*.blade.php
+  - resources/css/**/*.css
+  - resources/js/**/*.js
+  - Modules/**/resources/views/**/*.blade.php
+alwaysApply: false
+---
+
+# UI: Flux + Flowbite JS + Lucide
+
+- **Flux** = componentes UI / formularios / overlays (Livewire). Tailwind **v4** obligatorio.
+- **Flowbite** = solo JS (`initFlowbite` en `app.js`). Sin CSS completo Flowbite, sin plugin Tailwind Flowbite, sin DaisyUI.
+- **Lucide** = únicos iconos (`<x-icon name="..." />` / `LucideIcon`).
+- Layouts auth: `@fluxAppearance`, `@fluxScripts`, breadcrumbs. Layouts públicos (welcome/guest): sin trail de breadcrumbs.
+- No reescribir auth Breeze a Flux de golpe; migrar gradualmente.

@@ -1,0 +1,1514 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Chart.js - v4.5.1 (/docs/latest/api). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Chart.js - v4.5.1
+
+> Fuente: https://www.chartjs.org/docs/latest/api
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#chart-js-v4-5-1) Chart.js - v4.5.1
+
+## [#](#enumerations) Enumerations
+
+- [DecimationAlgorithm](/docs/latest/api/enums/DecimationAlgorithm.html)
+- [UpdateModeEnum](/docs/latest/api/enums/UpdateModeEnum.html)
+
+## [#](#classes) Classes
+
+- [Animation](/docs/latest/api/classes/Animation.html)
+- [Animations](/docs/latest/api/classes/Animations.html)
+- [Animator](/docs/latest/api/classes/Animator.html)
+- [ArcElement](/docs/latest/api/classes/ArcElement.html)
+- [BasePlatform](/docs/latest/api/classes/BasePlatform.html)
+- [BasicPlatform](/docs/latest/api/classes/BasicPlatform.html)
+- [Chart](/docs/latest/api/classes/Chart.html)
+- [DatasetController](/docs/latest/api/classes/DatasetController.html)
+- [DomPlatform](/docs/latest/api/classes/DomPlatform.html)
+- [PointElement](/docs/latest/api/classes/PointElement.html)
+- [Scale](/docs/latest/api/classes/Scale.html)
+
+## [#](#interfaces) Interfaces
+
+- [ActiveDataPoint](/docs/latest/api/interfaces/ActiveDataPoint.html)
+- [ActiveElement](/docs/latest/api/interfaces/ActiveElement.html)
+- [AnimationEvent](/docs/latest/api/interfaces/AnimationEvent.html)
+- [ArcBorderRadius](/docs/latest/api/interfaces/ArcBorderRadius.html)
+- [ArcHoverOptions](/docs/latest/api/interfaces/ArcHoverOptions.html)
+- [ArcOptions](/docs/latest/api/interfaces/ArcOptions.html)
+- [ArcProps](/docs/latest/api/interfaces/ArcProps.html)
+- [BackdropOptions](/docs/latest/api/interfaces/BackdropOptions.html)
+- [BarControllerChartOptions](/docs/latest/api/interfaces/BarControllerChartOptions.html)
+- [BarControllerDatasetOptions](/docs/latest/api/interfaces/BarControllerDatasetOptions.html)
+- [BarElement](/docs/latest/api/interfaces/BarElement.html)
+- [BarHoverOptions](/docs/latest/api/interfaces/BarHoverOptions.html)
+- [BarOptions](/docs/latest/api/interfaces/BarOptions.html)
+- [BarParsedData](/docs/latest/api/interfaces/BarParsedData.html)
+- [BarProps](/docs/latest/api/interfaces/BarProps.html)
+- [BorderOptions](/docs/latest/api/interfaces/BorderOptions.html)
+- [BorderRadius](/docs/latest/api/interfaces/BorderRadius.html)
+- [BubbleControllerDatasetOptions](/docs/latest/api/interfaces/BubbleControllerDatasetOptions.html)
+- [BubbleDataPoint](/docs/latest/api/interfaces/BubbleDataPoint.html)
+- [BubbleParsedData](/docs/latest/api/interfaces/BubbleParsedData.html)
+- [CanvasFontSpec](/docs/latest/api/interfaces/CanvasFontSpec.html)
+- [CartesianParsedData](/docs/latest/api/interfaces/CartesianParsedData.html)
+- [CartesianScaleOptions](/docs/latest/api/interfaces/CartesianScaleOptions.html)
+- [CartesianScaleTypeRegistry](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html)
+- [ChartArea](/docs/latest/api/interfaces/ChartArea.html)
+- [ChartComponent](/docs/latest/api/interfaces/ChartComponent.html)
+- [ChartConfiguration](/docs/latest/api/interfaces/ChartConfiguration.html)
+- [ChartConfigurationCustomTypesPerDataset](/docs/latest/api/interfaces/ChartConfigurationCustomTypesPerDataset.html)
+- [ChartData](/docs/latest/api/interfaces/ChartData.html)
+- [ChartDataCustomTypesPerDataset](/docs/latest/api/interfaces/ChartDataCustomTypesPerDataset.html)
+- [ChartDatasetProperties](/docs/latest/api/interfaces/ChartDatasetProperties.html)
+- [ChartDatasetPropertiesCustomTypesPerDataset](/docs/latest/api/interfaces/ChartDatasetPropertiesCustomTypesPerDataset.html)
+- [ChartEvent](/docs/latest/api/interfaces/ChartEvent.html)
+- [ChartTypeRegistry](/docs/latest/api/interfaces/ChartTypeRegistry.html)
+- [CommonElementOptions](/docs/latest/api/interfaces/CommonElementOptions.html)
+- [CommonHoverOptions](/docs/latest/api/interfaces/CommonHoverOptions.html)
+- [ComplexFillTarget](/docs/latest/api/interfaces/ComplexFillTarget.html)
+- [ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html)
+- [CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html)
+- [CoreInteractionOptions](/docs/latest/api/interfaces/CoreInteractionOptions.html)
+- [CoreScaleOptions](/docs/latest/api/interfaces/CoreScaleOptions.html)
+- [DatasetControllerChartComponent](/docs/latest/api/interfaces/DatasetControllerChartComponent.html)
+- [Defaults](/docs/latest/api/interfaces/Defaults.html)
+- [DoughnutAnimationOptions](/docs/latest/api/interfaces/DoughnutAnimationOptions.html)
+- [DoughnutController](/docs/latest/api/interfaces/DoughnutController.html)
+- [DoughnutControllerChartOptions](/docs/latest/api/interfaces/DoughnutControllerChartOptions.html)
+- [DoughnutControllerDatasetOptions](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html)
+- [DoughnutMetaExtensions](/docs/latest/api/interfaces/DoughnutMetaExtensions.html)
+- [ElementOptionsByType](/docs/latest/api/interfaces/ElementOptionsByType.html)
+- [ExtendedPlugin](/docs/latest/api/interfaces/ExtendedPlugin.html)
+- [FillerControllerDatasetOptions](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html)
+- [FillerOptions](/docs/latest/api/interfaces/FillerOptions.html)
+- [FontSpec](/docs/latest/api/interfaces/FontSpec.html)
+- [GridLineOptions](/docs/latest/api/interfaces/GridLineOptions.html)
+- [InteractionItem](/docs/latest/api/interfaces/InteractionItem.html)
+- [InteractionModeMap](/docs/latest/api/interfaces/InteractionModeMap.html)
+- [InteractionOptions](/docs/latest/api/interfaces/InteractionOptions.html)
+- [LabelItem](/docs/latest/api/interfaces/LabelItem.html)
+- [LayoutItem](/docs/latest/api/interfaces/LayoutItem.html)
+- [LegendElement](/docs/latest/api/interfaces/LegendElement.html)
+- [LegendItem](/docs/latest/api/interfaces/LegendItem.html)
+- [LegendOptions](/docs/latest/api/interfaces/LegendOptions.html)
+- [LineControllerChartOptions](/docs/latest/api/interfaces/LineControllerChartOptions.html)
+- [LineControllerDatasetOptions](/docs/latest/api/interfaces/LineControllerDatasetOptions.html)
+- [LineElement](/docs/latest/api/interfaces/LineElement.html)
+- [LineHoverOptions](/docs/latest/api/interfaces/LineHoverOptions.html)
+- [LineOptions](/docs/latest/api/interfaces/LineOptions.html)
+- [LineProps](/docs/latest/api/interfaces/LineProps.html)
+- [ParsingOptions](/docs/latest/api/interfaces/ParsingOptions.html)
+- [Plugin](/docs/latest/api/interfaces/Plugin.html)
+- [PluginChartOptions](/docs/latest/api/interfaces/PluginChartOptions.html)
+- [PluginDatasetOptionsByType](/docs/latest/api/interfaces/PluginDatasetOptionsByType.html)
+- [PluginOptionsByType](/docs/latest/api/interfaces/PluginOptionsByType.html)
+- [Point](/docs/latest/api/interfaces/Point.html)
+- [PointHoverOptions](/docs/latest/api/interfaces/PointHoverOptions.html)
+- [PointOptions](/docs/latest/api/interfaces/PointOptions.html)
+- [PointPrefixedHoverOptions](/docs/latest/api/interfaces/PointPrefixedHoverOptions.html)
+- [PointPrefixedOptions](/docs/latest/api/interfaces/PointPrefixedOptions.html)
+- [PolarAreaController](/docs/latest/api/interfaces/PolarAreaController.html)
+- [PolarAreaControllerChartOptions](/docs/latest/api/interfaces/PolarAreaControllerChartOptions.html)
+- [PolarAreaControllerDatasetOptions](/docs/latest/api/interfaces/PolarAreaControllerDatasetOptions.html)
+- [RadarControllerDatasetOptions](/docs/latest/api/interfaces/RadarControllerDatasetOptions.html)
+- [RadialLinearScale](/docs/latest/api/interfaces/RadialLinearScale.html)
+- [RadialParsedData](/docs/latest/api/interfaces/RadialParsedData.html)
+- [RadialScaleTypeRegistry](/docs/latest/api/interfaces/RadialScaleTypeRegistry.html)
+- [Registry](/docs/latest/api/interfaces/Registry.html)
+- [RenderTextOpts](/docs/latest/api/interfaces/RenderTextOpts.html)
+- [ScaleTypeRegistry](/docs/latest/api/interfaces/ScaleTypeRegistry.html)
+- [ScriptableCartesianScaleContext](/docs/latest/api/interfaces/ScriptableCartesianScaleContext.html)
+- [ScriptableChartContext](/docs/latest/api/interfaces/ScriptableChartContext.html)
+- [ScriptableContext](/docs/latest/api/interfaces/ScriptableContext.html)
+- [ScriptableLineSegmentContext](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)
+- [ScriptableScaleContext](/docs/latest/api/interfaces/ScriptableScaleContext.html)
+- [ScriptableScalePointLabelContext](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)
+- [ScriptableTooltipContext](/docs/latest/api/interfaces/ScriptableTooltipContext.html)
+- [Segment](/docs/latest/api/interfaces/Segment.html)
+- [Tick](/docs/latest/api/interfaces/Tick.html)
+- [TickOptions](/docs/latest/api/interfaces/TickOptions.html)
+- [TimeScale](/docs/latest/api/interfaces/TimeScale.html)
+- [TitleOptions](/docs/latest/api/interfaces/TitleOptions.html)
+- [Tooltip](/docs/latest/api/interfaces/Tooltip.html)
+- [TooltipCallbacks](/docs/latest/api/interfaces/TooltipCallbacks.html)
+- [TooltipDatasetCallbacks](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html)
+- [TooltipDatasetOptions](/docs/latest/api/interfaces/TooltipDatasetOptions.html)
+- [TooltipItem](/docs/latest/api/interfaces/TooltipItem.html)
+- [TooltipLabelStyle](/docs/latest/api/interfaces/TooltipLabelStyle.html)
+- [TooltipModel](/docs/latest/api/interfaces/TooltipModel.html)
+- [TooltipOptions](/docs/latest/api/interfaces/TooltipOptions.html)
+- [TooltipPosition](/docs/latest/api/interfaces/TooltipPosition.html)
+- [TooltipPositionerMap](/docs/latest/api/interfaces/TooltipPositionerMap.html)
+- [TypedRegistry](/docs/latest/api/interfaces/TypedRegistry.html)
+- [VisualElement](/docs/latest/api/interfaces/VisualElement.html)
+
+## [#](#type-aliases) Type Aliases
+
+### [#](#align) Align
+
+Ƭ **Align**: `"start"` | `"center"` | `"end"`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1814  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1814)
+
+---
+
+### [#](#animationoptions) AnimationOptions
+
+Ƭ **AnimationOptions**<`TType`>: `Object`
+
+#### [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `animation` | `false` | [`AnimationSpec`](/docs/latest/api/#animationspec)<`TType`> & { `onComplete?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html), `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` ; `onProgress?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html), `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` } |
+| `animations` | [`AnimationsSpec`](/docs/latest/api/#animationsspec)<`TType`> |
+| `transitions` | [`TransitionsSpec`](/docs/latest/api/#transitionsspec)<`TType`> |
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1767  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1767)
+
+---
+
+### [#](#animationspec) AnimationSpec
+
+Ƭ **AnimationSpec**<`TType`>: `Object`
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `delay?` | [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> | Delay before starting the animations. **`Default`** 0 |
+| `duration?` | [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> | The number of milliseconds an animation takes. **`Default`** 1000 |
+| `easing?` | [`Scriptable`](/docs/latest/api/#scriptable)<[`EasingFunction`](/docs/latest/api/#easingfunction), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> | Easing function to use **`Default`** 'easeOutQuart' |
+| `loop?` | [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> | If set to true, the animations loop endlessly. **`Default`** false |
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1711  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1711)
+
+---
+
+### [#](#animationsspec) AnimationsSpec
+
+Ƭ **AnimationsSpec**<`TType`>: `Object`
+
+#### [#](#type-parameters-3) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#index-signature) Index signature
+
+▪ [name: `string`]: `false` | [`AnimationSpec`](/docs/latest/api/#animationspec)<`TType`> & { `fn`: <T>(`from`: `T`, `to`: `T`, `factor`: `number`) => `T` ; `from`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color) | `number` | `boolean`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> ; `properties`: `string`[] ; `to`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color) | `number` | `boolean`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> ; `type`: `"color"` | `"number"` | `"boolean"` }
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1736  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1736)
+
+---
+
+### [#](#barcontroller) BarController
+
+Ƭ **BarController**: [`DatasetController`](/docs/latest/api/classes/DatasetController.html)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:156  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L156)
+
+[types/index.d.ts:157  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L157)
+
+---
+
+### [#](#bubblecontroller) BubbleController
+
+Ƭ **BubbleController**: [`DatasetController`](/docs/latest/api/classes/DatasetController.html)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:183  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L183)
+
+[types/index.d.ts:184  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L184)
+
+---
+
+### [#](#cartesiantickoptions) CartesianTickOptions
+
+Ƭ **CartesianTickOptions**: [`TickOptions`](/docs/latest/api/interfaces/TickOptions.html) & { `align`: [`Align`](/docs/latest/api/#align) | `"inner"` ; `autoSkip`: `boolean` ; `autoSkipPadding`: `number` ; `crossAlign`: `"near"` | `"center"` | `"far"` ; `includeBounds`: `boolean` ; `labelOffset`: `number` ; `maxRotation`: `number` ; `maxTicksLimit`: `number` ; `minRotation`: `number` ; `mirror`: `boolean` ; `padding`: `number` ; `sampleSize`: `number` }
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:3134  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3134)
+
+---
+
+### [#](#categoryscale) CategoryScale
+
+Ƭ **CategoryScale**<`O`>: [`Scale`](/docs/latest/api/classes/Scale.html)<`O`>
+
+#### [#](#type-parameters-4) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`CategoryScaleOptions`](/docs/latest/api/#categoryscaleoptions) = [`CategoryScaleOptions`](/docs/latest/api/#categoryscaleoptions) |
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:3301  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3301)
+
+[types/index.d.ts:3302  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3302)
+
+---
+
+### [#](#categoryscaleoptions) CategoryScaleOptions
+
+Ƭ **CategoryScaleOptions**: `Omit`<[`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html), `"min"` | `"max"`> & { `labels`: `string`[] | `string`[][] ; `max`: `string` | `number` ; `min`: `string` | `number` }
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:3295  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3295)
+
+---
+
+### [#](#chartcomponentlike) ChartComponentLike
+
+Ƭ **ChartComponentLike**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) | [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html)[] | { `[key: string]`: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html); } | [`Plugin`](/docs/latest/api/interfaces/Plugin.html) | [`Plugin`](/docs/latest/api/interfaces/Plugin.html)[]
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1136  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1136)
+
+---
+
+### [#](#chartdataset) ChartDataset
+
+Ƭ **ChartDataset**<`TType`, `TData`>: `DeepPartial`<{ [key in ChartType]: Object & ChartTypeRegistry[key]["datasetOptions"] }[`TType`]> & `DeepPartial`<[`PluginDatasetOptionsByType`](/docs/latest/api/interfaces/PluginDatasetOptionsByType.html)<`TType`>> & [`ChartDatasetProperties`](/docs/latest/api/interfaces/ChartDatasetProperties.html)<`TType`, `TData`>
+
+#### [#](#type-parameters-5) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+| `TData` | [`DefaultDataPoint`](/docs/latest/api/#defaultdatapoint)<`TType`> |
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:3820  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3820)
+
+---
+
+### [#](#chartdatasetcustomtypesperdataset) ChartDatasetCustomTypesPerDataset
+
+Ƭ **ChartDatasetCustomTypesPerDataset**<`TType`, `TData`>: `DeepPartial`<{ [key in ChartType]: Object & ChartTypeRegistry[key]["datasetOptions"] }[`TType`]> & `DeepPartial`<[`PluginDatasetOptionsByType`](/docs/latest/api/interfaces/PluginDatasetOptionsByType.html)<`TType`>> & [`ChartDatasetPropertiesCustomTypesPerDataset`](/docs/latest/api/interfaces/ChartDatasetPropertiesCustomTypesPerDataset.html)<`TType`, `TData`>
+
+#### [#](#type-parameters-6) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+| `TData` | [`DefaultDataPoint`](/docs/latest/api/#defaultdatapoint)<`TType`> |
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:3829  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3829)
+
+---
+
+### [#](#chartitem) ChartItem
+
+Ƭ **ChartItem**: `string` | `CanvasRenderingContext2D` | `HTMLCanvasElement` | { `canvas`: `HTMLCanvasElement` } | `ArrayLike`<`CanvasRenderingContext2D` | `HTMLCanvasElement`>
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:573  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L573)
+
+---
+
+### [#](#chartmeta) ChartMeta
+
+Ƭ **ChartMeta**<`TType`, `TElement`, `TDatasetElement`>: `DeepPartial`<{ [key in ChartType]: ChartTypeRegistry[key]["metaExtensions"] }[`TType`]> & `ChartMetaCommon`<`TElement`, `TDatasetElement`>
+
+#### [#](#type-parameters-7) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+| `TElement` | extends `Element` = `Element` |
+| `TDatasetElement` | extends `Element` = `Element` |
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:477  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L477)
+
+---
+
+### [#](#chartoptions) ChartOptions
+
+Ƭ **ChartOptions**<`TType`>: `Exclude`<`DeepPartial`<[`CoreChartOptions`](/docs/latest/api/interfaces/CoreChartOptions.html)<`TType`> & [`ElementChartOptions`](/docs/latest/api/#elementchartoptions)<`TType`> & [`PluginChartOptions`](/docs/latest/api/interfaces/PluginChartOptions.html)<`TType`> & [`DatasetChartOptions`](/docs/latest/api/#datasetchartoptions)<`TType`> & [`ScaleChartOptions`](/docs/latest/api/#scalechartoptions)<`TType`> & [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"chartOptions"`]>, `DeepPartial`<`unknown`[]>>
+
+#### [#](#type-parameters-8) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:3794  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3794)
+
+---
+
+### [#](#charttype) ChartType
+
+Ƭ **ChartType**: keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:3773  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3773)
+
+---
+
+### [#](#color) Color
+
+Ƭ **Color**: `string` | `CanvasGradient` | `CanvasPattern`
+
+#### [#](#defined-in-17) Defined in
+
+[types/color.d.ts:1  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/color.d.ts#L1)
+
+---
+
+### [#](#datasetchartoptions) DatasetChartOptions
+
+Ƭ **DatasetChartOptions**<`TType`>: { [key in TType]: Object }
+
+#### [#](#type-parameters-9) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:3782  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3782)
+
+---
+
+### [#](#decimationoptions) DecimationOptions
+
+Ƭ **DecimationOptions**: `LttbDecimationOptions` | `MinMaxDecimationOptions`
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:2247  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2247)
+
+---
+
+### [#](#defaultdatapoint) DefaultDataPoint
+
+Ƭ **DefaultDataPoint**<`TType`>: `DistributiveArray`<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"defaultDataPoint"`]>
+
+#### [#](#type-parameters-10) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:3806  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3806)
+
+---
+
+### [#](#doughnutdatapoint) DoughnutDataPoint
+
+Ƭ **DoughnutDataPoint**: `number`
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:338  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L338)
+
+---
+
+### [#](#easingfunction) EasingFunction
+
+Ƭ **EasingFunction**: keyof typeof `effects`
+
+#### [#](#defined-in-22) Defined in
+
+[helpers/helpers.easing.ts:122  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/helpers/helpers.easing.ts#L122)
+
+---
+
+### [#](#elementchartoptions) ElementChartOptions
+
+Ƭ **ElementChartOptions**<`TType`>: `Object`
+
+#### [#](#type-parameters-11) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#type-declaration-3) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `elements` | [`ElementOptionsByType`](/docs/latest/api/interfaces/ElementOptionsByType.html)<`TType`> |
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:2163  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2163)
+
+---
+
+### [#](#filltarget) FillTarget
+
+Ƭ **FillTarget**: `number` | `string` | { `value`: `number` } | `"start"` | `"end"` | `"origin"` | `"stack"` | `"shape"` | `boolean`
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:2255  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2255)
+
+---
+
+### [#](#interactionaxis) InteractionAxis
+
+Ƭ **InteractionAxis**: `"x"` | `"y"` | `"xy"` | `"r"`
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:1573  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1573)
+
+---
+
+### [#](#interactionmode) InteractionMode
+
+Ƭ **InteractionMode**: keyof [`InteractionModeMap`](/docs/latest/api/interfaces/InteractionModeMap.html)
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:771  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L771)
+
+---
+
+### [#](#interactionmodefunction) InteractionModeFunction
+
+Ƭ **InteractionModeFunction**: (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html), `e`: [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html), `options`: [`InteractionOptions`](/docs/latest/api/interfaces/InteractionOptions.html), `useFinalPosition?`: `boolean`) => [`InteractionItem`](/docs/latest/api/interfaces/InteractionItem.html)[]
+
+#### [#](#type-declaration-4) Type declaration
+
+▸ (`chart`, `e`, `options`, `useFinalPosition?`): [`InteractionItem`](/docs/latest/api/interfaces/InteractionItem.html)[]
+
+##### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html) |
+| `e` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `options` | [`InteractionOptions`](/docs/latest/api/interfaces/InteractionOptions.html) |
+| `useFinalPosition?` | `boolean` |
+
+##### [#](#returns) Returns
+
+[`InteractionItem`](/docs/latest/api/interfaces/InteractionItem.html)[]
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:733  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L733)
+
+---
+
+### [#](#layoutposition) LayoutPosition
+
+Ƭ **LayoutPosition**: `"left"` | `"top"` | `"right"` | `"bottom"` | `"center"` | `"chartArea"` | { `[scaleId: string]`: `number`; }
+
+#### [#](#defined-in-28) Defined in
+
+[types/layout.d.ts:3  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L3)
+
+---
+
+### [#](#linecontroller) LineController
+
+Ƭ **LineController**: [`DatasetController`](/docs/latest/api/classes/DatasetController.html)
+
+#### [#](#defined-in-29) Defined in
+
+[types/index.d.ts:229  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L229)
+
+[types/index.d.ts:230  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L230)
+
+---
+
+### [#](#linearscale) LinearScale
+
+Ƭ **LinearScale**<`O`>: [`Scale`](/docs/latest/api/classes/Scale.html)<`O`>
+
+#### [#](#type-parameters-12) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`LinearScaleOptions`](/docs/latest/api/#linearscaleoptions) = [`LinearScaleOptions`](/docs/latest/api/#linearscaleoptions) |
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:3350  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3350)
+
+[types/index.d.ts:3351  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3351)
+
+---
+
+### [#](#linearscaleoptions) LinearScaleOptions
+
+Ƭ **LinearScaleOptions**: [`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html) & { `beginAtZero`: `boolean` ; `grace?`: `string` | `number` ; `suggestedMax?`: `number` ; `suggestedMin?`: `number` ; `ticks`: { `count`: `number` ; `format`: `Intl.NumberFormatOptions` ; `precision`: `number` ; `stepSize`: `number` } }
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:3307  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3307)
+
+---
+
+### [#](#logarithmicscale) LogarithmicScale
+
+Ƭ **LogarithmicScale**<`O`>: [`Scale`](/docs/latest/api/classes/Scale.html)<`O`>
+
+#### [#](#type-parameters-13) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`LogarithmicScaleOptions`](/docs/latest/api/#logarithmicscaleoptions) = [`LogarithmicScaleOptions`](/docs/latest/api/#logarithmicscaleoptions) |
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:3374  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3374)
+
+[types/index.d.ts:3375  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3375)
+
+---
+
+### [#](#logarithmicscaleoptions) LogarithmicScaleOptions
+
+Ƭ **LogarithmicScaleOptions**: [`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html) & { `suggestedMax?`: `number` ; `suggestedMin?`: `number` ; `ticks`: { `format`: `Intl.NumberFormatOptions` } }
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:3356  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3356)
+
+---
+
+### [#](#overrides) Overrides
+
+Ƭ **Overrides**: { [key in ChartType]: CoreChartOptions<key> & ElementChartOptions<key> & PluginChartOptions<key> & DatasetChartOptions<ChartType> & ScaleChartOptions<key> & ChartTypeRegistry[key]["chartOptions"] }
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:710  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L710)
+
+---
+
+### [#](#parseddatatype) ParsedDataType
+
+Ƭ **ParsedDataType**<`TType`>: [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"parsedDataType"`]
+
+#### [#](#type-parameters-14) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:3808  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3808)
+
+---
+
+### [#](#pieanimationoptions) PieAnimationOptions
+
+Ƭ **PieAnimationOptions**: [`DoughnutAnimationOptions`](/docs/latest/api/interfaces/DoughnutAnimationOptions.html)
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:361  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L361)
+
+---
+
+### [#](#piecontroller) PieController
+
+Ƭ **PieController**: [`DoughnutController`](/docs/latest/api/#doughnutcontroller)
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:366  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L366)
+
+[types/index.d.ts:367  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L367)
+
+---
+
+### [#](#piecontrollerchartoptions) PieControllerChartOptions
+
+Ƭ **PieControllerChartOptions**: [`DoughnutControllerChartOptions`](/docs/latest/api/interfaces/DoughnutControllerChartOptions.html)
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:360  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L360)
+
+---
+
+### [#](#piecontrollerdatasetoptions) PieControllerDatasetOptions
+
+Ƭ **PieControllerDatasetOptions**: [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html)
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:359  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L359)
+
+---
+
+### [#](#piedatapoint) PieDataPoint
+
+Ƭ **PieDataPoint**: [`DoughnutDataPoint`](/docs/latest/api/#doughnutdatapoint)
+
+#### [#](#defined-in-40) Defined in
+
+[types/index.d.ts:363  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L363)
+
+---
+
+### [#](#piemetaextensions) PieMetaExtensions
+
+Ƭ **PieMetaExtensions**: [`DoughnutMetaExtensions`](/docs/latest/api/interfaces/DoughnutMetaExtensions.html)
+
+#### [#](#defined-in-41) Defined in
+
+[types/index.d.ts:364  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L364)
+
+---
+
+### [#](#pointprops) PointProps
+
+Ƭ **PointProps**: [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#defined-in-42) Defined in
+
+[elements/element.point.ts:18  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L18)
+
+---
+
+### [#](#pointstyle) PointStyle
+
+Ƭ **PointStyle**: `"circle"` | `"cross"` | `"crossRot"` | `"dash"` | `"line"` | `"rect"` | `"rectRounded"` | `"rectRot"` | `"star"` | `"triangle"` | `false` | `HTMLImageElement` | `HTMLCanvasElement`
+
+#### [#](#defined-in-43) Defined in
+
+[types/index.d.ts:1995  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1995)
+
+---
+
+### [#](#polarareaanimationoptions) PolarAreaAnimationOptions
+
+Ƭ **PolarAreaAnimationOptions**: [`DoughnutAnimationOptions`](/docs/latest/api/interfaces/DoughnutAnimationOptions.html)
+
+#### [#](#defined-in-44) Defined in
+
+[types/index.d.ts:380  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L380)
+
+---
+
+### [#](#radarcontroller) RadarController
+
+Ƭ **RadarController**: [`DatasetController`](/docs/latest/api/classes/DatasetController.html)
+
+#### [#](#defined-in-45) Defined in
+
+[types/index.d.ts:427  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L427)
+
+[types/index.d.ts:428  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L428)
+
+---
+
+### [#](#radarcontrollerchartoptions) RadarControllerChartOptions
+
+Ƭ **RadarControllerChartOptions**: [`LineControllerChartOptions`](/docs/latest/api/interfaces/LineControllerChartOptions.html)
+
+#### [#](#defined-in-46) Defined in
+
+[types/index.d.ts:425  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L425)
+
+---
+
+### [#](#radiallinearscaleoptions) RadialLinearScaleOptions
+
+Ƭ **RadialLinearScaleOptions**: [`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html) & { `angleLines`: { `borderDash`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`[], [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> ; `borderDashOffset`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> ; `color`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> ; `display`: `boolean` ; `lineWidth`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> } ; `animate`: `boolean` ; `beginAtZero`: `boolean` ; `grid`: `Partial`<[`GridLineOptions`](/docs/latest/api/interfaces/GridLineOptions.html)> ; `max`: `number` ; `min`: `number` ; `pointLabels`: { `backdropColor`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `backdropPadding`: [`Scriptable`](/docs/latest/api/#scriptable)<`number` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `borderRadius`: [`Scriptable`](/docs/latest/api/#scriptable)<`number` | [`BorderRadius`](/docs/latest/api/interfaces/BorderRadius.html), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `callback`: (`label`: `string`, `index`: `number`) => `string` | `string`[] | `number` | `number`[] ; `centerPointLabels`: `boolean` ; `color`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `display`: `boolean` | `"auto"` ; `font`: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `padding`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> } ; `startAngle`: `number` ; `suggestedMax`: `number` ; `suggestedMin`: `number` ; `ticks`: [`RadialTickOptions`](/docs/latest/api/#radialtickoptions) }
+
+#### [#](#defined-in-47) Defined in
+
+[types/index.d.ts:3514  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3514)
+
+---
+
+### [#](#radialtickoptions) RadialTickOptions
+
+Ƭ **RadialTickOptions**: [`TickOptions`](/docs/latest/api/interfaces/TickOptions.html) & { `count`: `number` ; `format`: `Intl.NumberFormatOptions` ; `maxTicksLimit`: `number` ; `precision`: `number` ; `stepSize`: `number` }
+
+#### [#](#defined-in-48) Defined in
+
+[types/index.d.ts:3486  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3486)
+
+---
+
+### [#](#scalechartoptions) ScaleChartOptions
+
+Ƭ **ScaleChartOptions**<`TType`>: `Object`
+
+#### [#](#type-parameters-15) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#type-declaration-5) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `scales` | { `[key: string]`: [`ScaleOptionsByType`](/docs/latest/api/#scaleoptionsbytype)<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"scales"`]>; } |
+
+#### [#](#defined-in-49) Defined in
+
+[types/index.d.ts:3788  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3788)
+
+---
+
+### [#](#scaleoptions) ScaleOptions
+
+Ƭ **ScaleOptions**<`TScale`>: `DeepPartial`<[`ScaleOptionsByType`](/docs/latest/api/#scaleoptionsbytype)<`TScale`>>
+
+#### [#](#type-parameters-16) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TScale` | extends [`ScaleType`](/docs/latest/api/#scaletype) = [`ScaleType`](/docs/latest/api/#scaletype) |
+
+#### [#](#defined-in-50) Defined in
+
+[types/index.d.ts:3780  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3780)
+
+---
+
+### [#](#scaleoptionsbytype) ScaleOptionsByType
+
+Ƭ **ScaleOptionsByType**<`TScale`>: { [key in ScaleType]: Object & ScaleTypeRegistry[key]["options"] }[`TScale`]
+
+#### [#](#type-parameters-17) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TScale` | extends [`ScaleType`](/docs/latest/api/#scaletype) = [`ScaleType`](/docs/latest/api/#scaletype) |
+
+#### [#](#defined-in-51) Defined in
+
+[types/index.d.ts:3775  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3775)
+
+---
+
+### [#](#scaletype) ScaleType
+
+Ƭ **ScaleType**: keyof [`ScaleTypeRegistry`](/docs/latest/api/interfaces/ScaleTypeRegistry.html)
+
+#### [#](#defined-in-52) Defined in
+
+[types/index.d.ts:3672  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3672)
+
+---
+
+### [#](#scattercontroller) ScatterController
+
+Ƭ **ScatterController**: [`LineController`](/docs/latest/api/#linecontroller-1)
+
+#### [#](#defined-in-53) Defined in
+
+[types/index.d.ts:241  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L241)
+
+[types/index.d.ts:242  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L242)
+
+---
+
+### [#](#scattercontrollerchartoptions) ScatterControllerChartOptions
+
+Ƭ **ScatterControllerChartOptions**: [`LineControllerChartOptions`](/docs/latest/api/interfaces/LineControllerChartOptions.html)
+
+#### [#](#defined-in-54) Defined in
+
+[types/index.d.ts:239  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L239)
+
+---
+
+### [#](#scattercontrollerdatasetoptions) ScatterControllerDatasetOptions
+
+Ƭ **ScatterControllerDatasetOptions**: [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html)
+
+#### [#](#defined-in-55) Defined in
+
+[types/index.d.ts:235  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L235)
+
+---
+
+### [#](#scatterdatapoint) ScatterDataPoint
+
+Ƭ **ScatterDataPoint**: [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#defined-in-56) Defined in
+
+[types/index.d.ts:237  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L237)
+
+---
+
+### [#](#scriptable) Scriptable
+
+Ƭ **Scriptable**<`T`, `TContext`>: `T` | (`ctx`: `TContext`, `options`: `AnyObject`) => `T` | `undefined`
+
+#### [#](#type-parameters-18) Type parameters
+
+| Name |
+| --- |
+| `T` |
+| `TContext` |
+
+#### [#](#defined-in-57) Defined in
+
+[types/index.d.ts:44  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L44)
+
+---
+
+### [#](#scriptableandarray) ScriptableAndArray
+
+Ƭ **ScriptableAndArray**<`T`, `TContext`>: readonly `T`[] | [`Scriptable`](/docs/latest/api/#scriptable)<`T`, `TContext`>
+
+#### [#](#type-parameters-19) Type parameters
+
+| Name |
+| --- |
+| `T` |
+| `TContext` |
+
+#### [#](#defined-in-58) Defined in
+
+[types/index.d.ts:47  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L47)
+
+---
+
+### [#](#scriptableandarrayoptions) ScriptableAndArrayOptions
+
+Ƭ **ScriptableAndArrayOptions**<`T`, `TContext`>: { [P in keyof T]: ScriptableAndArray<T[P], TContext> }
+
+#### [#](#type-parameters-20) Type parameters
+
+| Name |
+| --- |
+| `T` |
+| `TContext` |
+
+#### [#](#defined-in-59) Defined in
+
+[types/index.d.ts:48  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L48)
+
+---
+
+### [#](#scriptableandscriptableoptions) ScriptableAndScriptableOptions
+
+Ƭ **ScriptableAndScriptableOptions**<`T`, `TContext`>: [`Scriptable`](/docs/latest/api/#scriptable)<`T`, `TContext`> | [`ScriptableOptions`](/docs/latest/api/#scriptableoptions)<`T`, `TContext`>
+
+#### [#](#type-parameters-21) Type parameters
+
+| Name |
+| --- |
+| `T` |
+| `TContext` |
+
+#### [#](#defined-in-60) Defined in
+
+[types/index.d.ts:46  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L46)
+
+---
+
+### [#](#scriptableoptions) ScriptableOptions
+
+Ƭ **ScriptableOptions**<`T`, `TContext`>: { [P in keyof T]: Scriptable<T[P], TContext> }
+
+#### [#](#type-parameters-22) Type parameters
+
+| Name |
+| --- |
+| `T` |
+| `TContext` |
+
+#### [#](#defined-in-61) Defined in
+
+[types/index.d.ts:45  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L45)
+
+---
+
+### [#](#trbl) TRBL
+
+Ƭ **TRBL**: `Object`
+
+#### [#](#type-declaration-6) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `bottom` | `number` |
+| `left` | `number` |
+| `right` | `number` |
+| `top` | `number` |
+
+#### [#](#defined-in-62) Defined in
+
+[types/geometric.d.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L15)
+
+---
+
+### [#](#textalign) TextAlign
+
+Ƭ **TextAlign**: `"left"` | `"center"` | `"right"`
+
+#### [#](#defined-in-63) Defined in
+
+[types/index.d.ts:1813  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1813)
+
+---
+
+### [#](#timescaleoptions) TimeScaleOptions
+
+Ƭ **TimeScaleOptions**: `Omit`<[`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html), `"min"` | `"max"`> & { `adapters`: { `date`: `unknown` } ; `bounds`: `"ticks"` | `"data"` ; `max`: `string` | `number` ; `min`: `string` | `number` ; `offsetAfterAutoskip`: `boolean` ; `suggestedMax`: `string` | `number` ; `suggestedMin`: `string` | `number` ; `ticks`: [`TimeScaleTickOptions`](/docs/latest/api/#timescaletickoptions) ; `time`: [`TimeScaleTimeOptions`](/docs/latest/api/#timescaletimeoptions) }
+
+#### [#](#defined-in-64) Defined in
+
+[types/index.d.ts:3435  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3435)
+
+---
+
+### [#](#timescaletickoptions) TimeScaleTickOptions
+
+Ƭ **TimeScaleTickOptions**: `Object`
+
+#### [#](#type-declaration-7) Type declaration
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `source` | `"labels"` | `"auto"` | `"data"` | Ticks generation input values: - 'auto': generates "optimal" ticks based on scale size and time options. - 'data': generates ticks from data (including labels from data `{t\|x\|y}` objects). - 'labels': generates ticks from user given `data.labels` values ONLY. **`See`** https://github.com/chartjs/Chart.js/pull/4507 **`Since`** 2.7.0 **`Default`** 'auto' |
+| `stepSize` | `number` | The number of units between grid lines. **`Default`** 1 |
+
+#### [#](#defined-in-65) Defined in
+
+[types/index.d.ts:3417  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3417)
+
+---
+
+### [#](#timescaletimeoptions) TimeScaleTimeOptions
+
+Ƭ **TimeScaleTimeOptions**: `Object`
+
+#### [#](#type-declaration-8) Type declaration
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `displayFormats` | { `[key: string]`: `string`; } | Sets how different time units are displayed. |
+| `isoWeekday` | `boolean` | `number` | If boolean and true and the unit is set to 'week', then the first day of the week will be Monday. Otherwise, it will be Sunday. If `number`, the index of the first day of the week (0 - Sunday, 6 - Saturday). **`Default`** false |
+| `minUnit` | `TimeUnit` | The minimum display format to be used for a time unit. **`Default`** 'millisecond' |
+| `parser` | `string` | (`v`: `unknown`) => `number` | Custom parser for dates. |
+| `round` | `false` | `TimeUnit` | If defined, dates will be rounded to the start of this unit. See Time Units below for the allowed units. |
+| `tooltipFormat` | `string` | The format string to use for the tooltip. |
+| `unit` | `false` | `TimeUnit` | If defined, will force the unit to be a certain type. See Time Units section below for details. **`Default`** false |
+
+#### [#](#defined-in-66) Defined in
+
+[types/index.d.ts:3380  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3380)
+
+---
+
+### [#](#timeseriesscale) TimeSeriesScale
+
+Ƭ **TimeSeriesScale**<`O`>: [`TimeScale`](/docs/latest/api/#timescale)<`O`>
+
+#### [#](#type-parameters-23) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`TimeScaleOptions`](/docs/latest/api/#timescaleoptions) = [`TimeScaleOptions`](/docs/latest/api/#timescaleoptions) |
+
+#### [#](#defined-in-67) Defined in
+
+[types/index.d.ts:3480  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3480)
+
+[types/index.d.ts:3481  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3481)
+
+---
+
+### [#](#tooltippositioner) TooltipPositioner
+
+Ƭ **TooltipPositioner**: keyof [`TooltipPositionerMap`](/docs/latest/api/interfaces/TooltipPositionerMap.html)
+
+#### [#](#defined-in-68) Defined in
+
+[types/index.d.ts:2673  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2673)
+
+---
+
+### [#](#tooltippositionerfunction) TooltipPositionerFunction
+
+Ƭ **TooltipPositionerFunction**<`TType`>: (`this`: [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`>, `items`: readonly [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[], `eventPosition`: [`Point`](/docs/latest/api/interfaces/Point.html)) => [`TooltipPosition`](/docs/latest/api/interfaces/TooltipPosition.html) | `false`
+
+#### [#](#type-parameters-24) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#type-declaration-9) Type declaration
+
+▸ (`this`, `items`, `eventPosition`): [`TooltipPosition`](/docs/latest/api/interfaces/TooltipPosition.html) | `false`
+
+##### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`> |
+| `items` | readonly [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[] |
+| `eventPosition` | [`Point`](/docs/latest/api/interfaces/Point.html) |
+
+##### [#](#returns-2) Returns
+
+[`TooltipPosition`](/docs/latest/api/interfaces/TooltipPosition.html) | `false`
+
+#### [#](#defined-in-69) Defined in
+
+[types/index.d.ts:2662  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2662)
+
+---
+
+### [#](#tooltipxalignment) TooltipXAlignment
+
+Ƭ **TooltipXAlignment**: `"left"` | `"center"` | `"right"`
+
+#### [#](#defined-in-70) Defined in
+
+[types/index.d.ts:2573  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2573)
+
+---
+
+### [#](#tooltipyalignment) TooltipYAlignment
+
+Ƭ **TooltipYAlignment**: `"top"` | `"center"` | `"bottom"`
+
+#### [#](#defined-in-71) Defined in
+
+[types/index.d.ts:2574  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2574)
+
+---
+
+### [#](#transitionspec) TransitionSpec
+
+Ƭ **TransitionSpec**<`TType`>: `Object`
+
+#### [#](#type-parameters-25) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#type-declaration-10) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `animation` | [`AnimationSpec`](/docs/latest/api/#animationspec)<`TType`> |
+| `animations` | [`AnimationsSpec`](/docs/latest/api/#animationsspec)<`TType`> |
+
+#### [#](#defined-in-72) Defined in
+
+[types/index.d.ts:1758  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1758)
+
+---
+
+### [#](#transitionsspec) TransitionsSpec
+
+Ƭ **TransitionsSpec**<`TType`>: `Object`
+
+#### [#](#type-parameters-26) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+#### [#](#index-signature-2) Index signature
+
+▪ [mode: `string`]: [`TransitionSpec`](/docs/latest/api/#transitionspec)<`TType`>
+
+#### [#](#defined-in-73) Defined in
+
+[types/index.d.ts:1763  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1763)
+
+---
+
+### [#](#updatemode) UpdateMode
+
+Ƭ **UpdateMode**: keyof typeof [`UpdateModeEnum`](/docs/latest/api/enums/UpdateModeEnum.html)
+
+#### [#](#defined-in-74) Defined in
+
+[types/index.d.ts:590  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L590)
+
+## [#](#variables) Variables
+
+### [#](#barcontroller-2) BarController
+
+• **BarController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`BarController`](/docs/latest/api/#barcontroller-1)
+
+#### [#](#defined-in-75) Defined in
+
+[types/index.d.ts:156  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L156)
+
+[types/index.d.ts:157  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L157)
+
+---
+
+### [#](#barelement) BarElement
+
+• **BarElement**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`cfg`: `AnyObject`) => [`BarElement`](/docs/latest/api/#barelement)<[`BarProps`](/docs/latest/api/interfaces/BarProps.html), [`BarOptions`](/docs/latest/api/interfaces/BarOptions.html)>
+
+#### [#](#defined-in-76) Defined in
+
+[types/index.d.ts:2146  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2146)
+
+[types/index.d.ts:2151  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2151)
+
+---
+
+### [#](#bubblecontroller-2) BubbleController
+
+• **BubbleController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`BubbleController`](/docs/latest/api/#bubblecontroller-1)
+
+#### [#](#defined-in-77) Defined in
+
+[types/index.d.ts:183  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L183)
+
+[types/index.d.ts:184  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L184)
+
+---
+
+### [#](#categoryscale-2) CategoryScale
+
+• **CategoryScale**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & <O>(`cfg`: `AnyObject`) => [`CategoryScale`](/docs/latest/api/#categoryscale-1)<`O`>
+
+#### [#](#defined-in-78) Defined in
+
+[types/index.d.ts:3301  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3301)
+
+[types/index.d.ts:3302  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3302)
+
+---
+
+### [#](#decimation) Decimation
+
+• `Const` **Decimation**: [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+#### [#](#defined-in-79) Defined in
+
+[types/index.d.ts:2227  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2227)
+
+---
+
+### [#](#doughnutcontroller) DoughnutController
+
+• **DoughnutController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`DoughnutController`](/docs/latest/api/#doughnutcontroller)
+
+#### [#](#defined-in-80) Defined in
+
+[types/index.d.ts:340  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L340)
+
+[types/index.d.ts:350  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L350)
+
+---
+
+### [#](#filler) Filler
+
+• `Const` **Filler**: [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+#### [#](#defined-in-81) Defined in
+
+[types/index.d.ts:2249  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2249)
+
+---
+
+### [#](#interaction) Interaction
+
+• `Const` **Interaction**: `Object`
+
+#### [#](#type-declaration-11) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `modes` | [`InteractionModeMap`](/docs/latest/api/interfaces/InteractionModeMap.html) |
+| `evaluateInteractionItems` | (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `axis`: [`InteractionAxis`](/docs/latest/api/#interactionaxis), `position`: [`Point`](/docs/latest/api/interfaces/Point.html), `handler`: (`element`: `default`<`AnyObject`, `AnyObject`> & [`VisualElement`](/docs/latest/api/interfaces/VisualElement.html), `datasetIndex`: `number`, `index`: `number`) => `void`, `intersect?`: `boolean`) => [`InteractionItem`](/docs/latest/api/interfaces/InteractionItem.html)[] |
+
+#### [#](#defined-in-82) Defined in
+
+[types/index.d.ts:773  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L773)
+
+---
+
+### [#](#legend) Legend
+
+• `Const` **Legend**: [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+#### [#](#defined-in-83) Defined in
+
+[types/index.d.ts:2279  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2279)
+
+---
+
+### [#](#linecontroller-2) LineController
+
+• **LineController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`LineController`](/docs/latest/api/#linecontroller-1)
+
+#### [#](#defined-in-84) Defined in
+
+[types/index.d.ts:229  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L229)
+
+[types/index.d.ts:230  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L230)
+
+---
+
+### [#](#lineelement) LineElement
+
+• **LineElement**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`cfg`: `AnyObject`) => [`LineElement`](/docs/latest/api/#lineelement)<[`LineProps`](/docs/latest/api/interfaces/LineProps.html), [`LineOptions`](/docs/latest/api/interfaces/LineOptions.html)>
+
+#### [#](#defined-in-85) Defined in
+
+[types/index.d.ts:1977  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1977)
+
+[types/index.d.ts:1990  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1990)
+
+---
+
+### [#](#linearscale-2) LinearScale
+
+• **LinearScale**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & <O>(`cfg`: `AnyObject`) => [`LinearScale`](/docs/latest/api/#linearscale-1)<`O`>
+
+#### [#](#defined-in-86) Defined in
+
+[types/index.d.ts:3350  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3350)
+
+[types/index.d.ts:3351  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3351)
+
+---
+
+### [#](#logarithmicscale-2) LogarithmicScale
+
+• **LogarithmicScale**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & <O>(`cfg`: `AnyObject`) => [`LogarithmicScale`](/docs/latest/api/#logarithmicscale-1)<`O`>
+
+#### [#](#defined-in-87) Defined in
+
+[types/index.d.ts:3374  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3374)
+
+[types/index.d.ts:3375  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3375)
+
+---
+
+### [#](#piecontroller-2) PieController
+
+• **PieController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`DoughnutController`](/docs/latest/api/#doughnutcontroller)
+
+#### [#](#defined-in-88) Defined in
+
+[types/index.d.ts:366  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L366)
+
+[types/index.d.ts:367  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L367)
+
+---
+
+### [#](#polarareacontroller) PolarAreaController
+
+• **PolarAreaController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`PolarAreaController`](/docs/latest/api/#polarareacontroller)
+
+#### [#](#defined-in-89) Defined in
+
+[types/index.d.ts:392  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L392)
+
+[types/index.d.ts:395  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L395)
+
+---
+
+### [#](#radarcontroller-2) RadarController
+
+• **RadarController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`RadarController`](/docs/latest/api/#radarcontroller-1)
+
+#### [#](#defined-in-90) Defined in
+
+[types/index.d.ts:427  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L427)
+
+[types/index.d.ts:428  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L428)
+
+---
+
+### [#](#radiallinearscale) RadialLinearScale
+
+• **RadialLinearScale**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & <O>(`cfg`: `AnyObject`) => [`RadialLinearScale`](/docs/latest/api/#radiallinearscale)<`O`>
+
+#### [#](#defined-in-91) Defined in
+
+[types/index.d.ts:3627  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3627)
+
+[types/index.d.ts:3640  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3640)
+
+---
+
+### [#](#scattercontroller-2) ScatterController
+
+• **ScatterController**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `datasetIndex`: `number`) => [`LineController`](/docs/latest/api/#linecontroller-1)
+
+#### [#](#defined-in-92) Defined in
+
+[types/index.d.ts:241  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L241)
+
+[types/index.d.ts:242  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L242)
+
+---
+
+### [#](#subtitle) SubTitle
+
+• `Const` **SubTitle**: [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+#### [#](#defined-in-93) Defined in
+
+[types/index.d.ts:2531  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2531)
+
+---
+
+### [#](#ticks) Ticks
+
+• `Const` **Ticks**: `Object`
+
+#### [#](#type-declaration-12) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `formatters` | { `logarithmic`: (`this`: [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>, `tickValue`: `number`, `index`: `number`, `ticks`: { `value`: `number` }[]) => `string` ; `numeric`: (`this`: [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>, `tickValue`: `number`, `index`: `number`, `ticks`: { `value`: `number` }[]) => `string` ; `values`: (`value`: `unknown`) => `string` | `string`[] } |
+| `formatters.logarithmic` | [object Object] |
+| `formatters.numeric` | [object Object] |
+| `formatters.values` | [object Object] |
+
+#### [#](#defined-in-94) Defined in
+
+[types/index.d.ts:1507  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1507)
+
+---
+
+### [#](#timescale) TimeScale
+
+• **TimeScale**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & <O>(`cfg`: `AnyObject`) => [`TimeScale`](/docs/latest/api/#timescale)<`O`>
+
+#### [#](#defined-in-95) Defined in
+
+[types/index.d.ts:3468  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3468)
+
+[types/index.d.ts:3475  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3475)
+
+---
+
+### [#](#timeseriesscale-2) TimeSeriesScale
+
+• **TimeSeriesScale**: [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) & <O>(`cfg`: `AnyObject`) => [`TimeSeriesScale`](/docs/latest/api/#timeseriesscale-1)<`O`>
+
+#### [#](#defined-in-96) Defined in
+
+[types/index.d.ts:3480  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3480)
+
+[types/index.d.ts:3481  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3481)
+
+---
+
+### [#](#title) Title
+
+• `Const` **Title**: [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+#### [#](#defined-in-97) Defined in
+
+[types/index.d.ts:2532  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2532)
+
+---
+
+### [#](#tooltip) Tooltip
+
+• **Tooltip**: [`Tooltip`](/docs/latest/api/#tooltip)
+
+#### [#](#defined-in-98) Defined in
+
+[types/index.d.ts:2675  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2675)
+
+[types/index.d.ts:2679  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2679)
+
+---
+
+### [#](#defaults) defaults
+
+• `Const` **defaults**: [`Defaults`](/docs/latest/api/interfaces/Defaults.html)
+
+#### [#](#defined-in-99) Defined in
+
+[types/index.d.ts:720  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L720)
+
+---
+
+### [#](#layouts) layouts
+
+• `Const` **layouts**: `Object`
+
+#### [#](#type-declaration-13) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `addBox` | (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `item`: [`LayoutItem`](/docs/latest/api/interfaces/LayoutItem.html)) => `void` |
+| `configure` | (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `item`: [`LayoutItem`](/docs/latest/api/interfaces/LayoutItem.html), `options`: { `fullSize?`: `number` ; `position?`: [`LayoutPosition`](/docs/latest/api/#layoutposition) ; `weight?`: `number` }) => `void` |
+| `removeBox` | (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `layoutItem`: [`LayoutItem`](/docs/latest/api/interfaces/LayoutItem.html)) => `void` |
+| `update` | (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `width`: `number`, `height`: `number`) => `void` |
+
+#### [#](#defined-in-100) Defined in
+
+[types/index.d.ts:788  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L788)
+
+---
+
+### [#](#registerables) registerables
+
+• `Const` **registerables**: readonly [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[]
+
+#### [#](#defined-in-101) Defined in
+
+[types/index.d.ts:571  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L571)
+
+---
+
+### [#](#registry) registry
+
+• `Const` **registry**: [`Registry`](/docs/latest/api/interfaces/Registry.html)
+
+#### [#](#defined-in-102) Defined in
+
+[types/index.d.ts:1162  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1162)

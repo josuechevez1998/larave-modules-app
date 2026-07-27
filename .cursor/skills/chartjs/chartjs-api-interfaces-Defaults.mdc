@@ -1,0 +1,735 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: Defaults (/docs/latest/api/interfaces/Defaults.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: Defaults
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/Defaults.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-defaults) Interface: Defaults
+
+## [#](#hierarchy) Hierarchy
+
+- [`CoreChartOptions`](/docs/latest/api/interfaces/CoreChartOptions.html)<[`ChartType`](/docs/latest/api/#charttype)>
+- [`ElementChartOptions`](/docs/latest/api/#elementchartoptions)<[`ChartType`](/docs/latest/api/#charttype)>
+- [`PluginChartOptions`](/docs/latest/api/interfaces/PluginChartOptions.html)<[`ChartType`](/docs/latest/api/#charttype)>
+
+  ↳ **`Defaults`**
+
+## [#](#properties) Properties
+
+### [#](#animation) animation
+
+• **animation**: `false` | [`AnimationSpec`](/docs/latest/api/#animationspec)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)> & { `onComplete?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` ; `onProgress?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` }
+
+#### [#](#inherited-from) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[animation](/docs/latest/api/interfaces/CoreChartOptions.html#animation)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1768  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1768)
+
+---
+
+### [#](#animations) animations
+
+• **animations**: [`AnimationsSpec`](/docs/latest/api/#animationsspec)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>
+
+#### [#](#inherited-from-2) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[animations](/docs/latest/api/interfaces/CoreChartOptions.html#animations)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1778  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1778)
+
+---
+
+### [#](#aspectratio) aspectRatio
+
+• **aspectRatio**: `number`
+
+Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas). Note that this option is ignored if the height is explicitly defined either as attribute or via the style.
+
+**`Default`**
+
+2
+
+#### [#](#inherited-from-3) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[aspectRatio](/docs/latest/api/interfaces/CoreChartOptions.html#aspectratio)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1666  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1666)
+
+---
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>>
+
+base background color
+
+**`See`**
+
+Defaults.backgroundColor
+
+#### [#](#inherited-from-4) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[backgroundColor](/docs/latest/api/interfaces/CoreChartOptions.html#backgroundcolor)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1625  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1625)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>>
+
+base border color
+
+**`See`**
+
+Defaults.borderColor
+
+#### [#](#inherited-from-5) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[borderColor](/docs/latest/api/interfaces/CoreChartOptions.html#bordercolor)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1635  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1635)
+
+---
+
+### [#](#clip) clip
+
+• **clip**: `number` | `false` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+How to clip relative to chartArea. Positive value allows overflow, negative value clips that many pixels inside chartArea. 0 = clip at chartArea. Clipping can also be configured per side: `clip: {left: 5, top: false, right: -2, bottom: 0}`
+
+#### [#](#inherited-from-6) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[clip](/docs/latest/api/interfaces/CoreChartOptions.html#clip)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1614  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1614)
+
+---
+
+### [#](#color) color
+
+• **color**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>>
+
+base color
+
+**`See`**
+
+Defaults.color
+
+#### [#](#inherited-from-7) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[color](/docs/latest/api/interfaces/CoreChartOptions.html#color)
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1620  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1620)
+
+---
+
+### [#](#datasets) datasets
+
+• **datasets**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `bar` | [`BarControllerDatasetOptions`](/docs/latest/api/interfaces/BarControllerDatasetOptions.html) |
+| `bubble` | [`BubbleControllerDatasetOptions`](/docs/latest/api/interfaces/BubbleControllerDatasetOptions.html) |
+| `doughnut` | [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html) |
+| `line` | [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html) & [`FillerControllerDatasetOptions`](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html) |
+| `pie` | [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html) |
+| `polarArea` | [`PolarAreaControllerDatasetOptions`](/docs/latest/api/interfaces/PolarAreaControllerDatasetOptions.html) |
+| `radar` | [`RadarControllerDatasetOptions`](/docs/latest/api/interfaces/RadarControllerDatasetOptions.html) & [`FillerControllerDatasetOptions`](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html) |
+| `scatter` | [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html) |
+
+#### [#](#inherited-from-8) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[datasets](/docs/latest/api/interfaces/CoreChartOptions.html#datasets)
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1601  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1601)
+
+---
+
+### [#](#devicepixelratio) devicePixelRatio
+
+• **devicePixelRatio**: `number`
+
+Override the window's default devicePixelRatio.
+
+**`Default`**
+
+window.devicePixelRatio
+
+#### [#](#inherited-from-9) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[devicePixelRatio](/docs/latest/api/interfaces/CoreChartOptions.html#devicepixelratio)
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1683  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1683)
+
+---
+
+### [#](#elements) elements
+
+• **elements**: [`ElementOptionsByType`](/docs/latest/api/interfaces/ElementOptionsByType.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>
+
+#### [#](#inherited-from-10) Inherited from
+
+ElementChartOptions.elements
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2164  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2164)
+
+---
+
+### [#](#events) events
+
+• **events**: keyof `HTMLElementEventMap`[]
+
+The events option defines the browser events that the chart should listen to for tooltips and hovering.
+
+**`Default`**
+
+['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove']
+
+#### [#](#inherited-from-11) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[events](/docs/latest/api/interfaces/CoreChartOptions.html#events)
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1693  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1693)
+
+---
+
+### [#](#font) font
+
+• **font**: `Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>
+
+base font
+
+**`See`**
+
+Defaults.font
+
+#### [#](#inherited-from-12) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[font](/docs/latest/api/interfaces/CoreChartOptions.html#font)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1645  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1645)
+
+---
+
+### [#](#hover) hover
+
+• **hover**: [`CoreInteractionOptions`](/docs/latest/api/interfaces/CoreInteractionOptions.html)
+
+#### [#](#inherited-from-13) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[hover](/docs/latest/api/interfaces/CoreChartOptions.html#hover)
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1687  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1687)
+
+---
+
+### [#](#hoverbackgroundcolor) hoverBackgroundColor
+
+• **hoverBackgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>>
+
+base hover background color
+
+**`See`**
+
+Defaults.hoverBackgroundColor
+
+#### [#](#inherited-from-14) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[hoverBackgroundColor](/docs/latest/api/interfaces/CoreChartOptions.html#hoverbackgroundcolor)
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1630  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1630)
+
+---
+
+### [#](#hoverbordercolor) hoverBorderColor
+
+• **hoverBorderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>>
+
+base hover border color
+
+**`See`**
+
+Defaults.hoverBorderColor
+
+#### [#](#inherited-from-15) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[hoverBorderColor](/docs/latest/api/interfaces/CoreChartOptions.html#hoverbordercolor)
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:1640  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1640)
+
+---
+
+### [#](#indexaxis) indexAxis
+
+• **indexAxis**: `"x"` | `"y"`
+
+The base axis of the chart. 'x' for vertical charts and 'y' for horizontal charts.
+
+**`Default`**
+
+'x'
+
+#### [#](#inherited-from-16) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[indexAxis](/docs/latest/api/interfaces/CoreChartOptions.html#indexaxis)
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:1609  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1609)
+
+---
+
+### [#](#interaction) interaction
+
+• **interaction**: [`CoreInteractionOptions`](/docs/latest/api/interfaces/CoreInteractionOptions.html)
+
+#### [#](#inherited-from-17) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[interaction](/docs/latest/api/interfaces/CoreChartOptions.html#interaction)
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:1685  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1685)
+
+---
+
+### [#](#layout) layout
+
+• **layout**: `Partial`<{ `autoPadding`: `boolean` ; `padding`: [`Scriptable`](/docs/latest/api/#scriptable)<`Padding`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>> }>
+
+#### [#](#inherited-from-18) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[layout](/docs/latest/api/interfaces/CoreChartOptions.html#layout)
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:1705  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1705)
+
+---
+
+### [#](#locale) locale
+
+• **locale**: `string`
+
+Locale used for number formatting (using `Intl.NumberFormat`).
+
+**`Default`**
+
+user's browser setting
+
+#### [#](#inherited-from-19) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[locale](/docs/latest/api/interfaces/CoreChartOptions.html#locale)
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:1672  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1672)
+
+---
+
+### [#](#maintainaspectratio) maintainAspectRatio
+
+• **maintainAspectRatio**: `boolean`
+
+Maintain the original canvas aspect ratio (width / height) when resizing. For this option to work properly the chart must be in its own dedicated container.
+
+**`Default`**
+
+true
+
+#### [#](#inherited-from-20) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[maintainAspectRatio](/docs/latest/api/interfaces/CoreChartOptions.html#maintainaspectratio)
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:1655  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1655)
+
+---
+
+### [#](#normalized) normalized
+
+• **normalized**: `boolean`
+
+Chart.js is fastest if you provide data with indices that are unique, sorted, and consistent across datasets and provide the normalized: true option to let Chart.js know that you have done so.
+
+#### [#](#inherited-from-21) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[normalized](/docs/latest/api/interfaces/CoreChartOptions.html#normalized)
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:63  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L63)
+
+---
+
+### [#](#parsing) parsing
+
+• **parsing**: `false` | { `[key: string]`: `string`; }
+
+How to parse the dataset. The parsing can be disabled by specifying parsing: false at chart options or dataset. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
+
+#### [#](#inherited-from-22) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[parsing](/docs/latest/api/interfaces/CoreChartOptions.html#parsing)
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L54)
+
+---
+
+### [#](#plugins) plugins
+
+• **plugins**: [`PluginOptionsByType`](/docs/latest/api/interfaces/PluginOptionsByType.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>
+
+#### [#](#inherited-from-23) Inherited from
+
+[PluginChartOptions](/docs/latest/api/interfaces/PluginChartOptions.html).[plugins](/docs/latest/api/interfaces/PluginChartOptions.html#plugins)
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:2994  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2994)
+
+---
+
+### [#](#resizedelay) resizeDelay
+
+• **resizeDelay**: `number`
+
+Delay the resize update by give amount of milliseconds. This can ease the resize process by debouncing update of the elements.
+
+**`Default`**
+
+0
+
+#### [#](#inherited-from-24) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[resizeDelay](/docs/latest/api/interfaces/CoreChartOptions.html#resizedelay)
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:1660  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1660)
+
+---
+
+### [#](#responsive) responsive
+
+• **responsive**: `boolean`
+
+Resizes the chart canvas when its container does (important note...).
+
+**`Default`**
+
+true
+
+#### [#](#inherited-from-25) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[responsive](/docs/latest/api/interfaces/CoreChartOptions.html#responsive)
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:1650  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1650)
+
+---
+
+### [#](#scale) scale
+
+• **scale**: [`ScaleOptionsByType`](/docs/latest/api/#scaleoptionsbytype)<keyof [`ScaleTypeRegistry`](/docs/latest/api/interfaces/ScaleTypeRegistry.html)>
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:678  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L678)
+
+---
+
+### [#](#scales) scales
+
+• **scales**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `category` | { `type`: `"category"` } & `Omit`<[`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html), `"max"` | `"min"`> & { `labels`: `string`[] | `string`[][] ; `max`: `string` | `number` ; `min`: `string` | `number` } |
+| `linear` | { `type`: `"linear"` } & [`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html) & { `beginAtZero`: `boolean` ; `grace?`: `string` | `number` ; `suggestedMax?`: `number` ; `suggestedMin?`: `number` ; `ticks`: { `count`: `number` ; `format`: `NumberFormatOptions` ; `precision`: `number` ; `stepSize`: `number` } } |
+| `logarithmic` | { `type`: `"logarithmic"` } & [`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html) & { `suggestedMax?`: `number` ; `suggestedMin?`: `number` ; `ticks`: { `format`: `NumberFormatOptions` } } |
+| `radialLinear` | { `type`: `"radialLinear"` } & [`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html) & { `angleLines`: { `borderDash`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`[], [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> ; `borderDashOffset`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> ; `color`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> ; `display`: `boolean` ; `lineWidth`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)> } ; `animate`: `boolean` ; `beginAtZero`: `boolean` ; `grid`: `Partial`<[`GridLineOptions`](/docs/latest/api/interfaces/GridLineOptions.html)> ; `max`: `number` ; `min`: `number` ; `pointLabels`: { `backdropColor`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `backdropPadding`: [`Scriptable`](/docs/latest/api/#scriptable)<`number` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `borderRadius`: [`Scriptable`](/docs/latest/api/#scriptable)<`number` | [`BorderRadius`](/docs/latest/api/interfaces/BorderRadius.html), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `callback`: (`label`: `string`, `index`: `number`) => `string` | `number` | `string`[] | `number`[] ; `centerPointLabels`: `boolean` ; `color`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `display`: `boolean` | `"auto"` ; `font`: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> ; `padding`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScalePointLabelContext`](/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html)> } ; `startAngle`: `number` ; `suggestedMax`: `number` ; `suggestedMin`: `number` ; `ticks`: [`RadialTickOptions`](/docs/latest/api/#radialtickoptions) } |
+| `time` | { `type`: `"time"` } & `Omit`<[`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html), `"max"` | `"min"`> & { `adapters`: { `date`: `unknown` } ; `bounds`: `"data"` | `"ticks"` ; `max`: `string` | `number` ; `min`: `string` | `number` ; `offsetAfterAutoskip`: `boolean` ; `suggestedMax`: `string` | `number` ; `suggestedMin`: `string` | `number` ; `ticks`: [`TimeScaleTickOptions`](/docs/latest/api/#timescaletickoptions) ; `time`: [`TimeScaleTimeOptions`](/docs/latest/api/#timescaletimeoptions) } |
+| `timeseries` | { `type`: `"timeseries"` } & `Omit`<[`CartesianScaleOptions`](/docs/latest/api/interfaces/CartesianScaleOptions.html), `"max"` | `"min"`> & { `adapters`: { `date`: `unknown` } ; `bounds`: `"data"` | `"ticks"` ; `max`: `string` | `number` ; `min`: `string` | `number` ; `offsetAfterAutoskip`: `boolean` ; `suggestedMax`: `string` | `number` ; `suggestedMin`: `string` | `number` ; `ticks`: [`TimeScaleTickOptions`](/docs/latest/api/#timescaletickoptions) ; `time`: [`TimeScaleTimeOptions`](/docs/latest/api/#timescaletimeoptions) } |
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:679  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L679)
+
+---
+
+### [#](#transitions) transitions
+
+• **transitions**: [`TransitionsSpec`](/docs/latest/api/#transitionsspec)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)>
+
+#### [#](#inherited-from-26) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[transitions](/docs/latest/api/interfaces/CoreChartOptions.html#transitions)
+
+#### [#](#defined-in-28) Defined in
+
+[types/index.d.ts:1779  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1779)
+
+## [#](#methods) Methods
+
+### [#](#describe) describe
+
+▸ **describe**(`scope`, `values`): `AnyObject`
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scope` | `string` |
+| `values` | `AnyObject` |
+
+#### [#](#returns) Returns
+
+`AnyObject`
+
+#### [#](#defined-in-29) Defined in
+
+[types/index.d.ts:687  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L687)
+
+---
+
+### [#](#get) get
+
+▸ **get**(`scope`): `AnyObject`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scope` | `string` |
+
+#### [#](#returns-2) Returns
+
+`AnyObject`
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:685  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L685)
+
+---
+
+### [#](#onclick) onClick
+
+▸ **onClick**(`event`, `elements`, `chart`): `void`
+
+Called if the event is of type 'mouseup' or 'click'. Passed the event, an array of active elements, and the chart.
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `event` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `elements` | [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[] |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#inherited-from-27) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[onClick](/docs/latest/api/interfaces/CoreChartOptions.html#onclick)
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:1703  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1703)
+
+---
+
+### [#](#onhover) onHover
+
+▸ **onHover**(`event`, `elements`, `chart`): `void`
+
+Called when any of the events fire. Passed the event, an array of active elements (bars, points, etc), and the chart.
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `event` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `elements` | [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[] |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#inherited-from-28) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[onHover](/docs/latest/api/interfaces/CoreChartOptions.html#onhover)
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:1698  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1698)
+
+---
+
+### [#](#onresize) onResize
+
+▸ **onResize**(`chart`, `size`): `void`
+
+Called when a resize occurs. Gets passed two arguments: the chart instance and the new size.
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+| `size` | `Object` |
+| `size.height` | `number` |
+| `size.width` | `number` |
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#inherited-from-29) Inherited from
+
+[CoreChartOptions](/docs/latest/api/interfaces/CoreChartOptions.html).[onResize](/docs/latest/api/interfaces/CoreChartOptions.html#onresize)
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:1677  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1677)
+
+---
+
+### [#](#override) override
+
+▸ **override**(`scope`, `values`): `AnyObject`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scope` | `string` |
+| `values` | `AnyObject` |
+
+#### [#](#returns-6) Returns
+
+`AnyObject`
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:688  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L688)
+
+---
+
+### [#](#route) route
+
+▸ **route**(`scope`, `name`, `targetScope`, `targetName`): `void`
+
+Routes the named defaults to fallback to another scope/name.
+This routing is useful when those target values, like defaults.color, are changed runtime.
+If the values would be copied, the runtime change would not take effect. By routing, the
+fallback is evaluated at each access, so its always up to date.
+
+Example:
+
+defaults.route('elements.arc', 'backgroundColor', '', 'color')
+
+- reads the backgroundColor from defaults.color when undefined locally
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `scope` | `string` | Scope this route applies to. |
+| `name` | `string` | Property name that should be routed to different namespace when not defined here. |
+| `targetScope` | `string` | The namespace where those properties should be routed to. Empty string ('') is the root of defaults. |
+| `targetName` | `string` | The target name in the target scope the property should be routed to. |
+
+#### [#](#returns-7) Returns
+
+`void`
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:707  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L707)
+
+---
+
+### [#](#set) set
+
+▸ **set**(`values`): `AnyObject`
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `values` | `AnyObject` |
+
+#### [#](#returns-8) Returns
+
+`AnyObject`
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:683  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L683)
+
+▸ **set**(`scope`, `values`): `AnyObject`
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scope` | `string` |
+| `values` | `AnyObject` |
+
+#### [#](#returns-9) Returns
+
+`AnyObject`
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:684  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L684)

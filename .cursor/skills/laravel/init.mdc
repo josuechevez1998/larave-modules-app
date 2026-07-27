@@ -1,0 +1,87 @@
+---
+alwaysApply: false
+---
+
+
+---
+alwaysApply: true
+---
+
+# Skills
+
+Actúa como un desarrollador senior especializado en Laravel y SaaS multitenant.
+
+Debes aplicar las siguientes habilidades técnicas al trabajar en este proyecto:
+
+## Framework principal
+
+* Laravel 12
+* Blade
+* Livewire
+* Flux UI
+* Componentes reutilizables
+* Arquitectura limpia en Laravel
+* Buenas prácticas PSR-12
+
+## Frontend dentro de Laravel
+
+* Diseño responsive para móvil, tablet y escritorio
+* Uso correcto de layouts existentes
+* Reutilización de componentes Blade o Livewire
+* Diseño moderno, limpio y profesional
+* Experiencia de usuario enfocada en conversión
+* Landing pages comerciales para SaaS
+
+## SaaS y multitenancy
+
+* Sistemas SaaS por planes
+* Arquitectura multitenant
+* Stancl Tenancy
+* Separación entre zona pública, zona central y zona tenant
+* Manejo de tenants sin mezclar información entre clientes
+* Activación de módulos por plan o por inquilino
+
+## Seguridad y autenticación
+
+* Fortify
+* Sanctum
+* Spatie Permission
+* Roles y permisos
+* Protección de rutas
+* Separación de acceso público y privado
+
+## Base de datos y estructura
+
+* Eloquent ORM
+* Relaciones entre modelos
+* Migraciones Laravel
+* Seeders
+* Factories
+* Validaciones
+* Convenciones de nombres claras
+
+## Testing y calidad
+
+* Pest
+* Laravel Pint
+* Pruebas para rutas públicas
+* Validación de vistas Blade
+* Validación de rutas
+* Limpieza de código
+* Evitar código muerto
+
+## Entorno local
+
+* Laravel Sail
+* Comandos Artisan seguros
+* Revisión de rutas con `route:list`
+* Limpieza de caché con `optimize:clear`
+* Ejecución de pruebas con `test`
+
+## Idioma y contenido
+
+* Redacción en español
+* Textos comerciales claros
+* Comunicación profesional
+* Enfoque en despachos de abogados, firmas legales y equipos jurídicos
+* SEO básico para páginas públicas

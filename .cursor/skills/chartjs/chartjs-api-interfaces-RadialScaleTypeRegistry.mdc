@@ -1,0 +1,33 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: RadialScaleTypeRegistry (/docs/latest/api/interfaces/RadialScaleTypeRegistry.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: RadialScaleTypeRegistry
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/RadialScaleTypeRegistry.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-radialscaletyperegistry) Interface: RadialScaleTypeRegistry
+
+## [#](#hierarchy) Hierarchy
+
+- **`RadialScaleTypeRegistry`**
+
+  ↳ [`ScaleTypeRegistry`](/docs/latest/api/interfaces/ScaleTypeRegistry.html)
+
+## [#](#properties) Properties
+
+### [#](#radiallinear) radialLinear
+
+• **radialLinear**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`RadialLinearScaleOptions`](/docs/latest/api/#radiallinearscaleoptions) |
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3664  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3664)

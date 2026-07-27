@@ -1,0 +1,221 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LayoutItem (/docs/latest/api/interfaces/LayoutItem.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LayoutItem
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LayoutItem.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-layoutitem) Interface: LayoutItem
+
+## [#](#hierarchy) Hierarchy
+
+- **`LayoutItem`**
+
+  ↳ [`Scale`](/docs/latest/api/classes/Scale.html)
+
+  ↳ [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)
+
+## [#](#properties) Properties
+
+### [#](#bottom) bottom
+
+• **bottom**: `number`
+
+Bottom edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#defined-in) Defined in
+
+[types/layout.d.ts:41  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L41)
+
+---
+
+### [#](#fullsize) fullSize
+
+• **fullSize**: `boolean`
+
+if true, and the item is horizontal, then push vertical boxes down
+
+#### [#](#defined-in-2) Defined in
+
+[types/layout.d.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L17)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+Height of item. Must be valid after update()
+
+#### [#](#defined-in-3) Defined in
+
+[types/layout.d.ts:25  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L25)
+
+---
+
+### [#](#left) left
+
+• **left**: `number`
+
+Left edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#defined-in-4) Defined in
+
+[types/layout.d.ts:29  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L29)
+
+---
+
+### [#](#position) position
+
+• **position**: [`LayoutPosition`](/docs/latest/api/#layoutposition)
+
+The position of the item in the chart layout. Possible values are
+
+#### [#](#defined-in-5) Defined in
+
+[types/layout.d.ts:9  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L9)
+
+---
+
+### [#](#right) right
+
+• **right**: `number`
+
+Right edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#defined-in-6) Defined in
+
+[types/layout.d.ts:37  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L37)
+
+---
+
+### [#](#top) top
+
+• **top**: `number`
+
+Top edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#defined-in-7) Defined in
+
+[types/layout.d.ts:33  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L33)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number`
+
+The weight used to sort the item. Higher weights are further away from the chart area
+
+#### [#](#defined-in-8) Defined in
+
+[types/layout.d.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L13)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+Width of item. Must be valid after update()
+
+#### [#](#defined-in-9) Defined in
+
+[types/layout.d.ts:21  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L21)
+
+## [#](#methods) Methods
+
+### [#](#beforelayout) beforeLayout
+
+▸ `Optional` **beforeLayout**(): `void`
+
+Called before the layout process starts
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-10) Defined in
+
+[types/layout.d.ts:46  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L46)
+
+---
+
+### [#](#draw) draw
+
+▸ **draw**(`chartArea`): `void`
+
+Draws the element
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-11) Defined in
+
+[types/layout.d.ts:50  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L50)
+
+---
+
+### [#](#getpadding) getPadding
+
+▸ `Optional` **getPadding**(): [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+Returns an object with padding on the edges
+
+#### [#](#returns-3) Returns
+
+[`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+#### [#](#defined-in-12) Defined in
+
+[types/layout.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L54)
+
+---
+
+### [#](#ishorizontal) isHorizontal
+
+▸ **isHorizontal**(): `boolean`
+
+returns true if the layout item is horizontal (ie. top or bottom)
+
+#### [#](#returns-4) Returns
+
+`boolean`
+
+#### [#](#defined-in-13) Defined in
+
+[types/layout.d.ts:58  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L58)
+
+---
+
+### [#](#update) update
+
+▸ **update**(`width`, `height`, `margins?`): `void`
+
+Takes two parameters: width and height.
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `width` | `number` |
+| `height` | `number` |
+| `margins?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#defined-in-14) Defined in
+
+[types/layout.d.ts:64  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L64)

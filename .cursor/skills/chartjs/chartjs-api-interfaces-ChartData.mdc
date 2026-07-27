@@ -1,0 +1,63 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartData<TType, TData, TLabel> (/docs/latest/api/interfaces/ChartData.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartData<TType, TData, TLabel>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartData.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-chartdata-ttype-tdata-tlabel) Interface: ChartData<TType, TData, TLabel>
+
+TData represents the data point type. If unspecified, a default is provided
+based on the chart type.
+TLabel represents the label type
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+| `TData` | [`DefaultDataPoint`](/docs/latest/api/#defaultdatapoint)<`TType`> |
+| `TLabel` | `unknown` |
+
+## [#](#properties) Properties
+
+### [#](#datasets) datasets
+
+• **datasets**: [`ChartDataset`](/docs/latest/api/#chartdataset)<`TType`, `TData`>[]
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3851  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3851)
+
+---
+
+### [#](#labels) labels
+
+• `Optional` **labels**: `TLabel`[]
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3848  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3848)
+
+---
+
+### [#](#xlabels) xLabels
+
+• `Optional` **xLabels**: `TLabel`[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3849  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3849)
+
+---
+
+### [#](#ylabels) yLabels
+
+• `Optional` **yLabels**: `TLabel`[]
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3850  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3850)

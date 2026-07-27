@@ -1,0 +1,92 @@
+---
+alwaysApply: false
+description: Índice de documentación local Flux UI. Usar al buscar componentes flux:* o guías de Flux.
+---
+
+
+# Flux UI — documentación local
+
+Exportada el **2026-07-10 22:31 UTC** desde [https://fluxui.dev](https://fluxui.dev).
+
+## Cuándo usar este skill
+
+- Instalar o actualizar `livewire/flux` / Flux Pro.
+- Usar componentes `<flux:*>` en Blade/Livewire.
+- Theming, dark mode, layouts y personalización.
+
+Carpeta: `.cursor/skills/flux/`
+
+## Cómo actualizar
+
+Desde la raíz del exportador:
+
+```bash
+bash run.sh
+```
+
+Los `.mdc` se escriben en `.cursor/skills/flux/`.
+
+## Índice de páginas
+
+- [Installation](flux-installation.mdc) — `docs/installation`
+- [Upgrade guide](flux-upgrading.mdc) — `docs/upgrading`
+- [Principles](flux-principles.mdc) — `docs/principles`
+- [Patterns](flux-patterns.mdc) — `docs/patterns`
+- [Theming](flux-theming.mdc) — `docs/theming`
+- [Dark mode](flux-dark-mode.mdc) — `docs/dark-mode`
+- [Customization](flux-customization.mdc) — `docs/customization`
+- [Help](flux-help.mdc) — `docs/help`
+- [Header](flux-layouts-header.mdc) — `layouts/header`
+- [Sidebar](flux-layouts-sidebar.mdc) — `layouts/sidebar`
+- [Accordion](flux-accordion.mdc) — `components/accordion`
+- [Autocomplete](flux-autocomplete.mdc) — `components/autocomplete`
+- [Avatar](flux-avatar.mdc) — `components/avatar`
+- [Badge](flux-badge.mdc) — `components/badge`
+- [Brand](flux-brand.mdc) — `components/brand`
+- [Button](flux-button.mdc) — `components/button`
+- [Breadcrumbs](flux-breadcrumbs.mdc) — `components/breadcrumbs`
+- [Calendar](flux-calendar.mdc) — `components/calendar`
+- [Callout](flux-callout.mdc) — `components/callout`
+- [Card](flux-card.mdc) — `components/card`
+- [Carousel](flux-carousel.mdc) — `components/carousel`
+- [Chart](flux-chart.mdc) — `components/chart`
+- [Checkbox](flux-checkbox.mdc) — `components/checkbox`
+- [Color picker](flux-color-picker.mdc) — `components/color-picker`
+- [Command palette](flux-command.mdc) — `components/command`
+- [Context menu](flux-context.mdc) — `components/context`
+- [Composer](flux-composer.mdc) — `components/composer`
+- [Date picker](flux-date-picker.mdc) — `components/date-picker`
+- [Dropdown](flux-dropdown.mdc) — `components/dropdown`
+- [Rich text editor](flux-editor.mdc) — `components/editor`
+- [Field](flux-field.mdc) — `components/field`
+- [File upload](flux-file-upload.mdc) — `components/file-upload`
+- [Heading](flux-heading.mdc) — `components/heading`
+- [Icon](flux-icon.mdc) — `components/icon`
+- [Input](flux-input.mdc) — `components/input`
+- [Kanban](flux-kanban.mdc) — `components/kanban`
+- [Modal](flux-modal.mdc) — `components/modal`
+- [Navbar](flux-navbar.mdc) — `components/navbar`
+- [OTP Input](flux-otp-input.mdc) — `components/otp-input`
+- [Pagination](flux-pagination.mdc) — `components/pagination`
+- [Pillbox](flux-pillbox.mdc) — `components/pillbox`
+- [Popover](flux-popover.mdc) — `components/popover`
+- [Profile](flux-profile.mdc) — `components/profile`
+- [Progress](flux-progress.mdc) — `components/progress`
+- [Radio](flux-radio.mdc) — `components/radio`
+- [Select](flux-select.mdc) — `components/select`
+- [Separator](flux-separator.mdc) — `components/separator`
+- [Skeleton](flux-skeleton.mdc) — `components/skeleton`
+- [Slider](flux-slider.mdc) — `components/slider`
+- [Switch](flux-switch.mdc) — `components/switch`
+- [Table](flux-table.mdc) — `components/table`
+- [Tabs](flux-tabs.mdc) — `components/tabs`
+- [Text](flux-text.mdc) — `components/text`
+- [Textarea](flux-textarea.mdc) — `components/textarea`
+- [Time picker](flux-time-picker.mdc) — `components/time-picker`
+- [Timeline](flux-timeline.mdc) — `components/timeline`
+- [Toast](flux-toast.mdc) — `components/toast`
+- [Tooltip](flux-tooltip.mdc) — `components/tooltip`
+
+## Páginas no exportadas
+
+- Ninguna.

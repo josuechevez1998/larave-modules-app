@@ -1,0 +1,27 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: PluginDatasetOptionsByType<TType> (/docs/latest/api/interfaces/PluginDatasetOptionsByType.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: PluginDatasetOptionsByType<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/PluginDatasetOptionsByType.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-plugindatasetoptionsbytype-ttype) Interface: PluginDatasetOptionsByType<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#tooltip) tooltip
+
+• **tooltip**: [`TooltipDatasetOptions`](/docs/latest/api/interfaces/TooltipDatasetOptions.html)<`TType`>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2981  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2981)

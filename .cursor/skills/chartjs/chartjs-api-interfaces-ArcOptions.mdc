@@ -1,0 +1,187 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ArcOptions (/docs/latest/api/interfaces/ArcOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ArcOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ArcOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-arcoptions) Interface: ArcOptions
+
+## [#](#hierarchy) Hierarchy
+
+- [`CommonElementOptions`](/docs/latest/api/interfaces/CommonElementOptions.html)
+
+  ↳ **`ArcOptions`**
+
+## [#](#properties) Properties
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#inherited-from) Inherited from
+
+[CommonElementOptions](/docs/latest/api/interfaces/CommonElementOptions.html).[backgroundColor](/docs/latest/api/interfaces/CommonElementOptions.html#backgroundcolor)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1828  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1828)
+
+---
+
+### [#](#borderalign) borderAlign
+
+• **borderAlign**: `"center"` | `"inner"`
+
+Arc stroke alignment.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1860  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1860)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#inherited-from-2) Inherited from
+
+[CommonElementOptions](/docs/latest/api/interfaces/CommonElementOptions.html).[borderColor](/docs/latest/api/interfaces/CommonElementOptions.html#bordercolor)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1827  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1827)
+
+---
+
+### [#](#borderdash) borderDash
+
+• **borderDash**: `number`[]
+
+Line dash. See MDN.
+
+**`Default`**
+
+[]
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1865  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1865)
+
+---
+
+### [#](#borderdashoffset) borderDashOffset
+
+• **borderDashOffset**: `number`
+
+Line dash offset. See MDN.
+
+**`Default`**
+
+0.0
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1870  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1870)
+
+---
+
+### [#](#borderjoinstyle) borderJoinStyle
+
+• **borderJoinStyle**: `CanvasLineJoin`
+
+Line join style. See MDN. Default is 'round' when `borderAlign` is 'inner', else 'bevel'.
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1874  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1874)
+
+---
+
+### [#](#borderradius) borderRadius
+
+• **borderRadius**: `number` | [`ArcBorderRadius`](/docs/latest/api/interfaces/ArcBorderRadius.html)
+
+Sets the border radius for arcs
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1880  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1880)
+
+---
+
+### [#](#borderwidth) borderWidth
+
+• **borderWidth**: `number`
+
+#### [#](#inherited-from-3) Inherited from
+
+[CommonElementOptions](/docs/latest/api/interfaces/CommonElementOptions.html).[borderWidth](/docs/latest/api/interfaces/CommonElementOptions.html#borderwidth)
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1826  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1826)
+
+---
+
+### [#](#circular) circular
+
+• **circular**: `boolean`
+
+If false, Arc will be flat.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1891  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1891)
+
+---
+
+### [#](#offset) offset
+
+• **offset**: `number`
+
+Arc offset (in pixels).
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1885  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1885)
+
+---
+
+### [#](#selfjoin) selfJoin
+
+• **selfJoin**: `boolean`
+
+If true, Arc can take up 100% of a circular graph without any visual split or cut. This option doesn't support borderRadius and borderJoinStyle miter
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1855  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1855)
+
+---
+
+### [#](#spacing) spacing
+
+• **spacing**: `number`
+
+Spacing between arcs
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1896  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1896)

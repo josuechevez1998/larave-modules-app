@@ -1,0 +1,41 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: InteractionOptions (/docs/latest/api/interfaces/InteractionOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: InteractionOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/InteractionOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-interactionoptions) Interface: InteractionOptions
+
+## [#](#properties) Properties
+
+### [#](#axis) axis
+
+• `Optional` **axis**: `string`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:722  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L722)
+
+---
+
+### [#](#includeinvisible) includeInvisible
+
+• `Optional` **includeInvisible**: `boolean`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:724  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L724)
+
+---
+
+### [#](#intersect) intersect
+
+• `Optional` **intersect**: `boolean`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:723  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L723)

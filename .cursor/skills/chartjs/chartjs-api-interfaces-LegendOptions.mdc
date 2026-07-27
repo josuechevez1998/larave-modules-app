@@ -1,0 +1,274 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LegendOptions<TType> (/docs/latest/api/interfaces/LegendOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LegendOptions<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LegendOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-legendoptions-ttype) Interface: LegendOptions<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#align) align
+
+• **align**: [`Align`](/docs/latest/api/#align)
+
+Alignment of the legend.
+
+**`Default`**
+
+'center'
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2392  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2392)
+
+---
+
+### [#](#display) display
+
+• **display**: `boolean`
+
+Is the legend shown?
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2382  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2382)
+
+---
+
+### [#](#fullsize) fullSize
+
+• **fullSize**: `boolean`
+
+Marks that this box should take the full width/height of the canvas (moving other boxes). This is unlikely to need to be changed in day-to-day use.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2405  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2405)
+
+---
+
+### [#](#labels) labels
+
+• **labels**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `borderRadius` | `number` | Override the borderRadius to use. **`Default`** undefined |
+| `boxHeight` | `number` | Height of the coloured box. **`Default`** fontSize |
+| `boxWidth` | `number` | Width of colored box. **`Default`** 40 |
+| `color` | [`Color`](/docs/latest/api/#color) | Color of label **`See`** Defaults.color |
+| `font` | [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableChartContext`](/docs/latest/api/interfaces/ScriptableChartContext.html)> | Font of label **`See`** Defaults.font |
+| `padding` | `number` | Padding between rows of colored boxes. **`Default`** 10 |
+| `pointStyle` | [`PointStyle`](/docs/latest/api/#pointstyle) | Override point style for the legend. Only applies if usePointStyle is true |
+| `pointStyleWidth` | `number` | If usePointStyle is true, the width of the point style used for the legend. |
+| `textAlign?` | [`TextAlign`](/docs/latest/api/#textalign) | Text alignment |
+| `useBorderRadius` | `boolean` | Label borderRadius will match corresponding borderRadius. **`Default`** false |
+| `usePointStyle` | `boolean` | Label style will match corresponding point style (size is based on the minimum value between boxWidth and font.size). **`Default`** false |
+| `filter` | (`item`: [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html), `data`: [`ChartData`](/docs/latest/api/interfaces/ChartData.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>) => `boolean` | Filters legend items out of the legend. Receives 2 parameters, a Legend Item and the chart data |
+| `generateLabels` | (`chart`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>) => [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html)[] | Generates legend items for each thing in the legend. Default implementation returns the text + styling for the color box. See Legend Item for details. |
+| `sort` | (`a`: [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html), `b`: [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html), `data`: [`ChartData`](/docs/latest/api/interfaces/ChartData.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>) => `number` | Sorts the legend items |
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2424  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2424)
+
+---
+
+### [#](#maxheight) maxHeight
+
+• **maxHeight**: `number`
+
+Maximum height of the legend, in pixels
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2396  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2396)
+
+---
+
+### [#](#maxwidth) maxWidth
+
+• **maxWidth**: `number`
+
+Maximum width of the legend, in pixels
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2400  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2400)
+
+---
+
+### [#](#position) position
+
+• **position**: [`LayoutPosition`](/docs/latest/api/#layoutposition)
+
+Position of the legend.
+
+**`Default`**
+
+'top'
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2387  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2387)
+
+---
+
+### [#](#reverse) reverse
+
+• **reverse**: `boolean`
+
+Legend will show datasets in reverse order.
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2410  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2410)
+
+---
+
+### [#](#rtl) rtl
+
+• **rtl**: `boolean`
+
+true for rendering the legends from right to left.
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2500  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2500)
+
+---
+
+### [#](#textdirection) textDirection
+
+• **textDirection**: `string`
+
+This will force the text direction 'rtl' or 'ltr' on the canvas for rendering the legend, regardless of the css specified on the canvas
+
+**`Default`**
+
+canvas's default
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2505  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2505)
+
+---
+
+### [#](#title) title
+
+• **title**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `color` | [`Color`](/docs/latest/api/#color) | Color of title **`See`** Defaults.color |
+| `display` | `boolean` | Is the legend title displayed. **`Default`** false |
+| `font` | [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableChartContext`](/docs/latest/api/interfaces/ScriptableChartContext.html)> | see Fonts |
+| `padding?` | `number` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) | - |
+| `position` | `"center"` | `"end"` | `"start"` | - |
+| `text` | `string` | The string title. |
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:2507  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2507)
+
+## [#](#methods) Methods
+
+### [#](#onclick) onClick
+
+▸ **onClick**(`this`, `e`, `legendItem`, `legend`): `void`
+
+A callback that is called when a click event is registered on a label item.
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)<`TType`> |
+| `e` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `legendItem` | [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html) |
+| `legend` | [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)<`TType`> |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:2414  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2414)
+
+---
+
+### [#](#onhover) onHover
+
+▸ **onHover**(`this`, `e`, `legendItem`, `legend`): `void`
+
+A callback that is called when a 'mousemove' event is registered on top of a label item
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)<`TType`> |
+| `e` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `legendItem` | [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html) |
+| `legend` | [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)<`TType`> |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:2418  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2418)
+
+---
+
+### [#](#onleave) onLeave
+
+▸ **onLeave**(`this`, `e`, `legendItem`, `legend`): `void`
+
+A callback that is called when a 'mousemove' event is registered outside of a previously hovered label item.
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)<`TType`> |
+| `e` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `legendItem` | [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html) |
+| `legend` | [`LegendElement`](/docs/latest/api/interfaces/LegendElement.html)<`TType`> |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:2422  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2422)

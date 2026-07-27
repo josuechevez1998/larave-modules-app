@@ -1,0 +1,41 @@
+---
+alwaysApply: false
+description: Documentación local (driverjs): Styling Overlay - Driver.js (/docs/styling-overlay). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Styling Overlay - Driver.js
+
+> Fuente: https://driverjs.com/docs/styling-overlay
+> Exportado: 2026-07-10 23:31 UTC
+
+# Styling Overlay
+
+You can customize the overlay opacity and color using `overlayOpacity` and `overlayColor` options to change the look of the overlay.
+
+> **Note:** In the examples below we have used `highlight` method to highlight the elements. The same configuration applies to the tour steps as well.
+
+## Overlay Color
+
+Here are some driver.js examples with different overlay colors.
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  overlayColor: 'red'
+});
+
+driverObj.highlight({
+  popover: {
+    title: 'Pass any RGB Color',
+    description: 'Here we have set the overlay color to be red. You can pass any RGB color to overlayColor option.'
+  }
+});
+```
+
+Red Color
+
+Blue Color
+
+Yellow Color

@@ -1,0 +1,38 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Subtitle (/docs/latest/configuration/subtitle.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Subtitle
+
+> Fuente: https://www.chartjs.org/docs/latest/configuration/subtitle.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#subtitle) Subtitle
+
+Subtitle is a second title placed under the main title, by default. It has exactly the same configuration options with the main [title](/docs/latest/configuration/title.html).
+
+## [#](#subtitle-configuration) Subtitle Configuration
+
+Namespace: `options.plugins.subtitle`. The global defaults for subtitle are configured in `Chart.defaults.plugins.subtitle`.
+
+Exactly the same configuration options with [title](/docs/latest/configuration/title.html) are available for subtitle, the namespaces only differ.
+
+## [#](#example-usage) Example Usage
+
+The example below would enable a title of 'Custom Chart Subtitle' on the chart that is created.
+
+```
+const chart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            subtitle: {
+                display: true,
+                text: 'Custom Chart Subtitle'
+            }
+        }
+    }
+});
+```

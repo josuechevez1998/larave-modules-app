@@ -1,0 +1,46 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Resources (/docs/13/resources/resources). Referencia nwidart/laravel-modules v13.
+---
+
+# Resources
+
+> Fuente: https://laravelmodules.com/docs/13/resources/resources
+> Exportado: 2026-07-23 19:55 UTC
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Resources
+
+---
+
+🎥 Video Tutorials
+
+- [Laravel Module Generator v2](https://www.youtube.com/watch?v=BwYzfb9Fa8A)
+- [Laravel Modules Demo: Make Your Project Modular](https://www.youtube.com/watch?v=RVApkrYMcAg)
+- [Breaking Down Large Laravel 10 Projects: A Modular Approach](https://www.youtube.com/watch?v=Is6jcyPHE6E)
+- [Laravel Modules Package: Review and Demo-Project](https://www.youtube.com/watch?v=vSIIFKLpXNY)
+
+📦 Packages
+
+- [Dcblogdev's Module Generator](https://github.com/dcblogdev/laravel-module-generator)
+- [Mhmiton's Laravel Modules Livewire](https://github.com/mhmiton/laravel-modules-livewire)
+- [Filament Modules](https://github.com/savannabits/filament-modules)
+
+---
+
+[Previous page: 
+←
+Database: Seeders and Factories](/docs/13/database/seeders-and-factories)
+[Next page: 
+Inertia
+ →](/docs/13/resources/inertia)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/resources/resources.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/resources/resources&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

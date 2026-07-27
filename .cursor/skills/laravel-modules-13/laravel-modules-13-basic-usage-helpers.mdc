@@ -1,0 +1,108 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Helpers (/docs/13/basic-usage/helpers). Referencia nwidart/laravel-modules v13.
+---
+
+# Helpers
+
+> Fuente: https://laravelmodules.com/docs/13/basic-usage/helpers
+> Exportado: 2026-07-23 19:54 UTC
+
+- [`module\_path('Blog')`](#codemodule-pathblogcode)
+- [`module\_vite()`](#codemodule-vitecode)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Helpers
+
+---
+
+- [`module\_path('Blog')`](#codemodule-pathblogcode)
+- [`module\_vite()`](#codemodule-vitecode)
+
+Laravel Modules provides a set of global helper functions for working with module paths and assets.
+
+## [#](#codemodule-pathblogcode)`module_path('Blog')`
+
+Returns the absolute path to a module's directory on disk.
+
+```
+$path = module_path('Blog');
+
+// /var/www/your-app/Modules/Blog
+
+$path = module_path('Blog');
+// /var/www/your-app/Modules/Blog
+```
+
+Append a relative path as the second argument:
+
+```
+module_path('Blog', 'resources/views')
+
+// /var/www/your-app/Modules/Blog/resources/views
+
+module_path('Blog', 'app/Http/Controllers/PostController.php')
+
+// /var/www/your-app/Modules/Blog/app/Http/Controllers/PostController.php
+
+module_path('Blog', 'resources/views')
+// /var/www/your-app/Modules/Blog/resources/views
+
+module_path('Blog', 'app/Http/Controllers/PostController.php')
+// /var/www/your-app/Modules/Blog/app/Http/Controllers/PostController.php
+```
+
+Common usage in service providers:
+
+```
+$this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+
+$this->loadViewsFrom(module_path($this->moduleName, 'resources/views'), 'blog');
+
+$this->loadTranslationsFrom(module_path($this->moduleName, 'lang'), 'blog');
+
+$this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+$this->loadViewsFrom(module_path($this->moduleName, 'resources/views'), 'blog');
+$this->loadTranslationsFrom(module_path($this->moduleName, 'lang'), 'blog');
+```
+
+## [#](#codemodule-vitecode)`module_vite()`
+
+Generates the HTML `<script>` and `<link>` tags for a module's Vite-compiled assets when modules compile their own assets independently (i.e. each module runs `npm run build` from its own directory).
+
+```
+// In a Blade layout file
+
+{!! module_vite('build-blog', 'resources/assets/sass/app.scss') !!}
+
+{!! module_vite('build-blog', 'resources/assets/js/app.js') !!}
+
+// In a Blade layout file
+{!! module_vite('build-blog', 'resources/assets/sass/app.scss') !!}
+{!! module_vite('build-blog', 'resources/assets/js/app.js') !!}
+```
+
+The first argument is the build directory name (matches `buildDirectory` in the module's `vite.config.js`). The second argument is the input file path as defined in the Vite config.
+
+> If you are using the centralised approach (all modules compiled from the root `vite.config.js`), use the standard `@vite()` directive instead.
+
+See [Compiling Assets](/docs/13/basic-usage/compiling-assets) for full setup instructions.
+
+---
+
+[Previous page: 
+←
+Custom Namespaces](/docs/13/basic-usage/custom-namespaces)
+[Next page: 
+Routing
+ →](/docs/13/basic-usage/routing)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/basic-usage/helpers.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/basic-usage/helpers&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

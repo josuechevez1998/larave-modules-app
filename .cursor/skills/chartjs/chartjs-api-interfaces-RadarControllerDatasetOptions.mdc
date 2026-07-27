@@ -1,0 +1,862 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: RadarControllerDatasetOptions (/docs/latest/api/interfaces/RadarControllerDatasetOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: RadarControllerDatasetOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/RadarControllerDatasetOptions.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-radarcontrollerdatasetoptions) Interface: RadarControllerDatasetOptions
+
+## [#](#hierarchy) Hierarchy
+
+- [`ControllerDatasetOptions`](/docs/latest/api/interfaces/ControllerDatasetOptions.html)
+- [`ScriptableAndArrayOptions`](/docs/latest/api/#scriptableandarrayoptions)<[`PointOptions`](/docs/latest/api/interfaces/PointOptions.html) & [`PointHoverOptions`](/docs/latest/api/interfaces/PointHoverOptions.html) & [`PointPrefixedOptions`](/docs/latest/api/interfaces/PointPrefixedOptions.html) & [`PointPrefixedHoverOptions`](/docs/latest/api/interfaces/PointPrefixedHoverOptions.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+- [`ScriptableAndArrayOptions`](/docs/latest/api/#scriptableandarrayoptions)<[`LineOptions`](/docs/latest/api/interfaces/LineOptions.html) & [`LineHoverOptions`](/docs/latest/api/interfaces/LineHoverOptions.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+- [`AnimationOptions`](/docs/latest/api/#animationoptions)<`"radar"`>
+
+  ↳ **`RadarControllerDatasetOptions`**
+
+## [#](#properties) Properties
+
+### [#](#animation) animation
+
+• **animation**: `false` | [`AnimationSpec`](/docs/latest/api/#animationspec)<`"radar"`> & { `onComplete?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` ; `onProgress?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` }
+
+#### [#](#inherited-from) Inherited from
+
+AnimationOptions.animation
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1768  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1768)
+
+---
+
+### [#](#animations) animations
+
+• **animations**: [`AnimationsSpec`](/docs/latest/api/#animationsspec)<`"radar"`>
+
+#### [#](#inherited-from-2) Inherited from
+
+AnimationOptions.animations
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1778  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1778)
+
+---
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-3) Inherited from
+
+ScriptableAndArrayOptions.backgroundColor
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1828  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1828)
+
+---
+
+### [#](#bordercapstyle) borderCapStyle
+
+• **borderCapStyle**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`CanvasLineCap`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Line cap style. See MDN.
+
+**`Default`**
+
+'butt'
+
+#### [#](#inherited-from-4) Inherited from
+
+ScriptableAndArrayOptions.borderCapStyle
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1914  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1914)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-5) Inherited from
+
+ScriptableAndArrayOptions.borderColor
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1827  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1827)
+
+---
+
+### [#](#borderdash) borderDash
+
+• **borderDash**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`[], [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Line dash. See MDN.
+
+**`Default`**
+
+[]
+
+#### [#](#inherited-from-6) Inherited from
+
+ScriptableAndArrayOptions.borderDash
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1919  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1919)
+
+---
+
+### [#](#borderdashoffset) borderDashOffset
+
+• **borderDashOffset**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Line dash offset. See MDN.
+
+**`Default`**
+
+0.0
+
+#### [#](#inherited-from-7) Inherited from
+
+ScriptableAndArrayOptions.borderDashOffset
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1924  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1924)
+
+---
+
+### [#](#borderjoinstyle) borderJoinStyle
+
+• **borderJoinStyle**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`CanvasLineJoin`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Line join style. See MDN.
+
+**`Default`**
+
+'miter'
+
+#### [#](#inherited-from-8) Inherited from
+
+ScriptableAndArrayOptions.borderJoinStyle
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1929  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1929)
+
+---
+
+### [#](#borderwidth) borderWidth
+
+• **borderWidth**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-9) Inherited from
+
+ScriptableAndArrayOptions.borderWidth
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1826  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1826)
+
+---
+
+### [#](#capbezierpoints) capBezierPoints
+
+• **capBezierPoints**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`boolean`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+true to keep Bézier control inside the chart, false for no restriction.
+
+**`Default`**
+
+true
+
+#### [#](#inherited-from-10) Inherited from
+
+ScriptableAndArrayOptions.capBezierPoints
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1934  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1934)
+
+---
+
+### [#](#clip) clip
+
+• **clip**: `number` | `false` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+How to clip relative to chartArea. Positive value allows overflow, negative value clips that many pixels inside chartArea. 0 = clip at chartArea. Clipping can also be configured per side: `clip: {left: 5, top: false, right: -2, bottom: 0}`
+
+#### [#](#inherited-from-11) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[clip](/docs/latest/api/interfaces/ControllerDatasetOptions.html#clip)
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:75  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L75)
+
+---
+
+### [#](#cubicinterpolationmode) cubicInterpolationMode
+
+• **cubicInterpolationMode**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`"default"` | `"monotone"`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Interpolation mode to apply.
+
+**`Default`**
+
+'default'
+
+#### [#](#inherited-from-12) Inherited from
+
+ScriptableAndArrayOptions.cubicInterpolationMode
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1939  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1939)
+
+---
+
+### [#](#drawactiveelementsontop) drawActiveElementsOnTop
+
+• **drawActiveElementsOnTop**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`boolean`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Draw the active elements over the other elements of the dataset,
+
+**`Default`**
+
+true
+
+#### [#](#inherited-from-13) Inherited from
+
+ScriptableAndArrayOptions.drawActiveElementsOnTop
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:2035  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2035)
+
+---
+
+### [#](#fill) fill
+
+• **fill**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`FillTarget`](/docs/latest/api/#filltarget) | [`ComplexFillTarget`](/docs/latest/api/interfaces/ComplexFillTarget.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Both line and radar charts support a fill option on the dataset object which can be used to create area between two datasets or a dataset and a boundary, i.e. the scale origin, start or end
+
+#### [#](#inherited-from-14) Inherited from
+
+ScriptableAndArrayOptions.fill
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1953  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1953)
+
+---
+
+### [#](#hidden) hidden
+
+• **hidden**: `boolean`
+
+Configures the visibility state of the dataset. Set it to true, to hide the dataset from the chart.
+
+**`Default`**
+
+false
+
+#### [#](#inherited-from-15) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[hidden](/docs/latest/api/interfaces/ControllerDatasetOptions.html#hidden)
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:93  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L93)
+
+---
+
+### [#](#hitradius) hitRadius
+
+• **hitRadius**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Extra radius added to point radius for hit detection.
+
+**`Default`**
+
+1
+
+#### [#](#inherited-from-16) Inherited from
+
+ScriptableAndArrayOptions.hitRadius
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:2020  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2020)
+
+---
+
+### [#](#hoverbackgroundcolor) hoverBackgroundColor
+
+• **hoverBackgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-17) Inherited from
+
+ScriptableAndArrayOptions.hoverBackgroundColor
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:1834  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1834)
+
+---
+
+### [#](#hoverbordercapstyle) hoverBorderCapStyle
+
+• **hoverBorderCapStyle**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`CanvasLineCap`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-18) Inherited from
+
+ScriptableAndArrayOptions.hoverBorderCapStyle
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:1971  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1971)
+
+---
+
+### [#](#hoverbordercolor) hoverBorderColor
+
+• **hoverBorderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-19) Inherited from
+
+ScriptableAndArrayOptions.hoverBorderColor
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:1833  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1833)
+
+---
+
+### [#](#hoverborderdash) hoverBorderDash
+
+• **hoverBorderDash**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`[], [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-20) Inherited from
+
+ScriptableAndArrayOptions.hoverBorderDash
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:1972  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1972)
+
+---
+
+### [#](#hoverborderdashoffset) hoverBorderDashOffset
+
+• **hoverBorderDashOffset**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-21) Inherited from
+
+ScriptableAndArrayOptions.hoverBorderDashOffset
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:1973  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1973)
+
+---
+
+### [#](#hoverborderjoinstyle) hoverBorderJoinStyle
+
+• **hoverBorderJoinStyle**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`CanvasLineJoin`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-22) Inherited from
+
+ScriptableAndArrayOptions.hoverBorderJoinStyle
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:1974  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1974)
+
+---
+
+### [#](#hoverborderwidth) hoverBorderWidth
+
+• **hoverBorderWidth**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-23) Inherited from
+
+ScriptableAndArrayOptions.hoverBorderWidth
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:1832  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1832)
+
+---
+
+### [#](#hoverradius) hoverRadius
+
+• **hoverRadius**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Point radius when hovered.
+
+**`Default`**
+
+4
+
+#### [#](#inherited-from-24) Inherited from
+
+ScriptableAndArrayOptions.hoverRadius
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:2043  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2043)
+
+---
+
+### [#](#indexaxis) indexAxis
+
+• **indexAxis**: `"x"` | `"y"`
+
+The base axis of the chart. 'x' for vertical charts and 'y' for horizontal charts.
+
+**`Default`**
+
+'x'
+
+#### [#](#inherited-from-25) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[indexAxis](/docs/latest/api/interfaces/ControllerDatasetOptions.html#indexaxis)
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:71  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L71)
+
+---
+
+### [#](#label) label
+
+• **label**: `string`
+
+The label for the dataset which appears in the legend and tooltips.
+
+#### [#](#inherited-from-26) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[label](/docs/latest/api/interfaces/ControllerDatasetOptions.html#label)
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:79  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L79)
+
+---
+
+### [#](#normalized) normalized
+
+• **normalized**: `boolean`
+
+Chart.js is fastest if you provide data with indices that are unique, sorted, and consistent across datasets and provide the normalized: true option to let Chart.js know that you have done so.
+
+#### [#](#inherited-from-27) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[normalized](/docs/latest/api/interfaces/ControllerDatasetOptions.html#normalized)
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:63  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L63)
+
+---
+
+### [#](#order) order
+
+• **order**: `number`
+
+The drawing order of dataset. Also affects order for stacking, tooltip and legend.
+
+#### [#](#inherited-from-28) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[order](/docs/latest/api/interfaces/ControllerDatasetOptions.html#order)
+
+#### [#](#defined-in-28) Defined in
+
+[types/index.d.ts:83  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L83)
+
+---
+
+### [#](#parsing) parsing
+
+• **parsing**: `false` | { `[key: string]`: `string`; }
+
+How to parse the dataset. The parsing can be disabled by specifying parsing: false at chart options or dataset. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
+
+#### [#](#inherited-from-29) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[parsing](/docs/latest/api/interfaces/ControllerDatasetOptions.html#parsing)
+
+#### [#](#defined-in-29) Defined in
+
+[types/index.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L54)
+
+---
+
+### [#](#pointbackgroundcolor) pointBackgroundColor
+
+• **pointBackgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The fill color for points.
+
+#### [#](#inherited-from-30) Inherited from
+
+ScriptableAndArrayOptions.pointBackgroundColor
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:2050  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2050)
+
+---
+
+### [#](#pointbordercolor) pointBorderColor
+
+• **pointBorderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The border color for points.
+
+#### [#](#inherited-from-31) Inherited from
+
+ScriptableAndArrayOptions.pointBorderColor
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:2054  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2054)
+
+---
+
+### [#](#pointborderwidth) pointBorderWidth
+
+• **pointBorderWidth**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The width of the point border in pixels.
+
+#### [#](#inherited-from-32) Inherited from
+
+ScriptableAndArrayOptions.pointBorderWidth
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:2058  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2058)
+
+---
+
+### [#](#pointhitradius) pointHitRadius
+
+• **pointHitRadius**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The pixel size of the non-displayed point that reacts to mouse events.
+
+#### [#](#inherited-from-33) Inherited from
+
+ScriptableAndArrayOptions.pointHitRadius
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:2062  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2062)
+
+---
+
+### [#](#pointhoverbackgroundcolor) pointHoverBackgroundColor
+
+• **pointHoverBackgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Point background color when hovered.
+
+#### [#](#inherited-from-34) Inherited from
+
+ScriptableAndArrayOptions.pointHoverBackgroundColor
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:2081  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2081)
+
+---
+
+### [#](#pointhoverbordercolor) pointHoverBorderColor
+
+• **pointHoverBorderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Point border color when hovered.
+
+#### [#](#inherited-from-35) Inherited from
+
+ScriptableAndArrayOptions.pointHoverBorderColor
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:2085  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2085)
+
+---
+
+### [#](#pointhoverborderwidth) pointHoverBorderWidth
+
+• **pointHoverBorderWidth**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Border width of point when hovered.
+
+#### [#](#inherited-from-36) Inherited from
+
+ScriptableAndArrayOptions.pointHoverBorderWidth
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:2089  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2089)
+
+---
+
+### [#](#pointhoverradius) pointHoverRadius
+
+• **pointHoverRadius**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The radius of the point when hovered.
+
+#### [#](#inherited-from-37) Inherited from
+
+ScriptableAndArrayOptions.pointHoverRadius
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:2093  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2093)
+
+---
+
+### [#](#pointradius) pointRadius
+
+• **pointRadius**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The radius of the point shape. If set to 0, the point is not rendered.
+
+#### [#](#inherited-from-38) Inherited from
+
+ScriptableAndArrayOptions.pointRadius
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:2066  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2066)
+
+---
+
+### [#](#pointrotation) pointRotation
+
+• **pointRotation**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+The rotation of the point in degrees.
+
+#### [#](#inherited-from-39) Inherited from
+
+ScriptableAndArrayOptions.pointRotation
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:2070  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2070)
+
+---
+
+### [#](#pointstyle) pointStyle
+
+• **pointStyle**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`PointStyle`](/docs/latest/api/#pointstyle), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Point style
+
+**`Default`**
+
+'circle;
+
+#### [#](#inherited-from-40) Inherited from
+
+ScriptableAndArrayOptions.pointStyle
+
+#### [#](#defined-in-40) Defined in
+
+[types/index.d.ts:2025  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2025)
+
+[types/index.d.ts:2074  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2074)
+
+---
+
+### [#](#radius) radius
+
+• **radius**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Point radius
+
+**`Default`**
+
+3
+
+#### [#](#inherited-from-41) Inherited from
+
+ScriptableAndArrayOptions.radius
+
+#### [#](#defined-in-41) Defined in
+
+[types/index.d.ts:2015  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2015)
+
+---
+
+### [#](#rotation) rotation
+
+• **rotation**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Point rotation (in degrees).
+
+**`Default`**
+
+0
+
+#### [#](#inherited-from-42) Inherited from
+
+ScriptableAndArrayOptions.rotation
+
+#### [#](#defined-in-42) Defined in
+
+[types/index.d.ts:2030  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2030)
+
+---
+
+### [#](#segment) segment
+
+• **segment**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<{ `backgroundColor`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> ; `borderCapStyle`: [`Scriptable`](/docs/latest/api/#scriptable)<`CanvasLineCap`, [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> ; `borderColor`: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> ; `borderDash`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`[], [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> ; `borderDashOffset`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> ; `borderJoinStyle`: [`Scriptable`](/docs/latest/api/#scriptable)<`CanvasLineJoin`, [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> ; `borderWidth`: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableLineSegmentContext`](/docs/latest/api/interfaces/ScriptableLineSegmentContext.html)> }, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+#### [#](#inherited-from-43) Inherited from
+
+ScriptableAndArrayOptions.segment
+
+#### [#](#defined-in-43) Defined in
+
+[types/index.d.ts:1959  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1959)
+
+---
+
+### [#](#showline) showLine
+
+• **showLine**: `boolean`
+
+If false, the line is not drawn for this dataset.
+
+#### [#](#defined-in-44) Defined in
+
+[types/index.d.ts:422  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L422)
+
+---
+
+### [#](#spangaps) spanGaps
+
+• **spanGaps**: `number` | `boolean`
+
+If true, lines will be drawn between points with no or null data. If false, points with NaN data will create a break in the line. Can also be a number specifying the maximum gap length to span. The unit of the value depends on the scale used.
+
+#### [#](#overrides) Overrides
+
+ScriptableAndArrayOptions.spanGaps
+
+#### [#](#defined-in-45) Defined in
+
+[types/index.d.ts:417  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L417)
+
+---
+
+### [#](#stack) stack
+
+• **stack**: `string`
+
+The ID of the group to which this dataset belongs to (when stacked, each group will be a separate stack).
+
+#### [#](#inherited-from-44) Inherited from
+
+[ControllerDatasetOptions](/docs/latest/api/interfaces/ControllerDatasetOptions.html).[stack](/docs/latest/api/interfaces/ControllerDatasetOptions.html#stack)
+
+#### [#](#defined-in-46) Defined in
+
+[types/index.d.ts:88  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L88)
+
+---
+
+### [#](#stepped) stepped
+
+• **stepped**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`boolean` | `"middle"` | `"after"` | `"before"`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+true to show the line as a stepped line (tension will be ignored).
+
+**`Default`**
+
+false
+
+#### [#](#inherited-from-45) Inherited from
+
+ScriptableAndArrayOptions.stepped
+
+#### [#](#defined-in-47) Defined in
+
+[types/index.d.ts:1949  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1949)
+
+---
+
+### [#](#tension) tension
+
+• **tension**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"radar"`>>
+
+Bézier curve tension (0 for no Bézier curves).
+
+**`Default`**
+
+0
+
+#### [#](#inherited-from-46) Inherited from
+
+ScriptableAndArrayOptions.tension
+
+#### [#](#defined-in-48) Defined in
+
+[types/index.d.ts:1944  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1944)
+
+---
+
+### [#](#transitions) transitions
+
+• **transitions**: [`TransitionsSpec`](/docs/latest/api/#transitionsspec)<`"radar"`>
+
+#### [#](#inherited-from-47) Inherited from
+
+AnimationOptions.transitions
+
+#### [#](#defined-in-49) Defined in
+
+[types/index.d.ts:1779  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1779)
+
+---
+
+### [#](#xaxisid) xAxisID
+
+• **xAxisID**: `string`
+
+The ID of the x axis to plot this dataset on.
+
+#### [#](#defined-in-50) Defined in
+
+[types/index.d.ts:408  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L408)
+
+---
+
+### [#](#yaxisid) yAxisID
+
+• **yAxisID**: `string`
+
+The ID of the y axis to plot this dataset on.
+
+#### [#](#defined-in-51) Defined in
+
+[types/index.d.ts:412  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L412)

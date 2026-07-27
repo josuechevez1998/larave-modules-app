@@ -1,0 +1,35 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Requirements (/docs/13/getting-started/requirements). Referencia nwidart/laravel-modules v13.
+---
+
+# Requirements
+
+> Fuente: https://laravelmodules.com/docs/13/getting-started/requirements
+> Exportado: 2026-07-23 19:54 UTC
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Requirements
+
+---
+
+The modules package requires **PHP 8.3** or higher. The Laravel package also requires **Laravel 13.0**.
+
+---
+
+[Previous page: 
+←
+Introduction](/docs/13/getting-started/introduction)
+[Next page: 
+ChangeLog
+ →](/docs/13/getting-started/changelog)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/getting-started/requirements.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/getting-started/requirements&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

@@ -1,0 +1,213 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Installation and Setup (/docs/13/getting-started/installation-and-setup). Referencia nwidart/laravel-modules v13.
+---
+
+# Installation and Setup
+
+> Fuente: https://laravelmodules.com/docs/13/getting-started/installation-and-setup
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Install via Composer](#install-via-composer)
+- [Publish Configuration](#publish-configuration)
+- [Autoloading](#autoloading)
+- [Verify Installation](#verify-installation)
+- [Module Status File](#module-status-file)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Installation and Setup
+
+---
+
+- [Install via Composer](#install-via-composer)
+- [Publish Configuration](#publish-configuration)
+- [Autoloading](#autoloading)
+- [Verify Installation](#verify-installation)
+- [Module Status File](#module-status-file)
+
+## [#](#install-via-composer)Install via Composer
+
+```
+composer require nwidart/laravel-modules
+
+composer require nwidart/laravel-modules
+```
+
+The package registers its service provider automatically via Laravel's package discovery.
+
+## [#](#publish-configuration)Publish Configuration
+
+Publish the package configuration file to `config/modules.php`:
+
+```
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="config"
+
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="config"
+```
+
+Publish the module stubs (optional, for customisation):
+
+```
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="stubs"
+
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="stubs"
+```
+
+Publish the Vite module loader helper:
+
+```
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="vite"
+
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="vite"
+```
+
+Or publish everything at once:
+
+```
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+```
+
+## [#](#autoloading)Autoloading
+
+From v11.0 onwards, adding `"Modules\\": "Modules/"` to your `composer.json` autoload section is **no longer required** and should be removed if present.
+
+Modules are autoloaded by their own `composer.json` files using the `wikimedia/composer-merge-plugin`. Add the following to the `extra` section of your project's `composer.json`:
+
+```
+"extra": {
+
+"laravel": {
+
+"dont-discover": []
+
+},
+
+"merge-plugin": {
+
+"include": [
+
+"Modules/*/composer.json"
+
+]
+
+}
+
+}
+
+"extra": {
+    "laravel": {
+        "dont-discover": []
+    },
+    "merge-plugin": {
+        "include": [
+            "Modules/*/composer.json"
+        ]
+    }
+}
+```
+
+On the first installation, you will be prompted:
+
+```
+Do you trust "wikimedia/composer-merge-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]
+
+Do you trust "wikimedia/composer-merge-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]
+```
+
+Answer `y`. If you miss this prompt, add the following to your `composer.json` manually:
+
+```
+"config": {
+
+"allow-plugins": {
+
+"wikimedia/composer-merge-plugin": true
+
+}
+
+}
+
+"config": {
+    "allow-plugins": {
+        "wikimedia/composer-merge-plugin": true
+    }
+}
+```
+
+> If `wikimedia/composer-merge-plugin` is set to `false` in `allow-plugins`, module classes will not be autoloaded.
+
+After updating `composer.json`, regenerate the autoloader:
+
+```
+composer dump-autoload
+
+composer dump-autoload
+```
+
+## [#](#verify-installation)Verify Installation
+
+List all modules to confirm the package is working:
+
+```
+php artisan module:list
+
+php artisan module:list
+```
+
+With no modules created yet, this will output an empty table. Create your first module to verify end-to-end:
+
+```
+php artisan module:make Blog
+
+php artisan module:enable Blog
+
+php artisan module:make Blog
+php artisan module:enable Blog
+```
+
+Run `php artisan module:list` again and you should see the `Blog` module listed as enabled.
+
+## [#](#module-status-file)Module Status File
+
+Module enable/disable state is tracked in `modules_statuses.json` at the project root. This file is created automatically the first time you enable or disable a module:
+
+```
+{
+
+"Blog": true
+
+}
+
+{
+    "Blog": true
+}
+```
+
+Commit this file to version control so that your team shares the same module activation state across environments. You can also set a module to be disabled by default when creating it:
+
+```
+php artisan module:make Blog --disabled
+
+php artisan module:make Blog --disabled
+```
+
+---
+
+[Previous page: 
+←
+Upgrade](/docs/13/getting-started/upgrade)
+[Next page: 
+Lumen
+ →](/docs/13/getting-started/lumen)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/getting-started/installation-and-setup.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/getting-started/installation-and-setup&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

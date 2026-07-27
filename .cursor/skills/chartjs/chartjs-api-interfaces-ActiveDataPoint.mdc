@@ -1,0 +1,37 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ActiveDataPoint (/docs/latest/api/interfaces/ActiveDataPoint.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ActiveDataPoint
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ActiveDataPoint.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-activedatapoint) Interface: ActiveDataPoint
+
+## [#](#hierarchy) Hierarchy
+
+- **`ActiveDataPoint`**
+
+  ↳ [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)
+
+## [#](#properties) Properties
+
+### [#](#datasetindex) datasetIndex
+
+• **datasetIndex**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:486  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L486)
+
+---
+
+### [#](#index) index
+
+• **index**: `number`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:487  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L487)

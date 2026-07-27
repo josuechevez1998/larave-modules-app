@@ -1,0 +1,713 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipOptions<TType> (/docs/latest/api/interfaces/TooltipOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipOptions<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipOptions.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-tooltipoptions-ttype) Interface: TooltipOptions<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#hierarchy) Hierarchy
+
+- [`CoreInteractionOptions`](/docs/latest/api/interfaces/CoreInteractionOptions.html)
+
+  ↳ **`TooltipOptions`**
+
+## [#](#properties) Properties
+
+### [#](#animation) animation
+
+• **animation**: `false` | [`AnimationSpec`](/docs/latest/api/#animationspec)<`TType`>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2924  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2924)
+
+---
+
+### [#](#animations) animations
+
+• **animations**: `false` | [`AnimationsSpec`](/docs/latest/api/#animationsspec)<`TType`>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2925  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2925)
+
+---
+
+### [#](#axis) axis
+
+• **axis**: [`InteractionAxis`](/docs/latest/api/#interactionaxis)
+
+Defines which directions are used in calculating distances. Defaults to 'x' for 'index' mode and 'xy' in dataset and 'nearest' modes.
+
+#### [#](#inherited-from) Inherited from
+
+[CoreInteractionOptions](/docs/latest/api/interfaces/CoreInteractionOptions.html).[axis](/docs/latest/api/interfaces/CoreInteractionOptions.html#axis)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1590  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1590)
+
+---
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Background color of the tooltip.
+
+**`Default`**
+
+'rgba(0, 0, 0, 0.8)'
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2782  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2782)
+
+---
+
+### [#](#bodyalign) bodyAlign
+
+• **bodyAlign**: [`Scriptable`](/docs/latest/api/#scriptable)<[`TextAlign`](/docs/latest/api/#textalign), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Horizontal alignment of the body text lines.
+
+**`Default`**
+
+'left'
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2832  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2832)
+
+---
+
+### [#](#bodycolor) bodyColor
+
+• **bodyColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Color of body
+
+**`Default`**
+
+'#fff'
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2822  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2822)
+
+---
+
+### [#](#bodyfont) bodyFont
+
+• **bodyFont**: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+See Fonts.
+
+**`Default`**
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2827  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2827)
+
+---
+
+### [#](#bodyspacing) bodySpacing
+
+• **bodySpacing**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Spacing to add to top and bottom of each tooltip item.
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2817  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2817)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Color of the border.
+
+**`Default`**
+
+'rgba(0, 0, 0, 0)'
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2907  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2907)
+
+---
+
+### [#](#borderwidth) borderWidth
+
+• **borderWidth**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Size of the border.
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2912  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2912)
+
+---
+
+### [#](#boxheight) boxHeight
+
+• **boxHeight**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Height of the color box if displayColors is true.
+
+**`Default`**
+
+bodyFont.size
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:2897  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2897)
+
+---
+
+### [#](#boxpadding) boxPadding
+
+• **boxPadding**: `number`
+
+Padding between the color box and the text.
+
+**`Default`**
+
+1
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:2787  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2787)
+
+---
+
+### [#](#boxwidth) boxWidth
+
+• **boxWidth**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Width of the color box if displayColors is true.
+
+**`Default`**
+
+bodyFont.size
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:2892  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2892)
+
+---
+
+### [#](#callbacks) callbacks
+
+• **callbacks**: [`TooltipCallbacks`](/docs/latest/api/interfaces/TooltipCallbacks.html)<`TType`, [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`>, [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>>
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:2926  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2926)
+
+---
+
+### [#](#caretpadding) caretPadding
+
+• **caretPadding**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Extra distance to move the end of the tooltip arrow away from the tooltip point.
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:2867  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2867)
+
+---
+
+### [#](#caretsize) caretSize
+
+• **caretSize**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Size, in px, of the tooltip arrow.
+
+**`Default`**
+
+5
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:2872  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2872)
+
+---
+
+### [#](#cornerradius) cornerRadius
+
+• **cornerRadius**: [`Scriptable`](/docs/latest/api/#scriptable)<`number` | [`BorderRadius`](/docs/latest/api/interfaces/BorderRadius.html), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Radius of tooltip corner curves.
+
+**`Default`**
+
+6
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:2877  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2877)
+
+---
+
+### [#](#displaycolors) displayColors
+
+• **displayColors**: [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+If true, color boxes are shown in the tooltip.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:2887  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2887)
+
+---
+
+### [#](#enabled) enabled
+
+• **enabled**: [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Are on-canvas tooltips enabled?
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:2755  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2755)
+
+---
+
+### [#](#filter) filter
+
+• **filter**: (`e`: [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>, `index`: `number`, `array`: [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>[], `data`: [`ChartData`](/docs/latest/api/interfaces/ChartData.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>) => `boolean`
+
+#### [#](#type-declaration) Type declaration
+
+▸ (`e`, `index`, `array`, `data`): `boolean`
+
+##### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `e` | [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`> |
+| `index` | `number` |
+| `array` | [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>[] |
+| `data` | [`ChartData`](/docs/latest/api/interfaces/ChartData.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+
+##### [#](#returns) Returns
+
+`boolean`
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:2776  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2776)
+
+---
+
+### [#](#footeralign) footerAlign
+
+• **footerAlign**: [`Scriptable`](/docs/latest/api/#scriptable)<[`TextAlign`](/docs/latest/api/#textalign), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Horizontal alignment of the footer text lines.
+
+**`Default`**
+
+'left'
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:2857  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2857)
+
+---
+
+### [#](#footercolor) footerColor
+
+• **footerColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Color of footer
+
+**`Default`**
+
+'#fff'
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:2847  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2847)
+
+---
+
+### [#](#footerfont) footerFont
+
+• **footerFont**: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+See Fonts
+
+**`Default`**
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:2852  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2852)
+
+---
+
+### [#](#footermargintop) footerMarginTop
+
+• **footerMarginTop**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Margin to add before drawing the footer.
+
+**`Default`**
+
+6
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:2842  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2842)
+
+---
+
+### [#](#footerspacing) footerSpacing
+
+• **footerSpacing**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Spacing to add to top and bottom of each footer line.
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:2837  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2837)
+
+---
+
+### [#](#includeinvisible) includeInvisible
+
+• **includeInvisible**: `boolean`
+
+if true, the invisible points that are outside of the chart area will also be included when evaluating interactions.
+
+**`Default`**
+
+false
+
+#### [#](#inherited-from-2) Inherited from
+
+[CoreInteractionOptions](/docs/latest/api/interfaces/CoreInteractionOptions.html).[includeInvisible](/docs/latest/api/interfaces/CoreInteractionOptions.html#includeinvisible)
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:1596  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1596)
+
+---
+
+### [#](#intersect) intersect
+
+• **intersect**: `boolean`
+
+if true, the hover mode only applies when the mouse position intersects an item on the chart.
+
+**`Default`**
+
+true
+
+#### [#](#inherited-from-3) Inherited from
+
+[CoreInteractionOptions](/docs/latest/api/interfaces/CoreInteractionOptions.html).[intersect](/docs/latest/api/interfaces/CoreInteractionOptions.html#intersect)
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:1585  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1585)
+
+---
+
+### [#](#itemsort) itemSort
+
+• **itemSort**: (`a`: [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>, `b`: [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>, `data`: [`ChartData`](/docs/latest/api/interfaces/ChartData.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>) => `number`
+
+#### [#](#type-declaration-2) Type declaration
+
+▸ (`a`, `b`, `data`): `number`
+
+Sort tooltip items.
+
+##### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `a` | [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`> |
+| `b` | [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`> |
+| `data` | [`ChartData`](/docs/latest/api/interfaces/ChartData.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+
+##### [#](#returns-2) Returns
+
+`number`
+
+#### [#](#defined-in-28) Defined in
+
+[types/index.d.ts:2774  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2774)
+
+---
+
+### [#](#mode) mode
+
+• **mode**: keyof [`InteractionModeMap`](/docs/latest/api/interfaces/InteractionModeMap.html)
+
+Sets which elements appear in the tooltip. See Interaction Modes for details.
+
+**`Default`**
+
+'nearest'
+
+#### [#](#inherited-from-4) Inherited from
+
+[CoreInteractionOptions](/docs/latest/api/interfaces/CoreInteractionOptions.html).[mode](/docs/latest/api/interfaces/CoreInteractionOptions.html#mode)
+
+#### [#](#defined-in-29) Defined in
+
+[types/index.d.ts:1580  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1580)
+
+---
+
+### [#](#multikeybackground) multiKeyBackground
+
+• **multiKeyBackground**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Color to draw behind the colored boxes when multiple items are in the tooltip.
+
+**`Default`**
+
+'#fff'
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:2882  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2882)
+
+---
+
+### [#](#padding) padding
+
+• **padding**: [`Scriptable`](/docs/latest/api/#scriptable)<`Padding`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Padding to add to the tooltip
+
+**`Default`**
+
+6
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:2862  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2862)
+
+---
+
+### [#](#position) position
+
+• **position**: [`Scriptable`](/docs/latest/api/#scriptable)<keyof [`TooltipPositionerMap`](/docs/latest/api/interfaces/TooltipPositionerMap.html), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+The mode for positioning the tooltip
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:2763  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2763)
+
+---
+
+### [#](#rtl) rtl
+
+• **rtl**: [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+true for rendering the legends from right to left.
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:2916  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2916)
+
+---
+
+### [#](#textdirection) textDirection
+
+• **textDirection**: [`Scriptable`](/docs/latest/api/#scriptable)<`string`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+This will force the text direction 'rtl' or 'ltr on the canvas for rendering the tooltips, regardless of the css specified on the canvas
+
+**`Default`**
+
+canvas's default
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:2922  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2922)
+
+---
+
+### [#](#titlealign) titleAlign
+
+• **titleAlign**: [`Scriptable`](/docs/latest/api/#scriptable)<[`TextAlign`](/docs/latest/api/#textalign), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Horizontal alignment of the title text lines.
+
+**`Default`**
+
+'left'
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:2812  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2812)
+
+---
+
+### [#](#titlecolor) titleColor
+
+• **titleColor**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Color of title
+
+**`Default`**
+
+'#fff'
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:2792  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2792)
+
+---
+
+### [#](#titlefont) titleFont
+
+• **titleFont**: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+See Fonts
+
+**`Default`**
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:2797  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2797)
+
+---
+
+### [#](#titlemarginbottom) titleMarginBottom
+
+• **titleMarginBottom**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Margin to add on bottom of title section.
+
+**`Default`**
+
+6
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:2807  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2807)
+
+---
+
+### [#](#titlespacing) titleSpacing
+
+• **titleSpacing**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Spacing to add to top and bottom of each title line.
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:2802  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2802)
+
+---
+
+### [#](#usepointstyle) usePointStyle
+
+• **usePointStyle**: [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Use the corresponding point style (from dataset options) instead of color boxes, ex: star, triangle etc. (size is based on the minimum value between boxWidth and boxHeight)
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-40) Defined in
+
+[types/index.d.ts:2902  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2902)
+
+---
+
+### [#](#xalign) xAlign
+
+• **xAlign**: [`Scriptable`](/docs/latest/api/#scriptable)<[`TooltipXAlignment`](/docs/latest/api/#tooltipxalignment), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+Override the tooltip alignment calculations
+
+#### [#](#defined-in-41) Defined in
+
+[types/index.d.ts:2768  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2768)
+
+---
+
+### [#](#yalign) yAlign
+
+• **yAlign**: [`Scriptable`](/docs/latest/api/#scriptable)<[`TooltipYAlignment`](/docs/latest/api/#tooltipyalignment), [`ScriptableTooltipContext`](/docs/latest/api/interfaces/ScriptableTooltipContext.html)<`TType`>>
+
+#### [#](#defined-in-42) Defined in
+
+[types/index.d.ts:2769  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2769)
+
+## [#](#methods) Methods
+
+### [#](#external) external
+
+▸ **external**(`this`, `args`): `void`
+
+See external tooltip section.
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`> |
+| `args` | `Object` |
+| `args.chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+| `args.tooltip` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`> |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-43) Defined in
+
+[types/index.d.ts:2759  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2759)

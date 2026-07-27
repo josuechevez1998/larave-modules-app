@@ -1,0 +1,41 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: Segment (/docs/latest/api/interfaces/Segment.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: Segment
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/Segment.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-segment) Interface: Segment
+
+## [#](#properties) Properties
+
+### [#](#end) end
+
+• **end**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1839  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1839)
+
+---
+
+### [#](#loop) loop
+
+• **loop**: `boolean`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1840  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1840)
+
+---
+
+### [#](#start) start
+
+• **start**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1838  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1838)

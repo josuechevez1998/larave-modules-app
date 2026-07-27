@@ -1,0 +1,154 @@
+---
+alwaysApply: false
+description: Documentación local (driverjs): Popover Buttons - Driver.js (/docs/buttons). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Popover Buttons - Driver.js
+
+> Fuente: https://driverjs.com/docs/buttons
+> Exportado: 2026-07-10 23:31 UTC
+
+# Popover Buttons
+
+You can use the `showButtons` option to choose which buttons to show in the popover. The default value is `['next', 'previous', 'close']`.
+
+> **Note:** When using the `highlight` method to highlight a single element, the only button shown is the `close` button. However, you can use the `showButtons` option to show other buttons as well. But the buttons won’t do anything. You will have to use the `onNextClick` and `onPrevClick` callbacks to implement the functionality.
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  showButtons: [
+    'next',
+    'previous',
+    'close'
+  ],
+  steps: [
+    {
+      element: '#first-element',
+      popover: {
+        title: 'Popover Title',
+        description: 'Popover Description'
+      }
+    },
+    {
+      element: '#second-element',
+      popover: {
+        title: 'Popover Title',
+        description: 'Popover Description'
+      }
+    }
+  ]
+});
+
+driverObj.drive();
+```
+
+Show All Buttons
+
+No Close Button
+
+No Buttons (Use Arrows)
+
+## Change Button Text
+
+You can also change the text of buttons using `nextBtnText`, `prevBtnText` and `doneBtnText` options.
+
+Change Button Text
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  nextBtnText: '—›',
+  prevBtnText: '‹—',
+  doneBtnText: '✕',
+  showProgress: true,
+  steps: [
+    // ...
+  ]
+});
+
+driverObj.drive();
+```
+
+Change Button Text
+
+## Event Handlers
+
+You can use the `onNextClick`, `onPrevClick`, `onCloseClick` and `onDoneClick` callbacks to implement custom functionality when the user clicks on the buttons.
+
+> Please note that when you configure these callbacks, the default functionality of the buttons will be disabled. You will have to implement the functionality yourself.
+
+> `onDoneClick` runs when the done button (the next button on the last step) is clicked. When provided, it runs instead of `onNextClick` on the last step, so you can detect when the user finishes the tour. Driver.js won’t tear down the tour for you here — call `driverObj.destroy()` yourself.
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  onNextClick:() => {
+    console.log('Next Button Clicked');
+    // Implement your own functionality here
+    driverObj.moveNext();
+  },
+  onPrevClick:() => {
+    console.log('Previous Button Clicked');
+    // Implement your own functionality here
+    driverObj.movePrevious();
+  },
+  onCloseClick:() => {
+    console.log('Close Button Clicked');
+    // Implement your own functionality here
+    driverObj.destroy();
+  },
+  onDoneClick:() => {
+    console.log('Done Button Clicked');
+    // Runs on the last step instead of onNextClick
+    driverObj.destroy();
+  },
+  steps: [
+    // ...
+  ]
+});
+
+driverObj.drive();
+```
+
+Show Example
+
+## Custom Buttons
+
+You can add custom buttons using `onPopoverRender` callback. This callback is called before the popover is rendered. In the following example, we are adding a custom button that takes the user to the first step.
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  // Get full control over the popover rendering.
+  // Here we are adding a custom button that takes
+  // user to the first step.
+  onPopoverRender: (popover, { config, state }) => {
+    const firstButton = document.createElement("button");
+    firstButton.innerText = "Go to First";
+    // Add this class to give the button the default driver.js styling.
+    // Leave it out if you want to apply your own styles instead.
+    firstButton.classList.add("driver-popover-footer-btn");
+    popover.footerButtons.appendChild(firstButton);
+
+    firstButton.addEventListener("click", () => {
+      driverObj.drive(0);
+    });
+  },
+  steps: [
+    // ..
+  ]
+});
+
+driverObj.drive();
+```
+
+Run Example

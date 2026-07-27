@@ -1,0 +1,23 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: FillerControllerDatasetOptions (/docs/latest/api/interfaces/FillerControllerDatasetOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: FillerControllerDatasetOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/FillerControllerDatasetOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-fillercontrollerdatasetoptions) Interface: FillerControllerDatasetOptions
+
+## [#](#properties) Properties
+
+### [#](#fill) fill
+
+• **fill**: [`FillTarget`](/docs/latest/api/#filltarget) | [`ComplexFillTarget`](/docs/latest/api/interfaces/ComplexFillTarget.html)
+
+Both line and radar charts support a fill option on the dataset object which can be used to create area between two datasets or a dataset and a boundary, i.e. the scale origin, start or end
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2276  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2276)

@@ -1,0 +1,42 @@
+---
+alwaysApply: false
+description: Documentación local (driverjs): Confirm on Exit - Driver.js (/docs/confirm-on-exit). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Confirm on Exit - Driver.js
+
+> Fuente: https://driverjs.com/docs/confirm-on-exit
+> Exportado: 2026-07-10 23:31 UTC
+
+# Confirm on Exit
+
+You can use the `onDestroyStarted` hook to add a confirmation dialog or some other logic when the user tries to exit the tour. In the example below, upon exit we check if there are any tour steps left and ask for confirmation before we exit.
+
+Confirm on Exit
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  showProgress: true,
+  steps: [
+    { element: '#confirm-destroy-example', popover: { title: 'Animated Tour Example', description: 'Here is the code example showing animated tour. Let\'s walk you through it.', side: "left", align: 'start' }},
+    { element: 'code .line:nth-child(1)', popover: { title: 'Import the Library', description: 'It works the same in vanilla JavaScript as well as frameworks.', side: "bottom", align: 'start' }},
+    { element: 'code .line:nth-child(2)', popover: { title: 'Importing CSS', description: 'Import the CSS which gives you the default styling for popover and overlay.', side: "bottom", align: 'start' }},
+    { popover: { title: 'Happy Coding', description: 'And that is all, go ahead and start adding tours to your applications.' } }
+  ],
+  // onDestroyStarted is called when the user tries to exit the tour
+  onDestroyStarted: () => {
+    if (!driverObj.hasNextStep() || confirm("Are you sure?")) {
+      driverObj.destroy();
+    }
+  },
+});
+
+driverObj.drive();
+```
+
+Show me an Example
+
+> **Note:** By overriding the `onDestroyStarted` hook, you are responsible for calling `driverObj.destroy()` to exit the tour.

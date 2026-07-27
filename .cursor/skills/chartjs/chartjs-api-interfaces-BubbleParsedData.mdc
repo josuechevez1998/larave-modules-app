@@ -1,0 +1,73 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BubbleParsedData (/docs/latest/api/interfaces/BubbleParsedData.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BubbleParsedData
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BubbleParsedData.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-bubbleparseddata) Interface: BubbleParsedData
+
+## [#](#hierarchy) Hierarchy
+
+- [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html)
+
+  ↳ **`BubbleParsedData`**
+
+## [#](#properties) Properties
+
+### [#](#custom) \_custom
+
+• **\_custom**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3699  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3699)
+
+---
+
+### [#](#stacks) \_stacks
+
+• `Optional` **\_stacks**: `Object`
+
+#### [#](#index-signature) Index signature
+
+▪ [key: `string`]: { `[key: number]`: `number`; }
+
+#### [#](#inherited-from) Inherited from
+
+[CartesianParsedData](/docs/latest/api/interfaces/CartesianParsedData.html).[\_stacks](/docs/latest/api/interfaces/CartesianParsedData.html#stacks)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3676  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3676)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from-2) Inherited from
+
+[CartesianParsedData](/docs/latest/api/interfaces/CartesianParsedData.html).[x](/docs/latest/api/interfaces/CartesianParsedData.html#x)
+
+#### [#](#defined-in-3) Defined in
+
+[types/geometric.d.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-3) Inherited from
+
+[CartesianParsedData](/docs/latest/api/interfaces/CartesianParsedData.html).[y](/docs/latest/api/interfaces/CartesianParsedData.html#y)
+
+#### [#](#defined-in-4) Defined in
+
+[types/geometric.d.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L12)

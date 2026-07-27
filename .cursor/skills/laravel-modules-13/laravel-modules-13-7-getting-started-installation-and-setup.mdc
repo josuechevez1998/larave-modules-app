@@ -1,0 +1,68 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Installation and Setup (/docs/7/getting-started/installation-and-setup). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Installation and Setup
+
+> Fuente: https://laravelmodules.com/docs/7/getting-started/installation-and-setup
+> Exportado: 2026-07-23 19:57 UTC
+
+## [#](#composer)Composer
+
+To install through Composer, by run the following command:
+
+Copied!
+
+```
+composer require nwidart/laravel-modules
+
+composer require nwidart/laravel-modules
+```
+
+The package will automatically register a service provider and alias.
+
+Optionally, publish the package's configuration file by running:
+
+Copied!
+
+```
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+```
+
+## [#](#autoloading)Autoloading
+
+By default the module classes are not loaded automatically. You can autoload your modules using `psr-4`. For example :
+
+Copied!
+
+```
+{
+
+"autoload": {
+
+"psr-4": {
+
+"App\\": "app/",
+
+"Modules\\": "Modules/"
+
+}
+
+}
+
+}
+
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Modules\\": "Modules/"
+    }
+  }
+}
+```
+
+**Tip: don't forget to run `composer dump-autoload` afterwards**

@@ -1,0 +1,276 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Radial Axes (/docs/latest/axes/radial). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Radial Axes
+
+> Fuente: https://www.chartjs.org/docs/latest/axes/radial
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#radial-axes) Radial Axes
+
+Radial axes are used specifically for the radar and polar area chart types. These axes overlay the chart area, rather than being positioned on one of the edges. One radial axis is included by default in Chart.js.
+
+- [radialLinear](/docs/latest/axes/radial/linear.html)
+
+## [#](#visual-components) Visual Components
+
+A radial axis is composed of visual components that can be individually configured. These components are:
+
+- [angle lines](#angle-lines)
+- [grid lines](#grid-lines)
+- [point labels](#point-labels)
+- [ticks](#ticks)
+
+### [#](#angle-lines) Angle Lines
+
+The grid lines for an axis are drawn on the chart area. They stretch out from the center towards the edge of the canvas. In the example below, they are red.
+
+config
+setup
+
+const config = {
+type: 'radar',
+data,
+options: {
+scales: {
+r: {
+angleLines: {
+color: 'red'
+}
+}
+}
+}
+};
+
+```
+const config = {
+  type: 'radar',
+  data,
+  options: {
+    scales: {
+      r: {
+        angleLines: {
+          color: 'red'
+        }
+      }
+    }
+  }
+};
+```
+
+const labels = Utils.months({count: 7});
+const data = {
+labels: labels,
+datasets: [{
+label: 'My First dataset',
+backgroundColor: 'rgba(54, 162, 235, 0.5)',
+borderColor: 'rgb(54, 162, 235)',
+borderWidth: 1,
+data: [10, 20, 30, 40, 50, 0, 5],
+}]
+};
+
+```
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+    borderColor: 'rgb(54, 162, 235)',
+    borderWidth: 1,
+    data: [10, 20, 30, 40, 50, 0, 5],
+  }]
+};
+```
+
+### [#](#grid-lines) Grid Lines
+
+The grid lines for an axis are drawn on the chart area. In the example below, they are red.
+
+config
+setup
+
+const config = {
+type: 'radar',
+data,
+options: {
+scales: {
+r: {
+grid: {
+color: 'red'
+}
+}
+}
+}
+};
+
+```
+const config = {
+  type: 'radar',
+  data,
+  options: {
+    scales: {
+      r: {
+        grid: {
+          color: 'red'
+        }
+      }
+    }
+  }
+};
+```
+
+const labels = Utils.months({count: 7});
+const data = {
+labels: labels,
+datasets: [{
+label: 'My First dataset',
+backgroundColor: 'rgba(54, 162, 235, 0.5)',
+borderColor: 'rgb(54, 162, 235)',
+borderWidth: 1,
+data: [10, 20, 30, 40, 50, 0, 5],
+}]
+};
+
+```
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+    borderColor: 'rgb(54, 162, 235)',
+    borderWidth: 1,
+    data: [10, 20, 30, 40, 50, 0, 5],
+  }]
+};
+```
+
+### [#](#point-labels) Point Labels
+
+The point labels indicate the value for each angle line. In the example below, they are red.
+
+config
+setup
+
+const config = {
+type: 'radar',
+data,
+options: {
+scales: {
+r: {
+pointLabels: {
+color: 'red'
+}
+}
+}
+}
+};
+
+```
+const config = {
+  type: 'radar',
+  data,
+  options: {
+    scales: {
+      r: {
+        pointLabels: {
+          color: 'red'
+        }
+      }
+    }
+  }
+};
+```
+
+const labels = Utils.months({count: 7});
+const data = {
+labels: labels,
+datasets: [{
+label: 'My First dataset',
+backgroundColor: 'rgba(54, 162, 235, 0.5)',
+borderColor: 'rgb(54, 162, 235)',
+borderWidth: 1,
+data: [10, 20, 30, 40, 50, 0, 5],
+}]
+};
+
+```
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+    borderColor: 'rgb(54, 162, 235)',
+    borderWidth: 1,
+    data: [10, 20, 30, 40, 50, 0, 5],
+  }]
+};
+```
+
+### [#](#ticks) Ticks
+
+The ticks are used to label values based on how far they are from the center of the axis. In the example below, they are red.
+
+config
+setup
+
+const config = {
+type: 'radar',
+data,
+options: {
+scales: {
+r: {
+ticks: {
+color: 'red'
+}
+}
+}
+}
+};
+
+```
+const config = {
+  type: 'radar',
+  data,
+  options: {
+    scales: {
+      r: {
+        ticks: {
+          color: 'red'
+        }
+      }
+    }
+  }
+};
+```
+
+const labels = Utils.months({count: 7});
+const data = {
+labels: labels,
+datasets: [{
+label: 'My First dataset',
+backgroundColor: 'rgba(54, 162, 235, 0.5)',
+borderColor: 'rgb(54, 162, 235)',
+borderWidth: 1,
+data: [10, 20, 30, 40, 50, 0, 5],
+}]
+};
+
+```
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+    borderColor: 'rgb(54, 162, 235)',
+    borderWidth: 1,
+    data: [10, 20, 30, 40, 50, 0, 5],
+  }]
+};
+```

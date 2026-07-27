@@ -1,0 +1,43 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ParsingOptions (/docs/latest/api/interfaces/ParsingOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ParsingOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ParsingOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-parsingoptions) Interface: ParsingOptions
+
+## [#](#hierarchy) Hierarchy
+
+- **`ParsingOptions`**
+
+  ↳ [`ControllerDatasetOptions`](/docs/latest/api/interfaces/ControllerDatasetOptions.html)
+
+  ↳ [`CoreChartOptions`](/docs/latest/api/interfaces/CoreChartOptions.html)
+
+## [#](#properties) Properties
+
+### [#](#normalized) normalized
+
+• **normalized**: `boolean`
+
+Chart.js is fastest if you provide data with indices that are unique, sorted, and consistent across datasets and provide the normalized: true option to let Chart.js know that you have done so.
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:63  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L63)
+
+---
+
+### [#](#parsing) parsing
+
+• **parsing**: `false` | { `[key: string]`: `string`; }
+
+How to parse the dataset. The parsing can be disabled by specifying parsing: false at chart options or dataset. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L54)

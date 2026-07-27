@@ -1,0 +1,254 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: Registry (/docs/latest/api/interfaces/Registry.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: Registry
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/Registry.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-registry) Interface: Registry
+
+Please use the module's default export which provides a singleton instance
+Note: class is exported for typedoc
+
+## [#](#properties) Properties
+
+### [#](#controllers) controllers
+
+• `Readonly` **controllers**: [`TypedRegistry`](/docs/latest/api/interfaces/TypedRegistry.html)<[`DatasetController`](/docs/latest/api/classes/DatasetController.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>, `number` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) | [`BarParsedData`](/docs/latest/api/interfaces/BarParsedData.html) | [`BubbleParsedData`](/docs/latest/api/interfaces/BubbleParsedData.html) | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html)>>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1143  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1143)
+
+---
+
+### [#](#elements) elements
+
+• `Readonly` **elements**: [`TypedRegistry`](/docs/latest/api/interfaces/TypedRegistry.html)<`default`<`AnyObject`, `AnyObject`>>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1144  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1144)
+
+---
+
+### [#](#plugins) plugins
+
+• `Readonly` **plugins**: [`TypedRegistry`](/docs/latest/api/interfaces/TypedRegistry.html)<[`Plugin`](/docs/latest/api/interfaces/Plugin.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `AnyObject`>>
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1145  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1145)
+
+---
+
+### [#](#scales) scales
+
+• `Readonly` **scales**: [`TypedRegistry`](/docs/latest/api/interfaces/TypedRegistry.html)<[`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1146  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1146)
+
+## [#](#methods) Methods
+
+### [#](#add) add
+
+▸ **add**(`...args`): `void`
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `...args` | [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[] |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1148  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1148)
+
+---
+
+### [#](#addcontrollers) addControllers
+
+▸ **addControllers**(`...args`): `void`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `...args` | [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[] |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1151  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1151)
+
+---
+
+### [#](#addelements) addElements
+
+▸ **addElements**(`...args`): `void`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `...args` | [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[] |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1152  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1152)
+
+---
+
+### [#](#addplugins) addPlugins
+
+▸ **addPlugins**(`...args`): `void`
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `...args` | [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[] |
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1153  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1153)
+
+---
+
+### [#](#addscales) addScales
+
+▸ **addScales**(`...args`): `void`
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `...args` | [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[] |
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1154  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1154)
+
+---
+
+### [#](#getcontroller) getController
+
+▸ **getController**(`id`): [`DatasetController`](/docs/latest/api/classes/DatasetController.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>, `number` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) | [`BarParsedData`](/docs/latest/api/interfaces/BarParsedData.html) | [`BubbleParsedData`](/docs/latest/api/interfaces/BubbleParsedData.html) | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html)>
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `id` | `string` |
+
+#### [#](#returns-6) Returns
+
+[`DatasetController`](/docs/latest/api/classes/DatasetController.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>, `number` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) | [`BarParsedData`](/docs/latest/api/interfaces/BarParsedData.html) | [`BubbleParsedData`](/docs/latest/api/interfaces/BubbleParsedData.html) | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html)>
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1156  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1156)
+
+---
+
+### [#](#getelement) getElement
+
+▸ **getElement**(`id`): `default`<`AnyObject`, `AnyObject`>
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `id` | `string` |
+
+#### [#](#returns-7) Returns
+
+`default`<`AnyObject`, `AnyObject`>
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1157  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1157)
+
+---
+
+### [#](#getplugin) getPlugin
+
+▸ **getPlugin**(`id`): [`Plugin`](/docs/latest/api/interfaces/Plugin.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `AnyObject`>
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `id` | `string` |
+
+#### [#](#returns-8) Returns
+
+[`Plugin`](/docs/latest/api/interfaces/Plugin.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `AnyObject`>
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1158  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1158)
+
+---
+
+### [#](#getscale) getScale
+
+▸ **getScale**(`id`): [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `id` | `string` |
+
+#### [#](#returns-9) Returns
+
+[`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1159  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1159)
+
+---
+
+### [#](#remove) remove
+
+▸ **remove**(`...args`): `void`
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `...args` | [`ChartComponentLike`](/docs/latest/api/#chartcomponentlike)[] |
+
+#### [#](#returns-10) Returns
+
+`void`
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1149  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1149)

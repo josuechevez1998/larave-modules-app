@@ -1,0 +1,1617 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TimeScale<O> (/docs/latest/api/interfaces/TimeScale.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TimeScale<O>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TimeScale.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-timescale-o) Interface: TimeScale<O>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `O` | extends [`TimeScaleOptions`](/docs/latest/api/#timescaleoptions) = [`TimeScaleOptions`](/docs/latest/api/#timescaleoptions) |
+
+## [#](#hierarchy) Hierarchy
+
+- [`Scale`](/docs/latest/api/classes/Scale.html)<`O`>
+
+  ↳ **`TimeScale`**
+
+## [#](#properties) Properties
+
+### [#](#animations) $animations
+
+• **$animations**: `Record`<`never`, [`Animation`](/docs/latest/api/classes/Animation.html)>
+
+#### [#](#inherited-from) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[$animations](/docs/latest/api/classes/Scale.html#animations)
+
+#### [#](#defined-in) Defined in
+
+[core/core.element.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L15)
+
+---
+
+### [#](#active) active
+
+• **active**: `boolean` = `false`
+
+#### [#](#inherited-from-2) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[active](/docs/latest/api/classes/Scale.html#active)
+
+#### [#](#defined-in-2) Defined in
+
+[core/core.element.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L13)
+
+---
+
+### [#](#axis) axis
+
+• **axis**: `string`
+
+#### [#](#inherited-from-3) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[axis](/docs/latest/api/classes/Scale.html#axis)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1287  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1287)
+
+---
+
+### [#](#bottom) bottom
+
+• **bottom**: `number`
+
+Bottom edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-4) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[bottom](/docs/latest/api/classes/Scale.html#bottom)
+
+#### [#](#defined-in-4) Defined in
+
+[types/layout.d.ts:41  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L41)
+
+---
+
+### [#](#chart) chart
+
+• `Readonly` **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+#### [#](#inherited-from-5) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[chart](/docs/latest/api/classes/Scale.html#chart)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1277  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1277)
+
+---
+
+### [#](#ctx) ctx
+
+• `Readonly` **ctx**: `CanvasRenderingContext2D`
+
+#### [#](#inherited-from-6) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[ctx](/docs/latest/api/classes/Scale.html#ctx)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1276  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1276)
+
+---
+
+### [#](#fullsize) fullSize
+
+• **fullSize**: `boolean`
+
+if true, and the item is horizontal, then push vertical boxes down
+
+#### [#](#inherited-from-7) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[fullSize](/docs/latest/api/classes/Scale.html#fullsize)
+
+#### [#](#defined-in-7) Defined in
+
+[types/layout.d.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L17)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+Height of item. Must be valid after update()
+
+#### [#](#inherited-from-8) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[height](/docs/latest/api/classes/Scale.html#height)
+
+#### [#](#defined-in-8) Defined in
+
+[types/layout.d.ts:25  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L25)
+
+---
+
+### [#](#id) id
+
+• `Readonly` **id**: `string`
+
+#### [#](#inherited-from-9) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[id](/docs/latest/api/classes/Scale.html#id)
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1274  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1274)
+
+---
+
+### [#](#labelrotation) labelRotation
+
+• **labelRotation**: `number`
+
+#### [#](#inherited-from-10) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[labelRotation](/docs/latest/api/classes/Scale.html#labelrotation)
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1288  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1288)
+
+---
+
+### [#](#left) left
+
+• **left**: `number`
+
+Left edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-11) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[left](/docs/latest/api/classes/Scale.html#left)
+
+#### [#](#defined-in-11) Defined in
+
+[types/layout.d.ts:29  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L29)
+
+---
+
+### [#](#max) max
+
+• **max**: `number`
+
+#### [#](#inherited-from-12) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[max](/docs/latest/api/classes/Scale.html#max)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1290  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1290)
+
+---
+
+### [#](#maxheight) maxHeight
+
+• **maxHeight**: `number`
+
+#### [#](#inherited-from-13) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[maxHeight](/docs/latest/api/classes/Scale.html#maxheight)
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1280  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1280)
+
+---
+
+### [#](#maxwidth) maxWidth
+
+• **maxWidth**: `number`
+
+#### [#](#inherited-from-14) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[maxWidth](/docs/latest/api/classes/Scale.html#maxwidth)
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1279  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1279)
+
+---
+
+### [#](#min) min
+
+• **min**: `number`
+
+#### [#](#inherited-from-15) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[min](/docs/latest/api/classes/Scale.html#min)
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:1289  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1289)
+
+---
+
+### [#](#options) options
+
+• **options**: `O`
+
+#### [#](#inherited-from-16) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[options](/docs/latest/api/classes/Scale.html#options)
+
+#### [#](#defined-in-16) Defined in
+
+[core/core.element.ts:14  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L14)
+
+---
+
+### [#](#paddingbottom) paddingBottom
+
+• **paddingBottom**: `number`
+
+#### [#](#inherited-from-17) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[paddingBottom](/docs/latest/api/classes/Scale.html#paddingbottom)
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:1283  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1283)
+
+---
+
+### [#](#paddingleft) paddingLeft
+
+• **paddingLeft**: `number`
+
+#### [#](#inherited-from-18) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[paddingLeft](/docs/latest/api/classes/Scale.html#paddingleft)
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:1284  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1284)
+
+---
+
+### [#](#paddingright) paddingRight
+
+• **paddingRight**: `number`
+
+#### [#](#inherited-from-19) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[paddingRight](/docs/latest/api/classes/Scale.html#paddingright)
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:1285  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1285)
+
+---
+
+### [#](#paddingtop) paddingTop
+
+• **paddingTop**: `number`
+
+#### [#](#inherited-from-20) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[paddingTop](/docs/latest/api/classes/Scale.html#paddingtop)
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:1282  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1282)
+
+---
+
+### [#](#position) position
+
+• **position**: [`LayoutPosition`](/docs/latest/api/#layoutposition)
+
+The position of the item in the chart layout. Possible values are
+
+#### [#](#inherited-from-21) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[position](/docs/latest/api/classes/Scale.html#position)
+
+#### [#](#defined-in-21) Defined in
+
+[types/layout.d.ts:9  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L9)
+
+---
+
+### [#](#right) right
+
+• **right**: `number`
+
+Right edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-22) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[right](/docs/latest/api/classes/Scale.html#right)
+
+#### [#](#defined-in-22) Defined in
+
+[types/layout.d.ts:37  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L37)
+
+---
+
+### [#](#ticks) ticks
+
+• **ticks**: [`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#inherited-from-23) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[ticks](/docs/latest/api/classes/Scale.html#ticks)
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:1291  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1291)
+
+---
+
+### [#](#top) top
+
+• **top**: `number`
+
+Top edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-24) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[top](/docs/latest/api/classes/Scale.html#top)
+
+#### [#](#defined-in-24) Defined in
+
+[types/layout.d.ts:33  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L33)
+
+---
+
+### [#](#type) type
+
+• `Readonly` **type**: `string`
+
+#### [#](#inherited-from-25) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[type](/docs/latest/api/classes/Scale.html#type)
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:1275  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1275)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number`
+
+The weight used to sort the item. Higher weights are further away from the chart area
+
+#### [#](#inherited-from-26) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[weight](/docs/latest/api/classes/Scale.html#weight)
+
+#### [#](#defined-in-26) Defined in
+
+[types/layout.d.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L13)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+Width of item. Must be valid after update()
+
+#### [#](#inherited-from-27) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[width](/docs/latest/api/classes/Scale.html#width)
+
+#### [#](#defined-in-27) Defined in
+
+[types/layout.d.ts:21  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L21)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from-28) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[x](/docs/latest/api/classes/Scale.html#x)
+
+#### [#](#defined-in-28) Defined in
+
+[core/core.element.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-29) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[y](/docs/latest/api/classes/Scale.html#y)
+
+#### [#](#defined-in-29) Defined in
+
+[core/core.element.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L12)
+
+## [#](#methods) Methods
+
+### [#](#afterbuildticks) afterBuildTicks
+
+▸ **afterBuildTicks**(): `void`
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#inherited-from-30) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterBuildTicks](/docs/latest/api/classes/Scale.html#afterbuildticks)
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:1372  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1372)
+
+---
+
+### [#](#aftercalculatelabelrotation) afterCalculateLabelRotation
+
+▸ **afterCalculateLabelRotation**(): `void`
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#inherited-from-31) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterCalculateLabelRotation](/docs/latest/api/classes/Scale.html#aftercalculatelabelrotation)
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:1378  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1378)
+
+---
+
+### [#](#afterdatalimits) afterDataLimits
+
+▸ **afterDataLimits**(): `void`
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#inherited-from-32) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterDataLimits](/docs/latest/api/classes/Scale.html#afterdatalimits)
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:1369  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1369)
+
+---
+
+### [#](#afterfit) afterFit
+
+▸ **afterFit**(): `void`
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#inherited-from-33) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterFit](/docs/latest/api/classes/Scale.html#afterfit)
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:1381  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1381)
+
+---
+
+### [#](#aftersetdimensions) afterSetDimensions
+
+▸ **afterSetDimensions**(): `void`
+
+#### [#](#returns-5) Returns
+
+`void`
+
+#### [#](#inherited-from-34) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterSetDimensions](/docs/latest/api/classes/Scale.html#aftersetdimensions)
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:1366  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1366)
+
+---
+
+### [#](#afterticktolabelconversion) afterTickToLabelConversion
+
+▸ **afterTickToLabelConversion**(): `void`
+
+#### [#](#returns-6) Returns
+
+`void`
+
+#### [#](#inherited-from-35) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterTickToLabelConversion](/docs/latest/api/classes/Scale.html#afterticktolabelconversion)
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:1375  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1375)
+
+---
+
+### [#](#afterupdate) afterUpdate
+
+▸ **afterUpdate**(): `void`
+
+#### [#](#returns-7) Returns
+
+`void`
+
+#### [#](#inherited-from-36) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[afterUpdate](/docs/latest/api/classes/Scale.html#afterupdate)
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:1363  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1363)
+
+---
+
+### [#](#beforebuildticks) beforeBuildTicks
+
+▸ **beforeBuildTicks**(): `void`
+
+#### [#](#returns-8) Returns
+
+`void`
+
+#### [#](#inherited-from-37) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeBuildTicks](/docs/latest/api/classes/Scale.html#beforebuildticks)
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:1370  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1370)
+
+---
+
+### [#](#beforecalculatelabelrotation) beforeCalculateLabelRotation
+
+▸ **beforeCalculateLabelRotation**(): `void`
+
+#### [#](#returns-9) Returns
+
+`void`
+
+#### [#](#inherited-from-38) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeCalculateLabelRotation](/docs/latest/api/classes/Scale.html#beforecalculatelabelrotation)
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:1376  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1376)
+
+---
+
+### [#](#beforedatalimits) beforeDataLimits
+
+▸ **beforeDataLimits**(): `void`
+
+#### [#](#returns-10) Returns
+
+`void`
+
+#### [#](#inherited-from-39) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeDataLimits](/docs/latest/api/classes/Scale.html#beforedatalimits)
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:1367  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1367)
+
+---
+
+### [#](#beforefit) beforeFit
+
+▸ **beforeFit**(): `void`
+
+#### [#](#returns-11) Returns
+
+`void`
+
+#### [#](#inherited-from-40) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeFit](/docs/latest/api/classes/Scale.html#beforefit)
+
+#### [#](#defined-in-40) Defined in
+
+[types/index.d.ts:1379  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1379)
+
+---
+
+### [#](#beforelayout) beforeLayout
+
+▸ `Optional` **beforeLayout**(): `void`
+
+Called before the layout process starts
+
+#### [#](#returns-12) Returns
+
+`void`
+
+#### [#](#inherited-from-41) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeLayout](/docs/latest/api/classes/Scale.html#beforelayout)
+
+#### [#](#defined-in-41) Defined in
+
+[types/layout.d.ts:46  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L46)
+
+---
+
+### [#](#beforesetdimensions) beforeSetDimensions
+
+▸ **beforeSetDimensions**(): `void`
+
+#### [#](#returns-13) Returns
+
+`void`
+
+#### [#](#inherited-from-42) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeSetDimensions](/docs/latest/api/classes/Scale.html#beforesetdimensions)
+
+#### [#](#defined-in-42) Defined in
+
+[types/index.d.ts:1364  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1364)
+
+---
+
+### [#](#beforeticktolabelconversion) beforeTickToLabelConversion
+
+▸ **beforeTickToLabelConversion**(): `void`
+
+#### [#](#returns-14) Returns
+
+`void`
+
+#### [#](#inherited-from-43) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeTickToLabelConversion](/docs/latest/api/classes/Scale.html#beforeticktolabelconversion)
+
+#### [#](#defined-in-43) Defined in
+
+[types/index.d.ts:1373  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1373)
+
+---
+
+### [#](#beforeupdate) beforeUpdate
+
+▸ **beforeUpdate**(): `void`
+
+#### [#](#returns-15) Returns
+
+`void`
+
+#### [#](#inherited-from-44) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[beforeUpdate](/docs/latest/api/classes/Scale.html#beforeupdate)
+
+#### [#](#defined-in-44) Defined in
+
+[types/index.d.ts:1361  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1361)
+
+---
+
+### [#](#buildticks) buildTicks
+
+▸ **buildTicks**(): [`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#returns-16) Returns
+
+[`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#inherited-from-45) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[buildTicks](/docs/latest/api/classes/Scale.html#buildticks)
+
+#### [#](#defined-in-45) Defined in
+
+[types/index.d.ts:1371  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1371)
+
+---
+
+### [#](#calculatelabelrotation) calculateLabelRotation
+
+▸ **calculateLabelRotation**(): `void`
+
+#### [#](#returns-17) Returns
+
+`void`
+
+#### [#](#inherited-from-46) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[calculateLabelRotation](/docs/latest/api/classes/Scale.html#calculatelabelrotation)
+
+#### [#](#defined-in-46) Defined in
+
+[types/index.d.ts:1377  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1377)
+
+---
+
+### [#](#configure) configure
+
+▸ **configure**(): `void`
+
+#### [#](#returns-18) Returns
+
+`void`
+
+#### [#](#inherited-from-47) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[configure](/docs/latest/api/classes/Scale.html#configure)
+
+#### [#](#defined-in-47) Defined in
+
+[types/index.d.ts:1362  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1362)
+
+---
+
+### [#](#determinedatalimits) determineDataLimits
+
+▸ **determineDataLimits**(): `void`
+
+#### [#](#returns-19) Returns
+
+`void`
+
+#### [#](#inherited-from-48) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[determineDataLimits](/docs/latest/api/classes/Scale.html#determinedatalimits)
+
+#### [#](#defined-in-48) Defined in
+
+[types/index.d.ts:1368  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1368)
+
+---
+
+### [#](#draw) draw
+
+▸ **draw**(`chartArea`): `void`
+
+Draws the element
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-20) Returns
+
+`void`
+
+#### [#](#inherited-from-49) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[draw](/docs/latest/api/classes/Scale.html#draw)
+
+#### [#](#defined-in-49) Defined in
+
+[types/layout.d.ts:50  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L50)
+
+---
+
+### [#](#drawgrid) drawGrid
+
+▸ **drawGrid**(`chartArea`): `void`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-21) Returns
+
+`void`
+
+#### [#](#inherited-from-50) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[drawGrid](/docs/latest/api/classes/Scale.html#drawgrid)
+
+#### [#](#defined-in-50) Defined in
+
+[types/index.d.ts:1296  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1296)
+
+---
+
+### [#](#drawlabels) drawLabels
+
+▸ **drawLabels**(`chartArea`): `void`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-22) Returns
+
+`void`
+
+#### [#](#inherited-from-51) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[drawLabels](/docs/latest/api/classes/Scale.html#drawlabels)
+
+#### [#](#defined-in-51) Defined in
+
+[types/index.d.ts:1295  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1295)
+
+---
+
+### [#](#drawtitle) drawTitle
+
+▸ **drawTitle**(`chartArea`): `void`
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-23) Returns
+
+`void`
+
+#### [#](#inherited-from-52) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[drawTitle](/docs/latest/api/classes/Scale.html#drawtitle)
+
+#### [#](#defined-in-52) Defined in
+
+[types/index.d.ts:1294  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1294)
+
+---
+
+### [#](#fit) fit
+
+▸ **fit**(): `void`
+
+#### [#](#returns-24) Returns
+
+`void`
+
+#### [#](#inherited-from-53) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[fit](/docs/latest/api/classes/Scale.html#fit)
+
+#### [#](#defined-in-53) Defined in
+
+[types/index.d.ts:1380  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1380)
+
+---
+
+### [#](#format) format
+
+▸ **format**(`value`, `format?`): `string`
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+| `format?` | `string` |
+
+#### [#](#returns-25) Returns
+
+`string`
+
+#### [#](#defined-in-54) Defined in
+
+[types/index.d.ts:3469  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3469)
+
+---
+
+### [#](#generateticklabels) generateTickLabels
+
+▸ **generateTickLabels**(`ticks`): `void`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `ticks` | [`Tick`](/docs/latest/api/interfaces/Tick.html)[] |
+
+#### [#](#returns-26) Returns
+
+`void`
+
+#### [#](#inherited-from-54) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[generateTickLabels](/docs/latest/api/classes/Scale.html#generateticklabels)
+
+#### [#](#defined-in-55) Defined in
+
+[types/index.d.ts:1374  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1374)
+
+---
+
+### [#](#getbasepixel) getBasePixel
+
+▸ **getBasePixel**(): `number`
+
+Returns the pixel for the minimum chart value
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#returns-27) Returns
+
+`number`
+
+#### [#](#inherited-from-55) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getBasePixel](/docs/latest/api/classes/Scale.html#getbasepixel)
+
+#### [#](#defined-in-56) Defined in
+
+[types/index.d.ts:1352  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1352)
+
+---
+
+### [#](#getbasevalue) getBaseValue
+
+▸ **getBaseValue**(): `number`
+
+#### [#](#returns-28) Returns
+
+`number`
+
+#### [#](#inherited-from-56) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getBaseValue](/docs/latest/api/classes/Scale.html#getbasevalue)
+
+#### [#](#defined-in-57) Defined in
+
+[types/index.d.ts:1346  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1346)
+
+---
+
+### [#](#getdatatimestamps) getDataTimestamps
+
+▸ **getDataTimestamps**(): `number`[]
+
+#### [#](#returns-29) Returns
+
+`number`[]
+
+#### [#](#defined-in-58) Defined in
+
+[types/index.d.ts:3470  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3470)
+
+---
+
+### [#](#getdecimalforpixel) getDecimalForPixel
+
+▸ **getDecimalForPixel**(`pixel`): `number`
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `pixel` | `number` |
+
+#### [#](#returns-30) Returns
+
+`number`
+
+#### [#](#inherited-from-57) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getDecimalForPixel](/docs/latest/api/classes/Scale.html#getdecimalforpixel)
+
+#### [#](#defined-in-59) Defined in
+
+[types/index.d.ts:1302  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1302)
+
+---
+
+### [#](#getlabelforvalue) getLabelForValue
+
+▸ **getLabelForValue**(`value`): `string`
+
+Used to get the label to display in the tooltip for the given value
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+
+#### [#](#returns-31) Returns
+
+`string`
+
+#### [#](#inherited-from-58) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getLabelForValue](/docs/latest/api/classes/Scale.html#getlabelforvalue)
+
+#### [#](#defined-in-60) Defined in
+
+[types/index.d.ts:1322  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1322)
+
+---
+
+### [#](#getlabelitems) getLabelItems
+
+▸ **getLabelItems**(`chartArea?`): [`LabelItem`](/docs/latest/api/interfaces/LabelItem.html)[]
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-32) Returns
+
+[`LabelItem`](/docs/latest/api/interfaces/LabelItem.html)[]
+
+#### [#](#inherited-from-59) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getLabelItems](/docs/latest/api/classes/Scale.html#getlabelitems)
+
+#### [#](#defined-in-61) Defined in
+
+[types/index.d.ts:1360  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1360)
+
+---
+
+### [#](#getlabeltimestamps) getLabelTimestamps
+
+▸ **getLabelTimestamps**(): `string`[]
+
+#### [#](#returns-33) Returns
+
+`string`[]
+
+#### [#](#defined-in-62) Defined in
+
+[types/index.d.ts:3471  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3471)
+
+---
+
+### [#](#getlabels) getLabels
+
+▸ **getLabels**(): `string`[]
+
+#### [#](#returns-34) Returns
+
+`string`[]
+
+#### [#](#inherited-from-60) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getLabels](/docs/latest/api/classes/Scale.html#getlabels)
+
+#### [#](#defined-in-63) Defined in
+
+[types/index.d.ts:1359  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1359)
+
+---
+
+### [#](#getlinewidthforvalue) getLineWidthForValue
+
+▸ **getLineWidthForValue**(`value`): `number`
+
+Returns the grid line width at given value
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+
+#### [#](#returns-35) Returns
+
+`number`
+
+#### [#](#inherited-from-61) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getLineWidthForValue](/docs/latest/api/classes/Scale.html#getlinewidthforvalue)
+
+#### [#](#defined-in-64) Defined in
+
+[types/index.d.ts:1327  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1327)
+
+---
+
+### [#](#getmatchingvisiblemetas) getMatchingVisibleMetas
+
+▸ **getMatchingVisibleMetas**(`type?`): [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>[]
+
+#### [#](#parameters-11) Parameters
+
+| Name | Type |
+| --- | --- |
+| `type?` | `string` |
+
+#### [#](#returns-36) Returns
+
+[`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>[]
+
+#### [#](#inherited-from-62) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getMatchingVisibleMetas](/docs/latest/api/classes/Scale.html#getmatchingvisiblemetas)
+
+#### [#](#defined-in-65) Defined in
+
+[types/index.d.ts:1292  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1292)
+
+---
+
+### [#](#getminmax) getMinMax
+
+▸ **getMinMax**(`canStack`): `Object`
+
+#### [#](#parameters-12) Parameters
+
+| Name | Type |
+| --- | --- |
+| `canStack` | `boolean` |
+
+#### [#](#returns-37) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `max` | `number` |
+| `min` | `number` |
+
+#### [#](#inherited-from-63) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getMinMax](/docs/latest/api/classes/Scale.html#getminmax)
+
+#### [#](#defined-in-66) Defined in
+
+[types/index.d.ts:1357  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1357)
+
+---
+
+### [#](#getpadding) getPadding
+
+▸ `Optional` **getPadding**(): [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+Returns an object with padding on the edges
+
+#### [#](#returns-38) Returns
+
+[`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+#### [#](#inherited-from-64) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getPadding](/docs/latest/api/classes/Scale.html#getpadding)
+
+#### [#](#defined-in-67) Defined in
+
+[types/layout.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L54)
+
+---
+
+### [#](#getpixelfordecimal) getPixelForDecimal
+
+▸ **getPixelForDecimal**(`decimal`): `number`
+
+Utility for getting the pixel location of a percentage of scale
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-13) Parameters
+
+| Name | Type |
+| --- | --- |
+| `decimal` | `number` |
+
+#### [#](#returns-39) Returns
+
+`number`
+
+#### [#](#inherited-from-65) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getPixelForDecimal](/docs/latest/api/classes/Scale.html#getpixelfordecimal)
+
+#### [#](#defined-in-68) Defined in
+
+[types/index.d.ts:1309  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1309)
+
+---
+
+### [#](#getpixelfortick) getPixelForTick
+
+▸ **getPixelForTick**(`index`): `number`
+
+Returns the location of the tick at the given index
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-14) Parameters
+
+| Name | Type |
+| --- | --- |
+| `index` | `number` |
+
+#### [#](#returns-40) Returns
+
+`number`
+
+#### [#](#inherited-from-66) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getPixelForTick](/docs/latest/api/classes/Scale.html#getpixelfortick)
+
+#### [#](#defined-in-69) Defined in
+
+[types/index.d.ts:1316  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1316)
+
+---
+
+### [#](#getpixelforvalue) getPixelForValue
+
+▸ **getPixelForValue**(`value`, `index?`): `number`
+
+Returns the location of the given data point. Value can either be an index or a numerical value
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-15) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+| `index?` | `number` |
+
+#### [#](#returns-41) Returns
+
+`number`
+
+#### [#](#inherited-from-67) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getPixelForValue](/docs/latest/api/classes/Scale.html#getpixelforvalue)
+
+#### [#](#defined-in-70) Defined in
+
+[types/index.d.ts:1336  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1336)
+
+---
+
+### [#](#getprops) getProps
+
+▸ **getProps**<`P`>(`props`, `final?`): `Pick`<`unknown`, `P`[`number`]>
+
+Gets the current or final value of each prop. Can return extra properties (whole object).
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `never`[] |
+
+#### [#](#parameters-16) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `props` | `P` | properties to get |
+| `final?` | `boolean` | get the final value (animation target) |
+
+#### [#](#returns-42) Returns
+
+`Pick`<`unknown`, `P`[`number`]>
+
+#### [#](#inherited-from-68) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getProps](/docs/latest/api/classes/Scale.html#getprops)
+
+#### [#](#defined-in-71) Defined in
+
+[core/core.element.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L31)
+
+▸ **getProps**<`P`>(`props`, `final?`): `Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#type-parameters-3) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string` |
+
+#### [#](#parameters-17) Parameters
+
+| Name | Type |
+| --- | --- |
+| `props` | `P`[] |
+| `final?` | `boolean` |
+
+#### [#](#returns-43) Returns
+
+`Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#inherited-from-69) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getProps](/docs/latest/api/classes/Scale.html#getprops)
+
+#### [#](#defined-in-72) Defined in
+
+[core/core.element.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L32)
+
+---
+
+### [#](#getticks) getTicks
+
+▸ **getTicks**(): [`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#returns-44) Returns
+
+[`Tick`](/docs/latest/api/interfaces/Tick.html)[]
+
+#### [#](#inherited-from-70) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getTicks](/docs/latest/api/classes/Scale.html#getticks)
+
+#### [#](#defined-in-73) Defined in
+
+[types/index.d.ts:1358  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1358)
+
+---
+
+### [#](#getuserbounds) getUserBounds
+
+▸ **getUserBounds**(): `Object`
+
+#### [#](#returns-45) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `max` | `number` |
+| `maxDefined` | `boolean` |
+| `min` | `number` |
+| `minDefined` | `boolean` |
+
+#### [#](#inherited-from-71) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getUserBounds](/docs/latest/api/classes/Scale.html#getuserbounds)
+
+#### [#](#defined-in-74) Defined in
+
+[types/index.d.ts:1356  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1356)
+
+---
+
+### [#](#getvalueforpixel) getValueForPixel
+
+▸ **getValueForPixel**(`pixel`): `number`
+
+Used to get the data value from a given pixel. This is the inverse of getPixelForValue
+The coordinate (0, 0) is at the upper-left corner of the canvas
+
+#### [#](#parameters-18) Parameters
+
+| Name | Type |
+| --- | --- |
+| `pixel` | `number` |
+
+#### [#](#returns-46) Returns
+
+`number`
+
+#### [#](#inherited-from-72) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[getValueForPixel](/docs/latest/api/classes/Scale.html#getvalueforpixel)
+
+#### [#](#defined-in-75) Defined in
+
+[types/index.d.ts:1344  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1344)
+
+---
+
+### [#](#hasvalue) hasValue
+
+▸ **hasValue**(): `boolean`
+
+#### [#](#returns-47) Returns
+
+`boolean`
+
+#### [#](#inherited-from-73) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[hasValue](/docs/latest/api/classes/Scale.html#hasvalue)
+
+#### [#](#defined-in-76) Defined in
+
+[core/core.element.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L22)
+
+---
+
+### [#](#init) init
+
+▸ **init**(`options`): `void`
+
+#### [#](#parameters-19) Parameters
+
+| Name | Type |
+| --- | --- |
+| `options` | `O` |
+
+#### [#](#returns-48) Returns
+
+`void`
+
+#### [#](#inherited-from-74) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[init](/docs/latest/api/classes/Scale.html#init)
+
+#### [#](#defined-in-77) Defined in
+
+[types/index.d.ts:1354  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1354)
+
+---
+
+### [#](#isfullsize) isFullSize
+
+▸ **isFullSize**(): `boolean`
+
+#### [#](#returns-49) Returns
+
+`boolean`
+
+#### [#](#inherited-from-75) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[isFullSize](/docs/latest/api/classes/Scale.html#isfullsize)
+
+#### [#](#defined-in-78) Defined in
+
+[types/index.d.ts:1383  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1383)
+
+---
+
+### [#](#ishorizontal) isHorizontal
+
+▸ **isHorizontal**(): `boolean`
+
+returns true if the layout item is horizontal (ie. top or bottom)
+
+#### [#](#returns-50) Returns
+
+`boolean`
+
+#### [#](#inherited-from-76) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[isHorizontal](/docs/latest/api/classes/Scale.html#ishorizontal)
+
+#### [#](#defined-in-79) Defined in
+
+[types/layout.d.ts:58  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L58)
+
+---
+
+### [#](#normalize) normalize
+
+▸ **normalize**(`values`): `number`[]
+
+#### [#](#parameters-20) Parameters
+
+| Name | Type |
+| --- | --- |
+| `values` | `number`[] |
+
+#### [#](#returns-51) Returns
+
+`number`[]
+
+#### [#](#defined-in-80) Defined in
+
+[types/index.d.ts:3472  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3472)
+
+---
+
+### [#](#parse) parse
+
+▸ **parse**(`raw`, `index?`): `unknown`
+
+#### [#](#parameters-21) Parameters
+
+| Name | Type |
+| --- | --- |
+| `raw` | `unknown` |
+| `index?` | `number` |
+
+#### [#](#returns-52) Returns
+
+`unknown`
+
+#### [#](#inherited-from-77) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[parse](/docs/latest/api/classes/Scale.html#parse)
+
+#### [#](#defined-in-81) Defined in
+
+[types/index.d.ts:1355  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1355)
+
+---
+
+### [#](#setdimensions) setDimensions
+
+▸ **setDimensions**(): `void`
+
+#### [#](#returns-53) Returns
+
+`void`
+
+#### [#](#inherited-from-78) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[setDimensions](/docs/latest/api/classes/Scale.html#setdimensions)
+
+#### [#](#defined-in-82) Defined in
+
+[types/index.d.ts:1365  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1365)
+
+---
+
+### [#](#tooltipposition) tooltipPosition
+
+▸ **tooltipPosition**(`useFinalPosition`): [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#parameters-22) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-54) Returns
+
+[`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#inherited-from-79) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[tooltipPosition](/docs/latest/api/classes/Scale.html#tooltipposition)
+
+#### [#](#defined-in-83) Defined in
+
+[core/core.element.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L17)
+
+---
+
+### [#](#update) update
+
+▸ **update**(`width`, `height`, `margins?`): `void`
+
+Takes two parameters: width and height.
+
+#### [#](#parameters-23) Parameters
+
+| Name | Type |
+| --- | --- |
+| `width` | `number` |
+| `height` | `number` |
+| `margins?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-55) Returns
+
+`void`
+
+#### [#](#inherited-from-80) Inherited from
+
+[Scale](/docs/latest/api/classes/Scale.html).[update](/docs/latest/api/classes/Scale.html#update)
+
+#### [#](#defined-in-84) Defined in
+
+[types/layout.d.ts:64  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L64)

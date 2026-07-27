@@ -1,0 +1,59 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: PointPrefixedHoverOptions (/docs/latest/api/interfaces/PointPrefixedHoverOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: PointPrefixedHoverOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/PointPrefixedHoverOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-pointprefixedhoveroptions) Interface: PointPrefixedHoverOptions
+
+## [#](#properties) Properties
+
+### [#](#pointhoverbackgroundcolor) pointHoverBackgroundColor
+
+• **pointHoverBackgroundColor**: [`Color`](/docs/latest/api/#color)
+
+Point background color when hovered.
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2081  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2081)
+
+---
+
+### [#](#pointhoverbordercolor) pointHoverBorderColor
+
+• **pointHoverBorderColor**: [`Color`](/docs/latest/api/#color)
+
+Point border color when hovered.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2085  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2085)
+
+---
+
+### [#](#pointhoverborderwidth) pointHoverBorderWidth
+
+• **pointHoverBorderWidth**: `number`
+
+Border width of point when hovered.
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2089  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2089)
+
+---
+
+### [#](#pointhoverradius) pointHoverRadius
+
+• **pointHoverRadius**: `number`
+
+The radius of the point when hovered.
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2093  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2093)

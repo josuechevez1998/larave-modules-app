@@ -1,0 +1,362 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Views (/docs/13/basic-usage/views). Referencia nwidart/laravel-modules v13.
+---
+
+# Views
+
+> Fuente: https://laravelmodules.com/docs/13/basic-usage/views
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Referencing Module Views](#referencing-module-views)
+- [Generated Views](#generated-views)
+- [Generating Views](#generating-views)
+- [Passing Data to Views](#passing-data-to-views)
+- [Extending the Application Layout](#extending-the-application-layout)
+- [View Composers](#view-composers)
+- [Blade Components](#blade-components)
+- [Class-Based Components](#class-based-components)
+- [Anonymous Components](#anonymous-components)
+- [Overriding Module Views](#overriding-module-views)
+- [Sharing Views Between Modules](#sharing-views-between-modules)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Views
+
+---
+
+- [Referencing Module Views](#referencing-module-views)
+- [Generated Views](#generated-views)
+- [Generating Views](#generating-views)
+- [Passing Data to Views](#passing-data-to-views)
+- [Extending the Application Layout](#extending-the-application-layout)
+- [View Composers](#view-composers)
+- [Blade Components](#blade-components)
+- [Class-Based Components](#class-based-components)
+- [Anonymous Components](#anonymous-components)
+- [Overriding Module Views](#overriding-module-views)
+- [Sharing Views Between Modules](#sharing-views-between-modules)
+
+Module views live in `Modules/{ModuleName}/resources/views/` and are referenced using the module's alias as a namespace: `modulealias::view.name`.
+
+## [#](#referencing-module-views)Referencing Module Views
+
+Use the double-colon namespace syntax to load a module's views:
+
+```
+// From a controller
+
+return view('blog::index');
+
+return view('blog::posts.show', compact('post'));
+
+return view('blog::layouts.master');
+
+// From a controller
+return view('blog::index');
+return view('blog::posts.show', compact('post'));
+return view('blog::layouts.master');
+```
+
+The alias (`blog`) comes from the `alias` field in `module.json`. The rest of the path is relative to `resources/views/` within the module.
+
+## [#](#generated-views)Generated Views
+
+A new module (without `--plain`) generates two views:
+
+**`resources/views/layouts/master.blade.php`** — a basic HTML layout:
+
+```
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog Module</title>
+
+</head>
+
+<body>
+
+@yield('content')
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Module</title>
+</head>
+<body>
+    @yield('content')
+</body>
+</html>
+```
+
+**`resources/views/index.blade.php`** — a simple index view:
+
+```
+@extends('blog::layouts.master')
+
+@section('content')
+
+<h1>Hello World</h1>
+
+@endsection
+
+@extends('blog::layouts.master')
+
+@section('content')
+    <h1>Hello World</h1>
+@endsection
+```
+
+## [#](#generating-views)Generating Views
+
+Generate additional views using the artisan command:
+
+```
+php artisan module:make-view posts.index Blog
+
+php artisan module:make-view posts.show Blog
+
+php artisan module:make-view posts.create Blog
+
+php artisan module:make-view posts.index Blog
+php artisan module:make-view posts.show Blog
+php artisan module:make-view posts.create Blog
+```
+
+This creates files at the corresponding paths inside `resources/views/`.
+
+## [#](#passing-data-to-views)Passing Data to Views
+
+Pass data to views as the second argument to `view()`:
+
+```
+return view('blog::posts.index', [
+
+'posts' => Post::latest()->paginate(20),
+
+'categories' => Category::all(),
+
+]);
+
+return view('blog::posts.index', [
+    'posts' => Post::latest()->paginate(20),
+    'categories' => Category::all(),
+]);
+```
+
+Or use `compact()`:
+
+```
+$posts = Post::latest()->paginate(20);
+
+$categories = Category::all();
+
+return view('blog::posts.index', compact('posts', 'categories'));
+
+$posts = Post::latest()->paginate(20);
+$categories = Category::all();
+
+return view('blog::posts.index', compact('posts', 'categories'));
+```
+
+## [#](#extending-the-application-layout)Extending the Application Layout
+
+Your module views can extend a layout from the main application just as they would from within the main app:
+
+```
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+
+@foreach ($posts as $post)
+
+<article>
+
+<h2>{{ $post->title }}</h2>
+
+<p>{{ $post->excerpt }}</p>
+
+</article>
+
+@endforeach
+
+</div>
+
+@endsection
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        @foreach ($posts as $post)
+            <article>
+                <h2>{{ $post->title }}</h2>
+                <p>{{ $post->excerpt }}</p>
+            </article>
+        @endforeach
+    </div>
+@endsection
+```
+
+## [#](#view-composers)View Composers
+
+Register view composers in your module's service provider to share data across multiple views:
+
+```
+// Modules/Blog/app/Providers/BlogServiceProvider.php
+
+public function boot(): void
+
+{
+
+$this->app['view']->composer('blog::*', function ($view) {
+
+$view->with('categories', Category::all());
+
+});
+
+}
+
+// Modules/Blog/app/Providers/BlogServiceProvider.php
+
+public function boot(): void
+{
+    $this->app['view']->composer('blog::*', function ($view) {
+        $view->with('categories', Category::all());
+    });
+}
+```
+
+This passes `$categories` to every view in the Blog module.
+
+## [#](#blade-components)Blade Components
+
+### [#](#class-based-components)Class-Based Components
+
+Generate a class-based Blade component:
+
+```
+php artisan module:make-component Alert Blog
+
+php artisan module:make-component Alert Blog
+```
+
+This creates:
+
+- `Modules/Blog/app/View/Components/Alert.php`
+- `Modules/Blog/resources/views/components/alert.blade.php`
+
+Use it in a Blade template:
+
+```
+<x-blog::alert type="success" :message="$message" />
+
+<x-blog::alert type="success" :message="$message" />
+```
+
+### [#](#anonymous-components)Anonymous Components
+
+Create a view file directly in `resources/views/components/`:
+
+```
+php artisan module:make-component-view card Blog
+
+php artisan module:make-component-view card Blog
+```
+
+Use it in a template:
+
+```
+<x-blog::card>
+
+<p>Card content here</p>
+
+</x-blog::card>
+
+<x-blog::card>
+    <p>Card content here</p>
+</x-blog::card>
+```
+
+## [#](#overriding-module-views)Overriding Module Views
+
+You can override any module view by placing a file at the corresponding path inside your application's `resources/views/modules/{alias}/` directory.
+
+For example, to override `Modules/Blog/resources/views/posts/show.blade.php`, create:
+
+```
+resources/views/modules/blog/posts/show.blade.php
+
+resources/views/modules/blog/posts/show.blade.php
+```
+
+The module's service provider loads views from the application's `resources/views/modules/blog` directory first, before falling back to the module's own views:
+
+```
+$this->loadViewsFrom([
+
+resource_path('views/modules/blog'),
+
+__DIR__ . '/../../resources/views',
+
+], 'blog');
+
+$this->loadViewsFrom([
+    resource_path('views/modules/blog'),
+    __DIR__ . '/../../resources/views',
+], 'blog');
+```
+
+This means you can customise any module view without modifying the module itself.
+
+## [#](#sharing-views-between-modules)Sharing Views Between Modules
+
+Module views can include views from other modules using their namespace:
+
+```
+@include('shop::partials.cart-summary')
+
+@include('shop::partials.cart-summary')
+```
+
+Or extend another module's layout:
+
+```
+@extends('admin::layouts.dashboard')
+
+@extends('admin::layouts.dashboard')
+```
+
+---
+
+[Previous page: 
+←
+Controllers](/docs/13/basic-usage/controllers)
+[Next page: 
+Service Providers
+ →](/docs/13/basic-usage/service-providers)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/basic-usage/views.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/basic-usage/views&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

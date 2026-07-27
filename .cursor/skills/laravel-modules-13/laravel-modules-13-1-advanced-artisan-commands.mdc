@@ -1,0 +1,372 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Artisan commands (/docs/1/advanced/artisan-commands). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Artisan commands
+
+> Fuente: https://laravelmodules.com/docs/1/advanced/artisan-commands
+> Exportado: 2026-07-23 20:01 UTC
+
+Useful Tip:
+
+You can use the following commands with the `--help` suffix to find its arguments and options.
+
+**Note all the following commands use "Blog" as example module name, and example class/file names**
+
+## [#](#utility-commands)Utility commands
+
+### [#](#modulemake)module:make
+
+Generate a new module.
+
+Copied!
+
+```
+php artisan module:make Blog
+
+php artisan module:make Blog
+```
+
+### [#](#modulemake)module:make
+
+Generate multiple modules at once.
+
+Copied!
+
+```
+php artisan module:make Blog User Auth
+
+php artisan module:make Blog User Auth
+```
+
+### [#](#moduleuse)module:use
+
+Use a given module. This allows you to not specific the module name on other commands requiring the module name as an argument.
+
+Copied!
+
+```
+php artisan module:use Blog
+
+php artisan module:use Blog
+```
+
+### [#](#modulelist)module:list
+
+List all available modules.
+
+Copied!
+
+```
+php artisan module:list
+
+php artisan module:list
+```
+
+### [#](#modulemigrate)module:migrate
+
+Migrate the given module, or without a module an argument, migrate all modules.
+
+Copied!
+
+```
+php artisan module:migrate Blog
+
+php artisan module:migrate Blog
+```
+
+### [#](#modulemigrate-rollback)module:migrate-rollback
+
+Rollback the given module, or without an argument, rollback all modules.
+
+Copied!
+
+```
+php artisan module:migrate-rollback Blog
+
+php artisan module:migrate-rollback Blog
+```
+
+### [#](#modulemigrate-refresh)module:migrate-refresh
+
+Refresh the migration for the given module, or without a specified module refresh all modules migrations.
+
+Copied!
+
+```
+php artisan module:migrate-refresh Blog
+
+php artisan module:migrate-refresh Blog
+```
+
+### [#](#modulemigrate-reset-blog)module:migrate-reset Blog
+
+Reset the migration for the given module, or without a specified module reset all modules migrations.
+
+Copied!
+
+```
+php artisan module:migrate-reset Blog
+
+php artisan module:migrate-reset Blog
+```
+
+### [#](#moduleseed)module:seed
+
+Seed the given module, or without an argument, seed all modules
+
+Copied!
+
+```
+php artisan module:seed Blog
+
+php artisan module:seed Blog
+```
+
+### [#](#modulepublish-migration)module:publish-migration
+
+Publish the migration files for the given module, or without an argument publish all modules migrations.
+
+Copied!
+
+```
+php artisan module:publish-migration Blog
+
+php artisan module:publish-migration Blog
+```
+
+### [#](#modulepublish-config)module:publish-config
+
+Publish the given module configuration files, or without an argument publish all modules configuration files.
+
+Copied!
+
+```
+php artisan module:publish-config Blog
+
+php artisan module:publish-config Blog
+```
+
+### [#](#modulepublish-translation)module:publish-translation
+
+Publish the translation files for the given module, or without a specified module publish all modules migrations.
+
+Copied!
+
+```
+php artisan module:publish-translation Blog
+
+php artisan module:publish-translation Blog
+```
+
+### [#](#moduleenable)module:enable
+
+Enable the given module.
+
+Copied!
+
+```
+php artisan module:enable Blog
+
+php artisan module:enable Blog
+```
+
+### [#](#moduledisable)module:disable
+
+Disable the given module.
+
+Copied!
+
+```
+php artisan module:disable Blog
+
+php artisan module:disable Blog
+```
+
+### [#](#moduleupdate)module:update
+
+Update the given module.
+
+Copied!
+
+```
+php artisan module:update Blog
+
+php artisan module:update Blog
+```
+
+## [#](#generator-commands)Generator commands
+
+### [#](#modulemake-command)module:make-command
+
+Generate the given console command for the specified module.
+
+Copied!
+
+```
+php artisan module:make-command CreatePostCommand Blog
+
+php artisan module:make-command CreatePostCommand Blog
+```
+
+### [#](#modulemake-migration)module:make-migration
+
+Generate a migration for specified module.
+
+Copied!
+
+```
+php artisan module:make-migration create_posts_table Blog
+
+php artisan module:make-migration create_posts_table Blog
+```
+
+### [#](#modulemake-seed)module:make-seed
+
+Generate the given seed name for the specified module.
+
+Copied!
+
+```
+php artisan module:make-seed seed_fake_blog_posts Blog
+
+php artisan module:make-seed seed_fake_blog_posts Blog
+```
+
+### [#](#modulemake-controller)module:make-controller
+
+Generate a controller for the specified module.
+
+Copied!
+
+```
+php artisan module:make-controller PostsController Blog
+
+php artisan module:make-controller PostsController Blog
+```
+
+### [#](#modulemake-model)module:make-model
+
+Generate the given model for the specified module.
+
+Copied!
+
+```
+php artisan module:make-model Post Blog
+
+php artisan module:make-model Post Blog
+```
+
+Optional options:
+
+- `--fillable=field1,field2`: set the fillable fields on the generated model
+- `--migration`, `-m`: create the migration file for the given model
+
+### [#](#modulemake-provider)module:make-provider
+
+Generate the given service provider name for the specified module.
+
+Copied!
+
+```
+php artisan module:make-provider BlogServiceProvider Blog
+
+php artisan module:make-provider BlogServiceProvider Blog
+```
+
+### [#](#modulemake-middleware)module:make-middleware
+
+Generate the given middleware name for the specified module.
+
+Copied!
+
+```
+php artisan module:make-middleware CanReadPostsMiddleware Blog
+
+php artisan module:make-middleware CanReadPostsMiddleware Blog
+```
+
+### [#](#modulemake-mail)module:make-mail
+
+Generate the given mail class for the specified module.
+
+Copied!
+
+```
+php artisan module:make-mail SendWeeklyPostsEmail Blog
+
+php artisan module:make-mail SendWeeklyPostsEmail Blog
+```
+
+### [#](#modulemake-notification)module:make-notification
+
+Generate the given notification class name for the specified module.
+
+Copied!
+
+```
+php artisan module:make-notification NotifyAdminOfNewComment Blog
+
+php artisan module:make-notification NotifyAdminOfNewComment Blog
+```
+
+### [#](#modulemake-listener-blog-event-events)module:make-listener Blog --event events
+
+Generate the given listener for the specified module, base on an event
+
+Copied!
+
+```
+php artisan module:make-listener Blog --event events
+
+php artisan module:make-listener Blog --event events
+```
+
+### [#](#modulemake-request)module:make-request
+
+Generate the given request for the specified module.
+
+Copied!
+
+```
+php artisan module:make-request
+
+php artisan module:make-request
+```
+
+### [#](#modulemake-event)module:make-event
+
+Generate the given event for the specified module.
+
+Copied!
+
+```
+php artisan module:make-event
+
+php artisan module:make-event
+```
+
+### [#](#modulemake-job)module:make-job
+
+Generate the given job for the specified module.
+
+Copied!
+
+```
+php artisan module:make-job
+
+php artisan module:make-job
+```
+
+### [#](#moduleroute-provider)module:route-provider
+
+Generate the given route for the specified module.
+
+Copied!
+
+```
+php artisan module:route-provider Blog
+
+php artisan module:route-provider Blog
+```

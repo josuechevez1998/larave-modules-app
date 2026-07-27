@@ -1,0 +1,179 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartTypeRegistry (/docs/latest/api/interfaces/ChartTypeRegistry.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartTypeRegistry
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartTypeRegistry.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-charttyperegistry) Interface: ChartTypeRegistry
+
+## [#](#properties) Properties
+
+### [#](#bar) bar
+
+• **bar**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`BarControllerChartOptions`](/docs/latest/api/interfaces/BarControllerChartOptions.html) |
+| `datasetOptions` | [`BarControllerDatasetOptions`](/docs/latest/api/interfaces/BarControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` | [`number`, `number`] |
+| `metaExtensions` | {} |
+| `parsedDataType` | [`BarParsedData`](/docs/latest/api/interfaces/BarParsedData.html) |
+| `scales` | keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html) |
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3707  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3707)
+
+---
+
+### [#](#bubble) bubble
+
+• **bubble**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | `unknown` |
+| `datasetOptions` | [`BubbleControllerDatasetOptions`](/docs/latest/api/interfaces/BubbleControllerDatasetOptions.html) |
+| `defaultDataPoint` | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html) |
+| `metaExtensions` | {} |
+| `parsedDataType` | [`BubbleParsedData`](/docs/latest/api/interfaces/BubbleParsedData.html) |
+| `scales` | keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html) |
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3731  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3731)
+
+---
+
+### [#](#doughnut) doughnut
+
+• **doughnut**: `Object`
+
+#### [#](#type-declaration-3) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`DoughnutControllerChartOptions`](/docs/latest/api/interfaces/DoughnutControllerChartOptions.html) |
+| `datasetOptions` | [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` |
+| `metaExtensions` | [`DoughnutMetaExtensions`](/docs/latest/api/interfaces/DoughnutMetaExtensions.html) |
+| `parsedDataType` | `number` |
+| `scales` | keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html) |
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3747  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3747)
+
+---
+
+### [#](#line) line
+
+• **line**: `Object`
+
+#### [#](#type-declaration-4) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`LineControllerChartOptions`](/docs/latest/api/interfaces/LineControllerChartOptions.html) |
+| `datasetOptions` | [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html) & [`FillerControllerDatasetOptions`](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` | [`Point`](/docs/latest/api/interfaces/Point.html) |
+| `metaExtensions` | {} |
+| `parsedDataType` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) |
+| `scales` | keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html) |
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3715  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3715)
+
+---
+
+### [#](#pie) pie
+
+• **pie**: `Object`
+
+#### [#](#type-declaration-5) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`DoughnutControllerChartOptions`](/docs/latest/api/interfaces/DoughnutControllerChartOptions.html) |
+| `datasetOptions` | [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` |
+| `metaExtensions` | [`DoughnutMetaExtensions`](/docs/latest/api/interfaces/DoughnutMetaExtensions.html) |
+| `parsedDataType` | `number` |
+| `scales` | keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html) |
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:3739  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3739)
+
+---
+
+### [#](#polararea) polarArea
+
+• **polarArea**: `Object`
+
+#### [#](#type-declaration-6) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`PolarAreaControllerChartOptions`](/docs/latest/api/interfaces/PolarAreaControllerChartOptions.html) |
+| `datasetOptions` | [`PolarAreaControllerDatasetOptions`](/docs/latest/api/interfaces/PolarAreaControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` |
+| `metaExtensions` | {} |
+| `parsedDataType` | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html) |
+| `scales` | `"radialLinear"` |
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:3755  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3755)
+
+---
+
+### [#](#radar) radar
+
+• **radar**: `Object`
+
+#### [#](#type-declaration-7) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`LineControllerChartOptions`](/docs/latest/api/interfaces/LineControllerChartOptions.html) |
+| `datasetOptions` | [`RadarControllerDatasetOptions`](/docs/latest/api/interfaces/RadarControllerDatasetOptions.html) & [`FillerControllerDatasetOptions`](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` |
+| `metaExtensions` | {} |
+| `parsedDataType` | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html) |
+| `scales` | `"radialLinear"` |
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:3763  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3763)
+
+---
+
+### [#](#scatter) scatter
+
+• **scatter**: `Object`
+
+#### [#](#type-declaration-8) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `chartOptions` | [`LineControllerChartOptions`](/docs/latest/api/interfaces/LineControllerChartOptions.html) |
+| `datasetOptions` | [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html) |
+| `defaultDataPoint` | `number` | [`Point`](/docs/latest/api/interfaces/Point.html) |
+| `metaExtensions` | {} |
+| `parsedDataType` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) |
+| `scales` | keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html) |
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:3723  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3723)

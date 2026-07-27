@@ -1,0 +1,298 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Module Methods (/docs/13/advanced/module-methods). Referencia nwidart/laravel-modules v13.
+---
+
+# Module Methods
+
+> Fuente: https://laravelmodules.com/docs/13/advanced/module-methods
+> Exportado: 2026-07-23 19:55 UTC
+
+- [Name Methods](#name-methods)
+- [Description and Metadata](#description-and-metadata)
+- [Path Methods](#path-methods)
+- [Status Methods](#status-methods)
+- [Lifecycle Methods](#lifecycle-methods)
+- [Delete a Module](#delete-a-module)
+- [JSON File Access](#json-file-access)
+- [Practical Examples](#practical-examples)
+- [Display Module Information](#display-module-information)
+- [Conditionally Disable a Module](#conditionally-disable-a-module)
+- [Get All Module Paths for IDE Indexing](#get-all-module-paths-for-ide-indexing)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Module Methods
+
+---
+
+- [Name Methods](#name-methods)
+- [Description and Metadata](#description-and-metadata)
+- [Path Methods](#path-methods)
+- [Status Methods](#status-methods)
+- [Lifecycle Methods](#lifecycle-methods)
+- [Delete a Module](#delete-a-module)
+- [JSON File Access](#json-file-access)
+- [Practical Examples](#practical-examples)
+- [Display Module Information](#display-module-information)
+- [Conditionally Disable a Module](#conditionally-disable-a-module)
+- [Get All Module Paths for IDE Indexing](#get-all-module-paths-for-ide-indexing)
+
+Each module is represented by a `Module` instance. Retrieve one using the facade:
+
+```
+use Nwidart\Modules\Facades\Module;
+
+$module = Module::find('blog');
+
+use Nwidart\Modules\Facades\Module;
+
+$module = Module::find('blog');
+```
+
+> Always check that the module exists before calling instance methods to avoid a `null` error. Use `Module::findOrFail` if you want an exception on a missing module.
+
+## [#](#name-methods)Name Methods
+
+```
+$module->getName();        // "Blog"
+
+$module->getLowerName();   // "blog"
+
+$module->getStudlyName();  // "Blog"
+
+$module->getKebabName();   // "blog" (or "my-blog" for multi-word names)
+
+$module->getSnakeName();   // "blog" (or "my_blog" for multi-word names)
+
+// Casting to string returns the StudlyCase name
+
+(string) $module;          // "Blog"
+
+$module->getName();        // "Blog"
+$module->getLowerName();   // "blog"
+$module->getStudlyName();  // "Blog"
+$module->getKebabName();   // "blog" (or "my-blog" for multi-word names)
+$module->getSnakeName();   // "blog" (or "my_blog" for multi-word names)
+
+// Casting to string returns the StudlyCase name
+(string) $module;          // "Blog"
+```
+
+## [#](#description-and-metadata)Description and Metadata
+
+```
+$module->getDescription();   // value of "description" in module.json
+
+$module->getPriority();      // value of "priority" in module.json (int)
+
+$module->getDescription();   // value of "description" in module.json
+$module->getPriority();      // value of "priority" in module.json (int)
+```
+
+Read any key from `module.json`:
+
+```
+$module->get('alias');          // "blog"
+
+$module->get('keywords');       // []
+
+$module->get('missing', 'default');  // returns 'default' if key not found
+
+$module->get('alias');          // "blog"
+$module->get('keywords');       // []
+$module->get('missing', 'default');  // returns 'default' if key not found
+```
+
+Read any key from the module's `composer.json`:
+
+```
+$module->getComposerAttr('name');     // "nwidart/blog"
+
+$module->getComposerAttr('version');
+
+$module->getComposerAttr('name');     // "nwidart/blog"
+$module->getComposerAttr('version');
+```
+
+## [#](#path-methods)Path Methods
+
+```
+$module->getPath();              // full path to the module directory
+
+$module->getAppPath();           // path to the module's app/ subdirectory
+
+$module->getExtraPath('routes'); // path to module/routes
+
+$module->getExtraPath('resources/views'); // path to module/resources/views
+
+$module->getPath();              // full path to the module directory
+$module->getAppPath();           // path to the module's app/ subdirectory
+$module->getExtraPath('routes'); // path to module/routes
+$module->getExtraPath('resources/views'); // path to module/resources/views
+```
+
+`module_path()` helper is equivalent:
+
+```
+module_path('Blog', 'resources/views') // same as $module->getExtraPath('resources/views')
+
+module_path('Blog', 'resources/views') // same as $module->getExtraPath('resources/views')
+```
+
+## [#](#status-methods)Status Methods
+
+```
+$module->isEnabled();       // true if the module is active
+
+$module->isDisabled();      // true if the module is inactive
+
+$module->isStatus(true);    // true if enabled
+
+$module->isStatus(false);   // true if disabled
+
+$module->isEnabled();       // true if the module is active
+$module->isDisabled();      // true if the module is inactive
+$module->isStatus(true);    // true if enabled
+$module->isStatus(false);   // true if disabled
+```
+
+Chain from the facade if you are confident the module exists:
+
+```
+Module::find('Blog')->isEnabled();
+
+Module::find('Blog')->isEnabled();
+```
+
+Change status:
+
+```
+$module->enable();
+
+$module->disable();
+
+$module->setActive(true);   // enable
+
+$module->setActive(false);  // disable
+
+$module->enable();
+$module->disable();
+$module->setActive(true);   // enable
+$module->setActive(false);  // disable
+```
+
+## [#](#lifecycle-methods)Lifecycle Methods
+
+```
+$module->register();    // register the module's service providers and aliases
+
+$module->boot();        // boot the module (fire 'boot' event)
+
+$module->register();    // register the module's service providers and aliases
+$module->boot();        // boot the module (fire 'boot' event)
+```
+
+Fire a module event manually:
+
+```
+$module->fireEvent('custom-event');
+
+$module->fireEvent('custom-event');
+```
+
+## [#](#delete-a-module)Delete a Module
+
+```
+$module->delete();
+
+$module->delete();
+```
+
+## [#](#json-file-access)JSON File Access
+
+Access the parsed contents of any JSON file within the module:
+
+```
+$moduleJson   = $module->json();             // module.json
+
+$composerJson = $module->json('composer.json');
+
+$moduleJson   = $module->json();             // module.json
+$composerJson = $module->json('composer.json');
+```
+
+## [#](#practical-examples)Practical Examples
+
+### [#](#display-module-information)Display Module Information
+
+```
+@foreach (Module::allEnabled() as $module)
+
+<div>
+
+<strong>{{ $module->getName() }}</strong>
+
+<span>{{ $module->getDescription() }}</span>
+
+<code>Priority: {{ $module->getPriority() }}</code>
+
+</div>
+
+@endforeach
+
+@foreach (Module::allEnabled() as $module)
+    <div>
+        <strong>{{ $module->getName() }}</strong>
+        <span>{{ $module->getDescription() }}</span>
+        <code>Priority: {{ $module->getPriority() }}</code>
+    </div>
+@endforeach
+```
+
+### [#](#conditionally-disable-a-module)Conditionally Disable a Module
+
+```
+$module = Module::findOrFail('Blog');
+
+if ($someCondition) {
+
+$module->disable();
+
+logger()->info("Blog module disabled due to condition.");
+
+}
+
+$module = Module::findOrFail('Blog');
+
+if ($someCondition) {
+    $module->disable();
+    logger()->info("Blog module disabled due to condition.");
+}
+```
+
+### [#](#get-all-module-paths-for-ide-indexing)Get All Module Paths for IDE Indexing
+
+```
+$paths = collect(Module::all())->map(fn ($m) => $m->getPath())->values()->all();
+
+$paths = collect(Module::all())->map(fn ($m) => $m->getPath())->values()->all();
+```
+
+---
+
+[Previous page: 
+←
+Console Commands](/docs/13/advanced/module-console-commands)
+[Next page: 
+Module Resources
+ →](/docs/13/advanced/module-resources)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/advanced/module-methods.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/advanced/module-methods&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

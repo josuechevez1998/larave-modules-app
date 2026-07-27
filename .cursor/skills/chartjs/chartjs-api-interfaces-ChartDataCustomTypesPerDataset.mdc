@@ -1,0 +1,59 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartDataCustomTypesPerDataset<TType, TData, TLabel> (/docs/latest/api/interfaces/ChartDataCustomTypesPerDataset.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartDataCustomTypesPerDataset<TType, TData, TLabel>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartDataCustomTypesPerDataset.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-chartdatacustomtypesperdataset-ttype-tdata-tlabel) Interface: ChartDataCustomTypesPerDataset<TType, TData, TLabel>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+| `TData` | [`DefaultDataPoint`](/docs/latest/api/#defaultdatapoint)<`TType`> |
+| `TLabel` | `unknown` |
+
+## [#](#properties) Properties
+
+### [#](#datasets) datasets
+
+• **datasets**: [`ChartDatasetCustomTypesPerDataset`](/docs/latest/api/#chartdatasetcustomtypesperdataset)<`TType`, `TData`>[]
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3862  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3862)
+
+---
+
+### [#](#labels) labels
+
+• `Optional` **labels**: `TLabel`[]
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3859  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3859)
+
+---
+
+### [#](#xlabels) xLabels
+
+• `Optional` **xLabels**: `TLabel`[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3860  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3860)
+
+---
+
+### [#](#ylabels) yLabels
+
+• `Optional` **yLabels**: `TLabel`[]
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3861  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3861)

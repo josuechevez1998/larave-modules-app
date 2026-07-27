@@ -1,0 +1,20 @@
+---
+description: Services-first domain layer for Livewire and API
+globs:
+  - app/Services/**/*.php
+  - app/Http/Controllers/**/*.php
+  - Modules/**/app/Services/**/*.php
+  - Modules/**/app/Http/Controllers/**/*.php
+  - Modules/**/app/Livewire/**/*.php
+alwaysApply: false
+---
+
+# Arquitectura Services-first
+
+- Toda lógica de negocio vive en `app/Services` (o `Modules/{X}/app/Services`).
+- Livewire solo UI (Flux): valida presentación, llama Services, flash/toast.
+- API Controllers: Form Request → Service → Resource/JSON. Sin dominio en el controller.
+- Modelos Eloquent: persistencia y relaciones; no orquestar casos de uso complejos.
+- Reutilizar el mismo Service desde web y API.
+- Listados: `App\Services\ListQueryBuilder` (sort whitelist, includes, `status_id`, `per_page` acotado).
+- CRUD estándar: `php artisan make:crud {table} livewire` con stubs personalizados; features especiales a mano.

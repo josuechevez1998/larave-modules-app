@@ -1,0 +1,439 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Upgrade (/docs/13/getting-started/upgrade). Referencia nwidart/laravel-modules v13.
+---
+
+# Upgrade
+
+> Fuente: https://laravelmodules.com/docs/13/getting-started/upgrade
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Upgrading from v8.3.0](#upgrading-from-v830)
+- [Composer Merge Plugin](#composer-merge-plugin)
+- [Composer update](#composer-update)
+- [Config](#config)
+- [Autoloading](#autoloading)
+- [Existing modules that don't contain an App folder can continue to use their autoloading path:](#existing-modules-that-dont-contain-an-app-folder-can-continue-to-use-their-autoloading-path)
+- [Existing modules that do contain an App folder will need to adjust the autoloading path:](#existing-modules-that-do-contain-an-app-folder-will-need-to-adjust-the-autoloading-path)
+- [Module Structure](#module-structure)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Upgrade
+
+---
+
+- [Upgrading from v8.3.0](#upgrading-from-v830)
+- [Composer Merge Plugin](#composer-merge-plugin)
+- [Composer update](#composer-update)
+- [Config](#config)
+- [Autoloading](#autoloading)
+- [Existing modules that don't contain an App folder can continue to use their autoloading path:](#existing-modules-that-dont-contain-an-app-folder-can-continue-to-use-their-autoloading-path)
+- [Existing modules that do contain an App folder will need to adjust the autoloading path:](#existing-modules-that-do-contain-an-app-folder-will-need-to-adjust-the-autoloading-path)
+- [Module Structure](#module-structure)
+
+> Heads up:
+> If you upgrade to v6 from the previous version, run the following command: `php artisan module:v6:migrate`
+
+## [#](#upgrading-from-v830)Upgrading from v8.3.0
+
+If you have an existing config file, and you get an error:
+
+```
+Target class [CommandMakeCommand] does not exist
+
+Target class [CommandMakeCommand] does not exist
+```
+
+replace the commands array with:
+
+```
+'commands' => \Nwidart\Modules\Providers\ConsoleServiceProvider::defaultCommands()
+
+->merge([
+
+// New commands go here
+
+])->toArray(),
+
+'commands' => \Nwidart\Modules\Providers\ConsoleServiceProvider::defaultCommands()
+       ->merge([
+           // New commands go here
+       ])->toArray(),
+```
+
+## [#](#composer-merge-plugin)Composer Merge Plugin
+
+The first time you upgrade to v12 you will be asked whether to enable the merge plugin, press `y` to allow. It's now required for merging composer files from modules.
+
+```
+Do you trust "wikimedia/composer-merge-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]
+
+Do you trust "wikimedia/composer-merge-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]
+```
+
+> **Tip: run `composer dump-autoload` after any composer changes**
+
+## [#](#composer-update)Composer update
+
+There is a new command `php artisan module:composer-update` to update all module's composer.json files.
+
+This will update autoloading paths for existing modules.
+
+## [#](#config)Config
+
+Please update your `config/modules.php` file the generator paths have been updated as well as using internal paths for commands.
+
+> Please note the new paths only affect new modules / generated files.
+
+The easiest way is to delete the file and re-publish it:
+
+```
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="config"
+
+php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider" --tag="config"
+```
+
+## [#](#autoloading)Autoloading
+
+> from v11.0 autoloading `"Modules\\": "modules/",` is no longer required, and should be removed from your composer.json if present.
+
+Please delete the Modules autoloading section:
+
+```
+"autoload": {
+
+"psr-4": {
+
+"App\\": "app/",
+
+-            "Modules\\": "modules/", <-- delete this
+
+"Database\\Factories\\": "database/factories/",
+
+"Database\\Seeders\\": "database/seeders/"
+
+}
+
+"autoload": {
+         "psr-4": {
+             "App\\": "app/",
+-            "Modules\\": "modules/", <-- delete this
+             "Database\\Factories\\": "database/factories/",
+             "Database\\Seeders\\": "database/seeders/"
+         }
+```
+
+By default, the module classes are not loaded automatically. You can autoload your modules by adding merge-plugin to the extra section:
+
+```
+"extra": {
+
+"laravel": {
+
+"dont-discover": []
+
+},
+
+"merge-plugin": {
+
+"include": [
+
+"Modules/*/composer.json"
+
+]
+
+}
+
+},
+
+"extra": {
+    "laravel": {
+        "dont-discover": []
+    },
+    "merge-plugin": {
+        "include": [
+            "Modules/*/composer.json"
+        ]
+    }
+},
+```
+
+**Important**
+
+on the first installation you will be asked:
+
+```
+Do you trust "wikimedia/composer-merge-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]
+
+Do you trust "wikimedia/composer-merge-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]
+```
+
+Answer `y` to allow the plugin to be executed. Otherwise, you will need to manually enable the following to your composer.json:
+
+```
+"config": {
+
+"allow-plugins": {
+
+"wikimedia/composer-merge-plugin": true
+
+}
+
+"config": {
+    "allow-plugins": {
+        "wikimedia/composer-merge-plugin": true
+    }
+```
+
+> if `"wikimedia/composer-merge-plugin": false` modules will not be autoloaded.
+
+**Tip: don't forget to run `composer dump-autoload` afterwards**
+
+Modules composer.json files for newly generated modules will contain:
+
+```
+"autoload": {
+
+"psr-4": {
+
+"Modules\\Blog\\": "app/",
+
+"Modules\\Blog\\Database\\Factories\\": "database/factories/",
+
+"Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+
+}
+
+},
+
+"autoload-dev": {
+
+"psr-4": {
+
+"Modules\\Blog\\Tests\\": "tests/"
+
+}
+
+}
+
+"autoload": {
+    "psr-4": {
+        "Modules\\Blog\\": "app/",
+        "Modules\\Blog\\Database\\Factories\\": "database/factories/",
+        "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+    }
+},
+"autoload-dev": {
+    "psr-4": {
+        "Modules\\Blog\\Tests\\": "tests/"
+    }
+}
+```
+
+This allows all classes to be autoloaded from a new folder called app without requiring `App` to be in the classes' namespaces.
+
+### [#](#existing-modules-that-dont-contain-an-app-folder-can-continue-to-use-their-autoloading-path)Existing modules that don't contain an App folder can continue to use their autoloading path:
+
+Autoload all classes to the root of the module.
+
+```
+"autoload": {
+
+"psr-4": {
+
+"Modules\\Blog\\": ""
+
+}
+
+}
+
+"autoload": {
+    "psr-4": {
+        "Modules\\Blog\\": ""
+    }
+}
+```
+
+### [#](#existing-modules-that-do-contain-an-app-folder-will-need-to-adjust-the-autoloading-path)Existing modules that do contain an App folder will need to adjust the autoloading path:
+
+Autoload all classes to the root of the module.
+
+Please change `"Modules\\Blog\\": "app/",` to point to the root of the module:
+
+```
+"autoload": {
+
+"psr-4": {
+
+"Modules\\Blog\\": "",
+
+"Modules\\Blog\\Database\\Factories\\": "database/factories/",
+
+"Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+
+}
+
+},
+
+"autoload-dev": {
+
+"psr-4": {
+
+"Modules\\Blog\\Tests\\": "tests/"
+
+}
+
+}
+
+"autoload": {
+    "psr-4": {
+        "Modules\\Blog\\": "",
+        "Modules\\Blog\\Database\\Factories\\": "database/factories/",
+        "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+    }
+},
+"autoload-dev": {
+    "psr-4": {
+        "Modules\\Blog\\Tests\\": "tests/"
+    }
+}
+```
+
+## [#](#module-structure)Module Structure
+
+Newly generated modules will now have this structure
+
+```
+Modules
+
+└── Blog
+
+├── app
+
+│   ├── Http
+
+│   │   └── Controllers
+
+│   │       └── BlogController.php
+
+│   ├── Models
+
+│   └── Providers
+
+│       ├── BlogServiceProvider.php
+
+│       └── RouteServiceProvider.php
+
+├── config
+
+│   └── config.php
+
+├── database
+
+│   ├── factories
+
+│   ├── migrations
+
+│   └── seeders
+
+│       └── BlogDatabaseSeeder.php
+
+├── resources
+
+│   ├── assets
+
+│   │   ├── js
+
+│   │   │   └── app.js
+
+│   │   └── sass
+
+│   │       └── app.scss
+
+│   └── views
+
+│       ├── layouts
+
+│       │   └── master.blade.php
+
+│       └── index.blade.php
+
+├── routes
+
+│   ├── api.php
+
+│   └── web.php
+
+├── tests
+
+│   ├── Feature
+
+│   └── Unit
+
+├── composer.json
+
+├── module.json
+
+├── package.json
+
+└── vite.config.js
+
+Modules
+    └── Blog
+        ├── app
+        │   ├── Http
+        │   │   └── Controllers
+        │   │       └── BlogController.php
+        │   ├── Models
+        │   └── Providers
+        │       ├── BlogServiceProvider.php
+        │       └── RouteServiceProvider.php
+        ├── config
+        │   └── config.php
+        ├── database
+        │   ├── factories
+        │   ├── migrations
+        │   └── seeders
+        │       └── BlogDatabaseSeeder.php
+        ├── resources
+        │   ├── assets
+        │   │   ├── js
+        │   │   │   └── app.js
+        │   │   └── sass
+        │   │       └── app.scss
+        │   └── views
+        │       ├── layouts
+        │       │   └── master.blade.php
+        │       └── index.blade.php
+        ├── routes
+        │   ├── api.php
+        │   └── web.php
+        ├── tests
+        │   ├── Feature
+        │   └── Unit
+        ├── composer.json
+        ├── module.json
+        ├── package.json
+        └── vite.config.js
+```
+
+This can be changed by editing the generator paths in `config/modules.php`
+
+---
+
+[Previous page: 
+←
+ChangeLog](/docs/13/getting-started/changelog)
+[Next page: 
+Installation and Setup
+ →](/docs/13/getting-started/installation-and-setup)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/getting-started/upgrade.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/getting-started/upgrade&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

@@ -1,0 +1,193 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Grid Configuration (/docs/latest/samples/scale-options/grid.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Grid Configuration
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/scale-options/grid.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#grid-configuration) Grid Configuration
+
+This sample shows how to use scriptable grid options for an axis to control styling. In this case, the Y axis grid lines are colored based on their value. In addition, booleans are provided to toggle different parts of the X axis grid visibility.
+
+config
+setup
+actions
+
+// Change these settings to change the display for different parts of the X axis
+// grid configuration
+const DISPLAY = true;
+const BORDER = true;
+const CHART\_AREA = true;
+const TICKS = true;
+const config = {
+type: 'line',
+data: data,
+options: {
+responsive: true,
+plugins: {
+title: {
+display: true,
+text: 'Grid Line Settings'
+}
+},
+scales: {
+x: {
+border: {
+display: BORDER
+},
+grid: {
+display: DISPLAY,
+drawOnChartArea: CHART\_AREA,
+drawTicks: TICKS,
+}
+},
+y: {
+border: {
+display: false
+},
+grid: {
+color: function(context) {
+if (context.tick.value > 0) {
+return Utils.CHART\_COLORS.green;
+} else if (context.tick.value < 0) {
+return Utils.CHART\_COLORS.red;
+}
+return '#000000';
+},
+},
+}
+}
+},
+};
+
+```
+// Change these settings to change the display for different parts of the X axis
+// grid configuration
+const DISPLAY = true;
+const BORDER = true;
+const CHART_AREA = true;
+const TICKS = true;
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Grid Line Settings'
+      }
+    },
+    scales: {
+      x: {
+        border: {
+          display: BORDER
+        },
+        grid: {
+          display: DISPLAY,
+          drawOnChartArea: CHART_AREA,
+          drawTicks: TICKS,
+        }
+      },
+      y: {
+        border: {
+          display: false
+        },
+        grid: {
+          color: function(context) {
+            if (context.tick.value > 0) {
+              return Utils.CHART_COLORS.green;
+            } else if (context.tick.value < 0) {
+              return Utils.CHART_COLORS.red;
+            }
+            return '#000000';
+          },
+        },
+      }
+    }
+  },
+};
+```
+
+const DATA\_COUNT = 7;
+const data = {
+labels: Utils.months({count: DATA\_COUNT}),
+datasets: [
+{
+label: 'Dataset 1',
+data: [10, 30, 39, 20, 25, 34, -10],
+fill: false,
+borderColor: Utils.CHART\_COLORS.red,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.red, 0.5),
+},
+{
+label: 'Dataset 2',
+data: [18, 33, 22, 19, 11, -39, 30],
+fill: false,
+borderColor: Utils.CHART\_COLORS.blue,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.blue, 0.5),
+}
+]
+};
+
+```
+const DATA_COUNT = 7;
+const data = {
+  labels: Utils.months({count: DATA_COUNT}),
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: [10, 30, 39, 20, 25, 34, -10],
+      fill: false,
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+    },
+    {
+      label: 'Dataset 2',
+      data: [18, 33, 22, 19, 11, -39, 30],
+      fill: false,
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+    }
+  ]
+};
+```
+
+const actions = [
+{
+name: 'Randomize',
+handler(chart) {
+chart.data.datasets.forEach(dataset => {
+dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+});
+chart.update();
+}
+},
+];
+
+```
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+];
+```
+
+## [#](#docs) Docs
+
+- [Line](/docs/latest/charts/line.html)
+- [Options](/docs/latest/general/options.html)
+  - [Scriptable Options](/docs/latest/general/options.html#scriptable-options)
+    - [Tick Context](/docs/latest/general/options.html#tick)
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)
+- [Axes Styling](/docs/latest/axes/styling.html)
+  - [Grid Line Configuration](/docs/latest/axes/styling.html#grid-line-configuration)

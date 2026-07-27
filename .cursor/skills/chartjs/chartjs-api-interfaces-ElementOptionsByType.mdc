@@ -1,0 +1,57 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ElementOptionsByType<TType> (/docs/latest/api/interfaces/ElementOptionsByType.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ElementOptionsByType<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ElementOptionsByType.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-elementoptionsbytype-ttype) Interface: ElementOptionsByType<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#arc) arc
+
+• **arc**: [`ScriptableAndArrayOptions`](/docs/latest/api/#scriptableandarrayoptions)<[`ArcOptions`](/docs/latest/api/interfaces/ArcOptions.html) & [`ArcHoverOptions`](/docs/latest/api/interfaces/ArcHoverOptions.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2157  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2157)
+
+---
+
+### [#](#bar) bar
+
+• **bar**: [`ScriptableAndArrayOptions`](/docs/latest/api/#scriptableandarrayoptions)<[`BarOptions`](/docs/latest/api/interfaces/BarOptions.html) & [`BarHoverOptions`](/docs/latest/api/interfaces/BarHoverOptions.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2158  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2158)
+
+---
+
+### [#](#line) line
+
+• **line**: [`ScriptableAndArrayOptions`](/docs/latest/api/#scriptableandarrayoptions)<[`LineOptions`](/docs/latest/api/interfaces/LineOptions.html) & [`LineHoverOptions`](/docs/latest/api/interfaces/LineHoverOptions.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2159  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2159)
+
+---
+
+### [#](#point) point
+
+• **point**: [`ScriptableAndArrayOptions`](/docs/latest/api/#scriptableandarrayoptions)<[`PointOptions`](/docs/latest/api/interfaces/PointOptions.html) & [`PointHoverOptions`](/docs/latest/api/interfaces/PointHoverOptions.html), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2160  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2160)

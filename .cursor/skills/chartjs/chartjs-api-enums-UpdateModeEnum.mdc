@@ -1,0 +1,81 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Enumeration: UpdateModeEnum (/docs/latest/api/enums/UpdateModeEnum.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Enumeration: UpdateModeEnum
+
+> Fuente: https://www.chartjs.org/docs/latest/api/enums/UpdateModeEnum.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#enumeration-updatemodeenum) Enumeration: UpdateModeEnum
+
+## [#](#enumeration-members) Enumeration Members
+
+### [#](#active) active
+
+• **active** = `"active"`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:587  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L587)
+
+---
+
+### [#](#default) default
+
+• **default** = `"default"`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:586  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L586)
+
+---
+
+### [#](#hide) hide
+
+• **hide** = `"hide"`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:584  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L584)
+
+---
+
+### [#](#none) none
+
+• **none** = `"none"`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:583  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L583)
+
+---
+
+### [#](#reset) reset
+
+• **reset** = `"reset"`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:582  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L582)
+
+---
+
+### [#](#resize) resize
+
+• **resize** = `"resize"`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:581  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L581)
+
+---
+
+### [#](#show) show
+
+• **show** = `"show"`
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:585  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L585)

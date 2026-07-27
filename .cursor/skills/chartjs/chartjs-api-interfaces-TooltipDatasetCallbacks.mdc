@@ -1,0 +1,151 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipDatasetCallbacks<TType, Model, Item> (/docs/latest/api/interfaces/TooltipDatasetCallbacks.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipDatasetCallbacks<TType, Model, Item>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipDatasetCallbacks.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-tooltipdatasetcallbacks-ttype-model-item) Interface: TooltipDatasetCallbacks<TType, Model, Item>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+| `Model` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`> |
+| `Item` | [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`> |
+
+## [#](#hierarchy) Hierarchy
+
+- **`TooltipDatasetCallbacks`**
+
+  ↳ [`TooltipCallbacks`](/docs/latest/api/interfaces/TooltipCallbacks.html)
+
+## [#](#methods) Methods
+
+### [#](#afterlabel) afterLabel
+
+▸ **afterLabel**(`this`, `tooltipItem`): `string` | `void` | `string`[]
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2687  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2687)
+
+---
+
+### [#](#beforelabel) beforeLabel
+
+▸ **beforeLabel**(`this`, `tooltipItem`): `string` | `void` | `string`[]
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-2) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2685  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2685)
+
+---
+
+### [#](#label) label
+
+▸ **label**(`this`, `tooltipItem`): `string` | `void` | `string`[]
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-3) Returns
+
+`string` | `void` | `string`[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2686  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2686)
+
+---
+
+### [#](#labelcolor) labelColor
+
+▸ **labelColor**(`this`, `tooltipItem`): `void` | [`TooltipLabelStyle`](/docs/latest/api/interfaces/TooltipLabelStyle.html)
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-4) Returns
+
+`void` | [`TooltipLabelStyle`](/docs/latest/api/interfaces/TooltipLabelStyle.html)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2689  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2689)
+
+---
+
+### [#](#labelpointstyle) labelPointStyle
+
+▸ **labelPointStyle**(`this`, `tooltipItem`): `void` | { `pointStyle`: [`PointStyle`](/docs/latest/api/#pointstyle) ; `rotation`: `number` }
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-5) Returns
+
+`void` | { `pointStyle`: [`PointStyle`](/docs/latest/api/#pointstyle) ; `rotation`: `number` }
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2691  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2691)
+
+---
+
+### [#](#labeltextcolor) labelTextColor
+
+▸ **labelTextColor**(`this`, `tooltipItem`): `void` | [`Color`](/docs/latest/api/#color)
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `this` | `Model` |
+| `tooltipItem` | `Item` |
+
+#### [#](#returns-6) Returns
+
+`void` | [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2690  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2690)

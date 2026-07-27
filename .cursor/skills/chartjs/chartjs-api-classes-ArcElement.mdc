@@ -1,0 +1,429 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Class: ArcElement (/docs/latest/api/classes/ArcElement.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Class: ArcElement
+
+> Fuente: https://www.chartjs.org/docs/latest/api/classes/ArcElement.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#class-arcelement) Class: ArcElement
+
+## [#](#hierarchy) Hierarchy
+
+- `default`<[`ArcProps`](/docs/latest/api/interfaces/ArcProps.html), [`ArcOptions`](/docs/latest/api/interfaces/ArcOptions.html)>
+
+  ↳ **`ArcElement`**
+
+## [#](#constructors) Constructors
+
+### [#](#constructor) constructor
+
+• **new ArcElement**(`cfg`)
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `cfg` | `any` |
+
+#### [#](#overrides) Overrides
+
+Element<ArcProps, ArcOptions&gt;.constructor
+
+#### [#](#defined-in) Defined in
+
+[elements/element.arc.ts:336  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L336)
+
+## [#](#properties) Properties
+
+### [#](#animations) $animations
+
+• **$animations**: `Record`<keyof [`ArcProps`](/docs/latest/api/interfaces/ArcProps.html), [`Animation`](/docs/latest/api/classes/Animation.html)>
+
+#### [#](#inherited-from) Inherited from
+
+Element.$animations
+
+#### [#](#defined-in-2) Defined in
+
+[core/core.element.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L15)
+
+---
+
+### [#](#active) active
+
+• **active**: `boolean` = `false`
+
+#### [#](#inherited-from-2) Inherited from
+
+Element.active
+
+#### [#](#defined-in-3) Defined in
+
+[core/core.element.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L13)
+
+---
+
+### [#](#circumference) circumference
+
+• **circumference**: `number`
+
+#### [#](#defined-in-4) Defined in
+
+[elements/element.arc.ts:328  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L328)
+
+---
+
+### [#](#endangle) endAngle
+
+• **endAngle**: `number`
+
+#### [#](#defined-in-5) Defined in
+
+[elements/element.arc.ts:329  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L329)
+
+---
+
+### [#](#fullcircles) fullCircles
+
+• **fullCircles**: `number`
+
+#### [#](#defined-in-6) Defined in
+
+[elements/element.arc.ts:330  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L330)
+
+---
+
+### [#](#innerradius) innerRadius
+
+• **innerRadius**: `number`
+
+#### [#](#defined-in-7) Defined in
+
+[elements/element.arc.ts:331  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L331)
+
+---
+
+### [#](#options) options
+
+• **options**: [`ArcOptions`](/docs/latest/api/interfaces/ArcOptions.html)
+
+#### [#](#inherited-from-3) Inherited from
+
+Element.options
+
+#### [#](#defined-in-8) Defined in
+
+[core/core.element.ts:14  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L14)
+
+---
+
+### [#](#outerradius) outerRadius
+
+• **outerRadius**: `number`
+
+#### [#](#defined-in-9) Defined in
+
+[elements/element.arc.ts:332  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L332)
+
+---
+
+### [#](#pixelmargin) pixelMargin
+
+• **pixelMargin**: `number`
+
+#### [#](#defined-in-10) Defined in
+
+[elements/element.arc.ts:333  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L333)
+
+---
+
+### [#](#startangle) startAngle
+
+• **startAngle**: `number`
+
+#### [#](#defined-in-11) Defined in
+
+[elements/element.arc.ts:334  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L334)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from-4) Inherited from
+
+Element.x
+
+#### [#](#defined-in-12) Defined in
+
+[core/core.element.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-5) Inherited from
+
+Element.y
+
+#### [#](#defined-in-13) Defined in
+
+[core/core.element.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L12)
+
+---
+
+### [#](#defaultroutes) defaultRoutes
+
+▪ `Static` **defaultRoutes**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `backgroundColor` | `string` |
+
+#### [#](#overrides-2) Overrides
+
+Element.defaultRoutes
+
+#### [#](#defined-in-14) Defined in
+
+[elements/element.arc.ts:319  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L319)
+
+---
+
+### [#](#defaults) defaults
+
+▪ `Static` **defaults**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `angle` | `any` |
+| `borderAlign` | `string` |
+| `borderColor` | `string` |
+| `borderDash` | `any`[] |
+| `borderDashOffset` | `number` |
+| `borderJoinStyle` | `any` |
+| `borderRadius` | `number` |
+| `borderWidth` | `number` |
+| `circular` | `boolean` |
+| `offset` | `number` |
+| `selfJoin` | `boolean` |
+| `spacing` | `number` |
+
+#### [#](#overrides-3) Overrides
+
+Element.defaults
+
+#### [#](#defined-in-15) Defined in
+
+[elements/element.arc.ts:304  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L304)
+
+---
+
+### [#](#descriptors) descriptors
+
+▪ `Static` **descriptors**: `Object`
+
+#### [#](#type-declaration-3) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `_indexable` | (`name`: `any`) => `boolean` |
+| `_scriptable` | `boolean` |
+
+#### [#](#defined-in-16) Defined in
+
+[elements/element.arc.ts:323  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L323)
+
+---
+
+### [#](#id) id
+
+▪ `Static` **id**: `string` = `'arc'`
+
+#### [#](#defined-in-17) Defined in
+
+[elements/element.arc.ts:302  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L302)
+
+## [#](#methods) Methods
+
+### [#](#draw) draw
+
+▸ **draw**(`ctx`): `void`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `ctx` | `CanvasRenderingContext2D` |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-18) Defined in
+
+[elements/element.arc.ts:394  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L394)
+
+---
+
+### [#](#getcenterpoint) getCenterPoint
+
+▸ **getCenterPoint**(`useFinalPosition`): `Object`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-2) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `x` | `number` |
+| `y` | `number` |
+
+#### [#](#defined-in-19) Defined in
+
+[elements/element.arc.ts:372  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L372)
+
+---
+
+### [#](#getprops) getProps
+
+▸ **getProps**<`P`>(`props`, `final?`): `Pick`<[`ArcProps`](/docs/latest/api/interfaces/ArcProps.html), `P`[`number`]>
+
+Gets the current or final value of each prop. Can return extra properties (whole object).
+
+#### [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends keyof [`ArcProps`](/docs/latest/api/interfaces/ArcProps.html)[] |
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `props` | `P` | properties to get |
+| `final?` | `boolean` | get the final value (animation target) |
+
+#### [#](#returns-3) Returns
+
+`Pick`<[`ArcProps`](/docs/latest/api/interfaces/ArcProps.html), `P`[`number`]>
+
+#### [#](#inherited-from-6) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-20) Defined in
+
+[core/core.element.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L31)
+
+▸ **getProps**<`P`>(`props`, `final?`): `Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string` |
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `props` | `P`[] |
+| `final?` | `boolean` |
+
+#### [#](#returns-4) Returns
+
+`Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#inherited-from-7) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-21) Defined in
+
+[core/core.element.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L32)
+
+---
+
+### [#](#hasvalue) hasValue
+
+▸ **hasValue**(): `boolean`
+
+#### [#](#returns-5) Returns
+
+`boolean`
+
+#### [#](#inherited-from-8) Inherited from
+
+Element.hasValue
+
+#### [#](#defined-in-22) Defined in
+
+[core/core.element.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L22)
+
+---
+
+### [#](#inrange) inRange
+
+▸ **inRange**(`chartX`, `chartY`, `useFinalPosition`): `boolean`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartX` | `number` |
+| `chartY` | `number` |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-6) Returns
+
+`boolean`
+
+#### [#](#defined-in-23) Defined in
+
+[elements/element.arc.ts:353  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L353)
+
+---
+
+### [#](#tooltipposition) tooltipPosition
+
+▸ **tooltipPosition**(`useFinalPosition`): `Object`
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-7) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `x` | `number` |
+| `y` | `number` |
+
+#### [#](#overrides-4) Overrides
+
+Element.tooltipPosition
+
+#### [#](#defined-in-24) Defined in
+
+[elements/element.arc.ts:390  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.arc.ts#L390)

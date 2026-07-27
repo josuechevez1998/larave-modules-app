@@ -1,0 +1,949 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: DoughnutController (/docs/latest/api/interfaces/DoughnutController.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: DoughnutController
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/DoughnutController.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-doughnutcontroller) Interface: DoughnutController
+
+## [#](#hierarchy) Hierarchy
+
+- [`DatasetController`](/docs/latest/api/classes/DatasetController.html)
+
+  ↳ **`DoughnutController`**
+
+## [#](#properties) Properties
+
+### [#](#cachedmeta) \_cachedMeta
+
+• `Readonly` **\_cachedMeta**: [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>
+
+#### [#](#inherited-from) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[\_cachedMeta](/docs/latest/api/classes/DatasetController.html#cachedmeta)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:602  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L602)
+
+---
+
+### [#](#chart) chart
+
+• `Readonly` **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+#### [#](#inherited-from-2) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[chart](/docs/latest/api/classes/DatasetController.html#chart)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:600  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L600)
+
+---
+
+### [#](#enableoptionsharing) enableOptionSharing
+
+• **enableOptionSharing**: `boolean`
+
+#### [#](#inherited-from-3) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[enableOptionSharing](/docs/latest/api/classes/DatasetController.html#enableoptionsharing)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:603  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L603)
+
+---
+
+### [#](#index) index
+
+• `Readonly` **index**: `number`
+
+#### [#](#inherited-from-4) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[index](/docs/latest/api/classes/DatasetController.html#index)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:601  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L601)
+
+---
+
+### [#](#innerradius) innerRadius
+
+• `Readonly` **innerRadius**: `number`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:341  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L341)
+
+---
+
+### [#](#offsetx) offsetX
+
+• `Readonly` **offsetX**: `number`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:343  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L343)
+
+---
+
+### [#](#offsety) offsetY
+
+• `Readonly` **offsetY**: `number`
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:344  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L344)
+
+---
+
+### [#](#outerradius) outerRadius
+
+• `Readonly` **outerRadius**: `number`
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:342  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L342)
+
+---
+
+### [#](#supportsdecimation) supportsDecimation
+
+• **supportsDecimation**: `boolean`
+
+#### [#](#inherited-from-5) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[supportsDecimation](/docs/latest/api/classes/DatasetController.html#supportsdecimation)
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:607  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L607)
+
+## [#](#methods) Methods
+
+### [#](#addelements) addElements
+
+▸ **addElements**(): `void`
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#inherited-from-6) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[addElements](/docs/latest/api/classes/DatasetController.html#addelements)
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:623  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L623)
+
+---
+
+### [#](#applystack) applyStack
+
+▸ `Protected` **applyStack**(`scale`, `parsed`): `number`
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+| `parsed` | `unknown`[] |
+
+#### [#](#returns-2) Returns
+
+`number`
+
+#### [#](#inherited-from-7) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[applyStack](/docs/latest/api/classes/DatasetController.html#applystack)
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:659  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L659)
+
+---
+
+### [#](#buildorupdateelements) buildOrUpdateElements
+
+▸ **buildOrUpdateElements**(`resetNewElements?`): `void`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `resetNewElements?` | `boolean` |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#inherited-from-8) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[buildOrUpdateElements](/docs/latest/api/classes/DatasetController.html#buildorupdateelements)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:624  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L624)
+
+---
+
+### [#](#calculatecircumference) calculateCircumference
+
+▸ **calculateCircumference**(`value`): `number`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `value` | `number` |
+
+#### [#](#returns-4) Returns
+
+`number`
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:347  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L347)
+
+---
+
+### [#](#calculatetotal) calculateTotal
+
+▸ **calculateTotal**(): `number`
+
+#### [#](#returns-5) Returns
+
+`number`
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:346  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L346)
+
+---
+
+### [#](#configure) configure
+
+▸ **configure**(): `void`
+
+#### [#](#returns-6) Returns
+
+`void`
+
+#### [#](#inherited-from-9) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[configure](/docs/latest/api/classes/DatasetController.html#configure)
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:621  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L621)
+
+---
+
+### [#](#draw) draw
+
+▸ **draw**(): `void`
+
+#### [#](#returns-7) Returns
+
+`void`
+
+#### [#](#inherited-from-10) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[draw](/docs/latest/api/classes/DatasetController.html#draw)
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:616  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L616)
+
+---
+
+### [#](#getallparsedvalues) getAllParsedValues
+
+▸ **getAllParsedValues**(`scale`): `number`[]
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+
+#### [#](#returns-8) Returns
+
+`number`[]
+
+#### [#](#inherited-from-11) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getAllParsedValues](/docs/latest/api/classes/DatasetController.html#getallparsedvalues)
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:610  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L610)
+
+---
+
+### [#](#getdataset) getDataset
+
+▸ **getDataset**(): [`ChartDataset`](/docs/latest/api/#chartdataset)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[]>
+
+#### [#](#returns-9) Returns
+
+[`ChartDataset`](/docs/latest/api/#chartdataset)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[]>
+
+#### [#](#inherited-from-12) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getDataset](/docs/latest/api/classes/DatasetController.html#getdataset)
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:618  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L618)
+
+---
+
+### [#](#getlabelandvalue) getLabelAndValue
+
+▸ `Protected` **getLabelAndValue**(`index`): `Object`
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `index` | `number` |
+
+#### [#](#returns-10) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `label` | `string` |
+| `value` | `string` |
+
+#### [#](#inherited-from-13) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getLabelAndValue](/docs/latest/api/classes/DatasetController.html#getlabelandvalue)
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:611  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L611)
+
+---
+
+### [#](#getmaxoverflow) getMaxOverflow
+
+▸ `Protected` **getMaxOverflow**(): `number` | `boolean`
+
+#### [#](#returns-11) Returns
+
+`number` | `boolean`
+
+#### [#](#inherited-from-14) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getMaxOverflow](/docs/latest/api/classes/DatasetController.html#getmaxoverflow)
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:615  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L615)
+
+---
+
+### [#](#getmeta) getMeta
+
+▸ **getMeta**(): [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>
+
+#### [#](#returns-12) Returns
+
+[`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>>
+
+#### [#](#inherited-from-15) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getMeta](/docs/latest/api/classes/DatasetController.html#getmeta)
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:619  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L619)
+
+---
+
+### [#](#getminmax) getMinMax
+
+▸ `Protected` **getMinMax**(`scale`, `canStack?`): `Object`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+| `canStack?` | `boolean` |
+
+#### [#](#returns-13) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `max` | `number` |
+| `min` | `number` |
+
+#### [#](#inherited-from-16) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getMinMax](/docs/latest/api/classes/DatasetController.html#getminmax)
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:666  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L666)
+
+---
+
+### [#](#getparsed) getParsed
+
+▸ `Protected` **getParsed**(`index`): `number` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) | [`BarParsedData`](/docs/latest/api/interfaces/BarParsedData.html) | [`BubbleParsedData`](/docs/latest/api/interfaces/BubbleParsedData.html) | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html)
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `index` | `number` |
+
+#### [#](#returns-14) Returns
+
+`number` | [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html) | [`BarParsedData`](/docs/latest/api/interfaces/BarParsedData.html) | [`BubbleParsedData`](/docs/latest/api/interfaces/BubbleParsedData.html) | [`RadialParsedData`](/docs/latest/api/interfaces/RadialParsedData.html)
+
+#### [#](#inherited-from-17) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getParsed](/docs/latest/api/classes/DatasetController.html#getparsed)
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:658  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L658)
+
+---
+
+### [#](#getscaleforid) getScaleForId
+
+▸ **getScaleForId**(`scaleID`): [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `scaleID` | `string` |
+
+#### [#](#returns-15) Returns
+
+[`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>
+
+#### [#](#inherited-from-18) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getScaleForId](/docs/latest/api/classes/DatasetController.html#getscaleforid)
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:620  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L620)
+
+---
+
+### [#](#getsharedoptions) getSharedOptions
+
+▸ `Protected` **getSharedOptions**(`options`): `AnyObject`
+
+Utility for checking if the options are shared and should be animated separately.
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `options` | `AnyObject` |
+
+#### [#](#returns-16) Returns
+
+`AnyObject`
+
+#### [#](#inherited-from-19) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getSharedOptions](/docs/latest/api/classes/DatasetController.html#getsharedoptions)
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:633  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L633)
+
+---
+
+### [#](#getstyle) getStyle
+
+▸ **getStyle**(`index`, `active`): `AnyObject`
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `index` | `number` |
+| `active` | `boolean` |
+
+#### [#](#returns-17) Returns
+
+`AnyObject`
+
+#### [#](#inherited-from-20) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[getStyle](/docs/latest/api/classes/DatasetController.html#getstyle)
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:626  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L626)
+
+---
+
+### [#](#includeoptions) includeOptions
+
+▸ `Protected` **includeOptions**(`mode`, `sharedOptions`): `boolean`
+
+Utility for determining if `options` should be included in the updated properties
+
+#### [#](#parameters-11) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+| `sharedOptions` | `AnyObject` |
+
+#### [#](#returns-18) Returns
+
+`boolean`
+
+#### [#](#inherited-from-21) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[includeOptions](/docs/latest/api/classes/DatasetController.html#includeoptions)
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:638  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L638)
+
+---
+
+### [#](#initialize) initialize
+
+▸ **initialize**(): `void`
+
+#### [#](#returns-19) Returns
+
+`void`
+
+#### [#](#inherited-from-22) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[initialize](/docs/latest/api/classes/DatasetController.html#initialize)
+
+#### [#](#defined-in-28) Defined in
+
+[types/index.d.ts:622  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L622)
+
+---
+
+### [#](#linkscales) linkScales
+
+▸ **linkScales**(): `void`
+
+#### [#](#returns-20) Returns
+
+`void`
+
+#### [#](#inherited-from-23) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[linkScales](/docs/latest/api/classes/DatasetController.html#linkscales)
+
+#### [#](#defined-in-29) Defined in
+
+[types/index.d.ts:609  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L609)
+
+---
+
+### [#](#parse) parse
+
+▸ **parse**(`start`, `count`): `void`
+
+#### [#](#parameters-12) Parameters
+
+| Name | Type |
+| --- | --- |
+| `start` | `number` |
+| `count` | `number` |
+
+#### [#](#returns-21) Returns
+
+`void`
+
+#### [#](#inherited-from-24) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[parse](/docs/latest/api/classes/DatasetController.html#parse)
+
+#### [#](#defined-in-30) Defined in
+
+[types/index.d.ts:654  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L654)
+
+---
+
+### [#](#parsearraydata) parseArrayData
+
+▸ `Protected` **parseArrayData**(`meta`, `data`, `start`, `count`): `AnyObject`[]
+
+#### [#](#parameters-13) Parameters
+
+| Name | Type |
+| --- | --- |
+| `meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> |
+| `data` | `AnyObject`[] |
+| `start` | `number` |
+| `count` | `number` |
+
+#### [#](#returns-22) Returns
+
+`AnyObject`[]
+
+#### [#](#inherited-from-25) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[parseArrayData](/docs/latest/api/classes/DatasetController.html#parsearraydata)
+
+#### [#](#defined-in-31) Defined in
+
+[types/index.d.ts:656  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L656)
+
+---
+
+### [#](#parseobjectdata) parseObjectData
+
+▸ `Protected` **parseObjectData**(`meta`, `data`, `start`, `count`): `AnyObject`[]
+
+#### [#](#parameters-14) Parameters
+
+| Name | Type |
+| --- | --- |
+| `meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> |
+| `data` | `AnyObject`[] |
+| `start` | `number` |
+| `count` | `number` |
+
+#### [#](#returns-23) Returns
+
+`AnyObject`[]
+
+#### [#](#inherited-from-26) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[parseObjectData](/docs/latest/api/classes/DatasetController.html#parseobjectdata)
+
+#### [#](#defined-in-32) Defined in
+
+[types/index.d.ts:657  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L657)
+
+---
+
+### [#](#parseprimitivedata) parsePrimitiveData
+
+▸ `Protected` **parsePrimitiveData**(`meta`, `data`, `start`, `count`): `AnyObject`[]
+
+#### [#](#parameters-15) Parameters
+
+| Name | Type |
+| --- | --- |
+| `meta` | [`ChartMeta`](/docs/latest/api/#chartmeta)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), `default`<`AnyObject`, `AnyObject`>, `default`<`AnyObject`, `AnyObject`>> |
+| `data` | `AnyObject`[] |
+| `start` | `number` |
+| `count` | `number` |
+
+#### [#](#returns-24) Returns
+
+`AnyObject`[]
+
+#### [#](#inherited-from-27) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[parsePrimitiveData](/docs/latest/api/classes/DatasetController.html#parseprimitivedata)
+
+#### [#](#defined-in-33) Defined in
+
+[types/index.d.ts:655  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L655)
+
+---
+
+### [#](#removehoverstyle) removeHoverStyle
+
+▸ **removeHoverStyle**(`element`, `datasetIndex`, `index`): `void`
+
+#### [#](#parameters-16) Parameters
+
+| Name | Type |
+| --- | --- |
+| `element` | `default`<`AnyObject`, `AnyObject`> |
+| `datasetIndex` | `number` |
+| `index` | `number` |
+
+#### [#](#returns-25) Returns
+
+`void`
+
+#### [#](#inherited-from-28) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[removeHoverStyle](/docs/latest/api/classes/DatasetController.html#removehoverstyle)
+
+#### [#](#defined-in-34) Defined in
+
+[types/index.d.ts:651  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L651)
+
+---
+
+### [#](#reset) reset
+
+▸ **reset**(): `void`
+
+#### [#](#returns-26) Returns
+
+`void`
+
+#### [#](#inherited-from-29) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[reset](/docs/latest/api/classes/DatasetController.html#reset)
+
+#### [#](#defined-in-35) Defined in
+
+[types/index.d.ts:617  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L617)
+
+---
+
+### [#](#resolvedataelementoptions) resolveDataElementOptions
+
+▸ `Protected` **resolveDataElementOptions**(`index`, `mode`): `AnyObject`
+
+#### [#](#parameters-17) Parameters
+
+| Name | Type |
+| --- | --- |
+| `index` | `number` |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+
+#### [#](#returns-27) Returns
+
+`AnyObject`
+
+#### [#](#inherited-from-30) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[resolveDataElementOptions](/docs/latest/api/classes/DatasetController.html#resolvedataelementoptions)
+
+#### [#](#defined-in-36) Defined in
+
+[types/index.d.ts:628  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L628)
+
+---
+
+### [#](#resolvedatasetelementoptions) resolveDatasetElementOptions
+
+▸ `Protected` **resolveDatasetElementOptions**(`mode`): `AnyObject`
+
+#### [#](#parameters-18) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+
+#### [#](#returns-28) Returns
+
+`AnyObject`
+
+#### [#](#inherited-from-31) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[resolveDatasetElementOptions](/docs/latest/api/classes/DatasetController.html#resolvedatasetelementoptions)
+
+#### [#](#defined-in-37) Defined in
+
+[types/index.d.ts:627  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L627)
+
+---
+
+### [#](#sethoverstyle) setHoverStyle
+
+▸ **setHoverStyle**(`element`, `datasetIndex`, `index`): `void`
+
+#### [#](#parameters-19) Parameters
+
+| Name | Type |
+| --- | --- |
+| `element` | `default`<`AnyObject`, `AnyObject`> |
+| `datasetIndex` | `number` |
+| `index` | `number` |
+
+#### [#](#returns-29) Returns
+
+`void`
+
+#### [#](#inherited-from-32) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[setHoverStyle](/docs/latest/api/classes/DatasetController.html#sethoverstyle)
+
+#### [#](#defined-in-38) Defined in
+
+[types/index.d.ts:652  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L652)
+
+---
+
+### [#](#update) update
+
+▸ **update**(`mode`): `void`
+
+#### [#](#parameters-20) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+
+#### [#](#returns-30) Returns
+
+`void`
+
+#### [#](#inherited-from-33) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[update](/docs/latest/api/classes/DatasetController.html#update)
+
+#### [#](#defined-in-39) Defined in
+
+[types/index.d.ts:613  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L613)
+
+---
+
+### [#](#updateelement) updateElement
+
+▸ `Protected` **updateElement**(`element`, `index`, `properties`, `mode`): `void`
+
+Utility for updating an element with new properties, using animations when appropriate.
+
+#### [#](#parameters-21) Parameters
+
+| Name | Type |
+| --- | --- |
+| `element` | `default`<`AnyObject`, `AnyObject`> |
+| `index` | `number` |
+| `properties` | `AnyObject` |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+
+#### [#](#returns-31) Returns
+
+`void`
+
+#### [#](#inherited-from-34) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[updateElement](/docs/latest/api/classes/DatasetController.html#updateelement)
+
+#### [#](#defined-in-40) Defined in
+
+[types/index.d.ts:644  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L644)
+
+---
+
+### [#](#updateelements) updateElements
+
+▸ **updateElements**(`elements`, `start`, `count`, `mode`): `void`
+
+#### [#](#parameters-22) Parameters
+
+| Name | Type |
+| --- | --- |
+| `elements` | `default`<`AnyObject`, `AnyObject`>[] |
+| `start` | `number` |
+| `count` | `number` |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+
+#### [#](#returns-32) Returns
+
+`void`
+
+#### [#](#inherited-from-35) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[updateElements](/docs/latest/api/classes/DatasetController.html#updateelements)
+
+#### [#](#defined-in-41) Defined in
+
+[types/index.d.ts:612  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L612)
+
+---
+
+### [#](#updateindex) updateIndex
+
+▸ **updateIndex**(`datasetIndex`): `void`
+
+#### [#](#parameters-23) Parameters
+
+| Name | Type |
+| --- | --- |
+| `datasetIndex` | `number` |
+
+#### [#](#returns-33) Returns
+
+`void`
+
+#### [#](#inherited-from-36) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[updateIndex](/docs/latest/api/classes/DatasetController.html#updateindex)
+
+#### [#](#defined-in-42) Defined in
+
+[types/index.d.ts:614  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L614)
+
+---
+
+### [#](#updaterangefromparsed) updateRangeFromParsed
+
+▸ `Protected` **updateRangeFromParsed**(`range`, `scale`, `parsed`, `stack`): `void`
+
+#### [#](#parameters-24) Parameters
+
+| Name | Type |
+| --- | --- |
+| `range` | `Object` |
+| `range.max` | `number` |
+| `range.min` | `number` |
+| `scale` | [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)> |
+| `parsed` | `unknown`[] |
+| `stack` | `string` | `boolean` |
+
+#### [#](#returns-34) Returns
+
+`void`
+
+#### [#](#inherited-from-37) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[updateRangeFromParsed](/docs/latest/api/classes/DatasetController.html#updaterangefromparsed)
+
+#### [#](#defined-in-43) Defined in
+
+[types/index.d.ts:660  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L660)
+
+---
+
+### [#](#updatesharedoptions) updateSharedOptions
+
+▸ `Protected` **updateSharedOptions**(`sharedOptions`, `mode`, `newOptions`): `void`
+
+Utility to animate the shared options, that are potentially affecting multiple elements.
+
+#### [#](#parameters-25) Parameters
+
+| Name | Type |
+| --- | --- |
+| `sharedOptions` | `AnyObject` |
+| `mode` | `"none"` | `"hide"` | `"show"` | `"default"` | `"active"` | `"resize"` | `"reset"` |
+| `newOptions` | `AnyObject` |
+
+#### [#](#returns-35) Returns
+
+`void`
+
+#### [#](#inherited-from-38) Inherited from
+
+[DatasetController](/docs/latest/api/classes/DatasetController.html).[updateSharedOptions](/docs/latest/api/classes/DatasetController.html#updatesharedoptions)
+
+#### [#](#defined-in-44) Defined in
+
+[types/index.d.ts:650  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L650)

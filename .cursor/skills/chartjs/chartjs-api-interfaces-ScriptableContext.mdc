@@ -1,0 +1,107 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ScriptableContext<TType> (/docs/latest/api/interfaces/ScriptableContext.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ScriptableContext<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ScriptableContext.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-scriptablecontext-ttype) Interface: ScriptableContext<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#active) active
+
+• **active**: `boolean`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:24  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L24)
+
+---
+
+### [#](#chart) chart
+
+• **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:25  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L25)
+
+---
+
+### [#](#dataindex) dataIndex
+
+• **dataIndex**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:26  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L26)
+
+---
+
+### [#](#dataset) dataset
+
+• **dataset**: `UnionToIntersection`<[`ChartDataset`](/docs/latest/api/#chartdataset)<`TType`, `DistributiveArray`<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"defaultDataPoint"`]>>>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:27  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L27)
+
+---
+
+### [#](#datasetindex) datasetIndex
+
+• **datasetIndex**: `number`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:28  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L28)
+
+---
+
+### [#](#mode) mode
+
+• **mode**: `string`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:30  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L30)
+
+---
+
+### [#](#parsed) parsed
+
+• **parsed**: `UnionToIntersection`<[`ParsedDataType`](/docs/latest/api/#parseddatatype)<`TType`>>
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L31)
+
+---
+
+### [#](#raw) raw
+
+• **raw**: `unknown`
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L32)
+
+---
+
+### [#](#type) type
+
+• **type**: `string`
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:29  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L29)

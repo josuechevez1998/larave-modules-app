@@ -1,0 +1,39 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Module Generator (/docs/13/resources/laravel-module-generator). Referencia nwidart/laravel-modules v13.
+---
+
+# Module Generator
+
+> Fuente: https://laravelmodules.com/docs/13/resources/laravel-module-generator
+> Exportado: 2026-07-23 (manual)
+
+Package: `dcblogdev/laravel-module-generator` — generate modules from templates.
+
+## Install
+
+```bash
+composer require dcblogdev/laravel-module-generator
+php artisan vendor:publish --provider="Dcblogdev\ModuleGenerator\ModuleGeneratorServiceProvider"
+```
+
+Config templates (default stubs under `stubs/module-generator`):
+
+- Breeze - Blade - CRUD Web & API
+- Breeze - Blade - CRUD Web only
+- Breeze - Blade - CRUD API only
+
+## Usage
+
+```bash
+php artisan module:build
+php artisan module:build Contacts "Breeze - CRUD API only"
+php artisan module:enable Contacts
+composer dump-autoload
+```
+
+## Placeholders
+
+**Filenames:** `Module`, `module`, `module_plural`, `Model`, `model`
+
+**Inside files:** `{Module}`, `{module}`, `{module_}`, `{module-}`, `{module }`, `{Model}`, `{model}`, `{model_}`, `{model-}`, `{model }`

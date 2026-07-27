@@ -1,0 +1,440 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Class: PointElement (/docs/latest/api/classes/PointElement.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Class: PointElement
+
+> Fuente: https://www.chartjs.org/docs/latest/api/classes/PointElement.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#class-pointelement) Class: PointElement
+
+## [#](#hierarchy) Hierarchy
+
+- `default`<[`PointProps`](/docs/latest/api/#pointprops), [`PointOptions`](/docs/latest/api/interfaces/PointOptions.html) & [`PointHoverOptions`](/docs/latest/api/interfaces/PointHoverOptions.html)>
+
+  ↳ **`PointElement`**
+
+## [#](#constructors) Constructors
+
+### [#](#constructor) constructor
+
+• **new PointElement**(`cfg`)
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `cfg` | `any` |
+
+#### [#](#overrides) Overrides
+
+Element<PointProps, PointOptions & PointHoverOptions&gt;.constructor
+
+#### [#](#defined-in) Defined in
+
+[elements/element.point.ts:49  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L49)
+
+## [#](#properties) Properties
+
+### [#](#animations) $animations
+
+• **$animations**: `Record`<keyof [`Point`](/docs/latest/api/interfaces/Point.html), [`Animation`](/docs/latest/api/classes/Animation.html)>
+
+#### [#](#inherited-from) Inherited from
+
+Element.$animations
+
+#### [#](#defined-in-2) Defined in
+
+[core/core.element.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L15)
+
+---
+
+### [#](#active) active
+
+• **active**: `boolean` = `false`
+
+#### [#](#inherited-from-2) Inherited from
+
+Element.active
+
+#### [#](#defined-in-3) Defined in
+
+[core/core.element.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L13)
+
+---
+
+### [#](#options) options
+
+• **options**: [`PointOptions`](/docs/latest/api/interfaces/PointOptions.html) & [`PointHoverOptions`](/docs/latest/api/interfaces/PointHoverOptions.html)
+
+#### [#](#inherited-from-3) Inherited from
+
+Element.options
+
+#### [#](#defined-in-4) Defined in
+
+[core/core.element.ts:14  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L14)
+
+---
+
+### [#](#parsed) parsed
+
+• **parsed**: [`CartesianParsedData`](/docs/latest/api/interfaces/CartesianParsedData.html)
+
+#### [#](#defined-in-5) Defined in
+
+[elements/element.point.ts:24  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L24)
+
+---
+
+### [#](#skip) skip
+
+• `Optional` **skip**: `boolean`
+
+#### [#](#defined-in-6) Defined in
+
+[elements/element.point.ts:25  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L25)
+
+---
+
+### [#](#stop) stop
+
+• `Optional` **stop**: `boolean`
+
+#### [#](#defined-in-7) Defined in
+
+[elements/element.point.ts:26  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L26)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from-4) Inherited from
+
+Element.x
+
+#### [#](#defined-in-8) Defined in
+
+[core/core.element.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-5) Inherited from
+
+Element.y
+
+#### [#](#defined-in-9) Defined in
+
+[core/core.element.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L12)
+
+---
+
+### [#](#defaultroutes) defaultRoutes
+
+▪ `Static` **defaultRoutes**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `backgroundColor` | `string` |
+| `borderColor` | `string` |
+
+#### [#](#overrides-2) Overrides
+
+Element.defaultRoutes
+
+#### [#](#defined-in-10) Defined in
+
+[elements/element.point.ts:44  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L44)
+
+---
+
+### [#](#defaults) defaults
+
+▪ `Static` **defaults**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `borderWidth` | `number` |
+| `hitRadius` | `number` |
+| `hoverBorderWidth` | `number` |
+| `hoverRadius` | `number` |
+| `pointStyle` | `string` |
+| `radius` | `number` |
+| `rotation` | `number` |
+
+#### [#](#overrides-3) Overrides
+
+Element.defaults
+
+#### [#](#defined-in-11) Defined in
+
+[elements/element.point.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L31)
+
+---
+
+### [#](#id) id
+
+▪ `Static` **id**: `string` = `'point'`
+
+#### [#](#defined-in-12) Defined in
+
+[elements/element.point.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L22)
+
+## [#](#methods) Methods
+
+### [#](#draw) draw
+
+▸ **draw**(`ctx`, `area`): `void`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `ctx` | `CanvasRenderingContext2D` |
+| `area` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-13) Defined in
+
+[elements/element.point.ts:89  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L89)
+
+---
+
+### [#](#getcenterpoint) getCenterPoint
+
+▸ **getCenterPoint**(`useFinalPosition?`): `Object`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-2) Returns
+
+`Object`
+
+| Name | Type |
+| --- | --- |
+| `x` | `number` |
+| `y` | `number` |
+
+#### [#](#defined-in-14) Defined in
+
+[elements/element.point.ts:76  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L76)
+
+---
+
+### [#](#getprops) getProps
+
+▸ **getProps**<`P`>(`props`, `final?`): `Pick`<[`Point`](/docs/latest/api/interfaces/Point.html), `P`[`number`]>
+
+Gets the current or final value of each prop. Can return extra properties (whole object).
+
+#### [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends keyof [`Point`](/docs/latest/api/interfaces/Point.html)[] |
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `props` | `P` | properties to get |
+| `final?` | `boolean` | get the final value (animation target) |
+
+#### [#](#returns-3) Returns
+
+`Pick`<[`Point`](/docs/latest/api/interfaces/Point.html), `P`[`number`]>
+
+#### [#](#inherited-from-6) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-15) Defined in
+
+[core/core.element.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L31)
+
+▸ **getProps**<`P`>(`props`, `final?`): `Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string` |
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `props` | `P`[] |
+| `final?` | `boolean` |
+
+#### [#](#returns-4) Returns
+
+`Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#inherited-from-7) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-16) Defined in
+
+[core/core.element.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L32)
+
+---
+
+### [#](#getrange) getRange
+
+▸ **getRange**(): `any`
+
+#### [#](#returns-5) Returns
+
+`any`
+
+#### [#](#defined-in-17) Defined in
+
+[elements/element.point.ts:102  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L102)
+
+---
+
+### [#](#hasvalue) hasValue
+
+▸ **hasValue**(): `boolean`
+
+#### [#](#returns-6) Returns
+
+`boolean`
+
+#### [#](#inherited-from-8) Inherited from
+
+Element.hasValue
+
+#### [#](#defined-in-18) Defined in
+
+[core/core.element.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L22)
+
+---
+
+### [#](#inrange) inRange
+
+▸ **inRange**(`mouseX`, `mouseY`, `useFinalPosition?`): `boolean`
+
+#### [#](#parameters-6) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mouseX` | `number` |
+| `mouseY` | `number` |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-7) Returns
+
+`boolean`
+
+#### [#](#defined-in-19) Defined in
+
+[elements/element.point.ts:62  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L62)
+
+---
+
+### [#](#inxrange) inXRange
+
+▸ **inXRange**(`mouseX`, `useFinalPosition?`): `boolean`
+
+#### [#](#parameters-7) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mouseX` | `number` |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-8) Returns
+
+`boolean`
+
+#### [#](#defined-in-20) Defined in
+
+[elements/element.point.ts:68  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L68)
+
+---
+
+### [#](#inyrange) inYRange
+
+▸ **inYRange**(`mouseY`, `useFinalPosition?`): `boolean`
+
+#### [#](#parameters-8) Parameters
+
+| Name | Type |
+| --- | --- |
+| `mouseY` | `number` |
+| `useFinalPosition?` | `boolean` |
+
+#### [#](#returns-9) Returns
+
+`boolean`
+
+#### [#](#defined-in-21) Defined in
+
+[elements/element.point.ts:72  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L72)
+
+---
+
+### [#](#size) size
+
+▸ **size**(`options?`): `number`
+
+#### [#](#parameters-9) Parameters
+
+| Name | Type |
+| --- | --- |
+| `options?` | `Partial`<[`PointOptions`](/docs/latest/api/interfaces/PointOptions.html) & [`PointHoverOptions`](/docs/latest/api/interfaces/PointHoverOptions.html)> |
+
+#### [#](#returns-10) Returns
+
+`number`
+
+#### [#](#defined-in-22) Defined in
+
+[elements/element.point.ts:81  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/elements/element.point.ts#L81)
+
+---
+
+### [#](#tooltipposition) tooltipPosition
+
+▸ **tooltipPosition**(`useFinalPosition`): [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#parameters-10) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-11) Returns
+
+[`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#inherited-from-9) Inherited from
+
+Element.tooltipPosition
+
+#### [#](#defined-in-23) Defined in
+
+[core/core.element.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L17)

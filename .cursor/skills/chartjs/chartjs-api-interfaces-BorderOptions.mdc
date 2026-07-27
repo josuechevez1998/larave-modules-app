@@ -1,0 +1,83 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BorderOptions (/docs/latest/api/interfaces/BorderOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BorderOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BorderOptions.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-borderoptions) Interface: BorderOptions
+
+## [#](#properties) Properties
+
+### [#](#color) color
+
+• **color**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3010  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3010)
+
+---
+
+### [#](#dash) dash
+
+• **dash**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`[], [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+[]
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3005  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3005)
+
+---
+
+### [#](#dashoffset) dashOffset
+
+• **dashOffset**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3009  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3009)
+
+---
+
+### [#](#display) display
+
+• **display**: `boolean`
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3001  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3001)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:3011  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3011)
+
+---
+
+### [#](#z) z
+
+• **z**: `number`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:3012  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3012)

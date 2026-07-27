@@ -1,0 +1,60 @@
+---
+alwaysApply: false
+description: Documentación local (driverjs): Basic Usage - Driver.js (/docs/basic-usage). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Basic Usage - Driver.js
+
+> Fuente: https://driverjs.com/docs/basic-usage
+> Exportado: 2026-07-10 23:31 UTC
+
+# Basic Usage
+
+Once installed, you can import and start using the library. There are several different configuration options available to customize the library. You can find more details about the options in the [configuration section](/docs/configuration). Given below are the basic steps to get started.
+
+Here is a simple example of how to create a tour with multiple steps.
+
+Basic Tour Example
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver({
+  showProgress: true,
+  steps: [
+    { element: '.page-header', popover: { title: 'Title', description: 'Description' } },
+    { element: '.top-nav', popover: { title: 'Title', description: 'Description' } },
+    { element: '.sidebar', popover: { title: 'Title', description: 'Description' } },
+    { element: '.footer', popover: { title: 'Title', description: 'Description' } },
+  ]
+});
+
+driverObj.drive();
+```
+
+Show me an Example
+
+You can pass a single step configuration to the `highlight` method to highlight a single element. Given below is a simple example of how to highlight a single element.
+
+Highlighting a simple Element
+
+```
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
+const driverObj = driver();
+driverObj.highlight({
+  element: '#some-element',
+  popover: {
+    title: 'Title for the Popover',
+    description: 'Description for it',
+  },
+});
+```
+
+Show me an Example
+
+The same configuration passed to the `highlight` method can be used to create a tour. Given below is a simple example of how to create a tour with a single step.
+
+Examples above show the basic usage of the library. Find more details about the configuration options in the [configuration section](/docs/configuration) and the examples in the [examples section](/docs/examples).

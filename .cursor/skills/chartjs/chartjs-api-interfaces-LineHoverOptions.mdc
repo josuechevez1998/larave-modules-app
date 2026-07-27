@@ -1,0 +1,99 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LineHoverOptions (/docs/latest/api/interfaces/LineHoverOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LineHoverOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LineHoverOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-linehoveroptions) Interface: LineHoverOptions
+
+## [#](#hierarchy) Hierarchy
+
+- [`CommonHoverOptions`](/docs/latest/api/interfaces/CommonHoverOptions.html)
+
+  ↳ **`LineHoverOptions`**
+
+## [#](#properties) Properties
+
+### [#](#hoverbackgroundcolor) hoverBackgroundColor
+
+• **hoverBackgroundColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#inherited-from) Inherited from
+
+[CommonHoverOptions](/docs/latest/api/interfaces/CommonHoverOptions.html).[hoverBackgroundColor](/docs/latest/api/interfaces/CommonHoverOptions.html#hoverbackgroundcolor)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1834  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1834)
+
+---
+
+### [#](#hoverbordercapstyle) hoverBorderCapStyle
+
+• **hoverBorderCapStyle**: `CanvasLineCap`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1971  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1971)
+
+---
+
+### [#](#hoverbordercolor) hoverBorderColor
+
+• **hoverBorderColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#inherited-from-2) Inherited from
+
+[CommonHoverOptions](/docs/latest/api/interfaces/CommonHoverOptions.html).[hoverBorderColor](/docs/latest/api/interfaces/CommonHoverOptions.html#hoverbordercolor)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1833  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1833)
+
+---
+
+### [#](#hoverborderdash) hoverBorderDash
+
+• **hoverBorderDash**: `number`[]
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1972  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1972)
+
+---
+
+### [#](#hoverborderdashoffset) hoverBorderDashOffset
+
+• **hoverBorderDashOffset**: `number`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1973  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1973)
+
+---
+
+### [#](#hoverborderjoinstyle) hoverBorderJoinStyle
+
+• **hoverBorderJoinStyle**: `CanvasLineJoin`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1974  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1974)
+
+---
+
+### [#](#hoverborderwidth) hoverBorderWidth
+
+• **hoverBorderWidth**: `number`
+
+#### [#](#inherited-from-3) Inherited from
+
+[CommonHoverOptions](/docs/latest/api/interfaces/CommonHoverOptions.html).[hoverBorderWidth](/docs/latest/api/interfaces/CommonHoverOptions.html#hoverborderwidth)
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1832  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1832)

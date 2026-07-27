@@ -1,0 +1,47 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ComplexFillTarget (/docs/latest/api/interfaces/ComplexFillTarget.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ComplexFillTarget
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ComplexFillTarget.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-complexfilltarget) Interface: ComplexFillTarget
+
+## [#](#properties) Properties
+
+### [#](#above) above
+
+• **above**: [`Color`](/docs/latest/api/#color)
+
+If no color is set, the default color will be the background color of the chart.
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2265  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2265)
+
+---
+
+### [#](#below) below
+
+• **below**: [`Color`](/docs/latest/api/#color)
+
+Same as the above.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2269  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2269)
+
+---
+
+### [#](#target) target
+
+• **target**: [`FillTarget`](/docs/latest/api/#filltarget)
+
+The accepted values are the same as the filling mode values, so you may use absolute and relative dataset indexes and/or boundaries.
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2261  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2261)

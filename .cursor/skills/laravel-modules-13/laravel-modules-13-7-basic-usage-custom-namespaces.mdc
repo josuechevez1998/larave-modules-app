@@ -1,0 +1,49 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Custom Namespaces (/docs/7/basic-usage/custom-namespaces). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Custom Namespaces
+
+> Fuente: https://laravelmodules.com/docs/7/basic-usage/custom-namespaces
+> Exportado: 2026-07-23 19:57 UTC
+
+When you create a new module it also registers new custom namespace for `Lang`, `View` and `Config`. For example, if you create a new module named blog, it will also register new namespace/hint blog for that module. Then, you can use that namespace for calling `Lang`, `View` or `Config`. Following are some examples of its usage:
+
+Calling Lang:
+
+Copied!
+
+```
+Lang::get('blog::group.name');
+
+@trans('blog::group.name');
+
+Lang::get('blog::group.name');
+
+@trans('blog::group.name');
+```
+
+Calling View:
+
+Copied!
+
+```
+view('blog::index')
+
+view('blog::partials.sidebar')
+
+view('blog::index')
+
+view('blog::partials.sidebar')
+```
+
+Calling Config:
+
+Copied!
+
+```
+Config::get('blog.name')
+
+Config::get('blog.name')
+```

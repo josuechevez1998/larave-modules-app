@@ -1,0 +1,65 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipPosition (/docs/latest/api/interfaces/TooltipPosition.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipPosition
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipPosition.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-tooltipposition) Interface: TooltipPosition
+
+## [#](#hierarchy) Hierarchy
+
+- [`Point`](/docs/latest/api/interfaces/Point.html)
+
+  ↳ **`TooltipPosition`**
+
+## [#](#properties) Properties
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from) Inherited from
+
+[Point](/docs/latest/api/interfaces/Point.html).[x](/docs/latest/api/interfaces/Point.html#x)
+
+#### [#](#defined-in) Defined in
+
+[types/geometric.d.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L11)
+
+---
+
+### [#](#xalign) xAlign
+
+• `Optional` **xAlign**: [`TooltipXAlignment`](/docs/latest/api/#tooltipxalignment)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2658  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2658)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-2) Inherited from
+
+[Point](/docs/latest/api/interfaces/Point.html).[y](/docs/latest/api/interfaces/Point.html#y)
+
+#### [#](#defined-in-3) Defined in
+
+[types/geometric.d.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/geometric.d.ts#L12)
+
+---
+
+### [#](#yalign) yAlign
+
+• `Optional` **yAlign**: [`TooltipYAlignment`](/docs/latest/api/#tooltipyalignment)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2659  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2659)

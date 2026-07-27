@@ -1,0 +1,31 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Enumeration: DecimationAlgorithm (/docs/latest/api/enums/DecimationAlgorithm.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Enumeration: DecimationAlgorithm
+
+> Fuente: https://www.chartjs.org/docs/latest/api/enums/DecimationAlgorithm.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#enumeration-decimationalgorithm) Enumeration: DecimationAlgorithm
+
+## [#](#enumeration-members) Enumeration Members
+
+### [#](#lttb) lttb
+
+• **lttb** = `"lttb"`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2230  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2230)
+
+---
+
+### [#](#minmax) minmax
+
+• **minmax** = `"min-max"`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2231  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2231)

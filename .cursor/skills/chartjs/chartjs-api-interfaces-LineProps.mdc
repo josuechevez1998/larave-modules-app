@@ -1,0 +1,21 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LineProps (/docs/latest/api/interfaces/LineProps.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LineProps
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LineProps.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-lineprops) Interface: LineProps
+
+## [#](#properties) Properties
+
+### [#](#points) points
+
+• **points**: [`Point`](/docs/latest/api/interfaces/Point.html)[]
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1906  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1906)

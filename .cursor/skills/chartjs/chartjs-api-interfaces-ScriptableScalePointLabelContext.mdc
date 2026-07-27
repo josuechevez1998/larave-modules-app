@@ -1,0 +1,61 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ScriptableScalePointLabelContext (/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ScriptableScalePointLabelContext
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ScriptableScalePointLabelContext.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-scriptablescalepointlabelcontext) Interface: ScriptableScalePointLabelContext
+
+## [#](#properties) Properties
+
+### [#](#chart) chart
+
+• **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1397  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1397)
+
+---
+
+### [#](#index) index
+
+• **index**: `number`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1399  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1399)
+
+---
+
+### [#](#label) label
+
+• **label**: `string`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1400  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1400)
+
+---
+
+### [#](#scale) scale
+
+• **scale**: [`Scale`](/docs/latest/api/classes/Scale.html)<[`CoreScaleOptions`](/docs/latest/api/interfaces/CoreScaleOptions.html)>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1398  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1398)
+
+---
+
+### [#](#type) type
+
+• **type**: `string`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1401  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1401)

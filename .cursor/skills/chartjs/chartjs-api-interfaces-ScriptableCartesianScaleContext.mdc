@@ -1,0 +1,31 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ScriptableCartesianScaleContext (/docs/latest/api/interfaces/ScriptableCartesianScaleContext.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ScriptableCartesianScaleContext
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ScriptableCartesianScaleContext.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-scriptablecartesianscalecontext) Interface: ScriptableCartesianScaleContext
+
+## [#](#properties) Properties
+
+### [#](#scale) scale
+
+• **scale**: keyof [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3203  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3203)
+
+---
+
+### [#](#type) type
+
+• **type**: `string`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3204  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3204)

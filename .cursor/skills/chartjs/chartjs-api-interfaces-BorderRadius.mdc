@@ -1,0 +1,51 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: BorderRadius (/docs/latest/api/interfaces/BorderRadius.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: BorderRadius
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/BorderRadius.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-borderradius) Interface: BorderRadius
+
+## [#](#properties) Properties
+
+### [#](#bottomleft) bottomLeft
+
+• **bottomLeft**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2138  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2138)
+
+---
+
+### [#](#bottomright) bottomRight
+
+• **bottomRight**: `number`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2139  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2139)
+
+---
+
+### [#](#topleft) topLeft
+
+• **topLeft**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2136  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2136)
+
+---
+
+### [#](#topright) topRight
+
+• **topRight**: `number`
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2137  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2137)

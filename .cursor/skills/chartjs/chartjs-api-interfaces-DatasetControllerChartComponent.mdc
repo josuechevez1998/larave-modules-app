@@ -1,0 +1,142 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: DatasetControllerChartComponent (/docs/latest/api/interfaces/DatasetControllerChartComponent.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: DatasetControllerChartComponent
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/DatasetControllerChartComponent.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-datasetcontrollerchartcomponent) Interface: DatasetControllerChartComponent
+
+## [#](#hierarchy) Hierarchy
+
+- [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html)
+
+  ↳ **`DatasetControllerChartComponent`**
+
+## [#](#properties) Properties
+
+### [#](#defaultroutes) defaultRoutes
+
+• `Optional` **defaultRoutes**: `Object`
+
+#### [#](#index-signature) Index signature
+
+▪ [property: `string`]: `string`
+
+#### [#](#inherited-from) Inherited from
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[defaultRoutes](/docs/latest/api/interfaces/ChartComponent.html#defaultroutes)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1565  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1565)
+
+---
+
+### [#](#defaults) defaults
+
+• **defaults**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `dataElementType?` | `string` | `false` |
+| `datasetElementType?` | `string` | `false` |
+
+#### [#](#overrides) Overrides
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[defaults](/docs/latest/api/interfaces/ChartComponent.html#defaults)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:670  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L670)
+
+---
+
+### [#](#id) id
+
+• **id**: `string`
+
+#### [#](#inherited-from-2) Inherited from
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[id](/docs/latest/api/interfaces/ChartComponent.html#id)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1563  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1563)
+
+## [#](#methods) Methods
+
+### [#](#afterregister) afterRegister
+
+▸ `Optional` **afterRegister**(): `void`
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#inherited-from-3) Inherited from
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[afterRegister](/docs/latest/api/interfaces/ChartComponent.html#afterregister)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1568  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1568)
+
+---
+
+### [#](#afterunregister) afterUnregister
+
+▸ `Optional` **afterUnregister**(): `void`
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#inherited-from-4) Inherited from
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[afterUnregister](/docs/latest/api/interfaces/ChartComponent.html#afterunregister)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1570  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1570)
+
+---
+
+### [#](#beforeregister) beforeRegister
+
+▸ `Optional` **beforeRegister**(): `void`
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#inherited-from-5) Inherited from
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[beforeRegister](/docs/latest/api/interfaces/ChartComponent.html#beforeregister)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1567  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1567)
+
+---
+
+### [#](#beforeunregister) beforeUnregister
+
+▸ `Optional` **beforeUnregister**(): `void`
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#inherited-from-6) Inherited from
+
+[ChartComponent](/docs/latest/api/interfaces/ChartComponent.html).[beforeUnregister](/docs/latest/api/interfaces/ChartComponent.html#beforeunregister)
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1569  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1569)

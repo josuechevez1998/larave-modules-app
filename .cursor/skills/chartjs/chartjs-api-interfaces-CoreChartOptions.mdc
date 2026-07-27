@@ -1,0 +1,462 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: CoreChartOptions<TType> (/docs/latest/api/interfaces/CoreChartOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: CoreChartOptions<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/CoreChartOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-corechartoptions-ttype) Interface: CoreChartOptions<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#hierarchy) Hierarchy
+
+- [`ParsingOptions`](/docs/latest/api/interfaces/ParsingOptions.html)
+- [`AnimationOptions`](/docs/latest/api/#animationoptions)<`TType`>
+
+  ↳ **`CoreChartOptions`**
+
+  ↳↳ [`Defaults`](/docs/latest/api/interfaces/Defaults.html)
+
+## [#](#properties) Properties
+
+### [#](#animation) animation
+
+• **animation**: `false` | [`AnimationSpec`](/docs/latest/api/#animationspec)<`TType`> & { `onComplete?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` ; `onProgress?`: (`this`: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>, `event`: [`AnimationEvent`](/docs/latest/api/interfaces/AnimationEvent.html)) => `void` }
+
+#### [#](#inherited-from) Inherited from
+
+AnimationOptions.animation
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1768  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1768)
+
+---
+
+### [#](#animations) animations
+
+• **animations**: [`AnimationsSpec`](/docs/latest/api/#animationsspec)<`TType`>
+
+#### [#](#inherited-from-2) Inherited from
+
+AnimationOptions.animations
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1778  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1778)
+
+---
+
+### [#](#aspectratio) aspectRatio
+
+• **aspectRatio**: `number`
+
+Canvas aspect ratio (i.e. width / height, a value of 1 representing a square canvas). Note that this option is ignored if the height is explicitly defined either as attribute or via the style.
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1666  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1666)
+
+---
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+base background color
+
+**`See`**
+
+Defaults.backgroundColor
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1625  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1625)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+base border color
+
+**`See`**
+
+Defaults.borderColor
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1635  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1635)
+
+---
+
+### [#](#clip) clip
+
+• **clip**: `number` | `false` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+How to clip relative to chartArea. Positive value allows overflow, negative value clips that many pixels inside chartArea. 0 = clip at chartArea. Clipping can also be configured per side: `clip: {left: 5, top: false, right: -2, bottom: 0}`
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1614  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1614)
+
+---
+
+### [#](#color) color
+
+• **color**: [`Scriptable`](/docs/latest/api/#scriptable)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+base color
+
+**`See`**
+
+Defaults.color
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1620  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1620)
+
+---
+
+### [#](#datasets) datasets
+
+• **datasets**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `bar` | [`BarControllerDatasetOptions`](/docs/latest/api/interfaces/BarControllerDatasetOptions.html) |
+| `bubble` | [`BubbleControllerDatasetOptions`](/docs/latest/api/interfaces/BubbleControllerDatasetOptions.html) |
+| `doughnut` | [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html) |
+| `line` | [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html) & [`FillerControllerDatasetOptions`](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html) |
+| `pie` | [`DoughnutControllerDatasetOptions`](/docs/latest/api/interfaces/DoughnutControllerDatasetOptions.html) |
+| `polarArea` | [`PolarAreaControllerDatasetOptions`](/docs/latest/api/interfaces/PolarAreaControllerDatasetOptions.html) |
+| `radar` | [`RadarControllerDatasetOptions`](/docs/latest/api/interfaces/RadarControllerDatasetOptions.html) & [`FillerControllerDatasetOptions`](/docs/latest/api/interfaces/FillerControllerDatasetOptions.html) |
+| `scatter` | [`LineControllerDatasetOptions`](/docs/latest/api/interfaces/LineControllerDatasetOptions.html) |
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1601  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1601)
+
+---
+
+### [#](#devicepixelratio) devicePixelRatio
+
+• **devicePixelRatio**: `number`
+
+Override the window's default devicePixelRatio.
+
+**`Default`**
+
+window.devicePixelRatio
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1683  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1683)
+
+---
+
+### [#](#events) events
+
+• **events**: keyof `HTMLElementEventMap`[]
+
+The events option defines the browser events that the chart should listen to for tooltips and hovering.
+
+**`Default`**
+
+['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove']
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1693  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1693)
+
+---
+
+### [#](#font) font
+
+• **font**: `Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>
+
+base font
+
+**`See`**
+
+Defaults.font
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1645  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1645)
+
+---
+
+### [#](#hover) hover
+
+• **hover**: [`CoreInteractionOptions`](/docs/latest/api/interfaces/CoreInteractionOptions.html)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1687  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1687)
+
+---
+
+### [#](#hoverbackgroundcolor) hoverBackgroundColor
+
+• **hoverBackgroundColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+base hover background color
+
+**`See`**
+
+Defaults.hoverBackgroundColor
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:1630  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1630)
+
+---
+
+### [#](#hoverbordercolor) hoverBorderColor
+
+• **hoverBorderColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>>
+
+base hover border color
+
+**`See`**
+
+Defaults.hoverBorderColor
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:1640  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1640)
+
+---
+
+### [#](#indexaxis) indexAxis
+
+• **indexAxis**: `"x"` | `"y"`
+
+The base axis of the chart. 'x' for vertical charts and 'y' for horizontal charts.
+
+**`Default`**
+
+'x'
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:1609  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1609)
+
+---
+
+### [#](#interaction) interaction
+
+• **interaction**: [`CoreInteractionOptions`](/docs/latest/api/interfaces/CoreInteractionOptions.html)
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:1685  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1685)
+
+---
+
+### [#](#layout) layout
+
+• **layout**: `Partial`<{ `autoPadding`: `boolean` ; `padding`: [`Scriptable`](/docs/latest/api/#scriptable)<`Padding`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`TType`>> }>
+
+#### [#](#defined-in-17) Defined in
+
+[types/index.d.ts:1705  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1705)
+
+---
+
+### [#](#locale) locale
+
+• **locale**: `string`
+
+Locale used for number formatting (using `Intl.NumberFormat`).
+
+**`Default`**
+
+user's browser setting
+
+#### [#](#defined-in-18) Defined in
+
+[types/index.d.ts:1672  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1672)
+
+---
+
+### [#](#maintainaspectratio) maintainAspectRatio
+
+• **maintainAspectRatio**: `boolean`
+
+Maintain the original canvas aspect ratio (width / height) when resizing. For this option to work properly the chart must be in its own dedicated container.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-19) Defined in
+
+[types/index.d.ts:1655  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1655)
+
+---
+
+### [#](#normalized) normalized
+
+• **normalized**: `boolean`
+
+Chart.js is fastest if you provide data with indices that are unique, sorted, and consistent across datasets and provide the normalized: true option to let Chart.js know that you have done so.
+
+#### [#](#inherited-from-3) Inherited from
+
+[ParsingOptions](/docs/latest/api/interfaces/ParsingOptions.html).[normalized](/docs/latest/api/interfaces/ParsingOptions.html#normalized)
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:63  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L63)
+
+---
+
+### [#](#parsing) parsing
+
+• **parsing**: `false` | { `[key: string]`: `string`; }
+
+How to parse the dataset. The parsing can be disabled by specifying parsing: false at chart options or dataset. If parsing is disabled, data must be sorted and in the formats the associated chart type and scales use internally.
+
+#### [#](#inherited-from-4) Inherited from
+
+[ParsingOptions](/docs/latest/api/interfaces/ParsingOptions.html).[parsing](/docs/latest/api/interfaces/ParsingOptions.html#parsing)
+
+#### [#](#defined-in-21) Defined in
+
+[types/index.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L54)
+
+---
+
+### [#](#resizedelay) resizeDelay
+
+• **resizeDelay**: `number`
+
+Delay the resize update by give amount of milliseconds. This can ease the resize process by debouncing update of the elements.
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-22) Defined in
+
+[types/index.d.ts:1660  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1660)
+
+---
+
+### [#](#responsive) responsive
+
+• **responsive**: `boolean`
+
+Resizes the chart canvas when its container does (important note...).
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-23) Defined in
+
+[types/index.d.ts:1650  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1650)
+
+---
+
+### [#](#transitions) transitions
+
+• **transitions**: [`TransitionsSpec`](/docs/latest/api/#transitionsspec)<`TType`>
+
+#### [#](#inherited-from-5) Inherited from
+
+AnimationOptions.transitions
+
+#### [#](#defined-in-24) Defined in
+
+[types/index.d.ts:1779  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1779)
+
+## [#](#methods) Methods
+
+### [#](#onclick) onClick
+
+▸ **onClick**(`event`, `elements`, `chart`): `void`
+
+Called if the event is of type 'mouseup' or 'click'. Passed the event, an array of active elements, and the chart.
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `event` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `elements` | [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[] |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in-25) Defined in
+
+[types/index.d.ts:1703  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1703)
+
+---
+
+### [#](#onhover) onHover
+
+▸ **onHover**(`event`, `elements`, `chart`): `void`
+
+Called when any of the events fire. Passed the event, an array of active elements (bars, points, etc), and the chart.
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `event` | [`ChartEvent`](/docs/latest/api/interfaces/ChartEvent.html) |
+| `elements` | [`ActiveElement`](/docs/latest/api/interfaces/ActiveElement.html)[] |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-26) Defined in
+
+[types/index.d.ts:1698  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1698)
+
+---
+
+### [#](#onresize) onResize
+
+▸ **onResize**(`chart`, `size`): `void`
+
+Called when a resize occurs. Gets passed two arguments: the chart instance and the new size.
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> |
+| `size` | `Object` |
+| `size.height` | `number` |
+| `size.width` | `number` |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-27) Defined in
+
+[types/index.d.ts:1677  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1677)

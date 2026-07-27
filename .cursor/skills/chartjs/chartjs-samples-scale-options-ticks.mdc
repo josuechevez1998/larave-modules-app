@@ -1,0 +1,182 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Tick Configuration (/docs/latest/samples/scale-options/ticks.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Tick Configuration
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/scale-options/ticks.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#tick-configuration) Tick Configuration
+
+This sample shows how to use different tick features to control how tick labels are shown on the X axis. These features include:
+
+- Multi-line labels
+- Filtering labels
+- Changing the tick color
+- Changing the tick alignment for the X axis
+
+config
+setup
+actions
+
+const config = {
+type: 'line',
+data: data,
+options: {
+responsive: true,
+plugins: {
+title: {
+display: true,
+text: 'Chart with Tick Configuration'
+}
+},
+scales: {
+x: {
+ticks: {
+// For a category axis, the val is the index so the lookup via getLabelForValue is needed
+callback: function(val, index) {
+// Hide every 2nd tick label
+return index % 2 === 0 ? this.getLabelForValue(val) : '';
+},
+color: 'red',
+}
+}
+}
+},
+};
+
+```
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart with Tick Configuration'
+      }
+    },
+    scales: {
+      x: {
+        ticks: {
+          // For a category axis, the val is the index so the lookup via getLabelForValue is needed
+          callback: function(val, index) {
+            // Hide every 2nd tick label
+            return index % 2 === 0 ? this.getLabelForValue(val) : '';
+          },
+          color: 'red',
+        }
+      }
+    }
+  },
+};
+```
+
+const DATA\_COUNT = 12;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: 0, max: 100};
+const data = {
+labels: [['June', '2015'], 'July', 'August', 'September', 'October', 'November', 'December', ['January', '2016'], 'February', 'March', 'April', 'May'],
+datasets: [
+{
+label: 'Dataset 1',
+data: Utils.numbers(NUMBER\_CFG),
+fill: false,
+borderColor: Utils.CHART\_COLORS.red,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.red, 0.5),
+},
+{
+label: 'Dataset 2',
+data: Utils.numbers(NUMBER\_CFG),
+fill: false,
+borderColor: Utils.CHART\_COLORS.blue,
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.blue, 0.5),
+}
+]
+};
+
+```
+const DATA_COUNT = 12;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+const data = {
+  labels: [['June', '2015'], 'July', 'August', 'September', 'October', 'November', 'December', ['January', '2016'], 'February', 'March', 'April', 'May'],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      fill: false,
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+    },
+    {
+      label: 'Dataset 2',
+      data: Utils.numbers(NUMBER_CFG),
+      fill: false,
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+    }
+  ]
+};
+```
+
+const actions = [
+{
+name: 'Alignment: start',
+handler(chart) {
+chart.options.scales.x.ticks.align = 'start';
+chart.update();
+}
+},
+{
+name: 'Alignment: center (default)',
+handler(chart) {
+chart.options.scales.x.ticks.align = 'center';
+chart.update();
+}
+},
+{
+name: 'Alignment: end',
+handler(chart) {
+chart.options.scales.x.ticks.align = 'end';
+chart.update();
+}
+},
+];
+
+```
+const actions = [
+  {
+    name: 'Alignment: start',
+    handler(chart) {
+      chart.options.scales.x.ticks.align = 'start';
+      chart.update();
+    }
+  },
+  {
+    name: 'Alignment: center (default)',
+    handler(chart) {
+      chart.options.scales.x.ticks.align = 'center';
+      chart.update();
+    }
+  },
+  {
+    name: 'Alignment: end',
+    handler(chart) {
+      chart.options.scales.x.ticks.align = 'end';
+      chart.update();
+    }
+  },
+];
+```
+
+## [#](#docs) Docs
+
+- [Line](/docs/latest/charts/line.html)
+- [Options](/docs/latest/general/options.html)
+  - [Scriptable Options](/docs/latest/general/options.html#scriptable-options)
+    - [Tick Context](/docs/latest/general/options.html#tick)
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)
+- [Axes Styling](/docs/latest/axes/styling.html)
+  - [Tick Configuration](/docs/latest/axes/styling.html#tick-configuration)

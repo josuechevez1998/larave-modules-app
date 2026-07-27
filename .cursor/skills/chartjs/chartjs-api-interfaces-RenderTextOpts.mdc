@@ -1,0 +1,165 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: RenderTextOpts (/docs/latest/api/interfaces/RenderTextOpts.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: RenderTextOpts
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/RenderTextOpts.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-rendertextopts) Interface: RenderTextOpts
+
+## [#](#properties) Properties
+
+### [#](#backdrop) backdrop
+
+• `Optional` **backdrop**: [`BackdropOptions`](/docs/latest/api/interfaces/BackdropOptions.html)
+
+Dimensions for drawing the label backdrop
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1470  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1470)
+
+---
+
+### [#](#color) color
+
+• `Optional` **color**: [`Color`](/docs/latest/api/#color)
+
+The fill color of the text. If unset, the existing
+fillStyle property of the canvas is unchanged.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1409  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1409)
+
+---
+
+### [#](#decorationwidth) decorationWidth
+
+• `Optional` **decorationWidth**: `number`
+
+The width of the strikethrough / underline
+
+**`Default`**
+
+2
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1415  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1415)
+
+---
+
+### [#](#maxwidth) maxWidth
+
+• `Optional` **maxWidth**: `number`
+
+The max width of the text in pixels
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1420  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1420)
+
+---
+
+### [#](#rotation) rotation
+
+• `Optional` **rotation**: `number`
+
+A rotation to be applied to the canvas
+This is applied after the translation is applied
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1426  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1426)
+
+---
+
+### [#](#strikethrough) strikethrough
+
+• `Optional` **strikethrough**: `boolean`
+
+Apply a strikethrough effect to the text
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1431  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1431)
+
+---
+
+### [#](#strokecolor) strokeColor
+
+• `Optional` **strokeColor**: [`Color`](/docs/latest/api/#color)
+
+The color of the text stroke. If unset, the existing
+strokeStyle property of the context is unchanged
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:1437  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1437)
+
+---
+
+### [#](#strokewidth) strokeWidth
+
+• `Optional` **strokeWidth**: `number`
+
+The text stroke width. If unset, the existing
+lineWidth property of the context is unchanged
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:1443  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1443)
+
+---
+
+### [#](#textalign) textAlign
+
+• `Optional` **textAlign**: `CanvasTextAlign`
+
+The text alignment to use. If unset, the existing
+textAlign property of the context is unchanged
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:1449  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1449)
+
+---
+
+### [#](#textbaseline) textBaseline
+
+• `Optional` **textBaseline**: `CanvasTextBaseline`
+
+The text baseline to use. If unset, the existing
+textBaseline property of the context is unchanged
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:1455  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1455)
+
+---
+
+### [#](#translation) translation
+
+• `Optional` **translation**: [`number`, `number`]
+
+If specified, a translation to apply to the context
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:1460  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1460)
+
+---
+
+### [#](#underline) underline
+
+• `Optional` **underline**: `boolean`
+
+Underline the text
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:1465  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1465)

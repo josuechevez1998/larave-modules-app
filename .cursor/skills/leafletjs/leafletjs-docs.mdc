@@ -1,0 +1,28 @@
+---
+alwaysApply: false
+description: Índice de documentación local (leafletjs) exportada desde leafletjs.com.
+---
+
+# leafletjs — documentación local
+
+Exportada el **2026-07-11 18:52 UTC** desde [https://leafletjs.com/](https://leafletjs.com/).
+
+Carpeta: `.cursor/skills/leafletjs/`
+
+## Cómo actualizar
+
+```bash
+php artisan cursor:make:documentation https://leafletjs.com/ --prefix=leafletjs
+```
+
+## Índice
+
+- [Leaflet - a JavaScript library for interactive maps](leafletjs-index.mdc)
+- [Tutorials - Leaflet - a JavaScript library for interactive maps](leafletjs-examples.html.mdc)
+- [Documentation - Leaflet - a JavaScript library for interactive maps](leafletjs-reference.html.mdc)
+- [Download - Leaflet - a JavaScript library for interactive maps](leafletjs-download.html.mdc)
+- [Plugins - Leaflet - a JavaScript library for interactive maps](leafletjs-plugins.html.mdc)
+
+## No exportadas
+
+- Ninguna.

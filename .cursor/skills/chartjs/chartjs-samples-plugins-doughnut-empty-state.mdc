@@ -1,0 +1,125 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Doughnut Empty State (/docs/latest/samples/plugins/doughnut-empty-state.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Doughnut Empty State
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/plugins/doughnut-empty-state.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#doughnut-empty-state) Doughnut Empty State
+
+config
+plugin
+data
+
+const config = {
+type: 'doughnut',
+data: data,
+options: {
+plugins: {
+emptyDoughnut: {
+color: 'rgba(255, 128, 0, 0.5)',
+width: 2,
+radiusDecrease: 20
+}
+}
+},
+plugins: [plugin]
+};
+
+```
+const config = {
+  type: 'doughnut',
+  data: data,
+  options: {
+    plugins: {
+      emptyDoughnut: {
+        color: 'rgba(255, 128, 0, 0.5)',
+        width: 2,
+        radiusDecrease: 20
+      }
+    }
+  },
+  plugins: [plugin]
+};
+```
+
+const plugin = {
+id: 'emptyDoughnut',
+afterDraw(chart, args, options) {
+const {datasets} = chart.data;
+const {color, width, radiusDecrease} = options;
+let hasData = false;
+for (let i = 0; i < datasets.length; i += 1) {
+const dataset = datasets[i];
+hasData |= dataset.data.length > 0;
+}
+if (!hasData) {
+const {chartArea: {left, top, right, bottom}, ctx} = chart;
+const centerX = (left + right) / 2;
+const centerY = (top + bottom) / 2;
+const r = Math.min(right - left, bottom - top) / 2;
+ctx.beginPath();
+ctx.lineWidth = width || 2;
+ctx.strokeStyle = color || 'rgba(255, 128, 0, 0.5)';
+ctx.arc(centerX, centerY, (r - radiusDecrease || 0), 0, 2 \* Math.PI);
+ctx.stroke();
+}
+}
+};
+
+```
+const plugin = {
+  id: 'emptyDoughnut',
+  afterDraw(chart, args, options) {
+    const {datasets} = chart.data;
+    const {color, width, radiusDecrease} = options;
+    let hasData = false;
+    for (let i = 0; i < datasets.length; i += 1) {
+      const dataset = datasets[i];
+      hasData |= dataset.data.length > 0;
+    }
+    if (!hasData) {
+      const {chartArea: {left, top, right, bottom}, ctx} = chart;
+      const centerX = (left + right) / 2;
+      const centerY = (top + bottom) / 2;
+      const r = Math.min(right - left, bottom - top) / 2;
+      ctx.beginPath();
+      ctx.lineWidth = width || 2;
+      ctx.strokeStyle = color || 'rgba(255, 128, 0, 0.5)';
+      ctx.arc(centerX, centerY, (r - radiusDecrease || 0), 0, 2 * Math.PI);
+      ctx.stroke();
+    }
+  }
+};
+```
+
+const data = {
+labels: [],
+datasets: [
+{
+label: 'Dataset 1',
+data: []
+}
+]
+};
+
+```
+const data = {
+  labels: [],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: []
+    }
+  ]
+};
+```
+
+## [#](#docs) Docs
+
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)
+- [Plugins](/docs/latest/developers/plugins.html)
+- [Doughnut and Pie Charts](/docs/latest/charts/doughnut.html)

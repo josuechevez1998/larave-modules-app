@@ -1,0 +1,115 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Derived Chart Type (/docs/latest/samples/advanced/derived-chart-type.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Derived Chart Type
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/advanced/derived-chart-type.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#derived-chart-type) Derived Chart Type
+
+config
+setup
+
+const config = {
+type: 'derivedBubble',
+data: data,
+options: {
+responsive: true,
+plugins: {
+title: {
+display: true,
+text: 'Derived Chart Type'
+},
+}
+}
+};
+
+```
+const config = {
+  type: 'derivedBubble',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Derived Chart Type'
+      },
+    }
+  }
+};
+```
+
+const DATA\_COUNT = 7;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: -100, max: 100, rmin: 1, rmax: 20};
+const data = {
+datasets: [
+{
+label: 'My First dataset',
+backgroundColor: Utils.transparentize(Utils.CHART\_COLORS.blue, 0.5),
+borderColor: Utils.CHART\_COLORS.blue,
+borderWidth: 1,
+boxStrokeStyle: 'red',
+data: Utils.bubbles(NUMBER\_CFG)
+}
+],
+};
+
+```
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100, rmin: 1, rmax: 20};
+const data = {
+  datasets: [
+    {
+      label: 'My First dataset',
+      backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+      borderColor: Utils.CHART_COLORS.blue,
+      borderWidth: 1,
+      boxStrokeStyle: 'red',
+      data: Utils.bubbles(NUMBER_CFG)
+    }
+  ],
+};
+```
+
+## [#](#derivedbubble-implementation) DerivedBubble Implementation
+
+```
+import {Chart, BubbleController} from 'chart.js';
+class Custom extends BubbleController {
+  draw() {
+    // Call bubble controller method to draw all the points
+    super.draw(arguments);
+    // Now we can do some custom drawing for this dataset.
+    // Here we'll draw a box around the first point in each dataset,
+    // using `boxStrokeStyle` dataset option for color
+    var meta = this.getMeta();
+    var pt0 = meta.data[0];
+    const {x, y} = pt0.getProps(['x', 'y']);
+    const {radius} = pt0.options;
+    var ctx = this.chart.ctx;
+    ctx.save();
+    ctx.strokeStyle = this.options.boxStrokeStyle;
+    ctx.lineWidth = 1;
+    ctx.strokeRect(x - radius, y - radius, 2 * radius, 2 * radius);
+    ctx.restore();
+  }
+}
+Custom.id = 'derivedBubble';
+Custom.defaults = {
+  // Custom defaults. Bubble defaults are inherited.
+  boxStrokeStyle: 'red'
+};
+// Overrides are only inherited, but not merged if defined
+// Custom.overrides = Chart.overrides.bubble;
+// Stores the controller so that the chart initialization routine can look it up
+Chart.register(Custom);
+```
+
+## [#](#docs) Docs
+
+- [Bubble Chart](/docs/latest/charts/bubble.html)
+- [New Charts](/docs/latest/developers/charts.html)

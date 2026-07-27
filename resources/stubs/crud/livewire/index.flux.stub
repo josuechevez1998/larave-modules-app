@@ -1,0 +1,37 @@
+<div>
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <flux:heading size="lg">{{ modelTitle }}</flux:heading>
+        <flux:button href="{{ route('{{ route }}.create') }}" wire:navigate variant="primary">
+            {{ __('Create') }}
+        </flux:button>
+    </div>
+
+    <div class="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-700">
+        <table class="min-w-full divide-y divide-zinc-200 text-sm dark:divide-zinc-700">
+            <thead class="bg-zinc-50 dark:bg-zinc-800">
+                <tr>
+                    {{-- columns --}}
+                    <th class="px-3 py-2 text-left font-medium">{{ __('Actions') }}</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
+                @forelse ($items as $item)
+                    <tr>
+                        {{-- cells --}}
+                        <td class="px-3 py-2">
+                            <flux:button size="sm" href="{{ route('{{ route }}.edit', $item) }}" wire:navigate variant="ghost">
+                                {{ __('Edit') }}
+                            </flux:button>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="99" class="px-3 py-6 text-center text-zinc-500">{{ __('No records found.') }}</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-4">{{ $items->links() }}</div>
+</div>

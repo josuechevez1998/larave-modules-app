@@ -1,0 +1,375 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Facade Methods (/docs/13/advanced/facade-methods). Referencia nwidart/laravel-modules v13.
+---
+
+# Facade Methods
+
+> Fuente: https://laravelmodules.com/docs/13/advanced/facade-methods
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Retrieving Modules](#retrieving-modules)
+- [Get All Modules](#get-all-modules)
+- [Get All Enabled Modules](#get-all-enabled-modules)
+- [Get All Disabled Modules](#get-all-disabled-modules)
+- [Get Ordered Modules](#get-ordered-modules)
+- [Get Modules as a Collection](#get-modules-as-a-collection)
+- [Filter by Status](#filter-by-status)
+- [Scan for Modules](#scan-for-modules)
+- [Finding a Module](#finding-a-module)
+- [Find by Name](#find-by-name)
+- [Find or Fail](#find-or-fail)
+- [Check Existence](#check-existence)
+- [Checking Module Status](#checking-module-status)
+- [Enabling and Disabling](#enabling-and-disabling)
+- [Counting Modules](#counting-modules)
+- [Path Methods](#path-methods)
+- [CLI Session Helpers](#cli-session-helpers)
+- [Installing and Updating](#installing-and-updating)
+- [Delete a Module](#delete-a-module)
+- [Configuration](#configuration)
+- [Macros](#macros)
+- [Practical Examples](#practical-examples)
+- [Render a Navigation Menu from Enabled Modules](#render-a-navigation-menu-from-enabled-modules)
+- [Check a Module Before Using Its Features](#check-a-module-before-using-its-features)
+- [Get Scan Paths](#get-scan-paths)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Facade Methods
+
+---
+
+- [Retrieving Modules](#retrieving-modules)
+- [Get All Modules](#get-all-modules)
+- [Get All Enabled Modules](#get-all-enabled-modules)
+- [Get All Disabled Modules](#get-all-disabled-modules)
+- [Get Ordered Modules](#get-ordered-modules)
+- [Get Modules as a Collection](#get-modules-as-a-collection)
+- [Filter by Status](#filter-by-status)
+- [Scan for Modules](#scan-for-modules)
+- [Finding a Module](#finding-a-module)
+- [Find by Name](#find-by-name)
+- [Find or Fail](#find-or-fail)
+- [Check Existence](#check-existence)
+- [Checking Module Status](#checking-module-status)
+- [Enabling and Disabling](#enabling-and-disabling)
+- [Counting Modules](#counting-modules)
+- [Path Methods](#path-methods)
+- [CLI Session Helpers](#cli-session-helpers)
+- [Installing and Updating](#installing-and-updating)
+- [Delete a Module](#delete-a-module)
+- [Configuration](#configuration)
+- [Macros](#macros)
+- [Practical Examples](#practical-examples)
+- [Render a Navigation Menu from Enabled Modules](#render-a-navigation-menu-from-enabled-modules)
+- [Check a Module Before Using Its Features](#check-a-module-before-using-its-features)
+- [Get Scan Paths](#get-scan-paths)
+
+The `Module` facade provides static access to the module repository. Import it at the top of your file:
+
+```
+use Nwidart\Modules\Facades\Module;
+
+use Nwidart\Modules\Facades\Module;
+```
+
+## [#](#retrieving-modules)Retrieving Modules
+
+### [#](#get-all-modules)Get All Modules
+
+Returns an array of all modules (enabled and disabled):
+
+```
+$modules = Module::all();
+
+$modules = Module::all();
+```
+
+### [#](#get-all-enabled-modules)Get All Enabled Modules
+
+```
+$activeModules = Module::allEnabled();
+
+$activeModules = Module::allEnabled();
+```
+
+### [#](#get-all-disabled-modules)Get All Disabled Modules
+
+```
+$inactiveModules = Module::allDisabled();
+
+$inactiveModules = Module::allDisabled();
+```
+
+### [#](#get-ordered-modules)Get Ordered Modules
+
+Returns modules sorted by the `priority` field in `module.json`. Lower numbers come first:
+
+```
+$modules = Module::getOrdered();          // ascending (default)
+
+$modules = Module::getOrdered('desc');    // descending
+
+$modules = Module::getOrdered();          // ascending (default)
+$modules = Module::getOrdered('desc');    // descending
+```
+
+### [#](#get-modules-as-a-collection)Get Modules as a Collection
+
+```
+$collection = Module::toCollection();
+
+$collection = Module::collections(); // enabled modules only
+
+$collection = Module::toCollection();
+$collection = Module::collections(); // enabled modules only
+```
+
+### [#](#filter-by-status)Filter by Status
+
+Get modules by status (1 = enabled, 0 = disabled):
+
+```
+$enabled  = Module::getByStatus(1);
+
+$disabled = Module::getByStatus(0);
+
+$enabled  = Module::getByStatus(1);
+$disabled = Module::getByStatus(0);
+```
+
+### [#](#scan-for-modules)Scan for Modules
+
+Scan the filesystem for modules (re-reads the disk, bypassing any cache):
+
+```
+$modules = Module::scan();
+
+$modules = Module::scan();
+```
+
+## [#](#finding-a-module)Finding a Module
+
+### [#](#find-by-name)Find by Name
+
+Returns the `Module` instance or `null` if not found:
+
+```
+$module = Module::find('blog');
+
+$module = Module::find('blog');
+```
+
+### [#](#find-or-fail)Find or Fail
+
+Returns the `Module` instance or throws `Nwidart\Modules\Exceptions\ModuleNotFoundException`:
+
+```
+$module = Module::findOrFail('blog');
+
+$module = Module::findOrFail('blog');
+```
+
+### [#](#check-existence)Check Existence
+
+```
+if (Module::has('blog')) {
+
+// module exists
+
+}
+
+if (Module::has('blog')) {
+    // module exists
+}
+```
+
+## [#](#checking-module-status)Checking Module Status
+
+```
+Module::isEnabled('Blog');   // bool
+
+Module::isDisabled('Blog');  // bool
+
+Module::isEnabled('Blog');   // bool
+Module::isDisabled('Blog');  // bool
+```
+
+## [#](#enabling-and-disabling)Enabling and Disabling
+
+```
+Module::enable('Blog');
+
+Module::disable('Blog');
+
+Module::enable('Blog');
+Module::disable('Blog');
+```
+
+## [#](#counting-modules)Counting Modules
+
+```
+$total = Module::count();
+
+$total = Module::count();
+```
+
+## [#](#path-methods)Path Methods
+
+```
+Module::getPath();                  // path to the Modules root directory
+
+Module::getModulePath('Blog');      // path to the Blog module directory
+
+Module::assetPath('Blog');          // path to the Blog module's public assets
+
+Module::getAssetsPath();            // path to the modules asset directory
+
+Module::asset('blog:img/logo.png'); // URL to a module asset
+
+Module::getPath();                  // path to the Modules root directory
+Module::getModulePath('Blog');      // path to the Blog module directory
+Module::assetPath('Blog');          // path to the Blog module's public assets
+Module::getAssetsPath();            // path to the modules asset directory
+Module::asset('blog:img/logo.png'); // URL to a module asset
+```
+
+## [#](#cli-session-helpers)CLI Session Helpers
+
+These methods track which module is "in use" for the current CLI session, allowing you to omit the module name on generator commands after running `module:use`:
+
+```
+Module::setUsed('Blog');
+
+Module::getUsedNow();   // returns 'Blog'
+
+Module::getUsedStoragePath(); // path to the .modulesuse session file
+
+Module::setUsed('Blog');
+Module::getUsedNow();   // returns 'Blog'
+Module::getUsedStoragePath(); // path to the .modulesuse session file
+```
+
+## [#](#installing-and-updating)Installing and Updating
+
+Install a module from a Composer package name:
+
+```
+Module::install('nwidart/article-module');
+
+Module::install('nwidart/article-module');
+```
+
+Update a module's Composer dependencies:
+
+```
+Module::update('Blog');
+
+Module::update('Blog');
+```
+
+## [#](#delete-a-module)Delete a Module
+
+Permanently deletes the module directory:
+
+```
+Module::delete('Blog');
+
+Module::delete('Blog');
+```
+
+## [#](#configuration)Configuration
+
+Read values from the laravel-modules package configuration:
+
+```
+Module::config('composer.vendor');  // reads config/modules.php
+
+Module::config('composer.vendor');  // reads config/modules.php
+```
+
+## [#](#macros)Macros
+
+Extend the module repository with custom methods:
+
+```
+Module::macro('enabledCount', function () {
+
+return count($this->allEnabled());
+
+});
+
+// Call it
+
+$count = Module::enabledCount();
+
+Module::macro('enabledCount', function () {
+    return count($this->allEnabled());
+});
+
+// Call it
+$count = Module::enabledCount();
+```
+
+## [#](#practical-examples)Practical Examples
+
+### [#](#render-a-navigation-menu-from-enabled-modules)Render a Navigation Menu from Enabled Modules
+
+```
+@foreach (Module::allEnabled() as $module)
+
+<a href="{{ route($module->getLowerName() . '.index') }}">
+
+{{ $module->getName() }}
+
+</a>
+
+@endforeach
+
+@foreach (Module::allEnabled() as $module)
+    <a href="{{ route($module->getLowerName() . '.index') }}">
+        {{ $module->getName() }}
+    </a>
+@endforeach
+```
+
+### [#](#check-a-module-before-using-its-features)Check a Module Before Using Its Features
+
+```
+if (Module::isEnabled('Shop')) {
+
+$cartCount = app(\Modules\Shop\Services\CartService::class)->count();
+
+}
+
+if (Module::isEnabled('Shop')) {
+    $cartCount = app(\Modules\Shop\Services\CartService::class)->count();
+}
+```
+
+### [#](#get-scan-paths)Get Scan Paths
+
+```
+$paths = Module::getScanPaths(); // directories scanned for modules
+
+$paths = Module::getScanPaths(); // directories scanned for modules
+```
+
+---
+
+[Previous page: 
+←
+Artisan Commands](/docs/13/advanced/artisan-commands)
+[Next page: 
+Console Commands
+ →](/docs/13/advanced/module-console-commands)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/advanced/facade-methods.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/advanced/facade-methods&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

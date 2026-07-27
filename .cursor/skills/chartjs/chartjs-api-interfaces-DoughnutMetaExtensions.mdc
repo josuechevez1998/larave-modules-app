@@ -1,0 +1,21 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: DoughnutMetaExtensions (/docs/latest/api/interfaces/DoughnutMetaExtensions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: DoughnutMetaExtensions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/DoughnutMetaExtensions.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-doughnutmetaextensions) Interface: DoughnutMetaExtensions
+
+## [#](#properties) Properties
+
+### [#](#total) total
+
+• **total**: `number`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:356  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L356)

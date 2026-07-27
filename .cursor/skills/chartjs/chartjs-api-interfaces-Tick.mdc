@@ -1,0 +1,41 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: Tick (/docs/latest/api/interfaces/Tick.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: Tick
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/Tick.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-tick) Interface: Tick
+
+## [#](#properties) Properties
+
+### [#](#label) label
+
+• `Optional` **label**: `string` | `string`[]
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1166  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1166)
+
+---
+
+### [#](#major) major
+
+• `Optional` **major**: `boolean`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1167  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1167)
+
+---
+
+### [#](#value) value
+
+• **value**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1165  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1165)

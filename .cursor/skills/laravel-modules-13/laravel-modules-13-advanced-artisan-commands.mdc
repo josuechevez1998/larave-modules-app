@@ -1,0 +1,796 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Artisan Commands (/docs/13/advanced/artisan-commands). Referencia nwidart/laravel-modules v13.
+---
+
+# Artisan Commands
+
+> Fuente: https://laravelmodules.com/docs/13/advanced/artisan-commands
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Utility commands](#utility-commands)
+- [module:clear-compiled](#moduleclear-compiled)
+- [module:composer-update](#modulecomposer-update)
+- [module:dump](#moduledump)
+- [module:use](#moduleuse)
+- [module:unuse](#moduleunuse)
+- [module:list](#modulelist)
+- [module:show-model](#moduleshow-model)
+- [module:migrate](#modulemigrate)
+- [module:migrate-rollback](#modulemigrate-rollback)
+- [module:migrate-refresh](#modulemigrate-refresh)
+- [module:migrate-reset Blog](#modulemigrate-reset-blog)
+- [module:seed](#moduleseed)
+- [module:publish-migration](#modulepublish-migration)
+- [module:publish-config](#modulepublish-config)
+- [module:publish-translation](#modulepublish-translation)
+- [module:lang](#modulelang)
+- [module:enable](#moduleenable)
+- [module:delete](#moduledelete)
+- [module:disable](#moduledisable)
+- [module:update](#moduleupdate)
+- [Generator commands](#generator-commands)
+- [module:make](#modulemake)
+- [module:make](#modulemake)
+- [module:make-action](#modulemake-action)
+- [module:make-cast](#modulemake-cast)
+- [module:make-channel](#modulemake-channel)
+- [module:make-class](#modulemake-class)
+- [module:make-command](#modulemake-command)
+- [module:make-component](#modulemake-component)
+- [module:make-component-view](#modulemake-component-view)
+- [module:make-enum](#modulemake-enum)
+- [module:make-event-provider](#modulemake-event-provider)
+- [module:make-exception](#modulemake-exception)
+- [module:make-helper](#modulemake-helper)
+- [module:make-interface](#modulemake-interface)
+- [module:make-observer](#modulemake-observer)
+- [module:make-repository](#modulemake-repository)
+- [module:make-migration](#modulemake-migration)
+- [module:make-scope](#modulemake-scope)
+- [module:make-service](#modulemake-service)
+- [module:make-seed](#modulemake-seed)
+- [module:make-trait](#modulemake-trait)
+- [module:make-controller](#modulemake-controller)
+- [module:make-model](#modulemake-model)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Artisan Commands
+
+---
+
+- [Utility commands](#utility-commands)
+- [module:clear-compiled](#moduleclear-compiled)
+- [module:composer-update](#modulecomposer-update)
+- [module:dump](#moduledump)
+- [module:use](#moduleuse)
+- [module:unuse](#moduleunuse)
+- [module:list](#modulelist)
+- [module:show-model](#moduleshow-model)
+- [module:migrate](#modulemigrate)
+- [module:migrate-rollback](#modulemigrate-rollback)
+- [module:migrate-refresh](#modulemigrate-refresh)
+- [module:migrate-reset Blog](#modulemigrate-reset-blog)
+- [module:seed](#moduleseed)
+- [module:publish-migration](#modulepublish-migration)
+- [module:publish-config](#modulepublish-config)
+- [module:publish-translation](#modulepublish-translation)
+- [module:lang](#modulelang)
+- [module:enable](#moduleenable)
+- [module:delete](#moduledelete)
+- [module:disable](#moduledisable)
+- [module:update](#moduleupdate)
+- [Generator commands](#generator-commands)
+- [module:make](#modulemake)
+- [module:make](#modulemake)
+- [module:make-action](#modulemake-action)
+- [module:make-cast](#modulemake-cast)
+- [module:make-channel](#modulemake-channel)
+- [module:make-class](#modulemake-class)
+- [module:make-command](#modulemake-command)
+- [module:make-component](#modulemake-component)
+- [module:make-component-view](#modulemake-component-view)
+- [module:make-enum](#modulemake-enum)
+- [module:make-event-provider](#modulemake-event-provider)
+- [module:make-exception](#modulemake-exception)
+- [module:make-helper](#modulemake-helper)
+- [module:make-interface](#modulemake-interface)
+- [module:make-observer](#modulemake-observer)
+- [module:make-repository](#modulemake-repository)
+- [module:make-migration](#modulemake-migration)
+- [module:make-scope](#modulemake-scope)
+- [module:make-service](#modulemake-service)
+- [module:make-seed](#modulemake-seed)
+- [module:make-trait](#modulemake-trait)
+- [module:make-controller](#modulemake-controller)
+- [module:make-model](#modulemake-model)
+
+Useful Tip:
+
+You can use the following commands with the `--help` suffix to find its arguments and options.
+
+**Note all the following commands use "Blog" as example module name, and example class/file names**
+
+## [#](#utility-commands)Utility commands
+
+### [#](#moduleclear-compiled)module:clear-compiled
+
+Remove the compiled `bootstrap/cache/modules` file. Which is automatically created when not present.
+This will refresh the cache contents.
+
+It's recommended to run this command if you've made changes to the `module_statuses.json` file.
+
+```
+php artisan module:clear-compiled
+
+php artisan module:clear-compiled
+```
+
+### [#](#modulecomposer-update)module:composer-update
+
+Update the composer.json file for the given module.
+
+```
+php artisan module:composer-update Blog
+
+php artisan module:composer-update Blog
+```
+
+### [#](#moduledump)module:dump
+
+Run composer dump-autoload for a specific module or all modules.
+
+```
+php artisan module:dump Blog
+
+php artisan module:dump Blog
+```
+
+### [#](#moduleuse)module:use
+
+Use a given module. This allows you to not specify the module name on other commands requiring the module name as an argument.
+
+```
+php artisan module:use Blog
+
+php artisan module:use Blog
+```
+
+### [#](#moduleunuse)module:unuse
+
+This unsets the specified module that was set with the `module:use` command.
+
+```
+php artisan module:unuse
+
+php artisan module:unuse
+```
+
+### [#](#modulelist)module:list
+
+List all available modules.
+
+```
+php artisan module:list
+
+php artisan module:list
+```
+
+### [#](#moduleshow-model)module:show-model
+
+Provides a convenient overview of all the model's attributes and relations:
+
+```
+php artisan module:show-model Blog
+
+php artisan module:show-model Blog
+```
+
+### [#](#modulemigrate)module:migrate
+
+Migrate the given module, or without a module an argument, migrate all modules.
+
+```
+php artisan module:migrate Blog
+
+php artisan module:migrate Blog
+```
+
+### [#](#modulemigrate-rollback)module:migrate-rollback
+
+Rollback the given module, or without an argument, rollback all modules.
+
+```
+php artisan module:migrate-rollback Blog
+
+php artisan module:migrate-rollback Blog
+```
+
+> From version 10.1
+
+To only back a specific migration use the option `--subpath`
+
+```
+php artisan module:migrate-rollback --subpath="2023_10_17_101427_create_posts_table.php" Blog
+
+php artisan module:migrate-rollback --subpath="2023_10_17_101427_create_posts_table.php" Blog
+```
+
+### [#](#modulemigrate-refresh)module:migrate-refresh
+
+Refresh the migration for the given module, or without a specified module refresh all modules migrations.
+
+```
+php artisan module:migrate-refresh Blog
+
+php artisan module:migrate-refresh Blog
+```
+
+### [#](#modulemigrate-reset-blog)module:migrate-reset Blog
+
+Reset the migration for the given module, or without a specified module reset all modules migrations.
+
+```
+php artisan module:migrate-reset Blog
+
+php artisan module:migrate-reset Blog
+```
+
+### [#](#moduleseed)module:seed
+
+Seed the given module, or without an argument, seed all modules
+
+```
+php artisan module:seed Blog
+
+php artisan module:seed Blog
+```
+
+### [#](#modulepublish-migration)module:publish-migration
+
+Publish the migration files for the given module, or without an argument publish all modules migrations.
+
+```
+php artisan module:publish-migration Blog
+
+php artisan module:publish-migration Blog
+```
+
+### [#](#modulepublish-config)module:publish-config
+
+Publish the given module configuration files, or without an argument publish all modules configuration files.
+
+```
+php artisan module:publish-config Blog
+
+php artisan module:publish-config Blog
+```
+
+### [#](#modulepublish-translation)module:publish-translation
+
+Publish the translation files for the given module, or without a specified module publish all modules translation files.
+
+```
+php artisan module:publish-translation Blog
+
+php artisan module:publish-translation Blog
+```
+
+### [#](#modulelang)module:lang
+
+Check missing language keys in the specified module.
+
+```
+php artisan module:lang Blog
+
+php artisan module:lang Blog
+```
+
+### [#](#moduleenable)module:enable
+
+Enable the given module.
+
+```
+php artisan module:enable Blog
+
+php artisan module:enable Blog
+```
+
+### [#](#moduledelete)module:delete
+
+Delete the given module.
+
+```
+php artisan module:delete Blog
+
+php artisan module:delete Blog
+```
+
+### [#](#moduledisable)module:disable
+
+Disable the given module.
+
+```
+php artisan module:disable Blog
+
+php artisan module:disable Blog
+```
+
+### [#](#moduleupdate)module:update
+
+Update the given module.
+
+```
+php artisan module:update Blog
+
+php artisan module:update Blog
+```
+
+## [#](#generator-commands)Generator commands
+
+### [#](#modulemake)module:make
+
+Generate a new module.
+
+```
+php artisan module:make Blog
+
+php artisan module:make Blog
+```
+
+### [#](#modulemake)module:make
+
+Generate multiple modules at once.
+
+```
+php artisan module:make Blog User Auth
+
+php artisan module:make Blog User Auth
+```
+
+### [#](#modulemake-action)module:make-action
+
+Create a new action class for a specific module.
+
+```
+php artisan module:make-action PublishPost Blog
+
+php artisan module:make-action PublishPost Blog
+```
+
+### [#](#modulemake-cast)module:make-cast
+
+Create a new Eloquent cast class for a specific module.
+
+```
+php artisan module:make-cast TitleCast Blog
+
+php artisan module:make-cast TitleCast Blog
+```
+
+### [#](#modulemake-channel)module:make-channel
+
+Create a new channel class for a specific module.
+
+```
+php artisan module:make-channel NotificationChannel Blog
+
+php artisan module:make-channel NotificationChannel Blog
+```
+
+### [#](#modulemake-class)module:make-class
+
+Create a new class for a specific module.
+
+```
+php artisan module:make-class CustomClass Blog
+
+php artisan module:make-class CustomClass Blog
+```
+
+### [#](#modulemake-command)module:make-command
+
+Generate the given console command for the specified module.
+
+```
+php artisan module:make-command CreatePostCommand Blog
+
+php artisan module:make-command CreatePostCommand Blog
+```
+
+### [#](#modulemake-component)module:make-component
+
+Generate the given component for the specified module.
+
+```
+php artisan module:make-component Alert Blog
+
+php artisan module:make-component Alert Blog
+```
+
+### [#](#modulemake-component-view)module:make-component-view
+
+Generate a Blade component view file for a specific module.
+
+```
+php artisan module:make-component-view Alert Blog
+
+php artisan module:make-component-view Alert Blog
+```
+
+### [#](#modulemake-enum)module:make-enum
+
+Generate a new Enum class for a specific module.
+
+```
+php artisan module:make-enum PostStatus Blog
+
+php artisan module:make-enum PostStatus Blog
+```
+
+### [#](#modulemake-event-provider)module:make-event-provider
+
+Generate an event service provider for a specific module.
+
+```
+php artisan module:make-event-provider EventServiceProvider Blog
+
+php artisan module:make-event-provider EventServiceProvider Blog
+```
+
+### [#](#modulemake-exception)module:make-exception
+
+Generate an exception class for a specific module.
+
+```
+php artisan module:make-exception PostNotFoundException Blog
+
+php artisan module:make-exception PostNotFoundException Blog
+```
+
+### [#](#modulemake-helper)module:make-helper
+
+Generate a helper class for a specific module.
+
+```
+php artisan module:make-helper StringHelper Blog
+
+php artisan module:make-helper StringHelper Blog
+```
+
+### [#](#modulemake-interface)module:make-interface
+
+Generate a interface class for a specific module.
+
+```
+php artisan module:make-interface PostRepositoryInterface Blog
+
+php artisan module:make-interface PostRepositoryInterface Blog
+```
+
+### [#](#modulemake-observer)module:make-observer
+
+Generate a observer class for a specific module.
+
+```
+php artisan module:make-observer PostObserver Blog
+
+php artisan module:make-observer PostObserver Blog
+```
+
+### [#](#modulemake-repository)module:make-repository
+
+Generate a repository class for a specific module.
+
+```
+php artisan module:make-repository PostRepository Blog
+
+php artisan module:make-repository PostRepository Blog
+```
+
+### [#](#modulemake-migration)module:make-migration
+
+Generate a migration for specified module.
+
+```
+php artisan module:make-migration create_posts_table Blog
+
+php artisan module:make-migration create_posts_table Blog
+```
+
+### [#](#modulemake-scope)module:make-scope
+
+Generate a Eloquent query scope class for a specific module.
+
+```
+php artisan module:make-scope ActivePostsScope Blog
+
+php artisan module:make-scope ActivePostsScope Blog
+```
+
+### [#](#modulemake-service)module:make-service
+
+Generate a service class for a specific module.
+
+```
+php artisan module:make-service PostService Blog
+
+php artisan module:make-service PostService Blog
+```
+
+### [#](#modulemake-seed)module:make-seed
+
+Generate the given seed name for the specified module.
+
+```
+php artisan module:make-seed seed_fake_blog_posts Blog
+
+php artisan module:make-seed seed_fake_blog_posts Blog
+```
+
+### [#](#modulemake-trait)module:make-trait
+
+Generate a trait class for a specific module.
+
+```
+php artisan module:make-trait Sluggable Blog
+
+php artisan module:make-trait Sluggable Blog
+```
+
+### [#](#modulemake-controller)module:make-controller
+
+Generate a controller for the specified module.
+
+```
+php artisan module:make-controller PostsController Blog
+
+php artisan module:make-controller PostsController Blog
+```
+
+Optional options:
+
+- `--plain`,`-p` : create a plain controller
+- `--api` : create a resource controller
+
+### [#](#modulemake-model)module:make-model
+
+Generate the given model for the specified module.
+
+```
+php artisan module:make-model Post Blog
+
+php artisan module:make-model Post Blog
+```
+
+Optional options:
+
+```
+-c, --controller           Flag to create associated controllers
+
+--fillable[=FILLABLE]  The fillable attributes.
+
+-f, --factory              Create a new factory for the model
+
+-m, --migration            Flag to create associated migrations
+
+-r, --request              Create a new request for the model
+
+-s, --seed                 Create a new seeder for the model
+
+-c, --controller           Flag to create associated controllers
+--fillable[=FILLABLE]  The fillable attributes.
+-f, --factory              Create a new factory for the model
+-m, --migration            Flag to create associated migrations
+-r, --request              Create a new request for the model
+-s, --seed                 Create a new seeder for the model
+```
+
+> Added in 12.0.1
+
+```
+-a, --all                  Flag to create all associated files
+
+-R, --resource             Create a new resource for the model
+
+-p, --policy               Create a new policy for the model
+
+### module:make-provider
+
+Generate the given service provider name for the specified module.
+
+```bash
+
+php artisan module:make-provider BlogServiceProvider Blog
+
+-a, --all                  Flag to create all associated files
+-R, --resource             Create a new resource for the model
+-p, --policy               Create a new policy for the model
+
+### module:make-provider
+
+Generate the given service provider name for the specified module.
+
+```bash
+php artisan module:make-provider BlogServiceProvider Blog
+```
+
+### [#](#modulemake-middleware)module:make-middleware
+
+Generate the given middleware name for the specified module.
+
+```
+php artisan module:make-middleware CanReadPostsMiddleware Blog
+
+php artisan module:make-middleware CanReadPostsMiddleware Blog
+```
+
+### [#](#modulemake-mail)module:make-mail
+
+Generate the given mail class for the specified module.
+
+```
+php artisan module:make-mail SendWeeklyPostsEmail Blog
+
+php artisan module:make-mail SendWeeklyPostsEmail Blog
+```
+
+### [#](#modulemake-notification)module:make-notification
+
+Generate the given notification class name for the specified module.
+
+```
+php artisan module:make-notification NotifyAdminOfNewComment Blog
+
+php artisan module:make-notification NotifyAdminOfNewComment Blog
+```
+
+### [#](#modulemake-listener)module:make-listener
+
+Generate the given listener for the specified module. Optionally you can specify which event class it should listen to. It also accepts a `--queued` flag allowed queued event listeners.
+
+```
+php artisan module:make-listener NotifyUsersOfANewPost Blog
+
+php artisan module:make-listener NotifyUsersOfANewPost Blog --event=PostWasCreated
+
+php artisan module:make-listener NotifyUsersOfANewPost Blog --event=PostWasCreated --queued
+
+php artisan module:make-listener NotifyUsersOfANewPost Blog
+php artisan module:make-listener NotifyUsersOfANewPost Blog --event=PostWasCreated
+php artisan module:make-listener NotifyUsersOfANewPost Blog --event=PostWasCreated --queued
+```
+
+### [#](#modulemake-request)module:make-request
+
+Generate the given request for the specified module.
+
+```
+php artisan module:make-request CreatePostRequest Blog
+
+php artisan module:make-request CreatePostRequest Blog
+```
+
+### [#](#modulemake-event)module:make-event
+
+Generate the given event for the specified module.
+
+```
+php artisan module:make-event BlogPostWasUpdated Blog
+
+php artisan module:make-event BlogPostWasUpdated Blog
+```
+
+### [#](#modulemake-job)module:make-job
+
+Generate the given job for the specified module.
+
+```
+php artisan module:make-job JobName Blog
+
+php artisan module:make-job JobName Blog --sync # A synchronous job class
+
+php artisan module:make-job JobName Blog
+
+php artisan module:make-job JobName Blog --sync # A synchronous job class
+```
+
+### [#](#moduleroute-provider)module:route-provider
+
+Generate the given route service provider for the specified module.
+
+```
+php artisan module:route-provider Blog
+
+php artisan module:route-provider Blog
+```
+
+### [#](#modulemake-factory)module:make-factory
+
+Generate the given database factory for the specified module.
+
+```
+php artisan module:make-factory ModelName Blog
+
+php artisan module:make-factory ModelName Blog
+```
+
+### [#](#modulemake-policy)module:make-policy
+
+Generate the given policy class for the specified module.
+
+The `Policies` is not generated by default when creating a new module. Change the value of `paths.generator.policies` in `modules.php` to your desired location.
+
+```
+php artisan module:make-policy PolicyName Blog
+
+php artisan module:make-policy PolicyName Blog
+```
+
+### [#](#modulemake-rule)module:make-rule
+
+Generate the given validation rule class for the specified module.
+
+The `Rules` folder is not generated by default when creating a new module. Change the value of `paths.generator.rules` in `modules.php` to your desired location.
+
+```
+php artisan module:make-rule ValidationRule Blog
+
+php artisan module:make-rule ValidationRule Blog
+```
+
+### [#](#modulemake-resource)module:make-resource
+
+Generate the given resource class for the specified module. It can have an optional `--collection` argument to generate a resource collection.
+
+The `Transformers` folder is not generated by default when creating a new module. Change the value of `paths.generator.resource` in `modules.php` to your desired location.
+
+```
+php artisan module:make-resource PostResource Blog
+
+php artisan module:make-resource PostResource Blog --collection
+
+php artisan module:make-resource PostResource Blog
+php artisan module:make-resource PostResource Blog --collection
+```
+
+### [#](#modulemake-test)module:make-test
+
+Generate the given test class for the specified module.
+
+```
+php artisan module:make-test EloquentPostRepositoryTest Blog
+
+php artisan module:make-test EloquentPostRepositoryTest Blog
+```
+
+> v11.0.1 added: make:view
+
+### [#](#modulemake-view)module:make-view
+
+Generate the given view for the specified module.
+
+```
+php artisan module:make-view index Blog
+
+php artisan module:make-view index Blog
+```
+
+---
+
+[Previous page: 
+←
+Basic Usage: Middleware](/docs/13/basic-usage/middleware)
+[Next page: 
+Facade Methods
+ →](/docs/13/advanced/facade-methods)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/advanced/artisan-commands.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/advanced/artisan-commands&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

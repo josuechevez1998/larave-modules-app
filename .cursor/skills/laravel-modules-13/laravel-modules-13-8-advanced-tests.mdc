@@ -1,0 +1,350 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Tests (/docs/8/advanced/tests). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Tests
+
+> Fuente: https://laravelmodules.com/docs/8/advanced/tests
+> Exportado: 2026-07-23 19:57 UTC
+
+`phpunit.xml` is the configuration file for phpunit by default this file is configured to run tests only in the `/tests/Feature` and `/tests/Unit`
+
+In order for your modules to be tested their paths need adding to this file, manually adding entries for each module is not desirable so instead use a wildcard include to include the modules dynamically:
+
+Copied!
+
+```
+<testsuite name="Modules">
+
+<directory suffix="Test.php">./Modules/*/Tests/Feature</directory>
+
+<directory suffix="Test.php">./Modules/*/Tests/Unit</directory>
+
+</testsuite>
+
+<testsuite name="Modules">
+    <directory suffix="Test.php">./Modules/*/Tests/Feature</directory>
+    <directory suffix="Test.php">./Modules/*/Tests/Unit</directory>
+</testsuite>
+```
+
+Also ensure you've got the database connection set to sqlite and to use an in-memory database:
+
+Copied!
+
+```
+<server name="DB_CONNECTION" value="sqlite"/>
+
+<server name="DB_DATABASE" value=":memory:"/>
+
+<server name="DB_CONNECTION" value="sqlite"/>
+<server name="DB_DATABASE" value=":memory:"/>
+```
+
+## [#](#example-phpunitxml)Example phpunit.xml
+
+The file would look like this
+
+Copied!
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+
+bootstrap="vendor/autoload.php"
+
+colors="true"
+
+>
+
+<testsuites>
+
+<testsuite name="Unit">
+
+<directory suffix="Test.php">./tests/Unit</directory>
+
+</testsuite>
+
+<testsuite name="Feature">
+
+<directory suffix="Test.php">./tests/Feature</directory>
+
+</testsuite>
+
+<testsuite name="Modules">
+
+<directory suffix="Test.php">./Modules/*/Tests/Feature</directory>
+
+<directory suffix="Test.php">./Modules/*/Tests/Unit</directory>
+
+</testsuite>
+
+</testsuites>
+
+<coverage processUncoveredFiles="true">
+
+<include>
+
+<directory suffix=".php">./app</directory>
+
+</include>
+
+</coverage>
+
+<php>
+
+<server name="APP_ENV" value="testing"/>
+
+<server name="BCRYPT_ROUNDS" value="4"/>
+
+<server name="CACHE_DRIVER" value="array"/>
+
+<server name="DB_CONNECTION" value="sqlite"/>
+
+<server name="DB_DATABASE" value=":memory:"/>
+
+<server name="MAIL_MAILER" value="array"/>
+
+<server name="QUEUE_CONNECTION" value="sync"/>
+
+<server name="SESSION_DRIVER" value="array"/>
+
+<server name="TELESCOPE_ENABLED" value="false"/>
+
+</php>
+
+</phpunit>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+        <testsuite name="Modules">
+            <directory suffix="Test.php">./Modules/*/Tests/Feature</directory>
+            <directory suffix="Test.php">./Modules/*/Tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
+    </coverage>
+    <php>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+        <server name="DB_CONNECTION" value="sqlite"/>
+        <server name="DB_DATABASE" value=":memory:"/>
+        <server name="MAIL_MAILER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+        <server name="TELESCOPE_ENABLED" value="false"/>
+    </php>
+</phpunit>
+```
+
+Now when phpunit is run tests from modules and the global tests folder will run.
+
+## [#](#run-test-for-a-single-module)Run test for a single module
+
+When you run phpunit:
+
+Copied!
+
+```
+vendor/bin/phpunit
+
+vendor/bin/phpunit
+```
+
+All test will run.
+
+## [#](#run-single-test)Run single test
+
+If you want to only run a single test method, class or module you can use the filter flag:
+
+Copied!
+
+```
+vendor/bin/phpunit --filter 'contacts'
+
+vendor/bin/phpunit --filter 'contacts'
+```
+
+This would run all tests inside the Contacts module.
+
+Run a single test method:
+
+Copied!
+
+```
+vendor/bin/phpunit --filter 'can_delete_contact'
+
+vendor/bin/phpunit --filter 'can_delete_contact'
+```
+
+This would match a test
+
+Copied!
+
+```
+/** @test */
+
+public function can_delete_contact(): void
+
+{
+
+$this->authenticate();
+
+$contact = Contact::factory()->create();
+
+$this->delete(route('app.contacts.delete', $contact->id))->assertRedirect(route('app.contacts.index'));
+
+$this->assertDatabaseCount('contacts', 0);
+
+}
+
+/** @test */
+public function can_delete_contact(): void
+{
+    $this->authenticate();
+    $contact = Contact::factory()->create();
+    $this->delete(route('app.contacts.delete', $contact->id))->assertRedirect(route('app.contacts.index'));
+
+    $this->assertDatabaseCount('contacts', 0);
+}
+```
+
+Test a full test file:
+
+Copied!
+
+```
+vendor/bin/phpunit --filter 'ContactTest'
+
+vendor/bin/phpunit --filter 'ContactTest'
+```
+
+## [#](#use-pestphp)Use PestPHP
+
+Using PestPHP <https://pestphp.com>.
+
+Often you will want to run Pest testcase class, import it at the top of your file.
+
+Copied!
+
+```
+uses(Tests\TestCase::class);
+
+uses(Tests\TestCase::class);
+```
+
+When using Pest you don't need classes the following would be a valid file:
+
+Copied!
+
+```
+<?php
+
+use Modules\Contacts\Models\Contact;
+
+uses(Tests\TestCase::class);
+
+test('can see contact list', function() {
+
+$this->authenticate();
+
+$this->get(route('app.contacts.index'))->assertOk();
+
+});
+
+test('can delete contact', function() {
+
+$this->authenticate();
+
+$contact = Contact::factory()->create();
+
+$this->delete(route('app.contacts.delete', $contact->id))->assertRedirect(route('app.contacts.index'));
+
+$this->assertDatabaseCount('contacts', 0);
+
+});
+
+<?php
+
+use Modules\Contacts\Models\Contact;
+
+uses(Tests\TestCase::class);
+
+test('can see contact list', function() {
+    $this->authenticate();
+   $this->get(route('app.contacts.index'))->assertOk();
+});
+
+test('can delete contact', function() {
+    $this->authenticate();
+    $contact = Contact::factory()->create();
+    $this->delete(route('app.contacts.delete', $contact->id))->assertRedirect(route('app.contacts.index'));
+
+    $this->assertDatabaseCount('contacts', 0);
+});
+```
+
+Run test suite:
+
+Copied!
+
+```
+vendor/bin/pest
+
+vendor/bin/pest
+```
+
+If you want to only run a single test method, class or module you can use the filter flag:
+
+Copied!
+
+```
+vendor/bin/pest --filter 'contacts'
+
+vendor/bin/pest --filter 'contacts'
+```
+
+This would match a test
+
+Copied!
+
+```
+test('can_delete_contact', function() {
+
+$this->authenticate();
+
+$contact = Contact::factory()->create();
+
+$this->delete(route('app.contacts.delete', $contact->id))->assertRedirect(route('app.contacts.index'));
+
+$this->assertDatabaseCount('contacts', 0);
+
+});
+
+test('can_delete_contact', function() {
+    $this->authenticate();
+    $contact = Contact::factory()->create();
+    $this->delete(route('app.contacts.delete', $contact->id))->assertRedirect(route('app.contacts.index'));
+
+    $this->assertDatabaseCount('contacts', 0);
+});
+```

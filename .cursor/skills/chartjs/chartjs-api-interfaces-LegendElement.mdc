@@ -1,0 +1,498 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LegendElement<TType> (/docs/latest/api/interfaces/LegendElement.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LegendElement<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LegendElement.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-legendelement-ttype) Interface: LegendElement<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#hierarchy) Hierarchy
+
+- `default`<`AnyObject`, [`LegendOptions`](/docs/latest/api/interfaces/LegendOptions.html)<`TType`>>
+- [`LayoutItem`](/docs/latest/api/interfaces/LayoutItem.html)
+
+  ↳ **`LegendElement`**
+
+## [#](#properties) Properties
+
+### [#](#animations) $animations
+
+• **$animations**: `Record`<`string`, [`Animation`](/docs/latest/api/classes/Animation.html)>
+
+#### [#](#inherited-from) Inherited from
+
+Element.$animations
+
+#### [#](#defined-in) Defined in
+
+[core/core.element.ts:15  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L15)
+
+---
+
+### [#](#active) active
+
+• **active**: `boolean` = `false`
+
+#### [#](#inherited-from-2) Inherited from
+
+Element.active
+
+#### [#](#defined-in-2) Defined in
+
+[core/core.element.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L13)
+
+---
+
+### [#](#bottom) bottom
+
+• **bottom**: `number`
+
+Bottom edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-3) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[bottom](/docs/latest/api/interfaces/LayoutItem.html#bottom)
+
+#### [#](#defined-in-3) Defined in
+
+[types/layout.d.ts:41  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L41)
+
+---
+
+### [#](#chart) chart
+
+• **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<`TType`, `DistributiveArray`<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"defaultDataPoint"`]>, `unknown`>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2370  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2370)
+
+---
+
+### [#](#ctx) ctx
+
+• **ctx**: `CanvasRenderingContext2D`
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2371  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2371)
+
+---
+
+### [#](#fullsize) fullSize
+
+• **fullSize**: `boolean`
+
+if true, and the item is horizontal, then push vertical boxes down
+
+#### [#](#inherited-from-4) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[fullSize](/docs/latest/api/interfaces/LayoutItem.html#fullsize)
+
+#### [#](#defined-in-6) Defined in
+
+[types/layout.d.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L17)
+
+---
+
+### [#](#height) height
+
+• **height**: `number`
+
+Height of item. Must be valid after update()
+
+#### [#](#inherited-from-5) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[height](/docs/latest/api/interfaces/LayoutItem.html#height)
+
+#### [#](#defined-in-7) Defined in
+
+[types/layout.d.ts:25  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L25)
+
+---
+
+### [#](#left) left
+
+• **left**: `number`
+
+Left edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-6) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[left](/docs/latest/api/interfaces/LayoutItem.html#left)
+
+#### [#](#defined-in-8) Defined in
+
+[types/layout.d.ts:29  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L29)
+
+---
+
+### [#](#legenditems) legendItems
+
+• `Optional` **legendItems**: [`LegendItem`](/docs/latest/api/interfaces/LegendItem.html)[]
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2372  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2372)
+
+---
+
+### [#](#options) options
+
+• **options**: [`LegendOptions`](/docs/latest/api/interfaces/LegendOptions.html)<`TType`>
+
+#### [#](#overrides) Overrides
+
+Element.options
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2373  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2373)
+
+---
+
+### [#](#position) position
+
+• **position**: [`LayoutPosition`](/docs/latest/api/#layoutposition)
+
+The position of the item in the chart layout. Possible values are
+
+#### [#](#inherited-from-7) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[position](/docs/latest/api/interfaces/LayoutItem.html#position)
+
+#### [#](#defined-in-11) Defined in
+
+[types/layout.d.ts:9  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L9)
+
+---
+
+### [#](#right) right
+
+• **right**: `number`
+
+Right edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-8) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[right](/docs/latest/api/interfaces/LayoutItem.html#right)
+
+#### [#](#defined-in-12) Defined in
+
+[types/layout.d.ts:37  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L37)
+
+---
+
+### [#](#top) top
+
+• **top**: `number`
+
+Top edge of the item. Set by layout system and cannot be used in update
+
+#### [#](#inherited-from-9) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[top](/docs/latest/api/interfaces/LayoutItem.html#top)
+
+#### [#](#defined-in-13) Defined in
+
+[types/layout.d.ts:33  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L33)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number`
+
+The weight used to sort the item. Higher weights are further away from the chart area
+
+#### [#](#inherited-from-10) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[weight](/docs/latest/api/interfaces/LayoutItem.html#weight)
+
+#### [#](#defined-in-14) Defined in
+
+[types/layout.d.ts:13  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L13)
+
+---
+
+### [#](#width) width
+
+• **width**: `number`
+
+Width of item. Must be valid after update()
+
+#### [#](#inherited-from-11) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[width](/docs/latest/api/interfaces/LayoutItem.html#width)
+
+#### [#](#defined-in-15) Defined in
+
+[types/layout.d.ts:21  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L21)
+
+---
+
+### [#](#x) x
+
+• **x**: `number`
+
+#### [#](#inherited-from-12) Inherited from
+
+Element.x
+
+#### [#](#defined-in-16) Defined in
+
+[core/core.element.ts:11  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L11)
+
+---
+
+### [#](#y) y
+
+• **y**: `number`
+
+#### [#](#inherited-from-13) Inherited from
+
+Element.y
+
+#### [#](#defined-in-17) Defined in
+
+[core/core.element.ts:12  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L12)
+
+## [#](#methods) Methods
+
+### [#](#beforelayout) beforeLayout
+
+▸ `Optional` **beforeLayout**(): `void`
+
+Called before the layout process starts
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#inherited-from-14) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[beforeLayout](/docs/latest/api/interfaces/LayoutItem.html#beforelayout)
+
+#### [#](#defined-in-18) Defined in
+
+[types/layout.d.ts:46  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L46)
+
+---
+
+### [#](#draw) draw
+
+▸ **draw**(`chartArea`): `void`
+
+Draws the element
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `chartArea` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#inherited-from-15) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[draw](/docs/latest/api/interfaces/LayoutItem.html#draw)
+
+#### [#](#defined-in-19) Defined in
+
+[types/layout.d.ts:50  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L50)
+
+---
+
+### [#](#fit) fit
+
+▸ **fit**(): `void`
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-20) Defined in
+
+[types/index.d.ts:2374  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2374)
+
+---
+
+### [#](#getpadding) getPadding
+
+▸ `Optional` **getPadding**(): [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+Returns an object with padding on the edges
+
+#### [#](#returns-4) Returns
+
+[`ChartArea`](/docs/latest/api/interfaces/ChartArea.html)
+
+#### [#](#inherited-from-16) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[getPadding](/docs/latest/api/interfaces/LayoutItem.html#getpadding)
+
+#### [#](#defined-in-21) Defined in
+
+[types/layout.d.ts:54  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L54)
+
+---
+
+### [#](#getprops) getProps
+
+▸ **getProps**<`P`>(`props`, `final?`): `Pick`<`AnyObject`, `P`[`number`]>
+
+Gets the current or final value of each prop. Can return extra properties (whole object).
+
+#### [#](#type-parameters-2) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string`[] |
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `props` | `P` | properties to get |
+| `final?` | `boolean` | get the final value (animation target) |
+
+#### [#](#returns-5) Returns
+
+`Pick`<`AnyObject`, `P`[`number`]>
+
+#### [#](#inherited-from-17) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-22) Defined in
+
+[core/core.element.ts:31  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L31)
+
+▸ **getProps**<`P`>(`props`, `final?`): `Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#type-parameters-3) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `P` | extends `string` |
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `props` | `P`[] |
+| `final?` | `boolean` |
+
+#### [#](#returns-6) Returns
+
+`Partial`<`Record`<`P`, `unknown`>>
+
+#### [#](#inherited-from-18) Inherited from
+
+Element.getProps
+
+#### [#](#defined-in-23) Defined in
+
+[core/core.element.ts:32  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L32)
+
+---
+
+### [#](#hasvalue) hasValue
+
+▸ **hasValue**(): `boolean`
+
+#### [#](#returns-7) Returns
+
+`boolean`
+
+#### [#](#inherited-from-19) Inherited from
+
+Element.hasValue
+
+#### [#](#defined-in-24) Defined in
+
+[core/core.element.ts:22  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L22)
+
+---
+
+### [#](#ishorizontal) isHorizontal
+
+▸ **isHorizontal**(): `boolean`
+
+returns true if the layout item is horizontal (ie. top or bottom)
+
+#### [#](#returns-8) Returns
+
+`boolean`
+
+#### [#](#inherited-from-20) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[isHorizontal](/docs/latest/api/interfaces/LayoutItem.html#ishorizontal)
+
+#### [#](#defined-in-25) Defined in
+
+[types/layout.d.ts:58  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L58)
+
+---
+
+### [#](#tooltipposition) tooltipPosition
+
+▸ **tooltipPosition**(`useFinalPosition`): [`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#parameters-4) Parameters
+
+| Name | Type |
+| --- | --- |
+| `useFinalPosition` | `boolean` |
+
+#### [#](#returns-9) Returns
+
+[`Point`](/docs/latest/api/interfaces/Point.html)
+
+#### [#](#inherited-from-21) Inherited from
+
+Element.tooltipPosition
+
+#### [#](#defined-in-26) Defined in
+
+[core/core.element.ts:17  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/core/core.element.ts#L17)
+
+---
+
+### [#](#update) update
+
+▸ **update**(`width`, `height`, `margins?`): `void`
+
+Takes two parameters: width and height.
+
+#### [#](#parameters-5) Parameters
+
+| Name | Type |
+| --- | --- |
+| `width` | `number` |
+| `height` | `number` |
+| `margins?` | [`ChartArea`](/docs/latest/api/interfaces/ChartArea.html) |
+
+#### [#](#returns-10) Returns
+
+`void`
+
+#### [#](#inherited-from-22) Inherited from
+
+[LayoutItem](/docs/latest/api/interfaces/LayoutItem.html).[update](/docs/latest/api/interfaces/LayoutItem.html#update)
+
+#### [#](#defined-in-27) Defined in
+
+[types/layout.d.ts:64  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/layout.d.ts#L64)

@@ -1,0 +1,37 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): ChangeLog (/docs/13/getting-started/changelog). Referencia nwidart/laravel-modules v13.
+---
+
+# ChangeLog
+
+> Fuente: https://laravelmodules.com/docs/13/getting-started/changelog
+> Exportado: 2026-07-23 19:54 UTC
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# ChangeLog
+
+---
+
+All Notable changes to `laravel-modules` will be documented in the changelog file on the module repository.
+
+<https://github.com/nWidart/laravel-modules/blob/master/CHANGELOG.md>
+
+---
+
+[Previous page: 
+←
+Requirements](/docs/13/getting-started/requirements)
+[Next page: 
+Upgrade
+ →](/docs/13/getting-started/upgrade)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/getting-started/changelog.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/getting-started/changelog&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

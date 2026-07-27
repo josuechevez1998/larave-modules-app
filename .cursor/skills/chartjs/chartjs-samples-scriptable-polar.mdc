@@ -1,0 +1,141 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Polar Area Chart (/docs/latest/samples/scriptable/polar.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Polar Area Chart
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/scriptable/polar.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#polar-area-chart) Polar Area Chart
+
+options
+data
+setup
+
+function colorize(opaque, hover, ctx) {
+const v = ctx.raw;
+const c = v < 35 ? '#D60000'
+: v < 55 ? '#F46300'
+: v < 75 ? '#0358B6'
+: '#44DE28';
+const opacity = hover ? 1 - Math.abs(v / 150) - 0.2 : 1 - Math.abs(v / 150);
+return opaque ? c : Utils.transparentize(c, opacity);
+}
+function hoverColorize(ctx) {
+return colorize(false, true, ctx);
+}
+const config = {
+type: 'polarArea',
+data: data,
+options: {
+plugins: {
+legend: false,
+tooltip: false,
+},
+elements: {
+arc: {
+backgroundColor: colorize.bind(null, false, false),
+hoverBackgroundColor: hoverColorize
+}
+}
+}
+};
+
+```
+function colorize(opaque, hover, ctx) {
+  const v = ctx.raw;
+  const c = v < 35 ? '#D60000'
+    : v < 55 ? '#F46300'
+    : v < 75 ? '#0358B6'
+    : '#44DE28';
+  const opacity = hover ? 1 - Math.abs(v / 150) - 0.2 : 1 - Math.abs(v / 150);
+  return opaque ? c : Utils.transparentize(c, opacity);
+}
+function hoverColorize(ctx) {
+  return colorize(false, true, ctx);
+}
+const config = {
+  type: 'polarArea',
+  data: data,
+  options: {
+    plugins: {
+      legend: false,
+      tooltip: false,
+    },
+    elements: {
+      arc: {
+        backgroundColor: colorize.bind(null, false, false),
+        hoverBackgroundColor: hoverColorize
+      }
+    }
+  }
+};
+```
+
+function generateData() {
+return Utils.numbers({
+count: DATA\_COUNT,
+min: 0,
+max: 100
+});
+}
+const data = {
+labels: Utils.months({count: DATA\_COUNT}),
+datasets: [{
+data: generateData()
+}]
+};
+
+```
+function generateData() {
+  return Utils.numbers({
+    count: DATA_COUNT,
+    min: 0,
+    max: 100
+  });
+}
+const data = {
+  labels: Utils.months({count: DATA_COUNT}),
+  datasets: [{
+    data: generateData()
+  }]
+};
+```
+
+const DATA\_COUNT = 7;
+Utils.srand(110);
+const actions = [
+{
+name: 'Randomize',
+handler(chart) {
+chart.data.datasets.forEach(dataset => {
+dataset.data = generateData();
+});
+chart.update();
+}
+},
+];
+
+```
+const DATA_COUNT = 7;
+Utils.srand(110);
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = generateData();
+      });
+      chart.update();
+    }
+  },
+];
+```
+
+## [#](#docs) Docs
+
+- [Options](/docs/latest/general/options.html)
+  - [Scriptable Options](/docs/latest/general/options.html#scriptable-options)
+- [Polar Area Chart](/docs/latest/charts/polar.html)

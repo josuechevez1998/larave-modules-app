@@ -1,0 +1,13 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Changelog (/docs/6/getting-started/changelog). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Changelog
+
+> Fuente: https://laravelmodules.com/docs/6/getting-started/changelog
+> Exportado: 2026-07-23 19:57 UTC
+
+All Notable changes to `laravel-modules` will be documented in the changelog file on the module repository.
+
+<https://github.com/nWidart/laravel-modules/blob/master/CHANGELOG.md>

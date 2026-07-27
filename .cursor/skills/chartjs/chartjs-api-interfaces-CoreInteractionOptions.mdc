@@ -1,0 +1,77 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: CoreInteractionOptions (/docs/latest/api/interfaces/CoreInteractionOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: CoreInteractionOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/CoreInteractionOptions.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-coreinteractionoptions) Interface: CoreInteractionOptions
+
+## [#](#hierarchy) Hierarchy
+
+- **`CoreInteractionOptions`**
+
+  ↳ [`TooltipOptions`](/docs/latest/api/interfaces/TooltipOptions.html)
+
+## [#](#properties) Properties
+
+### [#](#axis) axis
+
+• **axis**: [`InteractionAxis`](/docs/latest/api/#interactionaxis)
+
+Defines which directions are used in calculating distances. Defaults to 'x' for 'index' mode and 'xy' in dataset and 'nearest' modes.
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1590  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1590)
+
+---
+
+### [#](#includeinvisible) includeInvisible
+
+• **includeInvisible**: `boolean`
+
+if true, the invisible points that are outside of the chart area will also be included when evaluating interactions.
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1596  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1596)
+
+---
+
+### [#](#intersect) intersect
+
+• **intersect**: `boolean`
+
+if true, the hover mode only applies when the mouse position intersects an item on the chart.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1585  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1585)
+
+---
+
+### [#](#mode) mode
+
+• **mode**: keyof [`InteractionModeMap`](/docs/latest/api/interfaces/InteractionModeMap.html)
+
+Sets which elements appear in the tooltip. See Interaction Modes for details.
+
+**`Default`**
+
+'nearest'
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1580  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1580)

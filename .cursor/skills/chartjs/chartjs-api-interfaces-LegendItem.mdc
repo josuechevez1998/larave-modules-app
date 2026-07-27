@@ -1,0 +1,224 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: LegendItem (/docs/latest/api/interfaces/LegendItem.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: LegendItem
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/LegendItem.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-legenditem) Interface: LegendItem
+
+## [#](#properties) Properties
+
+### [#](#borderradius) borderRadius
+
+• `Optional` **borderRadius**: `number` | [`BorderRadius`](/docs/latest/api/interfaces/BorderRadius.html)
+
+Border radius of the legend box
+
+**`Since`**
+
+3.1.0
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2291  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2291)
+
+---
+
+### [#](#datasetindex) datasetIndex
+
+• `Optional` **datasetIndex**: `number`
+
+Index of the associated dataset
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2296  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2296)
+
+---
+
+### [#](#fillstyle) fillStyle
+
+• `Optional` **fillStyle**: [`Color`](/docs/latest/api/#color)
+
+Fill style of the legend box
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2306  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2306)
+
+---
+
+### [#](#fontcolor) fontColor
+
+• `Optional` **fontColor**: [`Color`](/docs/latest/api/#color)
+
+Font color for the text
+Defaults to LegendOptions.labels.color
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2312  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2312)
+
+---
+
+### [#](#hidden) hidden
+
+• `Optional` **hidden**: `boolean`
+
+If true, this item represents a hidden dataset. Label will be rendered with a strike-through effect
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2317  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2317)
+
+---
+
+### [#](#index) index
+
+• `Optional` **index**: `number`
+
+Index the associated label in the labels array
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2301  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2301)
+
+---
+
+### [#](#linecap) lineCap
+
+• `Optional` **lineCap**: `CanvasLineCap`
+
+For box border.
+
+**`See`**
+
+https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2323  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2323)
+
+---
+
+### [#](#linedash) lineDash
+
+• `Optional` **lineDash**: `number`[]
+
+For box border.
+
+**`See`**
+
+https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2329  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2329)
+
+---
+
+### [#](#linedashoffset) lineDashOffset
+
+• `Optional` **lineDashOffset**: `number`
+
+For box border.
+
+**`See`**
+
+https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2335  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2335)
+
+---
+
+### [#](#linejoin) lineJoin
+
+• `Optional` **lineJoin**: `CanvasLineJoin`
+
+For box border.
+
+**`See`**
+
+https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:2341  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2341)
+
+---
+
+### [#](#linewidth) lineWidth
+
+• `Optional` **lineWidth**: `number`
+
+Width of box border
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:2346  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2346)
+
+---
+
+### [#](#pointstyle) pointStyle
+
+• `Optional` **pointStyle**: [`PointStyle`](/docs/latest/api/#pointstyle)
+
+Point style of the legend box (only used if usePointStyle is true)
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:2356  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2356)
+
+---
+
+### [#](#rotation) rotation
+
+• `Optional` **rotation**: `number`
+
+Rotation of the point in degrees (only used if usePointStyle is true)
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:2361  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2361)
+
+---
+
+### [#](#strokestyle) strokeStyle
+
+• `Optional` **strokeStyle**: [`Color`](/docs/latest/api/#color)
+
+Stroke style of the legend box
+
+#### [#](#defined-in-14) Defined in
+
+[types/index.d.ts:2351  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2351)
+
+---
+
+### [#](#text) text
+
+• **text**: `string`
+
+Label that will be displayed
+
+#### [#](#defined-in-15) Defined in
+
+[types/index.d.ts:2285  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2285)
+
+---
+
+### [#](#textalign) textAlign
+
+• `Optional` **textAlign**: [`TextAlign`](/docs/latest/api/#textalign)
+
+Text alignment
+
+#### [#](#defined-in-16) Defined in
+
+[types/index.d.ts:2366  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2366)

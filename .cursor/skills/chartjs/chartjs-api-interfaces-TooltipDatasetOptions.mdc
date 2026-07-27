@@ -1,0 +1,27 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipDatasetOptions<TType> (/docs/latest/api/interfaces/TooltipDatasetOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipDatasetOptions<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipDatasetOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-tooltipdatasetoptions-ttype) Interface: TooltipDatasetOptions<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) = [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#callbacks) callbacks
+
+• **callbacks**: [`TooltipDatasetCallbacks`](/docs/latest/api/interfaces/TooltipDatasetCallbacks.html)<`TType`, [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`>, [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2930  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2930)

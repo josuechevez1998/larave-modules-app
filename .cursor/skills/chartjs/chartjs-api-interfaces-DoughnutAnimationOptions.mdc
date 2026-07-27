@@ -1,0 +1,129 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: DoughnutAnimationOptions (/docs/latest/api/interfaces/DoughnutAnimationOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: DoughnutAnimationOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/DoughnutAnimationOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-doughnutanimationoptions) Interface: DoughnutAnimationOptions
+
+## [#](#hierarchy) Hierarchy
+
+- [`AnimationSpec`](/docs/latest/api/#animationspec)<`"doughnut"`>
+
+  ↳ **`DoughnutAnimationOptions`**
+
+## [#](#properties) Properties
+
+### [#](#animaterotate) animateRotate
+
+• **animateRotate**: `boolean`
+
+If true, the chart will animate in with a rotation animation. This property is in the options.animation object.
+
+**`Default`**
+
+true
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:289  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L289)
+
+---
+
+### [#](#animatescale) animateScale
+
+• **animateScale**: `boolean`
+
+If true, will animate scaling the chart from the center outwards.
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:295  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L295)
+
+---
+
+### [#](#delay) delay
+
+• `Optional` **delay**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"doughnut"`>>
+
+Delay before starting the animations.
+
+**`Default`**
+
+0
+
+#### [#](#inherited-from) Inherited from
+
+AnimationSpec.delay
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1727  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1727)
+
+---
+
+### [#](#duration) duration
+
+• `Optional` **duration**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"doughnut"`>>
+
+The number of milliseconds an animation takes.
+
+**`Default`**
+
+1000
+
+#### [#](#inherited-from-2) Inherited from
+
+AnimationSpec.duration
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1716  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1716)
+
+---
+
+### [#](#easing) easing
+
+• `Optional` **easing**: [`Scriptable`](/docs/latest/api/#scriptable)<`"linear"` | `"easeOutQuart"` | `"easeInQuad"` | `"easeOutQuad"` | `"easeInOutQuad"` | `"easeInCubic"` | `"easeOutCubic"` | `"easeInOutCubic"` | `"easeInQuart"` | `"easeInOutQuart"` | `"easeInQuint"` | `"easeOutQuint"` | `"easeInOutQuint"` | `"easeInSine"` | `"easeOutSine"` | `"easeInOutSine"` | `"easeInExpo"` | `"easeOutExpo"` | `"easeInOutExpo"` | `"easeInCirc"` | `"easeOutCirc"` | `"easeInOutCirc"` | `"easeInElastic"` | `"easeOutElastic"` | `"easeInOutElastic"` | `"easeInBack"` | `"easeOutBack"` | `"easeInOutBack"` | `"easeInBounce"` | `"easeOutBounce"` | `"easeInOutBounce"`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"doughnut"`>>
+
+Easing function to use
+
+**`Default`**
+
+'easeOutQuart'
+
+#### [#](#inherited-from-3) Inherited from
+
+AnimationSpec.easing
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1721  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1721)
+
+---
+
+### [#](#loop) loop
+
+• `Optional` **loop**: [`Scriptable`](/docs/latest/api/#scriptable)<`boolean`, [`ScriptableContext`](/docs/latest/api/interfaces/ScriptableContext.html)<`"doughnut"`>>
+
+If set to true, the animations loop endlessly.
+
+**`Default`**
+
+false
+
+#### [#](#inherited-from-4) Inherited from
+
+AnimationSpec.loop
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:1733  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1733)

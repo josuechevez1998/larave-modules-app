@@ -1,0 +1,31 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: FillerOptions (/docs/latest/api/interfaces/FillerOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: FillerOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/FillerOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-filleroptions) Interface: FillerOptions
+
+## [#](#properties) Properties
+
+### [#](#drawtime) drawTime
+
+• **drawTime**: `"beforeDraw"` | `"beforeDatasetsDraw"` | `"beforeDatasetDraw"`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2251  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2251)
+
+---
+
+### [#](#propagate) propagate
+
+• **propagate**: `boolean`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2252  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2252)

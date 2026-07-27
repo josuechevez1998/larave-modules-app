@@ -1,0 +1,11 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Questions and Issues (/docs/4/getting-started/questions-and-issues). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Questions and Issues
+
+> Fuente: https://laravelmodules.com/docs/4/getting-started/questions-and-issues
+> Exportado: 2026-07-23 19:57 UTC
+
+For any bugs, issues and questions for **laravel-modules**, please refer to the [github repository, issues tab](https://github.com/nWidart/laravel-modules/issues).

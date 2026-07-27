@@ -1,0 +1,150 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Line Styling (/docs/latest/samples/line/styling.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Line Styling
+
+> Fuente: https://www.chartjs.org/docs/latest/samples/line/styling.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#line-styling) Line Styling
+
+config
+setup
+
+const config = {
+type: 'line',
+data: data,
+options: {
+responsive: true,
+plugins: {
+title: {
+display: true,
+text: 'Chart.js Line Chart'
+},
+},
+interaction: {
+mode: 'index',
+intersect: false
+},
+scales: {
+x: {
+display: true,
+title: {
+display: true,
+text: 'Month'
+}
+},
+y: {
+display: true,
+title: {
+display: true,
+text: 'Value'
+}
+}
+}
+},
+};
+
+```
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart'
+      },
+    },
+    interaction: {
+      mode: 'index',
+      intersect: false
+    },
+    scales: {
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Month'
+        }
+      },
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Value'
+        }
+      }
+    }
+  },
+};
+```
+
+const DATA\_COUNT = 7;
+const NUMBER\_CFG = {count: DATA\_COUNT, min: -100, max: 100};
+const labels = Utils.months({count: DATA\_COUNT});
+const data = {
+labels: labels,
+datasets: [
+{
+label: 'Unfilled',
+fill: false,
+backgroundColor: Utils.CHART\_COLORS.blue,
+borderColor: Utils.CHART\_COLORS.blue,
+data: Utils.numbers(NUMBER\_CFG),
+}, {
+label: 'Dashed',
+fill: false,
+backgroundColor: Utils.CHART\_COLORS.green,
+borderColor: Utils.CHART\_COLORS.green,
+borderDash: [5, 5],
+data: Utils.numbers(NUMBER\_CFG),
+}, {
+label: 'Filled',
+backgroundColor: Utils.CHART\_COLORS.red,
+borderColor: Utils.CHART\_COLORS.red,
+data: Utils.numbers(NUMBER\_CFG),
+fill: true,
+}
+]
+};
+
+```
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+const labels = Utils.months({count: DATA_COUNT});
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Unfilled',
+      fill: false,
+      backgroundColor: Utils.CHART_COLORS.blue,
+      borderColor: Utils.CHART_COLORS.blue,
+      data: Utils.numbers(NUMBER_CFG),
+    }, {
+      label: 'Dashed',
+      fill: false,
+      backgroundColor: Utils.CHART_COLORS.green,
+      borderColor: Utils.CHART_COLORS.green,
+      borderDash: [5, 5],
+      data: Utils.numbers(NUMBER_CFG),
+    }, {
+      label: 'Filled',
+      backgroundColor: Utils.CHART_COLORS.red,
+      borderColor: Utils.CHART_COLORS.red,
+      data: Utils.numbers(NUMBER_CFG),
+      fill: true,
+    }
+  ]
+};
+```
+
+## [#](#docs) Docs
+
+- [Data structures (`labels`)](/docs/latest/general/data-structures.html)
+- [Line](/docs/latest/charts/line.html)
+  - [Line Styling](/docs/latest/charts/line.html#line-styling)

@@ -1,0 +1,51 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: CommonElementOptions (/docs/latest/api/interfaces/CommonElementOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: CommonElementOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/CommonElementOptions.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-commonelementoptions) Interface: CommonElementOptions
+
+## [#](#hierarchy) Hierarchy
+
+- **`CommonElementOptions`**
+
+  ↳ [`ArcOptions`](/docs/latest/api/interfaces/ArcOptions.html)
+
+  ↳ [`LineOptions`](/docs/latest/api/interfaces/LineOptions.html)
+
+  ↳ [`PointOptions`](/docs/latest/api/interfaces/PointOptions.html)
+
+## [#](#properties) Properties
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1828  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1828)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1827  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1827)
+
+---
+
+### [#](#borderwidth) borderWidth
+
+• **borderWidth**: `number`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1826  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1826)

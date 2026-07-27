@@ -1,0 +1,72 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Lumen (/docs/13/getting-started/lumen). Referencia nwidart/laravel-modules v13.
+---
+
+# Lumen
+
+> Fuente: https://laravelmodules.com/docs/13/getting-started/lumen
+> Exportado: 2026-07-23 19:54 UTC
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Lumen
+
+---
+
+Lumen doesn't come with a vendor publisher. In order to use laravel-modules with lumen you have to set it up manually.
+
+Create a config folder inside the root directory and copy `vendor/nwidart/laravel-modules/config/config.php` to that folder named `modules.php`
+
+```
+mkdir config
+
+cp vendor/nwidart/laravel-modules/config/config.php config/modules.php
+
+mkdir config
+cp vendor/nwidart/laravel-modules/config/config.php config/modules.php
+```
+
+Then load the config and the service provider in `bootstrap/app.php`
+
+```
+$app->configure('modules');
+
+$app->register(\Nwidart\Modules\LumenModulesServiceProvider::class)
+
+$app->configure('modules');
+$app->register(\Nwidart\Modules\LumenModulesServiceProvider::class)
+```
+
+Laravel-modules uses `path.public` which isn't defined by default in Lumen.
+Register `path.public` before loading the service provider.
+
+```
+$app->bind('path.public', function() {
+
+return __DIR__ . 'public/';
+
+});
+
+$app->bind('path.public', function() {
+ return __DIR__ . 'public/';
+});
+```
+
+---
+
+[Previous page: 
+←
+Installation and Setup](/docs/13/getting-started/installation-and-setup)
+[Next page: 
+Questions and Issues
+ →](/docs/13/getting-started/questions-and-issues)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/getting-started/lumen.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/getting-started/lumen&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

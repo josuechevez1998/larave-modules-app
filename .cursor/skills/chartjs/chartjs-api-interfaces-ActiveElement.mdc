@@ -1,0 +1,55 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ActiveElement (/docs/latest/api/interfaces/ActiveElement.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ActiveElement
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ActiveElement.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-activeelement) Interface: ActiveElement
+
+## [#](#hierarchy) Hierarchy
+
+- [`ActiveDataPoint`](/docs/latest/api/interfaces/ActiveDataPoint.html)
+
+  ↳ **`ActiveElement`**
+
+## [#](#properties) Properties
+
+### [#](#datasetindex) datasetIndex
+
+• **datasetIndex**: `number`
+
+#### [#](#inherited-from) Inherited from
+
+[ActiveDataPoint](/docs/latest/api/interfaces/ActiveDataPoint.html).[datasetIndex](/docs/latest/api/interfaces/ActiveDataPoint.html#datasetindex)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:486  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L486)
+
+---
+
+### [#](#element) element
+
+• **element**: `default`<`AnyObject`, `AnyObject`>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:491  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L491)
+
+---
+
+### [#](#index) index
+
+• **index**: `number`
+
+#### [#](#inherited-from-2) Inherited from
+
+[ActiveDataPoint](/docs/latest/api/interfaces/ActiveDataPoint.html).[index](/docs/latest/api/interfaces/ActiveDataPoint.html#index)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:487  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L487)

@@ -1,0 +1,115 @@
+---
+alwaysApply: false
+description: Documentación local (driverjs): Simple Highlight - Driver.js (/docs/simple-highlight). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Simple Highlight - Driver.js
+
+> Fuente: https://driverjs.com/docs/simple-highlight
+> Exportado: 2026-07-10 23:31 UTC
+
+# Simple Highlight
+
+Product tours is not the only usecase for Driver.js. You can use it to highlight any element on the page and show a popover with a description. This is useful for providing contextual help to the user e.g. help the user fill a form or explain a feature.
+
+Example below shows how to highlight an element and simply show a popover.
+
+Highlight Me
+
+Here is the code for above example:
+
+```
+const driverObj = driver({
+  popoverClass: "driverjs-theme",
+  stagePadding: 4,
+});
+
+driverObj.highlight({
+  element: "#highlight-me",
+  popover: {
+    side: "bottom",
+    title: "This is a title",
+    description: "This is a description",
+  }
+})
+```
+
+You can also use it to show a simple modal without highlighting any element.
+
+Show Popover
+
+Here is the code for above example:
+
+```
+const driverObj = driver();
+
+driverObj.highlight({
+  popover: {
+    description: "<img src='/animated-example.webp' style='height: 202.5px; width: 270px;' /><span style='font-size: 15px; display: block; margin-top: 10px; text-align: center;'>Yet another highlight example.</span>",
+  }
+})
+```
+
+Focus on the input below and see how the popover is shown.
+
+Here is the code for the above example.
+
+```
+const driverObj = driver({
+  popoverClass: "driverjs-theme",
+  stagePadding: 0,
+  onDestroyed: () => {
+    document?.activeElement?.blur();
+  }
+});
+
+const nameEl = document.getElementById("name");
+const educationEl = document.getElementById("education");
+const ageEl = document.getElementById("age");
+const addressEl = document.getElementById("address");
+const formEl = document.querySelector("form");
+
+nameEl.addEventListener("focus", () => {
+  driverObj.highlight({
+    element: nameEl,
+    popover: {
+      title: "Name",
+      description: "Enter your name here",
+    },
+  });
+});
+
+educationEl.addEventListener("focus", () => {
+  driverObj.highlight({
+    element: educationEl,
+    popover: {
+      title: "Education",
+      description: "Enter your education here",
+    },
+  });
+});
+
+ageEl.addEventListener("focus", () => {
+  driverObj.highlight({
+    element: ageEl,
+    popover: {
+      title: "Age",
+      description: "Enter your age here",
+    },
+  });
+});
+
+addressEl.addEventListener("focus", () => {
+  driverObj.highlight({
+    element: addressEl,
+    popover: {
+      title: "Address",
+      description: "Enter your address here",
+    },
+  });
+});
+
+formEl.addEventListener("blur", () => {
+  driverObj.destroy();
+});
+```

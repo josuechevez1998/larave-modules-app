@@ -1,0 +1,126 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TitleOptions (/docs/latest/api/interfaces/TitleOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TitleOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TitleOptions.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-titleoptions) Interface: TitleOptions
+
+## [#](#properties) Properties
+
+### [#](#align) align
+
+• **align**: [`Align`](/docs/latest/api/#align)
+
+Alignment of the title.
+
+**`Default`**
+
+'center'
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2539  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2539)
+
+---
+
+### [#](#color) color
+
+• **color**: [`Color`](/docs/latest/api/#color)
+
+Color of text
+
+**`See`**
+
+Defaults.color
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2554  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2554)
+
+---
+
+### [#](#display) display
+
+• **display**: `boolean`
+
+Is the title shown?
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2544  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2544)
+
+---
+
+### [#](#font) font
+
+• **font**: [`ScriptableAndScriptableOptions`](/docs/latest/api/#scriptableandscriptableoptions)<`Partial`<[`FontSpec`](/docs/latest/api/interfaces/FontSpec.html)>, [`ScriptableChartContext`](/docs/latest/api/interfaces/ScriptableChartContext.html)>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2555  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2555)
+
+---
+
+### [#](#fullsize) fullSize
+
+• **fullSize**: `boolean`
+
+Marks that this box should take the full width/height of the canvas (moving other boxes). If set to `false`, places the box above/beside the
+chart area
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2562  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2562)
+
+---
+
+### [#](#padding) padding
+
+• **padding**: `number` | { `bottom`: `number` ; `top`: `number` }
+
+Adds padding above and below the title text if a single number is specified. It is also possible to change top and bottom padding separately.
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2566  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2566)
+
+---
+
+### [#](#position) position
+
+• **position**: `"left"` | `"top"` | `"bottom"` | `"right"`
+
+Position of title
+
+**`Default`**
+
+'top'
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2549  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2549)
+
+---
+
+### [#](#text) text
+
+• **text**: `string` | `string`[]
+
+Title text to display. If specified as an array, text is rendered on multiple lines.
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2570  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2570)

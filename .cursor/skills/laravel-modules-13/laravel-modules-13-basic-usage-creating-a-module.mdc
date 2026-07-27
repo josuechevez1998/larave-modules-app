@@ -1,0 +1,492 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Creating a Module (/docs/13/basic-usage/creating-a-module). Referencia nwidart/laravel-modules v13.
+---
+
+# Creating a Module
+
+> Fuente: https://laravelmodules.com/docs/13/basic-usage/creating-a-module
+> Exportado: 2026-07-23 19:54 UTC
+
+- [The module:make Command](#the-modulemake-command)
+- [Module Creation Flags](#module-creation-flags)
+- [`--plain` / `-p`](#code-plaincode-code-pcode)
+- [`--api`](#code-apicode)
+- [`--web`](#code-webcode)
+- [`--disabled` / `-d`](#code-disabledcode-code-dcode)
+- [`--force`](#code-forcecode)
+- [Author flags](#author-flags)
+- [Generated Folder Structure](#generated-folder-structure)
+- [module.json](#modulejson)
+- [composer.json](#composerjson)
+- [Enabling and Disabling Modules](#enabling-and-disabling-modules)
+- [Deleting a Module](#deleting-a-module)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Creating a Module
+
+---
+
+- [The module:make Command](#the-modulemake-command)
+- [Module Creation Flags](#module-creation-flags)
+- [`--plain` / `-p`](#code-plaincode-code-pcode)
+- [`--api`](#code-apicode)
+- [`--web`](#code-webcode)
+- [`--disabled` / `-d`](#code-disabledcode-code-dcode)
+- [`--force`](#code-forcecode)
+- [Author flags](#author-flags)
+- [Generated Folder Structure](#generated-folder-structure)
+- [module.json](#modulejson)
+- [composer.json](#composerjson)
+- [Enabling and Disabling Modules](#enabling-and-disabling-modules)
+- [Deleting a Module](#deleting-a-module)
+
+## [#](#the-modulemake-command)The module:make Command
+
+Generate a new module using the `module:make` artisan command followed by the module name in StudlyCase:
+
+```
+php artisan module:make Blog
+
+php artisan module:make Blog
+```
+
+This creates a `Modules/Blog` directory with a full scaffolded structure and automatically enables the module.
+
+You can generate multiple modules in a single command:
+
+```
+php artisan module:make Blog Shop Users Invoices
+
+php artisan module:make Blog Shop Users Invoices
+```
+
+## [#](#module-creation-flags)Module Creation Flags
+
+### [#](#code-plaincode-code-pcode)`--plain` / `-p`
+
+Creates a minimal module with no scaffolded files (no controller, no seeder, no service provider boilerplate):
+
+```
+php artisan module:make Blog --plain
+
+php artisan module:make Blog --plain
+```
+
+Useful when you want to build up the module structure from scratch.
+
+### [#](#code-apicode)`--api`
+
+Scaffolds the module for an API — generates an API controller and omits views, Blade layouts, and web routes:
+
+```
+php artisan module:make Blog --api
+
+php artisan module:make Blog --api
+```
+
+### [#](#code-webcode)`--web`
+
+The default scaffold. Generates web routes, a controller, views, and a Blade layout:
+
+```
+php artisan module:make Blog --web
+
+php artisan module:make Blog --web
+```
+
+### [#](#code-disabledcode-code-dcode)`--disabled` / `-d`
+
+Creates the module but does not enable it. The module will not be booted by Laravel until explicitly enabled:
+
+```
+php artisan module:make Blog --disabled
+
+php artisan module:make Blog --disabled
+```
+
+Enable it later with:
+
+```
+php artisan module:enable Blog
+
+php artisan module:enable Blog
+```
+
+### [#](#code-forcecode)`--force`
+
+Overwrites an existing module with the same name:
+
+```
+php artisan module:make Blog --force
+
+php artisan module:make Blog --force
+```
+
+### [#](#author-flags)Author flags
+
+Set the author metadata written into the module's `composer.json`:
+
+```
+php artisan module:make Blog --author-name="Jane Smith" --author-email="jane@example.com" --author-vendor="acme"
+
+php artisan module:make Blog --author-name="Jane Smith" --author-email="jane@example.com" --author-vendor="acme"
+```
+
+## [#](#generated-folder-structure)Generated Folder Structure
+
+Running `php artisan module:make Blog` generates the following structure:
+
+```
+Modules/
+
+└── Blog/
+
+├── app/
+
+│   ├── Http/
+
+│   │   └── Controllers/
+
+│   │       └── BlogController.php
+
+│   ├── Models/
+
+│   └── Providers/
+
+│       ├── BlogServiceProvider.php
+
+│       └── RouteServiceProvider.php
+
+├── config/
+
+│   └── config.php
+
+├── database/
+
+│   ├── factories/
+
+│   ├── migrations/
+
+│   └── seeders/
+
+│       └── BlogDatabaseSeeder.php
+
+├── resources/
+
+│   ├── assets/
+
+│   │   ├── js/
+
+│   │   │   └── app.js
+
+│   │   └── sass/
+
+│   │       └── app.scss
+
+│   └── views/
+
+│       ├── layouts/
+
+│       │   └── master.blade.php
+
+│       └── index.blade.php
+
+├── routes/
+
+│   ├── api.php
+
+│   └── web.php
+
+├── tests/
+
+│   ├── Feature/
+
+│   └── Unit/
+
+├── composer.json
+
+├── module.json
+
+├── package.json
+
+└── vite.config.js
+
+Modules/
+└── Blog/
+    ├── app/
+    │   ├── Http/
+    │   │   └── Controllers/
+    │   │       └── BlogController.php
+    │   ├── Models/
+    │   └── Providers/
+    │       ├── BlogServiceProvider.php
+    │       └── RouteServiceProvider.php
+    ├── config/
+    │   └── config.php
+    ├── database/
+    │   ├── factories/
+    │   ├── migrations/
+    │   └── seeders/
+    │       └── BlogDatabaseSeeder.php
+    ├── resources/
+    │   ├── assets/
+    │   │   ├── js/
+    │   │   │   └── app.js
+    │   │   └── sass/
+    │   │       └── app.scss
+    │   └── views/
+    │       ├── layouts/
+    │       │   └── master.blade.php
+    │       └── index.blade.php
+    ├── routes/
+    │   ├── api.php
+    │   └── web.php
+    ├── tests/
+    │   ├── Feature/
+    │   └── Unit/
+    ├── composer.json
+    ├── module.json
+    ├── package.json
+    └── vite.config.js
+```
+
+You can customise which directories are generated by editing the `generator` section of `config/modules.php`. Set `generate` to `false` for any directory you do not want created:
+
+```
+'generator' => [
+
+'controller' => ['path' => 'app/Http/Controllers', 'generate' => true],
+
+'model'      => ['path' => 'app/Models', 'generate' => true],
+
+'migration'  => ['path' => 'database/migrations', 'generate' => true],
+
+'event'      => ['path' => 'app/Events', 'generate' => false],
+
+// ...
+
+],
+
+'generator' => [
+    'controller' => ['path' => 'app/Http/Controllers', 'generate' => true],
+    'model'      => ['path' => 'app/Models', 'generate' => true],
+    'migration'  => ['path' => 'database/migrations', 'generate' => true],
+    'event'      => ['path' => 'app/Events', 'generate' => false],
+    // ...
+],
+```
+
+## [#](#modulejson)module.json
+
+Every module contains a `module.json` file that defines the module's identity and how it is bootstrapped:
+
+```
+{
+
+"name": "Blog",
+
+"alias": "blog",
+
+"description": "",
+
+"keywords": [],
+
+"priority": 0,
+
+"providers": [
+
+"Modules\\Blog\\Providers\\BlogServiceProvider"
+
+],
+
+"files": []
+
+}
+
+{
+    "name": "Blog",
+    "alias": "blog",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Blog\\Providers\\BlogServiceProvider"
+    ],
+    "files": []
+}
+```
+
+**name** — The display name of the module.
+
+**alias** — The lowercase identifier used for view namespacing (`blog::index`), config keys (`config('blog.name')`), and translation lookups.
+
+**priority** — Controls the order in which modules are booted and seeded. Lower numbers boot first. Useful when one module depends on another.
+
+**providers** — Service providers to register when this module is loaded. Add additional providers here if your module has more than one.
+
+**files** — Additional PHP files to include when the module boots. Useful for helper files or global function definitions:
+
+```
+"files": [
+
+"helpers.php"
+
+]
+
+"files": [
+    "helpers.php"
+]
+```
+
+## [#](#composerjson)composer.json
+
+Each module has its own `composer.json`. This primarily controls the module's PSR-4 autoloading and is required for the `wikimedia/composer-merge-plugin` to work:
+
+```
+{
+
+"name": "nwidart/blog",
+
+"description": "",
+
+"authors": [
+
+{
+
+"name": "Nicolas Widart",
+
+"email": "n.widart@gmail.com"
+
+}
+
+],
+
+"extra": {
+
+"laravel": {
+
+"providers": [],
+
+"aliases": {}
+
+}
+
+},
+
+"autoload": {
+
+"psr-4": {
+
+"Modules\\Blog\\": "app/",
+
+"Modules\\Blog\\Database\\Factories\\": "database/factories/",
+
+"Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+
+}
+
+}
+
+}
+
+{
+    "name": "nwidart/blog",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Blog\\": "app/",
+            "Modules\\Blog\\Database\\Factories\\": "database/factories/",
+            "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+        }
+    }
+}
+```
+
+> The vendor name in the module's `composer.json` is set from `composer.vendor` in `config/modules.php`. Update this before creating modules if you plan to publish them as packages.
+
+If a module has its own Composer dependencies (e.g. a third-party SDK only used by that module), you can add them to this file. Note that these dependencies are not automatically installed, they must also be added to the root `composer.json` or required separately.
+
+## [#](#enabling-and-disabling-modules)Enabling and Disabling Modules
+
+Modules are enabled and disabled via artisan commands. Their state is stored in `modules_statuses.json` at the project root.
+
+Enable a module:
+
+```
+php artisan module:enable Blog
+
+php artisan module:enable Blog
+```
+
+Disable a module:
+
+```
+php artisan module:disable Blog
+
+php artisan module:disable Blog
+```
+
+List all modules and their status:
+
+```
+php artisan module:list
+
+php artisan module:list
+```
+
+You can also enable/disable modules programmatically:
+
+```
+use Nwidart\Modules\Facades\Module;
+
+Module::enable('Blog');
+
+Module::disable('Blog');
+
+use Nwidart\Modules\Facades\Module;
+
+Module::enable('Blog');
+Module::disable('Blog');
+```
+
+## [#](#deleting-a-module)Deleting a Module
+
+```
+php artisan module:delete Blog
+
+php artisan module:delete Blog
+```
+
+This permanently removes the `Modules/Blog` directory. This action cannot be undone.
+
+---
+
+[Previous page: 
+←
+Compiling Assets](/docs/13/basic-usage/compiling-assets)
+[Next page: 
+Custom Namespaces
+ →](/docs/13/basic-usage/custom-namespaces)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/basic-usage/creating-a-module.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/basic-usage/creating-a-module&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

@@ -1,0 +1,17 @@
+---
+description: Errores amigables web y API
+globs:
+  - bootstrap/app.php
+  - lang/**/errors.php
+  - resources/views/errors/**/*.blade.php
+alwaysApply: false
+---
+
+# Errores amigables
+
+- `QueryException` → mensaje i18n `errors.database` + log técnico.
+- `ValidationException` → 422 con `errors` (API).
+- `AuthorizationException` → 403 i18n.
+- Genérico → 500 `errors.unexpected`; detalle solo con `APP_DEBUG` (API o Ignition en web).
+- API JSON: `{ message, code, errors? }`.
+- Web: flash `error` + vistas `errors/{403,404,500}`.

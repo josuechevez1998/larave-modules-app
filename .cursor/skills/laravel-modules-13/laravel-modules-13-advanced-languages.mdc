@@ -1,0 +1,39 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Languages and Translations (/docs/13/advanced/languages). Referencia nwidart/laravel-modules v13.
+---
+
+# Languages and Translations
+
+> Fuente: https://laravelmodules.com/docs/13/advanced/languages
+> Exportado: 2026-07-23 (manual)
+
+Stored in `Modules/{Module}/lang/`, namespace = module alias.
+
+## Structure
+
+```
+Modules/Blog/lang/
+├── en/messages.php
+└── fr/messages.php
+```
+
+Published overrides: `resources/lang/modules/blog/` take priority.
+
+## Usage
+
+```php
+__('blog::messages.welcome')
+__('blog::posts.actions.create')
+__('blog::messages.post_count', ['count' => $n])
+trans_choice('blog::messages.posts', $count, ['count' => $count])
+```
+
+JSON files (`lang/fr.json`) use original string as key (no namespace).
+
+## Commands
+
+```bash
+php artisan module:lang Blog
+php artisan module:publish-translation Blog
+```

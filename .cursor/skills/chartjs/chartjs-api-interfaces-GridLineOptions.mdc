@@ -1,0 +1,193 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: GridLineOptions (/docs/latest/api/interfaces/GridLineOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: GridLineOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/GridLineOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-gridlineoptions) Interface: GridLineOptions
+
+## [#](#properties) Properties
+
+### [#](#circular) circular
+
+• **circular**: `boolean`
+
+**`Default`**
+
+false
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3023  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3023)
+
+---
+
+### [#](#color) color
+
+• **color**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+'rgba(0, 0, 0, 0.1)'
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3027  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3027)
+
+---
+
+### [#](#display) display
+
+• **display**: `boolean`
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3019  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3019)
+
+---
+
+### [#](#drawonchartarea) drawOnChartArea
+
+• **drawOnChartArea**: `boolean`
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3035  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3035)
+
+---
+
+### [#](#drawticks) drawTicks
+
+• **drawTicks**: `boolean`
+
+**`Default`**
+
+true
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:3039  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3039)
+
+---
+
+### [#](#linewidth) lineWidth
+
+• **lineWidth**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+1
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:3031  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3031)
+
+---
+
+### [#](#offset) offset
+
+• **offset**: `boolean`
+
+**`Default`**
+
+false
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:3063  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3063)
+
+---
+
+### [#](#tickborderdash) tickBorderDash
+
+• **tickBorderDash**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`[], [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+[]
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:3043  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3043)
+
+---
+
+### [#](#tickborderdashoffset) tickBorderDashOffset
+
+• **tickBorderDashOffset**: [`Scriptable`](/docs/latest/api/#scriptable)<`number`, [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:3047  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3047)
+
+---
+
+### [#](#tickcolor) tickColor
+
+• **tickColor**: [`ScriptableAndArray`](/docs/latest/api/#scriptableandarray)<[`Color`](/docs/latest/api/#color), [`ScriptableScaleContext`](/docs/latest/api/interfaces/ScriptableScaleContext.html)>
+
+**`Default`**
+
+'rgba(0, 0, 0, 0.1)'
+
+#### [#](#defined-in-10) Defined in
+
+[types/index.d.ts:3051  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3051)
+
+---
+
+### [#](#ticklength) tickLength
+
+• **tickLength**: `number`
+
+**`Default`**
+
+10
+
+#### [#](#defined-in-11) Defined in
+
+[types/index.d.ts:3055  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3055)
+
+---
+
+### [#](#tickwidth) tickWidth
+
+• **tickWidth**: `number`
+
+**`Default`**
+
+1
+
+#### [#](#defined-in-12) Defined in
+
+[types/index.d.ts:3059  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3059)
+
+---
+
+### [#](#z) z
+
+• **z**: `number`
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-13) Defined in
+
+[types/index.d.ts:3067  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3067)

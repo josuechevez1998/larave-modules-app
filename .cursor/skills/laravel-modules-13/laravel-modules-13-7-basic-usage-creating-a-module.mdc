@@ -1,0 +1,139 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Creating a module (/docs/7/basic-usage/creating-a-module). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Creating a module
+
+> Fuente: https://laravelmodules.com/docs/7/basic-usage/creating-a-module
+> Exportado: 2026-07-23 19:57 UTC
+
+Creating a module is simple and straightforward. Run the following command to create a module.
+
+Copied!
+
+```
+php artisan module:make <module-name>
+
+php artisan module:make <module-name>
+```
+
+Replace `<module-name>` by your desired name.
+
+It is also possible to create multiple modules in one command.
+
+Copied!
+
+```
+php artisan module:make Blog User Auth
+
+php artisan module:make Blog User Auth
+```
+
+By default when you create a new module, the command will add some resources like a controller, seed class, service provider, etc. automatically. If you don't want these, you can add `--plain` flag, to generate a plain module.
+
+Copied!
+
+```
+php artisan module:make Blog --plain
+
+# or
+
+php artisan module:make Blog -p
+
+php artisan module:make Blog --plain
+# or
+php artisan module:make Blog -p
+```
+
+## [#](#naming-convention)Naming convention
+
+Because we are autoloading the modules using [psr-4](http://www.php-fig.org/psr/psr-4/), we strongly recommend using StudlyCase convention.
+
+## [#](#folder-structure)Folder structure
+
+Copied!
+
+```
+app/
+
+bootstrap/
+
+vendor/
+
+Modules/
+
+├── Blog/
+
+├── Assets/
+
+├── Config/
+
+├── Console/
+
+├── Database/
+
+├── Migrations/
+
+├── Seeders/
+
+├── Entities/
+
+├── Http/
+
+├── Controllers/
+
+├── Middleware/
+
+├── Requests/
+
+├── routes.php
+
+├── Providers/
+
+├── BlogServiceProvider.php
+
+├── Resources/
+
+├── lang/
+
+├── views/
+
+├── Repositories/
+
+├── Tests/
+
+├── composer.json
+
+├── module.json
+
+├── start.php
+
+app/
+bootstrap/
+vendor/
+Modules/
+  ├── Blog/
+      ├── Assets/
+      ├── Config/
+      ├── Console/
+      ├── Database/
+          ├── Migrations/
+          ├── Seeders/
+      ├── Entities/
+      ├── Http/
+          ├── Controllers/
+          ├── Middleware/
+          ├── Requests/
+          ├── routes.php
+      ├── Providers/
+          ├── BlogServiceProvider.php
+      ├── Resources/
+          ├── lang/
+          ├── views/
+      ├── Repositories/
+      ├── Tests/
+      ├── composer.json
+      ├── module.json
+      ├── start.php
+```

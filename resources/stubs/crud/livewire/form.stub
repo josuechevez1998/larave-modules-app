@@ -1,0 +1,39 @@
+<?php
+
+namespace {{livewireNamespace}}\Forms;
+
+use App\Services\{{modelName}}Service;
+use {{modelNamespace}}\{{modelName}};
+use Livewire\Form;
+
+class {{modelName}}Form extends Form
+{
+    public ?{{modelName}} ${{modelNameLowerCase}}Model;
+    {{livewireFormProperties}}
+
+    public function rules(): array
+    {
+        return [{{rules}}
+        ];
+    }
+
+    public function set{{modelName}}Model({{modelName}} ${{modelNameLowerCase}}Model): void
+    {
+        $this->{{modelNameLowerCase}}Model = ${{modelNameLowerCase}}Model;
+        {{livewireFormSetValues}}
+    }
+
+    public function store({{modelName}}Service $service): void
+    {
+        $service->create($this->validate());
+
+        $this->reset();
+    }
+
+    public function update({{modelName}}Service $service): void
+    {
+        $service->update($this->{{modelNameLowerCase}}Model, $this->validate());
+
+        $this->reset();
+    }
+}

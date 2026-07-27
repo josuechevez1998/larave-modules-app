@@ -1,0 +1,30 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Common options to all axes (/docs/latest/axes/_common.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Common options to all axes
+
+> Fuente: https://www.chartjs.org/docs/latest/axes/_common.html
+> Exportado: 2026-07-12 20:58 UTC
+
+### [#](#common-options-to-all-axes) Common options to all axes
+
+Namespace: `options.scales[scaleId]`
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `type` | `string` |  | Type of scale being employed. Custom scales can be created and registered with a string key. This allows changing the type of an axis for a chart. |
+| `alignToPixels` | `boolean` | `false` | Align pixel values to device pixels. |
+| `backgroundColor` | [`Color`](/docs/latest/general/colors.html) |  | Background color of the scale area. |
+| `border` | `object` |  | Border configuration. [more...](/docs/latest/axes/styling.html#border-configuration) |
+| `display` | `boolean`|`string` | `true` | Controls the axis global visibility (visible when `true`, hidden when `false`). When `display: 'auto'`, the axis is visible only if at least one associated dataset is visible. |
+| `grid` | `object` |  | Grid line configuration. [more...](/docs/latest/axes/styling.html#grid-line-configuration) |
+| `min` | `number` |  | User defined minimum number for the scale, overrides minimum value from data. [more...](/docs/latest/axes/#axis-range-settings) |
+| `max` | `number` |  | User defined maximum number for the scale, overrides maximum value from data. [more...](/docs/latest/axes/#axis-range-settings) |
+| `reverse` | `boolean` | `false` | Reverse the scale. |
+| `stacked` | `boolean`|`string` | `false` | Should the data be stacked. [more...](/docs/latest/axes/#stacking) |
+| `suggestedMax` | `number` |  | Adjustment used when calculating the maximum data value. [more...](/docs/latest/axes/#axis-range-settings) |
+| `suggestedMin` | `number` |  | Adjustment used when calculating the minimum data value. [more...](/docs/latest/axes/#axis-range-settings) |
+| `ticks` | `object` |  | Tick configuration. [more...](/docs/latest/axes/#tick-configuration) |
+| `weight` | `number` | `0` | The weight used to sort the axis. Higher weights are further away from the chart area. |

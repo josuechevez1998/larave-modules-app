@@ -1,0 +1,329 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Middleware (/docs/13/basic-usage/middleware). Referencia nwidart/laravel-modules v13.
+---
+
+# Middleware
+
+> Fuente: https://laravelmodules.com/docs/13/basic-usage/middleware
+> Exportado: 2026-07-23 19:54 UTC
+
+- [Generating Middleware](#generating-middleware)
+- [Registering Middleware](#registering-middleware)
+- [As a Route Middleware Alias](#as-a-route-middleware-alias)
+- [Directly on Routes](#directly-on-routes)
+- [In the Global Kernel](#in-the-global-kernel)
+- [Middleware on Route Groups](#middleware-on-route-groups)
+- [Middleware Parameters](#middleware-parameters)
+- [Terminable Middleware](#terminable-middleware)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Middleware
+
+---
+
+- [Generating Middleware](#generating-middleware)
+- [Registering Middleware](#registering-middleware)
+- [As a Route Middleware Alias](#as-a-route-middleware-alias)
+- [Directly on Routes](#directly-on-routes)
+- [In the Global Kernel](#in-the-global-kernel)
+- [Middleware on Route Groups](#middleware-on-route-groups)
+- [Middleware Parameters](#middleware-parameters)
+- [Terminable Middleware](#terminable-middleware)
+
+Module middleware works exactly like Laravel middleware. You can create middleware scoped to a module and apply it to the module's routes.
+
+## [#](#generating-middleware)Generating Middleware
+
+```
+php artisan module:make-middleware EnsurePostIsPublished Blog
+
+php artisan module:make-middleware EnsurePostIsPublished Blog
+```
+
+This creates `Modules/Blog/app/Http/Middleware/EnsurePostIsPublished.php`:
+
+```
+<?php
+
+namespace Modules\Blog\Http\Middleware;
+
+use Closure;
+
+use Illuminate\Http\Request;
+
+use Symfony\Component\HttpFoundation\Response;
+
+class EnsurePostIsPublished
+
+{
+
+public function handle(Request $request, Closure $next): Response
+
+{
+
+$post = $request->route('post');
+
+if ($post && ! $post->isPublished()) {
+
+abort(404);
+
+}
+
+return $next($request);
+
+}
+
+}
+
+<?php
+
+namespace Modules\Blog\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class EnsurePostIsPublished
+{
+    public function handle(Request $request, Closure $next): Response
+    {
+        $post = $request->route('post');
+
+        if ($post && ! $post->isPublished()) {
+            abort(404);
+        }
+
+        return $next($request);
+    }
+}
+```
+
+## [#](#registering-middleware)Registering Middleware
+
+### [#](#as-a-route-middleware-alias)As a Route Middleware Alias
+
+Register the middleware in your module's `RouteServiceProvider` so it can be applied by alias in route definitions:
+
+```
+// Modules/Blog/app/Providers/RouteServiceProvider.php
+
+use Modules\Blog\Http\Middleware\EnsurePostIsPublished;
+
+public function boot(): void
+
+{
+
+$this->app['router']->aliasMiddleware('post.published', EnsurePostIsPublished::class);
+
+parent::boot();
+
+}
+
+// Modules/Blog/app/Providers/RouteServiceProvider.php
+
+use Modules\Blog\Http\Middleware\EnsurePostIsPublished;
+
+public function boot(): void
+{
+    $this->app['router']->aliasMiddleware('post.published', EnsurePostIsPublished::class);
+
+    parent::boot();
+}
+```
+
+Then apply it in your route file:
+
+```
+Route::get('/posts/{post}', [PostController::class, 'show'])
+
+->middleware('post.published');
+
+Route::get('/posts/{post}', [PostController::class, 'show'])
+    ->middleware('post.published');
+```
+
+### [#](#directly-on-routes)Directly on Routes
+
+You can also reference the middleware class directly without registering an alias:
+
+```
+use Modules\Blog\Http\Middleware\EnsurePostIsPublished;
+
+Route::get('/posts/{post}', [PostController::class, 'show'])
+
+->middleware(EnsurePostIsPublished::class);
+
+use Modules\Blog\Http\Middleware\EnsurePostIsPublished;
+
+Route::get('/posts/{post}', [PostController::class, 'show'])
+    ->middleware(EnsurePostIsPublished::class);
+```
+
+### [#](#in-the-global-kernel)In the Global Kernel
+
+To apply middleware globally or as part of a middleware group (e.g. `web` or `api`), register it in `app/Http/Kernel.php`:
+
+```
+// app/Http/Kernel.php
+
+protected $middlewareGroups = [
+
+'web' => [
+
+// ...
+
+\Modules\Blog\Http\Middleware\TrackBlogVisits::class,
+
+],
+
+];
+
+// app/Http/Kernel.php
+
+protected $middlewareGroups = [
+    'web' => [
+        // ...
+        \Modules\Blog\Http\Middleware\TrackBlogVisits::class,
+    ],
+];
+```
+
+## [#](#middleware-on-route-groups)Middleware on Route Groups
+
+Apply middleware to a group of module routes:
+
+```
+// Modules/Blog/routes/web.php
+
+Route::middleware(['web', 'auth', 'post.published'])
+
+->prefix('blog')
+
+->name('blog.')
+
+->group(function () {
+
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
+});
+
+// Modules/Blog/routes/web.php
+
+Route::middleware(['web', 'auth', 'post.published'])
+    ->prefix('blog')
+    ->name('blog.')
+    ->group(function () {
+        Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+    });
+```
+
+## [#](#middleware-parameters)Middleware Parameters
+
+Middleware can accept parameters. Define them after the middleware name separated by a colon:
+
+```
+// Modules/Blog/app/Http/Middleware/RequireRole.php
+
+public function handle(Request $request, Closure $next, string $role): Response
+
+{
+
+if (! $request->user()->hasRole($role)) {
+
+abort(403);
+
+}
+
+return $next($request);
+
+}
+
+// Modules/Blog/app/Http/Middleware/RequireRole.php
+
+public function handle(Request $request, Closure $next, string $role): Response
+{
+    if (! $request->user()->hasRole($role)) {
+        abort(403);
+    }
+
+    return $next($request);
+}
+```
+
+Register the alias and use it with a parameter:
+
+```
+Route::middleware('role:editor')->group(function () {
+
+Route::get('/posts/create', [PostController::class, 'create']);
+
+Route::post('/posts', [PostController::class, 'store']);
+
+});
+
+Route::middleware('role:editor')->group(function () {
+    Route::get('/posts/create', [PostController::class, 'create']);
+    Route::post('/posts', [PostController::class, 'store']);
+});
+```
+
+## [#](#terminable-middleware)Terminable Middleware
+
+Middleware can run code after the response has been sent to the browser by implementing the `terminate` method:
+
+```
+public function handle(Request $request, Closure $next): Response
+
+{
+
+return $next($request);
+
+}
+
+public function terminate(Request $request, Response $response): void
+
+{
+
+// Log post views after the response has been sent
+
+if ($request->route('post')) {
+
+PostView::record($request->route('post'), $request->ip());
+
+}
+
+}
+
+public function handle(Request $request, Closure $next): Response
+{
+    return $next($request);
+}
+
+public function terminate(Request $request, Response $response): void
+{
+    // Log post views after the response has been sent
+    if ($request->route('post')) {
+        PostView::record($request->route('post'), $request->ip());
+    }
+}
+```
+
+---
+
+[Previous page: 
+←
+Service Providers](/docs/13/basic-usage/service-providers)
+[Next page: 
+Advanced: Artisan Commands
+ →](/docs/13/advanced/artisan-commands)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/basic-usage/middleware.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/basic-usage/middleware&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

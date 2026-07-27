@@ -1,0 +1,40 @@
+---
+alwaysApply: false
+description: Índice de documentación local (driverjs) exportada desde driverjs.com.
+---
+
+# driverjs — documentación local
+
+Exportada el **2026-07-10 23:31 UTC** desde [https://driverjs.com/docs/installation](https://driverjs.com/docs/installation).
+
+Carpeta: `.cursor/skills/driverjs/`
+
+## Cómo actualizar
+
+```bash
+php artisan cursor:make:documentation https://driverjs.com/docs/installation --prefix=driverjs
+```
+
+## Índice
+
+- [Installation - Driver.js](driverjs-installation.mdc)
+- [Basic Usage - Driver.js](driverjs-basic-usage.mdc)
+- [Configuration - Driver.js](driverjs-configuration.mdc)
+- [API Reference - Driver.js](driverjs-api.mdc)
+- [Theming - Driver.js](driverjs-theming.mdc)
+- [Changelog - Driver.js](driverjs-changelog.mdc)
+- [Animated Tour - Driver.js](driverjs-animated-tour.mdc)
+- [Static Tour - Driver.js](driverjs-static-tour.mdc)
+- [Styling Popover - Driver.js](driverjs-styling-popover.mdc)
+- [Tour Progress - Driver.js](driverjs-tour-progress.mdc)
+- [Async Tour - Driver.js](driverjs-async-tour.mdc)
+- [Confirm on Exit - Driver.js](driverjs-confirm-on-exit.mdc)
+- [Prevent Tour Exit - Driver.js](driverjs-prevent-destroy.mdc)
+- [Styling Overlay - Driver.js](driverjs-styling-overlay.mdc)
+- [Popover Position - Driver.js](driverjs-popover-position.mdc)
+- [Popover Buttons - Driver.js](driverjs-buttons.mdc)
+- [Simple Highlight - Driver.js](driverjs-simple-highlight.mdc)
+
+## No exportadas
+
+- Ninguna.

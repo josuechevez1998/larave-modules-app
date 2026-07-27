@@ -1,0 +1,87 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: PluginOptionsByType<TType> (/docs/latest/api/interfaces/PluginOptionsByType.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: PluginOptionsByType<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/PluginOptionsByType.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-pluginoptionsbytype-ttype) Interface: PluginOptionsByType<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#colors) colors
+
+• **colors**: `ColorsPluginOptions`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2985  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2985)
+
+---
+
+### [#](#decimation) decimation
+
+• **decimation**: [`DecimationOptions`](/docs/latest/api/#decimationoptions)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2986  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2986)
+
+---
+
+### [#](#filler) filler
+
+• **filler**: [`FillerOptions`](/docs/latest/api/interfaces/FillerOptions.html)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2987  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2987)
+
+---
+
+### [#](#legend) legend
+
+• **legend**: [`LegendOptions`](/docs/latest/api/interfaces/LegendOptions.html)<`TType`>
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2988  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2988)
+
+---
+
+### [#](#subtitle) subtitle
+
+• **subtitle**: [`TitleOptions`](/docs/latest/api/interfaces/TitleOptions.html)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2989  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2989)
+
+---
+
+### [#](#title) title
+
+• **title**: [`TitleOptions`](/docs/latest/api/interfaces/TitleOptions.html)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2990  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2990)
+
+---
+
+### [#](#tooltip) tooltip
+
+• **tooltip**: [`TooltipOptions`](/docs/latest/api/interfaces/TooltipOptions.html)<`TType`>
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2991  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2991)

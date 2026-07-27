@@ -1,0 +1,125 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipItem<TType> (/docs/latest/api/interfaces/TooltipItem.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipItem<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipItem.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-tooltipitem-ttype) Interface: TooltipItem<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#chart) chart
+
+• **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`>
+
+The chart the tooltip is being shown on
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2937  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2937)
+
+---
+
+### [#](#dataindex) dataIndex
+
+• **dataIndex**: `number`
+
+Index of this data item in the dataset
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2972  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2972)
+
+---
+
+### [#](#dataset) dataset
+
+• **dataset**: `UnionToIntersection`<[`ChartDataset`](/docs/latest/api/#chartdataset)<`TType`, `DistributiveArray`<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"defaultDataPoint"`]>>>
+
+The dataset the item comes from
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2962  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2962)
+
+---
+
+### [#](#datasetindex) datasetIndex
+
+• **datasetIndex**: `number`
+
+Index of the dataset the item comes from
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2967  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2967)
+
+---
+
+### [#](#element) element
+
+• **element**: `default`<`AnyObject`, `AnyObject`>
+
+The chart element (point, arc, bar, etc.) for this tooltip item
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2977  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2977)
+
+---
+
+### [#](#formattedvalue) formattedValue
+
+• **formattedValue**: `string`
+
+Formatted value for the tooltip
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2957  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2957)
+
+---
+
+### [#](#label) label
+
+• **label**: `string`
+
+Label for the tooltip
+
+#### [#](#defined-in-7) Defined in
+
+[types/index.d.ts:2942  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2942)
+
+---
+
+### [#](#parsed) parsed
+
+• **parsed**: `UnionToIntersection`<[`ParsedDataType`](/docs/latest/api/#parseddatatype)<`TType`>>
+
+Parsed data values for the given `dataIndex` and `datasetIndex`
+
+#### [#](#defined-in-8) Defined in
+
+[types/index.d.ts:2947  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2947)
+
+---
+
+### [#](#raw) raw
+
+• **raw**: `unknown`
+
+Raw data values for the given `dataIndex` and `datasetIndex`
+
+#### [#](#defined-in-9) Defined in
+
+[types/index.d.ts:2952  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2952)

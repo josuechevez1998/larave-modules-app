@@ -1,0 +1,80 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Console Commands (/docs/13/advanced/module-console-commands). Referencia nwidart/laravel-modules v13.
+---
+
+# Console Commands
+
+> Fuente: https://laravelmodules.com/docs/13/advanced/module-console-commands
+> Exportado: 2026-07-23 (manual)
+
+Modules can define their own Artisan commands. Use CamelCase module names.
+
+## Generate & register
+
+```bash
+php artisan module:make-command ImportPostsCommand Blog
+```
+
+```php
+// BlogServiceProvider
+protected function registerCommands(): void
+{
+    $this->commands([
+        \Modules\Blog\Console\Commands\ImportPostsCommand::class,
+    ]);
+}
+```
+
+```bash
+php artisan blog:import-posts
+```
+
+## Signatures
+
+```php
+protected $signature = 'blog:publish {post}';
+protected $signature = 'blog:import-posts {--dry-run}';
+protected $signature = 'blog:import-posts {--limit=100}';
+protected $signature = 'blog:import-posts
+                        {source : The import source (csv|api)}
+                        {--limit=100}
+                        {--dry-run}';
+```
+
+## Input / progress / confirm
+
+```php
+$source = $this->argument('source');
+$limit = (int) $this->option('limit');
+$dryRun = $this->option('dry-run');
+
+$bar = $this->output->createProgressBar($posts->count());
+$bar->start();
+// ...
+$bar->finish();
+
+if (! $this->confirm('Continue?')) {
+    return self::SUCCESS;
+}
+```
+
+## Schedule
+
+```php
+protected function registerCommandSchedules(): void
+{
+    $this->app->booted(function () {
+        $schedule = $this->app->make(\Illuminate\Console\Scheduling\Schedule::class);
+        $schedule->command('blog:publish-scheduled')->everyMinute();
+        $schedule->command('blog:prune-drafts')->dailyAt('00:00');
+    });
+}
+```
+
+## Call from code
+
+```php
+Artisan::call('blog:import-posts', ['source' => 'api', '--limit' => 50]);
+Artisan::queue('blog:import-posts', ['source' => 'api']);
+```

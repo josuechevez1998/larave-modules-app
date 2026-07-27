@@ -1,0 +1,95 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TooltipLabelStyle (/docs/latest/api/interfaces/TooltipLabelStyle.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TooltipLabelStyle
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TooltipLabelStyle.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-tooltiplabelstyle) Interface: TooltipLabelStyle
+
+## [#](#properties) Properties
+
+### [#](#backgroundcolor) backgroundColor
+
+• **backgroundColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2577  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2577)
+
+---
+
+### [#](#bordercolor) borderColor
+
+• **borderColor**: [`Color`](/docs/latest/api/#color)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2576  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2576)
+
+---
+
+### [#](#borderdash) borderDash
+
+• `Optional` **borderDash**: [`number`, `number`]
+
+Border dash
+
+**`Since`**
+
+3.1.0
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2589  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2589)
+
+---
+
+### [#](#borderdashoffset) borderDashOffset
+
+• `Optional` **borderDashOffset**: `number`
+
+Border dash offset
+
+**`Since`**
+
+3.1.0
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:2595  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2595)
+
+---
+
+### [#](#borderradius) borderRadius
+
+• `Optional` **borderRadius**: `number` | [`BorderRadius`](/docs/latest/api/interfaces/BorderRadius.html)
+
+borderRadius
+
+**`Since`**
+
+3.1.0
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:2601  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2601)
+
+---
+
+### [#](#borderwidth) borderWidth
+
+• `Optional` **borderWidth**: `number`
+
+Width of border line
+
+**`Since`**
+
+3.1.0
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:2583  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2583)

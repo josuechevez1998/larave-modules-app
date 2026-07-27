@@ -1,0 +1,138 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ScaleTypeRegistry (/docs/latest/api/interfaces/ScaleTypeRegistry.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ScaleTypeRegistry
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ScaleTypeRegistry.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-scaletyperegistry) Interface: ScaleTypeRegistry
+
+## [#](#hierarchy) Hierarchy
+
+- [`CartesianScaleTypeRegistry`](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html)
+- [`RadialScaleTypeRegistry`](/docs/latest/api/interfaces/RadialScaleTypeRegistry.html)
+
+  ↳ **`ScaleTypeRegistry`**
+
+## [#](#properties) Properties
+
+### [#](#category) category
+
+• **category**: `Object`
+
+#### [#](#type-declaration) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`CategoryScaleOptions`](/docs/latest/api/#categoryscaleoptions) |
+
+#### [#](#inherited-from) Inherited from
+
+[CartesianScaleTypeRegistry](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html).[category](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html#category)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3652  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3652)
+
+---
+
+### [#](#linear) linear
+
+• **linear**: `Object`
+
+#### [#](#type-declaration-2) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`LinearScaleOptions`](/docs/latest/api/#linearscaleoptions) |
+
+#### [#](#inherited-from-2) Inherited from
+
+[CartesianScaleTypeRegistry](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html).[linear](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html#linear)
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3646  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3646)
+
+---
+
+### [#](#logarithmic) logarithmic
+
+• **logarithmic**: `Object`
+
+#### [#](#type-declaration-3) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`LogarithmicScaleOptions`](/docs/latest/api/#logarithmicscaleoptions) |
+
+#### [#](#inherited-from-3) Inherited from
+
+[CartesianScaleTypeRegistry](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html).[logarithmic](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html#logarithmic)
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:3649  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3649)
+
+---
+
+### [#](#radiallinear) radialLinear
+
+• **radialLinear**: `Object`
+
+#### [#](#type-declaration-4) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`RadialLinearScaleOptions`](/docs/latest/api/#radiallinearscaleoptions) |
+
+#### [#](#inherited-from-4) Inherited from
+
+[RadialScaleTypeRegistry](/docs/latest/api/interfaces/RadialScaleTypeRegistry.html).[radialLinear](/docs/latest/api/interfaces/RadialScaleTypeRegistry.html#radiallinear)
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:3664  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3664)
+
+---
+
+### [#](#time) time
+
+• **time**: `Object`
+
+#### [#](#type-declaration-5) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`TimeScaleOptions`](/docs/latest/api/#timescaleoptions) |
+
+#### [#](#inherited-from-5) Inherited from
+
+[CartesianScaleTypeRegistry](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html).[time](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html#time)
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:3655  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3655)
+
+---
+
+### [#](#timeseries) timeseries
+
+• **timeseries**: `Object`
+
+#### [#](#type-declaration-6) Type declaration
+
+| Name | Type |
+| --- | --- |
+| `options` | [`TimeScaleOptions`](/docs/latest/api/#timescaleoptions) |
+
+#### [#](#inherited-from-6) Inherited from
+
+[CartesianScaleTypeRegistry](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html).[timeseries](/docs/latest/api/interfaces/CartesianScaleTypeRegistry.html#timeseries)
+
+#### [#](#defined-in-6) Defined in
+
+[types/index.d.ts:3658  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3658)

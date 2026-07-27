@@ -1,0 +1,110 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Class: Animation (/docs/latest/api/classes/Animation.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Class: Animation
+
+> Fuente: https://www.chartjs.org/docs/latest/api/classes/Animation.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#class-animation) Class: Animation
+
+## [#](#constructors) Constructors
+
+### [#](#constructor) constructor
+
+• **new Animation**(`cfg`, `target`, `prop`, `to?`)
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `cfg` | `AnyObject` |
+| `target` | `AnyObject` |
+| `prop` | `string` |
+| `to?` | `unknown` |
+
+#### [#](#defined-in) Defined in
+
+[types/animation.d.ts:5  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/animation.d.ts#L5)
+
+## [#](#properties) Properties
+
+### [#](#to) \_to
+
+• `Readonly` **\_to**: `unknown`
+
+#### [#](#defined-in-2) Defined in
+
+[types/animation.d.ts:10  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/animation.d.ts#L10)
+
+## [#](#methods) Methods
+
+### [#](#active) active
+
+▸ **active**(): `boolean`
+
+#### [#](#returns) Returns
+
+`boolean`
+
+#### [#](#defined-in-3) Defined in
+
+[types/animation.d.ts:6  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/animation.d.ts#L6)
+
+---
+
+### [#](#cancel) cancel
+
+▸ **cancel**(): `void`
+
+#### [#](#returns-2) Returns
+
+`void`
+
+#### [#](#defined-in-4) Defined in
+
+[types/animation.d.ts:8  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/animation.d.ts#L8)
+
+---
+
+### [#](#tick) tick
+
+▸ **tick**(`date`): `void`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `date` | `number` |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-5) Defined in
+
+[types/animation.d.ts:9  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/animation.d.ts#L9)
+
+---
+
+### [#](#update) update
+
+▸ **update**(`cfg`, `to`, `date`): `void`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `cfg` | `AnyObject` |
+| `to` | `unknown` |
+| `date` | `number` |
+
+#### [#](#returns-4) Returns
+
+`void`
+
+#### [#](#defined-in-6) Defined in
+
+[types/animation.d.ts:7  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/animation.d.ts#L7)

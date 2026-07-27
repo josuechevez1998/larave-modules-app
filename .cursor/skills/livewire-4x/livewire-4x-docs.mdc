@@ -1,0 +1,103 @@
+---
+alwaysApply: false
+description: Índice de documentación local (livewire-4x) exportada desde livewire.laravel.com.
+---
+
+# livewire-4x — documentación local
+
+Exportada el **2026-07-10 22:34 UTC** desde [https://livewire.laravel.com/docs/4.x/quickstart](https://livewire.laravel.com/docs/4.x/quickstart).
+
+Carpeta: `.cursor/skills/livewire-4x/`
+
+## Cómo actualizar
+
+```bash
+php artisan cursor:make:documentation https://livewire.laravel.com/docs/4.x/quickstart --prefix=livewire-4x
+```
+
+## Índice
+
+- [Quickstart](livewire-4x-quickstart.mdc)
+- [Installation](livewire-4x-installation.mdc)
+- [Upgrade Guide](livewire-4x-upgrading.mdc)
+- [Components](livewire-4x-components.mdc)
+- [Pages](livewire-4x-pages.mdc)
+- [Properties](livewire-4x-properties.mdc)
+- [Actions](livewire-4x-actions.mdc)
+- [Forms](livewire-4x-forms.mdc)
+- [Events](livewire-4x-events.mdc)
+- [Lifecycle Hooks](livewire-4x-lifecycle-hooks.mdc)
+- [Nesting Components](livewire-4x-nesting.mdc)
+- [Testing](livewire-4x-testing.mdc)
+- [Alpine](livewire-4x-alpine.mdc)
+- [Styles](livewire-4x-styles.mdc)
+- [Navigate](livewire-4x-navigate.mdc)
+- [Islands](livewire-4x-islands.mdc)
+- [Lazy Loading](livewire-4x-lazy.mdc)
+- [Loading States](livewire-4x-loading-states.mdc)
+- [Validation](livewire-4x-validation.mdc)
+- [File Uploads](livewire-4x-uploads.mdc)
+- [Pagination](livewire-4x-pagination.mdc)
+- [URL Query Parameters](livewire-4x-url.mdc)
+- [Computed Properties](livewire-4x-computed-properties.mdc)
+- [Redirecting](livewire-4x-redirecting.mdc)
+- [File Downloads](livewire-4x-downloads.mdc)
+- [Teleport](livewire-4x-teleport.mdc)
+- [wire:bind](livewire-4x-wire-bind.mdc)
+- [wire:click](livewire-4x-wire-click.mdc)
+- [wire:submit](livewire-4x-wire-submit.mdc)
+- [wire:model](livewire-4x-wire-model.mdc)
+- [wire:loading](livewire-4x-wire-loading.mdc)
+- [wire:navigate](livewire-4x-wire-navigate.mdc)
+- [wire:current](livewire-4x-wire-current.mdc)
+- [wire:cloak](livewire-4x-wire-cloak.mdc)
+- [wire:dirty](livewire-4x-wire-dirty.mdc)
+- [wire:confirm](livewire-4x-wire-confirm.mdc)
+- [wire:transition](livewire-4x-wire-transition.mdc)
+- [wire:init](livewire-4x-wire-init.mdc)
+- [wire:intersect](livewire-4x-wire-intersect.mdc)
+- [wire:poll](livewire-4x-wire-poll.mdc)
+- [wire:offline](livewire-4x-wire-offline.mdc)
+- [wire:ignore](livewire-4x-wire-ignore.mdc)
+- [wire:ref](livewire-4x-wire-ref.mdc)
+- [wire:replace](livewire-4x-wire-replace.mdc)
+- [wire:show](livewire-4x-wire-show.mdc)
+- [wire:sort](livewire-4x-wire-sort.mdc)
+- [wire:stream](livewire-4x-wire-stream.mdc)
+- [wire:text](livewire-4x-wire-text.mdc)
+- [Async](livewire-4x-attribute-async.mdc)
+- [Computed](livewire-4x-attribute-computed.mdc)
+- [Defer](livewire-4x-attribute-defer.mdc)
+- [Isolate](livewire-4x-attribute-isolate.mdc)
+- [Js](livewire-4x-attribute-js.mdc)
+- [Json](livewire-4x-attribute-json.mdc)
+- [Layout](livewire-4x-attribute-layout.mdc)
+- [Lazy](livewire-4x-attribute-lazy.mdc)
+- [Locked](livewire-4x-attribute-locked.mdc)
+- [Modelable](livewire-4x-attribute-modelable.mdc)
+- [On](livewire-4x-attribute-on.mdc)
+- [Reactive](livewire-4x-attribute-reactive.mdc)
+- [Renderless](livewire-4x-attribute-renderless.mdc)
+- [Session](livewire-4x-attribute-session.mdc)
+- [Title](livewire-4x-attribute-title.mdc)
+- [Transition](livewire-4x-attribute-transition.mdc)
+- [Url](livewire-4x-attribute-url.mdc)
+- [Validate](livewire-4x-attribute-validate.mdc)
+- [@island](livewire-4x-directive-island.mdc)
+- [@placeholder](livewire-4x-directive-placeholder.mdc)
+- [@persist](livewire-4x-directive-persist.mdc)
+- [@teleport](livewire-4x-directive-teleport.mdc)
+- [Morphing](livewire-4x-morphing.mdc)
+- [Hydration](livewire-4x-hydration.mdc)
+- [Nesting](livewire-4x-understanding-nesting.mdc)
+- [Troubleshooting](livewire-4x-troubleshooting.mdc)
+- [Security](livewire-4x-security.mdc)
+- [CSP](livewire-4x-csp.mdc)
+- [JavaScript](livewire-4x-javascript.mdc)
+- [Synthesizers](livewire-4x-synthesizers.mdc)
+- [Package Development](livewire-4x-packages.mdc)
+- [Contribution Guide](livewire-4x-contribution-guide.mdc)
+
+## No exportadas
+
+- Ninguna.

@@ -1,0 +1,21 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Helpers (/docs/2/basic-usage/helpers). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Helpers
+
+> Fuente: https://laravelmodules.com/docs/2/basic-usage/helpers
+> Exportado: 2026-07-23 19:57 UTC
+
+## [#](#module-path-function)Module path function
+
+Get the path to the given module.
+
+Copied!
+
+```
+$path = module_path('Blog');
+
+$path = module_path('Blog');
+```

@@ -1,0 +1,79 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: TypedRegistry<T> (/docs/latest/api/interfaces/TypedRegistry.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: TypedRegistry<T>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/TypedRegistry.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-typedregistry-t) Interface: TypedRegistry<T>
+
+## [#](#type-parameters) Type parameters
+
+| Name |
+| --- |
+| `T` |
+
+## [#](#methods) Methods
+
+### [#](#get) get
+
+▸ **get**(`id`): `T`
+
+#### [#](#parameters) Parameters
+
+| Name | Type |
+| --- | --- |
+| `id` | `string` |
+
+#### [#](#returns) Returns
+
+`T`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1540  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1540)
+
+---
+
+### [#](#register) register
+
+▸ **register**(`item`): `string`
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type |
+| --- | --- |
+| `item` | [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) |
+
+#### [#](#returns-2) Returns
+
+`string`
+
+The scope where items defaults were registered to.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1539  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1539)
+
+---
+
+### [#](#unregister) unregister
+
+▸ **unregister**(`item`): `void`
+
+#### [#](#parameters-3) Parameters
+
+| Name | Type |
+| --- | --- |
+| `item` | [`ChartComponent`](/docs/latest/api/interfaces/ChartComponent.html) |
+
+#### [#](#returns-3) Returns
+
+`void`
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1541  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1541)

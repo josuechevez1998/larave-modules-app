@@ -1,0 +1,38 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ChartDatasetProperties<TType, TData> (/docs/latest/api/interfaces/ChartDatasetProperties.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ChartDatasetProperties<TType, TData>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ChartDatasetProperties.html
+> Exportado: 2026-07-12 20:59 UTC
+
+# [#](#interface-chartdatasetproperties-ttype-tdata) Interface: ChartDatasetProperties<TType, TData>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+| `TData` | `TData` |
+
+## [#](#properties) Properties
+
+### [#](#data) data
+
+• **data**: `TData`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:3812  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3812)
+
+---
+
+### [#](#type) type
+
+• `Optional` **type**: `TType`
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:3811  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L3811)

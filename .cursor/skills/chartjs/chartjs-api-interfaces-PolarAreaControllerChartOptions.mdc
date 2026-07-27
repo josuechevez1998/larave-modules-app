@@ -1,0 +1,37 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: PolarAreaControllerChartOptions (/docs/latest/api/interfaces/PolarAreaControllerChartOptions.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: PolarAreaControllerChartOptions
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/PolarAreaControllerChartOptions.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-polarareacontrollerchartoptions) Interface: PolarAreaControllerChartOptions
+
+## [#](#properties) Properties
+
+### [#](#animation) animation
+
+• **animation**: `false` | [`DoughnutAnimationOptions`](/docs/latest/api/interfaces/DoughnutAnimationOptions.html)
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:389  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L389)
+
+---
+
+### [#](#startangle) startAngle
+
+• **startAngle**: `number`
+
+Starting angle to draw arcs for the first item in a dataset. In degrees, 0 is at top.
+
+**`Default`**
+
+0
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:387  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L387)

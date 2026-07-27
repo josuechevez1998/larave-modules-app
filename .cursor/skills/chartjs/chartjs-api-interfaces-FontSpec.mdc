@@ -1,0 +1,93 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: FontSpec (/docs/latest/api/interfaces/FontSpec.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: FontSpec
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/FontSpec.html
+> Exportado: 2026-07-12 20:57 UTC
+
+# [#](#interface-fontspec) Interface: FontSpec
+
+## [#](#hierarchy) Hierarchy
+
+- **`FontSpec`**
+
+  ↳ [`CanvasFontSpec`](/docs/latest/api/interfaces/CanvasFontSpec.html)
+
+## [#](#properties) Properties
+
+### [#](#family) family
+
+• **family**: `string`
+
+Default font family for all text, follows CSS font-family options.
+
+**`Default`**
+
+"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:1787  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1787)
+
+---
+
+### [#](#lineheight) lineHeight
+
+• **lineHeight**: `string` | `number`
+
+Height of an individual line of text (see MDN).
+
+**`Default`**
+
+1.2
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:1806  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1806)
+
+---
+
+### [#](#size) size
+
+• **size**: `number`
+
+Default font size (in px) for text. Does not apply to radialLinear scale point labels.
+
+**`Default`**
+
+12
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:1792  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1792)
+
+---
+
+### [#](#style) style
+
+• **style**: `"normal"` | `"inherit"` | `"italic"` | `"oblique"` | `"initial"`
+
+Default font style. Does not apply to tooltip title or footer. Does not apply to chart title. Follows CSS font-style options (i.e. normal, italic, oblique, initial, inherit)
+
+**`Default`**
+
+'normal'
+
+#### [#](#defined-in-4) Defined in
+
+[types/index.d.ts:1797  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1797)
+
+---
+
+### [#](#weight) weight
+
+• **weight**: `number` | `"bold"` | `"normal"` | `"lighter"` | `"bolder"`
+
+Default font weight (boldness). (see MDN).
+
+#### [#](#defined-in-5) Defined in
+
+[types/index.d.ts:1801  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L1801)

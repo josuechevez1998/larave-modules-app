@@ -1,0 +1,67 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Custom Namespaces (/docs/13/basic-usage/custom-namespaces). Referencia nwidart/laravel-modules v13.
+---
+
+# Custom Namespaces
+
+> Fuente: https://laravelmodules.com/docs/13/basic-usage/custom-namespaces
+> Exportado: 2026-07-23 19:54 UTC
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Custom Namespaces
+
+---
+
+When you create a new module it also registers new custom namespace for `Lang`, `View` and `Config`. For example, if you create a new module named blog, it will also register new namespace/hint blog for that module. Then, you can use that namespace for calling `Lang`, `View` or `Config`. Following are some examples of its usage:
+
+Calling Lang:
+
+```
+Lang::get('blog::group.name');
+
+@trans('blog::group.name');
+
+Lang::get('blog::group.name');
+
+@trans('blog::group.name');
+```
+
+Calling View:
+
+```
+view('blog::index')
+
+view('blog::partials.sidebar')
+
+view('blog::index')
+
+view('blog::partials.sidebar')
+```
+
+Calling Config:
+
+```
+Config::get('blog.name')
+
+Config::get('blog.name')
+```
+
+---
+
+[Previous page: 
+←
+Creating a Module](/docs/13/basic-usage/creating-a-module)
+[Next page: 
+Helpers
+ →](/docs/13/basic-usage/helpers)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/basic-usage/custom-namespaces.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/basic-usage/custom-namespaces&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)

@@ -1,0 +1,47 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ScriptableTooltipContext<TType> (/docs/latest/api/interfaces/ScriptableTooltipContext.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ScriptableTooltipContext<TType>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ScriptableTooltipContext.html
+> Exportado: 2026-07-12 20:58 UTC
+
+# [#](#interface-scriptabletooltipcontext-ttype) Interface: ScriptableTooltipContext<TType>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+
+## [#](#properties) Properties
+
+### [#](#chart) chart
+
+• **chart**: [`Chart`](/docs/latest/api/classes/Chart.html)<`TType`, `DistributiveArray`<[`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html)[`TType`][`"defaultDataPoint"`]>, `unknown`>
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2745  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2745)
+
+---
+
+### [#](#tooltip) tooltip
+
+• **tooltip**: [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`>
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2746  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2746)
+
+---
+
+### [#](#tooltipitems) tooltipItems
+
+• **tooltipItems**: [`TooltipItem`](/docs/latest/api/interfaces/TooltipItem.html)<`TType`>[]
+
+#### [#](#defined-in-3) Defined in
+
+[types/index.d.ts:2747  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2747)

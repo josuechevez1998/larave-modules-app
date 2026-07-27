@@ -1,0 +1,84 @@
+---
+alwaysApply: false
+description: Documentación local (chartjs): Interface: ExtendedPlugin<TType, O, Model> (/docs/latest/api/interfaces/ExtendedPlugin.html). Usar como referencia al implementar o depurar según esta documentación.
+---
+
+# Interface: ExtendedPlugin<TType, O, Model>
+
+> Fuente: https://www.chartjs.org/docs/latest/api/interfaces/ExtendedPlugin.html
+> Exportado: 2026-07-12 21:00 UTC
+
+# [#](#interface-extendedplugin-ttype-o-model) Interface: ExtendedPlugin<TType, O, Model>
+
+## [#](#type-parameters) Type parameters
+
+| Name | Type |
+| --- | --- |
+| `TType` | extends [`ChartType`](/docs/latest/api/#charttype) |
+| `O` | `AnyObject` |
+| `Model` | [`TooltipModel`](/docs/latest/api/interfaces/TooltipModel.html)<`TType`> |
+
+## [#](#hierarchy) Hierarchy
+
+- **`ExtendedPlugin`**
+
+  ↳ [`Plugin`](/docs/latest/api/interfaces/Plugin.html)
+
+## [#](#methods) Methods
+
+### [#](#aftertooltipdraw) afterTooltipDraw
+
+▸ `Optional` **afterTooltipDraw**(`chart`, `args`, `options`): `void`
+
+**`Desc`**
+
+Called after drawing the `tooltip`. Note that this hook will not
+be called if the tooltip drawing has been previously cancelled.
+
+#### [#](#parameters) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.tooltip` | `Model` | The tooltip. |
+| `options` | `O` | The plugin options. |
+
+#### [#](#returns) Returns
+
+`void`
+
+#### [#](#defined-in) Defined in
+
+[types/index.d.ts:2741  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2741)
+
+---
+
+### [#](#beforetooltipdraw) beforeTooltipDraw
+
+▸ `Optional` **beforeTooltipDraw**(`chart`, `args`, `options`): `boolean` | `void`
+
+**`Desc`**
+
+Called before drawing the `tooltip`. If any plugin returns `false`,
+the tooltip drawing is cancelled until another `render` is triggered.
+
+#### [#](#parameters-2) Parameters
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `chart` | [`Chart`](/docs/latest/api/classes/Chart.html)<keyof [`ChartTypeRegistry`](/docs/latest/api/interfaces/ChartTypeRegistry.html), (`number` | [`number`, `number`] | [`Point`](/docs/latest/api/interfaces/Point.html) | [`BubbleDataPoint`](/docs/latest/api/interfaces/BubbleDataPoint.html))[], `unknown`> | The chart instance. |
+| `args` | `Object` | The call arguments. |
+| `args.cancelable` | `true` | - |
+| `args.tooltip` | `Model` | The tooltip. |
+| `options` | `O` | The plugin options. |
+
+#### [#](#returns-2) Returns
+
+`boolean` | `void`
+
+`false` to cancel the chart tooltip drawing.
+
+#### [#](#defined-in-2) Defined in
+
+[types/index.d.ts:2732  (opens new window)](https://github.com/chartjs/Chart.js/blob/9c5cf9f/src/types/index.d.ts#L2732)

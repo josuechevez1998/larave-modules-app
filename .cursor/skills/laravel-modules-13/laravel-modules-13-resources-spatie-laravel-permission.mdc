@@ -1,0 +1,347 @@
+---
+alwaysApply: false
+description: Documentación local (laravel-modules-13): Spatie's Laravel Permission (/docs/13/resources/spatie-laravel-permission). Referencia nwidart/laravel-modules v13.
+---
+
+# Spatie's Laravel Permission
+
+> Fuente: https://laravelmodules.com/docs/13/resources/spatie-laravel-permission
+> Exportado: 2026-07-23 19:55 UTC
+
+- [Installation](#installation)
+- [Create a roles module:](#create-a-roles-module)
+- [Seed a user with a role](#seed-a-user-with-a-role)
+- [Assign all permissions to a role](#assign-all-permissions-to-a-role)
+- [To group permissions by their roles](#to-group-permissions-by-their-roles)
+- [Updating permissions to roles using syncPermissions](#updating-permissions-to-roles-using-syncpermissions)
+
+[![David Carr Laravel Developer](https://laravelmodules.com/images/sponsors/dcblog.png "David Carr Laravel Developer")](https://dcblog.dev?utm_source=laravelmodules.com&utm_medium=website)
+
+# Spatie's Laravel Permission
+
+---
+
+- [Installation](#installation)
+- [Create a roles module:](#create-a-roles-module)
+- [Seed a user with a role](#seed-a-user-with-a-role)
+- [Assign all permissions to a role](#assign-all-permissions-to-a-role)
+- [To group permissions by their roles](#to-group-permissions-by-their-roles)
+- [Updating permissions to roles using syncPermissions](#updating-permissions-to-roles-using-syncpermissions)
+
+Spatie provide a powerful roles and permissions package for Laravel. it's a great way to manage complete roles each with their own permissions.
+
+Consult their docs for complete details <https://spatie.be/docs/laravel-permission>
+
+## [#](#installation)Installation
+
+Install the package with composer:
+
+```
+composer require spatie/laravel-permission
+
+composer require spatie/laravel-permission
+```
+
+Publish the migrations and config file:
+
+```
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+```
+
+This shows these file have been published:
+
+```
+Copied File [/vendor/spatie/laravel-permission/config/permission.php] To [/config/permission.php]
+
+Copied File [/vendor/spatie/laravel-permission/database/migrations/create_permission_tables.php.stub] To [/database/migrations/2021_12_22_111730_create_permission_tables.php]
+
+Publishing complete.
+
+Copied File [/vendor/spatie/laravel-permission/config/permission.php] To [/config/permission.php]
+Copied File [/vendor/spatie/laravel-permission/database/migrations/create_permission_tables.php.stub] To [/database/migrations/2021_12_22_111730_create_permission_tables.php]
+Publishing complete.
+```
+
+At this point the docs recommending migrating the database, we're not ready yet. We need to alter a migration to include modules but first we want to move all roles and permissions related files to a new module called `Roles`.
+
+## [#](#create-a-roles-module)Create a roles module:
+
+```
+php artisan module:make Roles
+
+php artisan module:make Roles
+```
+
+Now move the `create_permission_tables.php` file from `database/migrations` to the new Roles module `Modules/Roles/database/migrations`
+
+Open the `create_permission_tables.php` file add a modules enter to the permissions schema:
+
+```
+Schema::create($tableNames['permissions'], function (Blueprint $table) {
+
+$table->bigIncrements('id');
+
+$table->string('name');       // For MySQL 8.0 use string('name', 125);
+
+$table->string('module');     // For MySQL 8.0 use string('module', 125);
+
+$table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
+
+$table->timestamps();
+
+$table->unique(['name', 'guard_name']);
+
+});
+
+Schema::create($tableNames['permissions'], function (Blueprint $table) {
+    $table->bigIncrements('id');
+    $table->string('name');       // For MySQL 8.0 use string('name', 125);
+    $table->string('module');     // For MySQL 8.0 use string('module', 125);
+    $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
+    $table->timestamps();
+
+    $table->unique(['name', 'guard_name']);
+});
+```
+
+When creating permission a module key should be used in order to group permissions to their modules.
+
+For example:
+
+> This would come from the seeder classes from each module, this example is from an admin module
+
+Create permission to view dashboard, the module to an admin module and use the web guard.
+
+```
+use Spatie\Permission\Models\Permission;
+
+Permission::firstOrCreate(['name' => 'View Dashboard', 'module' => 'Admin', 'guard_name' => 'web']);
+
+use Spatie\Permission\Models\Permission;
+
+Permission::firstOrCreate(['name' => 'View Dashboard', 'module' => 'Admin', 'guard_name' => 'web']);
+```
+
+Then to check the permissions the usage is the same as the package documentation, you do not check the module setting here. The Module setting is used only to group the permissions into an UI for managing the permissions by their modules.
+
+```
+auth()->user()->hasPermissionTo('View Dashboard')
+
+auth()->user()->hasPermissionTo('View Dashboard')
+```
+
+## [#](#seed-a-user-with-a-role)Seed a user with a role
+
+Often you'll want to create a default user with an application and have them set as an Admin, to do this you can create a user inside a seed class. For this I use `Modules/Roles/Database/Seeders/RolesDatabaseSeeder.php` inside the `run` method.
+
+> Roles should already exist before trying to assign them:
+
+```
+use Spatie\Permission\Models\Role;
+
+Role::firstOrCreate(['name' => 'Admin']);
+
+Role::firstOrCreate(['name' => 'User']);
+
+use Spatie\Permission\Models\Role;
+
+Role::firstOrCreate(['name' => 'Admin']);
+Role::firstOrCreate(['name' => 'User']);
+```
+
+Using firstOrCreate means the seeder can run multiple times, only one user would ever be created this way.
+
+Once the user is created a role of Admin is assigned to the user.
+
+```
+public function run()
+
+{
+
+app()['cache']->forget('spatie.permission.cache');
+
+$admin = User::firstOrCreate([
+
+'name' => 'Joe',
+
+'slug' => 'Bloggs',
+
+'email' => 'j.bloggs@domain.com'
+
+],
+
+[
+
+'password' => bcrypt('a-random-password')
+
+]);
+
+$admin->assignRole('Admin');
+
+}
+
+public function run()
+{
+    app()['cache']->forget('spatie.permission.cache');
+
+    $admin = User::firstOrCreate([
+        'name' => 'Joe',
+        'slug' => 'Bloggs',
+        'email' => 'j.bloggs@domain.com'
+    ],
+    [
+        'password' => bcrypt('a-random-password')
+    ]);
+
+    $admin->assignRole('Admin');
+}
+```
+
+## [#](#assign-all-permissions-to-a-role)Assign all permissions to a role
+
+If you need to assign all permissions to a role, collect an array of the permission ids:
+
+```
+$permissions = Permission::all()->pluck('id')->toArray();
+
+$permissions = Permission::all()->pluck('id')->toArray();
+```
+
+Then select a role and sync the permissions array:
+
+```
+$role = Role::find(1);
+
+$role->syncPermissions($permissions);
+
+$role = Role::find(1);
+$role->syncPermissions($permissions);
+```
+
+## [#](#to-group-permissions-by-their-roles)To group permissions by their roles
+
+Get a specific role.
+
+Get all modules from permissions, use distinct to remove duplicate module names.
+
+```
+$role             = Role::findOrFail($id);
+
+$permissionGroups = Permission::orderBy('module')->get()->groupBy('module');
+
+$role             = Role::findOrFail($id);
+$permissionGroups = Permission::orderBy('module')->get()->groupBy('module');
+```
+
+Then in a view loop over the modules array,
+
+```
+@foreach($permissionGroups as $module => $permissions)
+
+@foreach($permissionGroups as $module => $permissions)
+```
+
+Inside each loop extract their permissions, to display the module name:
+
+```
+Str::camel($module)
+
+Str::camel($module)
+```
+
+To show all permissions for the module:
+
+```
+@foreach ($permissions as $perm)
+
+@foreach ($permissions as $perm)
+```
+
+Then using the `$perm` to show the permission name `{{ $perm->name }}`
+
+Putting it all together without any styling:
+
+```
+@foreach($permissionGroups as $module => $permissions)
+
+<h3>{{ Str::camel($module) }}</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Permisson</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+@foreach ($permissions as $perm)
+
+<tr>
+
+<td>{{ $perm->name }}</td>
+
+<td><input type="checkbox" name="permission[]" value="{{ $perm->id }}" @checked($role->hasPermissionTo($perm->name)) /></td>
+
+</tr>
+
+@endforeach
+
+</table>
+
+@endforeach
+
+@foreach($permissionGroups as $module => $permissions)
+    <h3>{{ Str::camel($module) }}</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Permisson</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        @foreach ($permissions as $perm)
+            <tr>
+                <td>{{ $perm->name }}</td>
+                <td><input type="checkbox" name="permission[]" value="{{ $perm->id }}" @checked($role->hasPermissionTo($perm->name)) /></td>
+            </tr>
+        @endforeach
+    </table>
+@endforeach
+```
+
+## [#](#updating-permissions-to-roles-using-syncpermissions)Updating permissions to roles using syncPermissions
+
+Once you've got an array of permissions you can update the permissions that are saved with a role. This will delete any permissions from the pivot table for the role that are not in the `$permissions` array.
+
+```
+$role->syncPermissions($permissions);
+
+$role->syncPermissions($permissions);
+```
+
+---
+
+[Previous page: 
+←
+Livewire](/docs/13/resources/livewire)
+[Next page: 
+Module Generator
+ →](/docs/13/resources/laravel-module-generator)
+
+---
+
+[Edit this page on GitHub](https://github.com/laravel-modules-com/docs/edit/main/13/resources/spatie-laravel-permission.md)
+
+Laravel Package built by [Nicolas Widart](https://github.com/nwidart).
+
+Maintained by [David Carr](https://dcblog.dev?utm_source=https://laravelmodules.com/docs/13/resources/spatie-laravel-permission&utm_medium=docs&utm_campaign=Laravel Modules)
+follow on X [@dcblogdev](https://twitter.com/dcblogdev)
